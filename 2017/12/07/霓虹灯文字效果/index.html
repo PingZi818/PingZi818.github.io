@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Hexo</title>
+  <title>霓虹灯文字效果 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Little Bottle">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="使用 SVG + CSS 实现动态霓虹灯文字效果    刚开始以为是gif动画之类的，审查元素发现居然是用SVG + CSS3动画实现的，顿时激起了我的(hao)欲(qi)望(xin)，决定要一探究竟，查看代码之后，发现原理居然是如此简单：多个SVG描边动画使用不同的animation-delay即可！ 对于一个形状SVG元素或文本SVG元素，可以使用stroke-dasharray来控制描边的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="霓虹灯文字效果">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/霓虹灯文字效果/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Little Bottle">
+<meta property="og:description" content="使用 SVG + CSS 实现动态霓虹灯文字效果    刚开始以为是gif动画之类的，审查元素发现居然是用SVG + CSS3动画实现的，顿时激起了我的(hao)欲(qi)望(xin)，决定要一探究竟，查看代码之后，发现原理居然是如此简单：多个SVG描边动画使用不同的animation-delay即可！ 对于一个形状SVG元素或文本SVG元素，可以使用stroke-dasharray来控制描边的">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="http://yoursite.com/img/coloredtext.gif">
+<meta property="og:image" content="http://yoursite.com/img/text.gif">
+<meta property="og:updated_time" content="2017-12-07T01:46:53.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Little Bottle">
+<meta name="twitter:title" content="霓虹灯文字效果">
+<meta name="twitter:description" content="使用 SVG + CSS 实现动态霓虹灯文字效果    刚开始以为是gif动画之类的，审查元素发现居然是用SVG + CSS3动画实现的，顿时激起了我的(hao)欲(qi)望(xin)，决定要一探究竟，查看代码之后，发现原理居然是如此简单：多个SVG描边动画使用不同的animation-delay即可！ 对于一个形状SVG元素或文本SVG元素，可以使用stroke-dasharray来控制描边的">
+<meta name="twitter:image" content="http://yoursite.com/img/coloredtext.gif">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,295 +161,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-霓虹灯文字效果" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/07/css画三角形/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/07/css画三角形/">css画三角形</a>
+    <h1 class="article-title" itemprop="name">
+      霓虹灯文字效果
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/07/霓虹灯文字效果/" class="archive-article-date">
+        
+        <a href="/2017/12/07/霓虹灯文字效果/" class="archive-article-date">
   	<time datetime="2017-12-07T01:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/07/霓虹灯文字效果/">霓虹灯文字效果</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center> <h1>使用 SVG + CSS 实现动态霓虹灯文字效果</h1> </center>
 
-        <div class="article-info info-on-right">
-          
-          
+<p><img src="../../../../img/coloredtext.gif" alt="Alt text"></p>
+<p>刚开始以为是gif动画之类的，审查元素发现居然是用SVG + CSS3动画实现的，顿时激起了我的(hao)欲(qi)望(xin)，决定要一探究竟，查看代码之后，发现原理居然是如此简单：多个SVG描边动画使用不同的animation-delay即可！</p>
+<p>对于一个形状SVG元素或文本SVG元素，可以使用stroke-dasharray来控制描边的间隔样式，并且可以用stroke-dashoffset来控制描边的偏移量，借此可以实现描边动画效果，更具体的资料可以看看张大神的《纯CSS实现帅气的SVG路径描边动画效果》</p>
+<p>我们先实现一个简单的文字描边动画：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;svg width=&quot;100%&quot; height=&quot;100&quot;&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">&lt;/svg&gt; </div><div class="line">.text&#123;</div><div class="line">    font-size: 64px;</div><div class="line">    font-weight: bold;</div><div class="line">    text-transform: uppercase;</div><div class="line">    fill: none;</div><div class="line">    stroke: #3498db;</div><div class="line">    stroke-width: 2px;</div><div class="line">    stroke-dasharray: 90 310;</div><div class="line">    animation: stroke 6s infinite linear;</div><div class="line">&#125;</div><div class="line">@keyframes stroke &#123;</div><div class="line">  100% &#123;</div><div class="line">    stroke-dashoffset: -400;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们同时使用多个描边动画，并设置不同的animation-delay：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;svg width=&quot;100%&quot; height=&quot;100&quot;&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-1&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-2&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-3&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-4&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
+<p>注意：要使用多少种颜色，就放多少个text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">.text&#123;</div><div class="line">    font-size: 64px;</div><div class="line">    font-weight: bold;</div><div class="line">    text-transform: uppercase;</div><div class="line">    fill: none;</div><div class="line">    stroke-width: 2px;</div><div class="line">    stroke-dasharray: 90 310;</div><div class="line">    animation: stroke 6s infinite linear;</div><div class="line">&#125;</div><div class="line">.text-1&#123;</div><div class="line">    stroke: #3498db;</div><div class="line">    text-shadow: 0 0 5px #3498db;</div><div class="line">    animation-delay: -1.5s;</div><div class="line">&#125;</div><div class="line">.text-2&#123;</div><div class="line">    stroke: #f39c12;</div><div class="line">    text-shadow: 0 0 5px #f39c12;</div><div class="line">    animation-delay: -3s;</div><div class="line">&#125;</div><div class="line">.text-3&#123;</div><div class="line">    stroke: #e74c3c;</div><div class="line">    text-shadow: 0 0 5px #e74c3c;</div><div class="line">    animation-delay: -4.5s;</div><div class="line">&#125;</div><div class="line">.text-4&#123;</div><div class="line">    stroke: #9b59b6;</div><div class="line">    text-shadow: 0 0 5px #9b59b6;</div><div class="line">    animation-delay: -6s;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@keyframes stroke &#123;</div><div class="line">  100% &#123;</div><div class="line">    stroke-dashoffset: -400;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="../../../../img/text.gif" alt="Alt text"></p>
+<p>需要注意的几个点：</p>
+<p>各个元素的animation-delay与animation的总时长的设置要协调<br>stroke-dashoffset与stroke-dasharray的设置要协调</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://ovl59s8f8.bkt.clouddn.com/money.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://ovl59s8f8.bkt.clouddn.com/wmoney.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/07/霓虹灯文字效果/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/07/用一张图片做出gif效果/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/12/07/css画三角形/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css画三角形
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/07/用一张图片做出gif效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用一张图片做出gif效果</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/07/用一张图片做出gif效果/">用一张图片做出gif效果</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/10/css黑魔法/" class="archive-article-date">
-  	<time datetime="2017-10-10T09:18:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/css黑魔法/">css黑魔法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/10/javaScript高级程序设计/" class="archive-article-date">
-  	<time datetime="2017-10-10T08:56:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/javaScript高级程序设计/">javaScript高级程序设计</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/10/闭包/" class="archive-article-date">
-  	<time datetime="2017-10-10T07:54:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/10/闭包/">闭包</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/14/css/" class="archive-article-date">
-  	<time datetime="2017-09-14T02:40:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/14/css/">css</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/13/flex/" class="archive-article-date">
-  	<time datetime="2017-09-13T01:57:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/13/flex/">flex</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/05/blog/" class="archive-article-date">
-  	<time datetime="2017-09-05T03:02:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/blog/">How to look great in photographs?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/05/head/" class="archive-article-date">
-  	<time datetime="2017-09-05T00:50:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/head/">head</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -469,8 +363,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

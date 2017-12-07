@@ -159,6 +159,515 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Regexp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/04/Regexp/">RegExp</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/04/Regexp/" class="archive-article-date">
+  	<time datetime="2017-09-04T07:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RegExp对象方法"><a href="#RegExp对象方法" class="headerlink" title="RegExp对象方法"></a>RegExp对象方法</h2><p>正则表达式可以被用于RegExp的exec和test方法以及 String的match、replace、search和split方法。</p>
+<h3 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h3><p>test() 方法检索字符串中是否存在指定的值。返回值是 true 或 false。<br>JavaScript 代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var patt1=new RegExp(<span class="string">'e'</span>);</div><div class="line">console.log(patt1.test(<span class="string">'some text'</span>));</div><div class="line">//OUTPUT:<span class="literal">true</span></div><div class="line">var patt2=new RegExp(<span class="string">'ee'</span>)</div><div class="line">console.log(patt2.test(<span class="string">'some text'</span>));</div><div class="line">//OUTPUT:<span class="literal">false</span></div><div class="line">//判断是不是QQ号</div><div class="line">//1 首位不能是0 ^[1-9]</div><div class="line">//2 必须是 [5,11] 位的数字 \d&#123;4,9&#125;</div><div class="line">var str = <span class="string">'80583600'</span>;</div><div class="line">var regexp = /^[1-9][0-9]&#123;4,10&#125;$/gim;</div><div class="line"><span class="keyword">if</span> (regexp.test(str)) &#123;</div><div class="line">    alert(<span class="string">'is'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    alert(<span class="string">'no'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。</p>
+<p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var patt1 = new RegExp(&apos;e&apos;);</div><div class="line">console.log(patt1.exec(&apos;some text&apos;));</div><div class="line">// OUTPUT:e</div><div class="line">var patt2 = new RegExp(&apos;ee&apos;);</div><div class="line">console.log(patt2.exec(&apos;some text&apos;));</div><div class="line">// OUTPUT:null</div></pre></td></tr></table></figure></p>
+<h3 id="compile"><a href="#compile" class="headerlink" title="compile()"></a>compile()</h3><p>compile() 既可以改变检索模式，也可以添加或删除第二个参数。</p>
+<p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var patt1=new RegExp(&quot;e&quot;);</div><div class="line">document.write(patt1.test(&quot;The best things in life are free&quot;)); // true</div><div class="line">// 改变了检索模式</div><div class="line">patt1.compile(&quot;eee&quot;);</div><div class="line">document.write(patt1.test(&quot;The best things in life are free&quot;)); // false</div></pre></td></tr></table></figure></p>
+<h3 id="支持正则表达式的-String-对象的方法"><a href="#支持正则表达式的-String-对象的方法" class="headerlink" title="支持正则表达式的 String 对象的方法"></a>支持正则表达式的 String 对象的方法</h3><h3 id="search-检索与正则表达式相匹配的值。"><a href="#search-检索与正则表达式相匹配的值。" class="headerlink" title="search 检索与正则表达式相匹配的值。"></a>search 检索与正则表达式相匹配的值。</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &quot;Visit W3School!&quot;</div><div class="line">console.log(str.search(/W3School/))</div><div class="line">// OUTPUT:6</div></pre></td></tr></table></figure></p>
+<h3 id="match-找到一个或多个正则表达式的匹配。"><a href="#match-找到一个或多个正则表达式的匹配。" class="headerlink" title="match 找到一个或多个正则表达式的匹配。"></a>match 找到一个或多个正则表达式的匹配。</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str=&quot;1 plus 2 equal 3&quot;</div><div class="line">console.log(str.match(/\d+/g))</div><div class="line">// OUTPUT:1,2,3</div></pre></td></tr></table></figure></p>
+<h3 id="replace-替换与正则表达式匹配的子串。"><a href="#replace-替换与正则表达式匹配的子串。" class="headerlink" title="replace 替换与正则表达式匹配的子串。"></a>replace 替换与正则表达式匹配的子串。</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &quot;Visit Microsoft!&quot;</div><div class="line">console.log(str.replace(/Microsoft/, &quot;W3School&quot;));</div><div class="line">// OUTPUT:Visit W3School!</div></pre></td></tr></table></figure></p>
+<p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// 找重复项最多的字符个数</div><div class="line">var str = &apos;g21ss4aeba_ersb43sgnnsssstht6sss60snnsj8resw0_ss&apos;;</div><div class="line">// split : 将字符串转化为数组</div><div class="line">// sort : 对数组排序，ASCII</div><div class="line">// join : 将数组转化为字符串</div><div class="line">var str_new = str.split(&apos;&apos;).sort().join(&apos;&apos;);</div><div class="line">document.write(str + &apos;</div><div class="line">&apos;);</div><div class="line">document.write(str.split(&apos;&apos;) + &apos;</div><div class="line">&apos;);</div><div class="line">document.write(str.split(&apos;&apos;).sort() + &apos;</div><div class="line">&apos;);</div><div class="line">document.write(str.split(&apos;&apos;).sort().join(&apos;&apos;) + &apos;</div><div class="line">&apos;);</div><div class="line">// 匹配字符，且重复这个字符，重复次数至少一次。</div><div class="line">var regexp = /(\w)\1+/g;</div><div class="line">var index = 0;</div><div class="line">var value = &apos;&apos;;</div><div class="line">str_new.replace(regexp, function($0, $1) &#123;</div><div class="line">    // document.write($0);</div><div class="line">    // document.write($1);</div><div class="line">    if (index &lt; $0.length) &#123;</div><div class="line">        index = $0.length;</div><div class="line">        value = $1;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">document.write(&apos;重复项最多的字符是：&apos; + value + &apos;，个数是：&apos; + index);</div><div class="line">// OUTPUT:</div><div class="line">// 0012344668__aabbeeegghjnnnnrrssssssssssssssssttw</div><div class="line">// 重复项最多的字符是：s，个数是：16</div></pre></td></tr></table></figure></p>
+<h3 id="split-把字符串分割为字符串数组。"><a href="#split-把字符串分割为字符串数组。" class="headerlink" title="split 把字符串分割为字符串数组。"></a>split 把字符串分割为字符串数组。</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &quot;How are you doing today?&quot;</div><div class="line">document.write(str.split(/\s+/));</div><div class="line">// OUTPUT:How,are,you,doing,today?</div></pre></td></tr></table></figure></p>
+<h2 id="常用正则表达式收集"><a href="#常用正则表达式收集" class="headerlink" title="常用正则表达式收集"></a>常用正则表达式收集</h2><h3 id="用户名正则"><a href="#用户名正则" class="headerlink" title="用户名正则"></a>用户名正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//用户名正则，4到16位（字母，数字，下划线，减号）</div><div class="line">var uPattern = /^[a-zA-Z0-9_-]&#123;4,16&#125;$/;</div><div class="line">//输出 true</div><div class="line">console.log(uPattern.test(&quot;caibaojian&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="密码强度正则"><a href="#密码强度正则" class="headerlink" title="密码强度正则"></a>密码强度正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符</div><div class="line">var pPattern = /^.*(?=.&#123;6,&#125;)(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&amp;*? ]).*$/;</div><div class="line">//输出 true</div><div class="line">console.log(&quot;==&quot;+pPattern.test(&quot;caibaojian#&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="整数正则"><a href="#整数正则" class="headerlink" title="整数正则"></a>整数正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//正整数正则</div><div class="line">var posPattern = /^\d+$/;</div><div class="line">//负整数正则</div><div class="line">var negPattern = /^-\d+$/;</div><div class="line">//整数正则</div><div class="line">var intPattern = /^-?\d+$/;</div><div class="line">//输出 true</div><div class="line">console.log(posPattern.test(&quot;42&quot;));</div><div class="line">//输出 true</div><div class="line">console.log(negPattern.test(&quot;-42&quot;));</div><div class="line">//输出 true</div><div class="line">console.log(intPattern.test(&quot;-42&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="数字正则"><a href="#数字正则" class="headerlink" title="数字正则"></a>数字正则</h3><h3 id="可以是整数也可以是浮点数"><a href="#可以是整数也可以是浮点数" class="headerlink" title="可以是整数也可以是浮点数"></a>可以是整数也可以是浮点数</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//正数正则</div><div class="line">var posPattern = /^\d*\.?\d+$/;</div><div class="line">//负数正则</div><div class="line">var negPattern = /^-\d*\.?\d+$/;</div><div class="line">//数字正则</div><div class="line">var numPattern = /^-?\d*\.?\d+$/;</div><div class="line">console.log(posPattern.test(&quot;42.2&quot;));</div><div class="line">console.log(negPattern.test(&quot;-42.2&quot;));</div><div class="line">console.log(numPattern.test(&quot;-42.2&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="Email正则"><a href="#Email正则" class="headerlink" title="Email正则"></a>Email正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//Email正则</div><div class="line">var ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]&#123;2,4&#125;)$/;</div><div class="line">//输出 true</div><div class="line">console.log(ePattern.test(&quot;99154507@qq.com&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="手机号码正则"><a href="#手机号码正则" class="headerlink" title="手机号码正则"></a>手机号码正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//手机号正则</div><div class="line">var mPattern = /^1[34578]\d&#123;9&#125;$/; //http://caibaojian.com/regexp-example.html</div><div class="line">//输出 true</div><div class="line">console.log(mPattern.test(&quot;15507621888&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="身份证号正则"><a href="#身份证号正则" class="headerlink" title="身份证号正则"></a>身份证号正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//身份证号（18位）正则</div><div class="line">var cP = /^[1-9]\d&#123;5&#125;(18|19|([23]\d))\d&#123;2&#125;((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d&#123;3&#125;[0-9Xx]$/;</div><div class="line">//输出 true</div><div class="line">console.log(cP.test(&quot;11010519880605371X&quot;));</div><div class="line">注：身份号码验证建议查看《关于身份证号码验证的几个实用函数》</div></pre></td></tr></table></figure></p>
+<h3 id="URL正则"><a href="#URL正则" class="headerlink" title="URL正则"></a>URL正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//URL正则</div><div class="line">var urlP= /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)([\/\w \.-]*)*\/?$/;</div><div class="line">//输出 true</div><div class="line">console.log(urlP.test(&quot;http://caibaojian.com&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="IPv4地址正则"><a href="#IPv4地址正则" class="headerlink" title="IPv4地址正则"></a>IPv4地址正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//ipv4地址正则</div><div class="line">var ipP = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;</div><div class="line">//输出 true</div><div class="line">console.log(ipP.test(&quot;115.28.47.26&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="十六进制颜色正则"><a href="#十六进制颜色正则" class="headerlink" title="十六进制颜色正则"></a>十六进制颜色正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//RGB Hex颜色正则</div><div class="line">var cPattern = /^#?([a-fA-F0-9]&#123;6&#125;|[a-fA-F0-9]&#123;3&#125;)$/;</div><div class="line">//输出 true</div><div class="line">console.log(cPattern.test(&quot;#b8b8b8&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="日期正则"><a href="#日期正则" class="headerlink" title="日期正则"></a>日期正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//日期正则，简单判定,未做月份及日期的判定</div><div class="line">var dP1 = /^\d&#123;4&#125;(\-)\d&#123;1,2&#125;\1\d&#123;1,2&#125;$/;</div><div class="line">//输出 true</div><div class="line">console.log(dP1.test(&quot;2017-05-11&quot;));</div><div class="line">//输出 true</div><div class="line">console.log(dP1.test(&quot;2017-15-11&quot;));</div><div class="line">//日期正则，复杂判定</div><div class="line">var dP2 = /^(?:(?!0000)[0-9]&#123;4&#125;-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]&#123;2&#125;(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/;</div><div class="line">//输出 true</div><div class="line">console.log(dP2.test(&quot;2017-02-11&quot;));</div><div class="line">//输出 false</div><div class="line">console.log(dP2.test(&quot;2017-15-11&quot;));</div><div class="line">//输出 false</div><div class="line">console.log(dP2.test(&quot;2017-02-29&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="QQ号码正则"><a href="#QQ号码正则" class="headerlink" title="QQ号码正则"></a>QQ号码正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//QQ号正则，5至11位</div><div class="line">var qqPattern = /^[1-9][0-9]&#123;4,10&#125;$/;</div><div class="line">//输出 true</div><div class="line">console.log(qqPattern.test(&quot;65974040&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="微信号正则"><a href="#微信号正则" class="headerlink" title="微信号正则"></a>微信号正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//微信号正则，6至20位，以字母开头，字母，数字，减号，下划线</div><div class="line">var wxPattern = /^[a-zA-Z]([-_a-zA-Z0-9]&#123;5,19&#125;)+$/;</div><div class="line">//输出 true</div><div class="line">console.log(wxPattern.test(&quot;caibaojian_com&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="车牌号正则"><a href="#车牌号正则" class="headerlink" title="车牌号正则"></a>车牌号正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//车牌号正则</div><div class="line">var cPattern = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]&#123;1&#125;[A-Z]&#123;1&#125;[A-Z0-9]&#123;4&#125;[A-Z0-9挂学警港澳]&#123;1&#125;$/;</div><div class="line">//输出 true</div><div class="line">console.log(cPattern.test(&quot;浙AKP053&quot;));</div></pre></td></tr></table></figure></p>
+<h3 id="包含中文正则"><a href="#包含中文正则" class="headerlink" title="包含中文正则"></a>包含中文正则</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//包含中文正则</div><div class="line">var cnPattern = /[\u4E00-\u9FA5]/;</div><div class="line">//输出 true</div><div class="line">console.log(cnPattern.test(&quot;愚人码头&quot;));</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>校验数字的表达式</p>
+</blockquote>
+<ul>
+<li>数字：^[0-9]*$</li>
+<li>n位的数字：^\d{n}$</li>
+<li>至少n位的数字：^\d{n,}$</li>
+<li>m-n位的数字：^\d{m,n}$</li>
+<li>零和非零开头的数字：^(0|[1-9][0-9]*)$</li>
+<li>非零开头的最多带两位小数的数字：^([1-9][0-9]*)+(.[0-9]{1,2})?$</li>
+<li>带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$</li>
+<li>正数、负数、和小数：^(-|+)?\d+(.\d+)?$</li>
+<li>有两位小数的正实数：^[0-9]+(.[0-9]{2})?$</li>
+<li>有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$</li>
+<li>非零的正整数：^[1-9]\d<em>$ 或 ^([1-9][0-9]</em>){1,3}$ 或 ^+?[1-9][0-9]*$</li>
+<li>非零的负整数：^-[1-9][]0-9”<em>$ 或 ^-[1-9]\d</em>$</li>
+<li>非负整数：^\d+$ 或 ^[1-9]\d*|0$</li>
+<li>非正整数：^-[1-9]\d*|0$ 或 ^((-\d+)|(0+))$</li>
+<li>非负浮点数：^\d+(.\d+)?$ 或 ^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0$</li>
+<li>非正浮点数：^((-\d+(.\d+)?)|(0+(.0+)?))$ 或  ^(-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>))|0?.0+|0$</li>
+<li>正浮点数：^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>$ 或  ^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$</li>
+<li>负浮点数：^-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>)$ 或  ^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$</li>
+<li><p>浮点数：^(-?\d+)(.\d+)?$ 或 ^-?([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0)$</p>
+<blockquote>
+<p>校验字符的表达式</p>
+</blockquote>
+</li>
+<li><p>汉字：^[\u4e00-\u9fa5]{0,}$</p>
+</li>
+<li>英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$</li>
+<li>长度为3-20的所有字符：^.{3,20}$</li>
+<li>由26个英文字母组成的字符串：^[A-Za-z]+$</li>
+<li>由26个大写英文字母组成的字符串：^[A-Z]+$</li>
+<li>由26个小写英文字母组成的字符串：^[a-z]+$</li>
+<li>由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</li>
+<li>由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$</li>
+<li>中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</li>
+<li>可以输入含有^%&amp;’,;=?$\”等字符：[^%&amp;’,;=?$\x22]+</li>
+<li><p>禁止输入含有~的字符：[^~\x22]+</p>
+<blockquote>
+<p>特殊需求表达式</p>
+</blockquote>
+</li>
+<li><p>Email地址：^\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*$</p>
+</li>
+<li>域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</li>
+<li>InternetURL：[a-zA-z]+://[^\s]<em> 或 ^<a href="http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=" target="_blank" rel="external">http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=</a>]</em>)?$</li>
+<li>手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</li>
+<li>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：^((\d{3,4}-)|\d{3.4}-)?\d{7,8}$</li>
+<li>国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7}</li>
+<li>身份证号(15位、18位数字)：^\d{15}|\d{18}$</li>
+<li>短身份证号码(数字、字母x结尾)：^([0-9]){7,18}(x|X)?$ 或  ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</li>
+<li>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$</li>
+<li>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$</li>
+<li>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.<em>\d)(?=.</em>[a-z])(?=.*[A-Z]).{8,10}$</li>
+<li>日期格式：^\d{4}-\d{1,2}-\d{1,2}</li>
+<li>一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$</li>
+<li>一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$</li>
+<li>xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\.[x|X][m|M][l|L]$</li>
+<li>中文字符的正则表达式：[\u4e00-\u9fa5]</li>
+<li>双字节字符：[^\x00-\xff] (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</li>
+<li>空白行的正则表达式：\n\s*\r (可以用来删除空白行)</li>
+<li>HTML标记的正则表达式：&lt; (\S<em>?)[^&gt;]</em>&gt;.<em>?|&lt; .</em>? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</li>
+<li>首尾空白字符的正则表达式：^\s<em>|\s</em>$或(^\s<em>)|(\s</em>$) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</li>
+<li>腾讯QQ号：[1-9][0-9]{4,} (腾讯QQ号从10000开始)</li>
+<li>中国邮政编码：[1-9]\d{5}(?!\d) (中国邮政编码为6位数字)</li>
+<li>IP地址：\d+.\d+.\d+.\d+ (提取IP地址时有用)</li>
+<li>IP地址：((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</li>
+<li>港澳居民来往内地通行证号码验证正则： /^([A-Z]\d{6,10}((\w{1}))?)$/</li>
+<li><p>护照验证正则：  /^(P\d{7}|G\d{7,8}|TH\d{7,8}|S\d{7,8}|A\d{7,8}|L\d{7,8}|\d{9}|D\d+|1[4,5]\d{7})$/<br>注：身份号码验证建议查看《关于身份证号码验证的几个实用函数》</p>
+<blockquote>
+<p>钱的输入格式：</p>
+</blockquote>
+</li>
+<li><p>有四种钱的表示形式我们可以接受:”10000.00″ 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：^[1-9][0-9]*$</p>
+</li>
+<li>这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0″不通过,所以我们采用下面的形式：^(0|[1-9][0-9]*)$</li>
+<li>一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]*)$</li>
+<li>这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$</li>
+<li>必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：^[0-9]+(.[0-9]{2})?$</li>
+<li>这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$</li>
+<li>这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})*(.[0-9]{1,2})?$</li>
+<li>1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})<em>)(.[0-9]{1,2})?$<br>备注：这就是最终结果了,别忘了”+”可以用”</em>”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</li>
+</ul>
+<blockquote>
+<p>更多收集的正则</p>
+</blockquote>
+<h3 id="常见的-正则表达式-校验：QQ号、手机号、Email、是否是数字、去掉前后空格、是否存在中文、邮编、身份证、URL、日期格式、IP"><a href="#常见的-正则表达式-校验：QQ号、手机号、Email、是否是数字、去掉前后空格、是否存在中文、邮编、身份证、URL、日期格式、IP" class="headerlink" title="常见的 正则表达式 校验：QQ号、手机号、Email、是否是数字、去掉前后空格、是否存在中文、邮编、身份证、URL、日期格式、IP"></a>常见的 正则表达式 校验：QQ号、手机号、Email、是否是数字、去掉前后空格、是否存在中文、邮编、身份证、URL、日期格式、IP</h3><p>JavaScript 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">var myRegExp = &#123;</div><div class="line">    // 检查字符串是否为合法QQ号码</div><div class="line">    isQQ: function(str) &#123;</div><div class="line">        // 1 首位不能是0  ^[1-9]</div><div class="line">        // 2 必须是 [5, 11] 位的数字  \d&#123;4, 9&#125;</div><div class="line">        var reg = /^[1-9][0-9]&#123;4,9&#125;$/gim;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(&apos;QQ号码格式输入正确&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(&apos;请输入正确格式的QQ号码&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法手机号码</div><div class="line">    isPhone: function(str) &#123;</div><div class="line">        var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|18[0-9]|14[57]|17[678])[0-9]&#123;8&#125;$/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(&apos;手机号码格式输入正确&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(&apos;请输入正确格式的手机号码&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法Email地址</div><div class="line">    isEmail: function(str) &#123;</div><div class="line">        var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;</div><div class="line">        // var reg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(&apos;Email格式输入正确&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(&apos;请输入正确格式的Email&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否是数字</div><div class="line">    isNumber: function(str) &#123;</div><div class="line">        var reg = /^\d+$/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos;是数字&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos;不是数字&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 去掉前后空格</div><div class="line">    trim: function(str) &#123;</div><div class="line">        var reg = /^\s+|\s+$/g;</div><div class="line">        return str.replace(reg, &apos;&apos;);</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否存在中文</div><div class="line">    isChinese: function(str) &#123;</div><div class="line">        var reg = /[\u4e00-\u9fa5]/gm;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 中存在中文&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 中不存在中文&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法邮政编码</div><div class="line">    isPostcode: function(str) &#123;</div><div class="line">        // 起始数字不能为0，然后是5个数字  [1-9]\d&#123;5&#125;</div><div class="line">        var reg = /^[1-9]\d&#123;5&#125;$/g;</div><div class="line">        // var reg = /^[1-9]\d&#123;5&#125;(?!\d)$/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 是合法的邮编格式&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 是不合法的邮编格式&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法身份证号码</div><div class="line">    isIDcard: function(str) &#123;</div><div class="line">        var reg = /^(^[1-9]\d&#123;7&#125;((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d&#123;3&#125;$)|(^[1-9]\d&#123;5&#125;[1-9]\d&#123;3&#125;((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d&#123;4&#125;)|\d&#123;3&#125;[Xx])$)$/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 是合法的身份证号码&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 是不合法的身份证号码&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法URL</div><div class="line">    isURL: function(str) &#123;</div><div class="line">        var reg = /^https?:\/\/(([a-zA-Z0-9_-])+(\.)?)*(:\d+)?(\/((\.)?(\?)?=?&amp;?[a-zA-Z0-9_-](\?)?)*)*$/i;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 是合法的URL&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 是不合法的URL&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法日期格式 yyyy-mm-dd</div><div class="line">    isDate: function(str) &#123;</div><div class="line">        var reg = /^[1-2][0-9][0-9][0-9]-[0-1]&#123;0,1&#125;[0-9]-[0-3]&#123;0,1&#125;[0-9]$/;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 是合法的日期格式&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 是不合法的日期格式，yyyy-mm-dd&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    // 检查字符串是否为合法IP地址</div><div class="line">    isIP: function(str) &#123;</div><div class="line">        // 1.1.1.1  四段  [0 , 255]</div><div class="line">        // 第一段不能为0</div><div class="line">        // 每个段不能以0开头</div><div class="line">        //</div><div class="line">        // 本机IP: 58.50.120.18 湖北省荆州市 电信</div><div class="line">        var reg = /^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]))&#123;3&#125;$/gi;</div><div class="line">        if (reg.test(str)) &#123;</div><div class="line">            console.log(str + &apos; 是合法的IP地址&apos;);</div><div class="line">            return true;</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(str + &apos; 是不合法的IP地址&apos;);</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 测试</div><div class="line">// console.log(myRegExp.isQQ(&apos;80583600&apos;));</div><div class="line">// console.log(myRegExp.isPhone(&apos;17607160722&apos;));</div><div class="line">// console.log(myRegExp.isEmail(&apos;80583600@qq.com&apos;));</div><div class="line">// console.log(myRegExp.isNumber(&apos;100a&apos;));</div><div class="line">// console.log(myRegExp.trim(&apos;  100  &apos;));</div><div class="line">// console.log(myRegExp.isChinese(&apos;baixiaoming&apos;));</div><div class="line">// console.log(myRegExp.isChinese(&apos;小明&apos;));</div><div class="line">// console.log(myRegExp.isPostcode(&apos;412345&apos;));</div><div class="line">// console.log(myRegExp.isIDcard(&apos;42091119940927001X&apos;));</div><div class="line">// console.log(myRegExp.isURL(&apos;https://www.baidu.com/&apos;));</div><div class="line">// console.log(myRegExp.isDate(&apos;2017-4-4&apos;));</div><div class="line">// console.log(myRegExp.isIP(&apos;1.0.0.0&apos;));</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/04/Regexp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-movie-stopone" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/movie-stopone/">movie stopone</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/01/movie-stopone/" class="archive-article-date">
+  	<time datetime="2017-09-01T06:50:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hi everyone Welcome to movie stopone! I’m LittleBottle.enjoy it!<br>音乐有点多的时候需要手动关掉其他的，目前还没有解决这个问题，以后我会定期更新我个人比较推荐的音乐和电影博文，当然还有技术博文哈哈，好的音乐需要耐心去欣赏，have fun!</p>
+<center> <h1>再次出发之纽约遇见你（Begin Again）</h1> </center>
+
+<p><img src="http://ovl59s8f8.bkt.clouddn.com/m2.jpg" alt="Alt text"></p>
+<p>电影主要描述了一个关于音乐和梦想的故事，很不错，如果你喜欢音乐就不要错过哟！</p>
+<p>格雷塔（凯拉·奈特莉饰）抛弃了一切跟随着男友戴夫（亚当·李维饰）来到美国纽约实现他们的音乐和爱情梦想，没想到曾经幻想过的美好一切化作泡影，在获得了更好的工作机会后，戴夫果断抛弃了格雷塔，留下她一人苦苦在底层挣扎。</p>
+<p>丹（马克·鲁法洛饰）最近的生活也不好过，他发现自己无法从思念前妻马瑞安（凯瑟琳·基纳饰）的感情中走出来，与此同时，他的女儿维奥莱特（海莉·斯坦菲尔德饰）正处于一生中最叛逆的阶段。命运让这失意的丹和格雷塔于一间小小的酒吧里相遇，丹看到了她的希望，也似乎找到了自己的新方向 。</p>
+<p></p><h2>following is a song i recommend</h2><br>如果有兴趣的话可以去看一下<a href="http://music.163.com/#/mv?id=285033" target="_blank" rel="external">MV</a>不一样的感觉哟！<p></p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=35270161&auto=1&height=66"></iframe><br>建议去听原唱 Keira Knightley 或者 Adam Levine唱的 但是我更喜欢Keira Knightley唱的感觉，由于版权问题在这里就不能播放啦！</p>
+<p></p><h3>《Lost Stars》歌词：<h3><p></p>
+<p>please don’t see</p>
+<p>just a girl caught up in dreams and fantasies </p>
+<p>please see me reaching out for someone I can’t see </p>
+<p>take my hand let’s see where we wake up tomorrow</p>
+<p>Best laid plans sometimes are just a one night stand </p>
+<p>I’ll be damned cupid’s demanding back his arrow. </p>
+<p>So let’s get drunk on our tears. </p>
+<p>And god tell us the reason.</p>
+<p>Youth is wasted on the young . </p>
+<p>It’s hunting season and this lamb is on the run </p>
+<p>We are searching for meaning. </p>
+<p>But are we all lost stars trying to light up the dark. </p>
+<p>Who are we ?</p>
+<p>Just a speck of dust within the galaxy </p>
+<p>Woe is me</p>
+<p>If we’re not careful turns into reality </p>
+<p>But don’t you dare let our best memories bring you sorrow </p>
+<p>Yesterday i saw a lion kiss a deer </p>
+<p>turn the page maybe we’ll find a brand new ending </p>
+<p>Where we dancing in our tears </p>
+<p>And god tell us the reason </p>
+<p>Youth is wasted on the young . </p>
+<p>It’s hunting season and this lamb is on the run</p>
+<p>We are searching for meaning. </p>
+<p>But are we all lost stars trying to light up the dark</p>
+<p><img src="http://ovl59s8f8.bkt.clouddn.com/m3.jpg" alt="Alt text"></p>
+<p>I thought i saw you out there crying</p>
+<p>I thought i heard you call my name </p>
+<p>I thought i heard you out there crying but just the same </p>
+<p>and god tell us the reason.</p>
+<p>Youth is wasted on the young . </p>
+<p>It’s hunting season and this lamb is on the run </p>
+<p>We are searching for meaning. </p>
+<p>But are we all lost stars trying to light up the dark. </p>
+<p>Are we all lost stars trying to light up the dark.</p>
+</h3></h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/01/movie-stopone/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-music-stop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/music-stop/">Music Enjoy</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/01/music-stop/" class="archive-article-date">
+  	<time datetime="2017-09-01T01:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=461545003&auto=1&height=66"></iframe><br>Hi everyone Welcome to music enjoy! I’m LittleBottle.the music i Recommended  is one of my favorite musics,hope you enjoy it as much as I do<br>音乐有点多的时候需要手动关掉其他的，目前还没有解决这个问题，以后我会定期更新我个人比较推荐的音乐和电影博文，当然还有技术博文哈哈，好的音乐需要耐心去欣赏，have fun!</p>
+<center> <h1>繁星之城 为爱闪耀</h1> </center>
+
+<p><img src="../../../../img/p507921.jpg" alt="Alt text"></p>
+<p>在电影院看的是2D版本，感觉不够清晰，代入感不够强，回到家后慢慢回忆电影里的剧情，随机播放LaLaLand原声带，越听越无法抑制自己的感情，于是感觉有写一点东西的必要了。</p>
+<p>在评论上看到有人说《爱乐之城》剧情老套，当然，我不否认。</p>
+<p>我们太过于习惯于将电影的各个要素分割开去评价一部电影，而忽略了一个事实——电影的各个方面是相互依存的，取其中任何一部分是无法独立存在的。若是想评论剧情，就只能结合配乐、人物形象、情感表现等其他方面综合起来分析。</p>
+<p>剧情的优劣完全可以左右一部的电影品质好坏，然而老套的剧情本身并不坏，是我们自身的问题。我们之所以认为某部电影剧情老土，只是因为我们看了太多这样的故事发展，倘若是世界上第一个这样写的人，那必定会一鸣惊人吧。《追忆似水年华》能把主人公入睡前在床上的辗转反侧这样一个平常的场景写得如此细致，打的当然不是剧情牌。</p>
+<p>试想当我们只看到《当幸福来敲门》是一个普通职员有着不幸的经历，经过一番奋斗终于成功的励志故事，试想我们只看到《爆裂鼓手》严师出高徒的套路剧情，那么自然我们定会认为确实不怎么样。若是这样，那么电影的真正魅力将无法展现出来。世界上有太多的“老套”电影，其实说来说去这个世界上的剧情也就那么多，新颖的剧情固然更容易受人喜爱，但“老套”的故事也并不是毫无光彩。</p>
+<p>我想说，一部令人称赞的电影，创作它的人通过各种各样的修饰美化，再平常的剧情也可以成为佳片。而爱乐之城正是做到了这一点。电影本身是否足够优秀看的是综合实力。</p>
+<p>《爱乐之城》延续了达米安•查泽雷的“霓虹风格”，再加上颜色鲜艳明亮的服饰造型，颇有复古之感。</p>
+<p>现在，结合剧情，谈谈《爱乐之城》中与那些美化故事的亮点</p>
+<p>本片最大的亮点即是——音乐（原声带LaLaLand）</p>
+<p>音乐的介入使得剧情得以升华，内容也不再单调，当然若是不喜欢音乐或者只喜欢流行音乐的人另当别论。来说作为一部优秀的歌舞片，《爱乐之城》的有着杰出的配乐，而音乐响起的同时也意味着观众情绪的调动。<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507923.jpg" alt="Alt text"></p>
+<p>电影的开场以洛杉矶拥堵的交通为背景，超长镜头拍摄，上百人在高架桥上纵情的舞蹈。在《Another day of sun》欢快明亮的旋律中，开始叙说这美丽的洛城爱情故事，也揭开了“乐”与“城”的序幕。这一段舞蹈有种看MV的感觉。整齐划一的舞姿，热情洋溢的脸庞，这座城市仿佛充满了活力，音乐和洛杉矶再也分割不来了。所有人跳完之后恢复拥堵的交通之后，镜头向下一转，女主角Mia坐在汽车里，对着长长的车队按喇叭。男主角不停按着喇叭。然后男女主角第一次照面，女主就竖了个中指。</p>
+<p>Mia是个想要成为演员的咖啡师，参加过多次试镜，却每每不如意。（不知道那些人怎么想的，明明又漂亮又演的好）一次又一次的试镜失败让Mia难过不已。Mia在一次试镜失败后和她的同居女友们去参加派对。<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507926.jpg" alt="Alt text"></p>
+<p>电影的又一个亮点——色彩。胶片拍摄的全片色彩选取凸显出复古的情调，令人眼前一亮。大量的室内、夜景、街灯等电影场景，暗色调加灯光，这也是达米安•查泽雷导演的一贯风格，但相比《爆裂鼓手》，《爱乐之城》在色彩与灯光的运用上更为新颖大胆。色彩与灯光交映，每个观众的内心都变得梦幻起来。</p>
+<p>Mia和她的小伙伴们从住处一直到派对结束都伴随着《Someone in the crowd》这首歌，整个派对的过程，导演通过一段漂亮的蒙太奇压缩成短短的一分多钟，既不累赘啰嗦，又可以融合进歌舞元素，足以体现导演的才智与造诣。然而绝不仅仅如此，在这一段的蒙太奇中，包含了太多有关Mia的信息。透过杯中的酒水我们可以窥见，Mia与派对的一切格格不入，无尽的娱乐只会让她厌倦。通过穿透酒水这样一个视觉，观众很容易感受到派对的梦幻与躁动，这正是影片中的绝妙之处。尽管派对的气氛再欢快，Mia总是无法融入那样的世界，她是孤独的，她在渴求某样东西。</p>
+<p>Someone in the crowd could be the one you need to know, </p>
+<p>The one to finally lift you off the ground, </p>
+<p>Someone in the crowd could take you where you want to go, </p>
+<p>If you’re the someone ready to be found(someone ready to be found). </p>
+<p>……</p>
+<p>That someone in the crowd, </p>
+<p>That someone in the crowd, </p>
+<p>Is someone in the crowd the only thing you really see?</p>
+<p>Watching while the world keeps spinning ‘round. </p>
+<p>回家的路上Mia路过一家餐厅。钢琴曲渐渐响起。她被这悠扬的琴声吸引住了。她走进餐厅，找到了命运中茫茫人海中的那个人，此刻镜头长久地停在Mia脸上。这也是《爱乐之城》中的神来一笔。整部电影留给了Mia大量的的面部特写镜头，这恰到好处的留白，给了所有观众想象与感受的时间。通过这些留白，观众可以看到Mia微妙的神态表情，真切地感受到Mia的内心情感。在这就不得不夸夸石头了，演得真好。<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507922.jpg" alt="Alt text"></p>
+<p>Mia&amp;Sebastian’s theme</p>
+<p>到了这里，本应该轮到男主角Seb的戏份，然后两人正式邂逅。但导演并没有打算直接将剧情发展下去，转而三百六十度大转弯，从头开始。</p>
+<p>于是镜头回到Mia在高架桥上对Seb竖中指那一刻。Seb热爱爵士，弹得一手好琴。在那家餐厅里，他趁老板不注意，偷偷弹起自己创作的钢琴曲。也正是这琴声，为他带来了Mia。</p>
+<p>电影到这里按照老的套路两人应该一见如故，相见恨晚。然而却是意料之外。Seb却冷漠地擦肩而过。而这擦肩而过，留下Mia一人尴尬地站在原地。埋下了后文的伏笔。</p>
+<p>在《爱乐之城》中，歌舞的存在不单纯是为了起到单纯配乐的效果，它还包含了叙事。</p>
+<p>《爱乐之城》中多次利用舞蹈来推动情节，Mia与Seb的情感穿插其中，与舞蹈融为一体。不重在描写事情发展的外观，而在于表现舞蹈而透出本质。这是导演相当巧妙的表现主义手法。</p>
+<p>因此不是电影没有做好感情方面的基础，而是这个花招太巧妙，它把观众们都骗到了。所以故事内容和精神核心的空洞这个说法是绝对不成立的。</p>
+<p>两人在山顶上的那段。爱情好像尚未在他们之间生根萌芽。但是第二天Seb就去咖啡店里找到Mia。似乎Mia和Seb之间并没有发生什么，突然之间他们就走得越来越近。在这个迷人的夜晚，表面上没发生什么事，其实，秘密隐藏在音乐的歌词中。在《爱乐之城》中，剧情是以另一种独特的方式显现出来。<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507925.jpg" alt="Alt text"></p>
+<p>Some other girls and guy, </p>
+<p>Would love this wordly sky, </p>
+<p>But  there`s only you and I, </p>
+<p>And we`ve got no shot, </p>
+<p>This could never be, </p>
+<p>You`re not the type for me, </p>
+<p>And there`s not a spark in sight, </p>
+<p>What a, a waste of a lovely night, </p>
+<p>Emma: You say there`s nothing here, </p>
+<p>Well let`s make something clear, </p>
+<p>I think I`ll be the one to make that call, </p>
+<p>(Ryan: What`s your call?), </p>
+<p>And though you look so cute, </p>
+<p>In your polyester suit (Ryan: It`s wool), </p>
+<p>You<code>re right I</code>d never fall with you at all, </p>
+<p>And maybe this appeals, </p>
+<p>To someone who`s not in heels, </p>
+<p>Or to any girls who feels, </p>
+<p>There`re some chance for romance, </p>
+<p>But I`m frankly feeling nothing (Ryan: Is that so?!), </p>
+<p>Or it could be less than nothing, </p>
+<p>Ryan: Good to know, so you agree, </p>
+<p>Emma: That`s right, </p>
+<p>Together: What a waste of a lovely night. </p>
+<p>仅仅是舞蹈，就折射出Mia和Seb这对刚刚相遇并产生好感的准恋人的朦胧又微妙的感情，不得不赞叹导演的才华。歌词中一系列的俏皮话，彼此对对方有兴趣却不好意思承认，这正是爱情刚刚降临的感觉。</p>
+<p>Seb刚和Mia分别，从The Light House离开，来到海边唱着歌《City of stars》<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507924.jpg" alt="Alt text"></p>
+<p>如果有兴趣的话可以看一下<a href="http://music.163.com/#/mv?id=5407011" target="_blank" rel="external">MV</a></p>
+<p>City of stars<br>星光之城啊<br>Are you shining just for me?<br>你是否只愿为我闪耀<br>City of stars<br>星光之城啊<br>There’s so much that I can’t see<br>世间有太多不可明了<br>Who knows?<br>谁又能明了<br>I felt it from the first embrace I shared with you<br>我感觉到自你我初次拥抱时<br>That now our dreams<br>所怀有的那些梦想<br>They’ve finally come true<br>都已一一实现</p>
+<p>City of stars<br>噢星光之城<br>Just one thing everybody wants<br>每个人翘首以盼的<br>There in the bars<br>就是那热闹的酒吧中<br>And through the smokescreen of the crowded restaurants<br>以及雾气袅袅的嘈杂餐馆里<br>It’s love<br>名叫爱的东西<br>Yes, all we’re looking for is love from someone else<br>是的 人人都想从某个同样孤单的灵魂里找到爱<br>A rush<br>也许是匆匆擦肩的某一刻<br>A glance<br>或某个抬眼的一瞬间<br>A touch<br>也许是不经意的轻轻触碰<br>A dance<br>激荡起的雀跃欣喜的灵魂</p>
+<p>To look in somebody’s eyes<br>从某个人眼中看到的光<br>To light up the skies<br>足以将夜空都点亮<br>To open the world and send them reeling<br>足以打开世界的新篇章 不复悲伤过往<br>A voice that says, I’ll be here<br>好像有某个声音总在对我说 我会等你<br>And you’ll be alright<br>请你放心<br>I don’t care if I know<br>所以我不会在意自己是否清楚<br>Just where I will go<br>将要到达的目的地<br>‘Cause all that I need’s this crazy feeling<br>我只愿能感受这奋不顾身的疯狂爱意<br>A rat-tat-tat on my heart…<br>以及我胸腔怦怦跳动的心</p>
+<p>Think I want it to stay<br>希望这爱意能永驻我心<br>City of stars<br>星光之城啊<br>Are you shining just for me?<br>你是否只愿为我闪耀<br>City of stars<br>星光之城啊<br>You never shined so brightly<br>我感受到了你从未有过的闪耀</p>
+<p>剧情发展到这里Seb确确实实爱上了Mia，而《City of stars》表达的正是Seb此时陷入爱情这突如其来的美好时的那份迷茫与惆怅。这究竟是美好的开始，还是终究是又一个我不可及的梦？Seb担心这美好的爱情会变成像他的爵士梦想一般不可及的梦。但是，他的担心成真了。</p>
+<p>就在Mia和她的真正男友一起共度晚宴的时候，影片迎来一个小高潮。Mia突然想到Seb在等着她一起看电影，她茫然了好一会儿。她突然意识到，眼前的这一切不是她想要的。她突然起身，急忙离开。恐怕Mia从来没有如此开心过吧，因为她跑开的时候，微笑着。</p>
+<p>他们来到格里菲斯天文台纵情地舞蹈，相比之前山顶上的青涩舞步，这下舞蹈明显跳得更加放开，更加优美。加入想象和夸张的元素，场景也是更加唯美，爱情的甜蜜与幸福，在这华丽至极的双人舞蹈中体现得淋漓尽致。舞蹈和音乐的表现的，是他们爱情的升华。</p>
+<p>Mia和Seb都是有各自梦想的人。起初是Seb鼓励Mia建议她写自己的剧本。再是Seb为了一份稳定的工作而放弃了自己的爵士酒吧梦想，成为了一个乐队的键盘手，这就意味着他要不停地巡演。然而梦想与爱情却产生了矛盾。当梦想显得遥不可及的时候，爱情的魔力往往使人着迷，Seb为了生活加入了乐队，却使Mia不满。那天晚上，他们闹掰了。剧情上应该从这里急转直下，两人的关系应该从这里开始就此恶劣。但导演并不打算继续那样，这不过是一个小插曲，在一次难得的试镜机会后，他们和好如初。Mia和Seb，不是带着痛苦而分开的。</p>
+<p>试镜结束后，Mia对Seb说，我会永远爱你。Seb回答：我也会永远爱你。</p>
+<p>冬天，他们相遇，春天他们相识，夏天他们相恋，冬天他们相爱。而当五年后又一个冬天来临的时候，Mia已经成为一个大明星，是一个孩子的母亲了，她有自己幸福的家庭。一次巧合，Mia和他的丈夫来到一家酒吧，当Mia看见酒吧的招牌时，镜头再次给了Mia，又是长久的面部特写。Seb’s，是她当初给Seb的爵士酒吧起的名字，没想到Seb真的实现了他的梦想。</p>
+<p>Mia坐在台下看着Seb，正在介绍乐队的Seb突然间看见了她，这也正符合了那句歌词：Is someone in the crowd the only thing you really see?彼此的眼中只有彼此。Seb刚看见久别的Mia时一时间不知所措，他对着麦克风说：“Welcome to seb’s”，这句话乍一看是对酒吧里的观众说的，但是其实是对久别的Mia说的。Seb默默走到钢琴前坐下，看着琴键静止了一会儿，悲伤的气息在这样的细节描写中开始弥漫。Seb开始弹奏那首熟悉又陌生的《Mia&amp;Sebastian’s theme》</p>
+<p>场景变换，Seb回到在餐厅弹琴的时刻，灯光褪去，黑暗中只剩下Mia。</p>
+<p>电影已经接近尾声。然而就在所有人都以为接下来就是曲终人散的时候，《爱乐之城》最精彩的部分呈现出来，一大段的蒙太奇。</p>
+<p>回到最初Mia在餐厅看见Seb弹琴的时刻，Seb与Mia的爱情从此改变。以前的擦肩而过变成了一吻定情。过往的点点滴滴变得童话般美好，两人的梦想都实现了。昔日一切不可能的事情都一一实现。Seb和Mia有了孩子，Seb和Mia牵手来到Seb’s。渐渐的，从美好的梦回归现实。《爱乐之城》为爱情悲剧提供了一个圆满结局存在的可能性。这将成为经典。</p>
+<p>Seb颤抖着弹下最后一个音，一时间万籁俱寂。Mia起身意欲离开。在Mia就要从Seb的视线中消失的时候，Mia停下了。她背对着人群，背景虚化，只见Mia无法割舍的表情。暮然回首，Mia远远望着Seb，这下又是两人的面部特写，对视，无言。</p>
+<p>整个过程是这样的：</p>
+<p>Mia：回首，凝视</p>
+<p>Seb：抬头，凝视</p>
+<p>Mia：凝视，眨眼</p>
+<p>Seb：凝视，露出浅浅的笑容</p>
+<p>Mia：凝视，露出浅浅的笑容，两次眨眼（眼睛泛出泪花）</p>
+<p>Seb：凝视，微笑着轻轻点头</p>
+<p>Mia：微笑，两次眨眼，转身离去。</p>
+<p>Seb：凝视，扭头回去，目光转移，点头，哼起节奏，one two ,one two three four </p>
+<p>最后一时间，太多的情感一下子涌现出来。通过两人的眼神，传达出了他们的爱意，以及对爱情的看开，久别的思念，对爱的放手……最后对视的这一幕，可谓是点睛之笔，再简单不过的的对视竟会如此意味深长，回味无穷。无论曾经还是将来，他们都永远爱着对方。</p>
+<p>影片结束，但它带给你的感受却自始至终伴随着你。</p>
+<p>《爱乐之城》的配乐、舞蹈、剧情、人物，都有着极高的统一性，协调性。配乐伴随着舞蹈，舞蹈又与剧情息息相关，人物身份与歌舞相联系。导演达米安有着超高的电影控制力。</p>
+<p>唯一令人费解的是为何Mia与Seb再也没有联系过。但我也不想深究，导演又不会打电话告诉我。</p>
+<p>有人说高司令演的Seb的舞步略显笨拙，但是这正是符合Seb这个角色的特点，一个沉迷爵士无法自拔的人，跳得要是比当演员的Mia还要好才会显得不自然。</p>
+<p>Mia与Seb的爱情从一开始就不是一场美丽的巧合，他们是注定要在一起的，吸引Mia的是Seb的琴声，但那琴声，本就是Seb的孤独呻吟。两个孤独的人，是磁铁的两极，彼此的孤独吸引彼此。</p>
+<p>Mia和Seb的爱情如一场幻梦，音乐因为太过美丽而让人感觉不真实。LaLaLand本身就有身处幻境的意思，所以注定他们最后走不到一起。</p>
+<p>总的来说，对于《爱乐之城》这样一部电影，绝对是不可多得的好片，一场艺术的盛宴。<br><img src="http://ovl59s8f8.bkt.clouddn.com/p507920.jpg" alt="Alt text"><br>假如一切重来，我会在第一次见面吻你，推掉工作来看你的第一次表演，我会辞掉工作，跟随你到巴黎，巴黎也有好的爵士乐，我们会有美好家庭，在孩子丢给保姆的夜晚，开车带你进去吃饭，然后一起走进酒吧，听别人弹奏我做的曲子。<br>可惜没有假如。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/01/music-stop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-破茧成蝶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/31/破茧成蝶/">花若盛开 清风自来</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/31/破茧成蝶/" class="archive-article-date">
+  	<time datetime="2017-08-31T08:03:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center> <h1>花若盛开 清风自来</h1> </center><br><center> <h6> 文/平台部 陈励平  </h6> </center> 
+
+<p>  　　花若盛开，蝴蝶自来；你若精彩，天自安排。你若盛开，笑靥如花，清风自来，如沐春风，我心安好，便是晴天。</p>
+<p>  　　春去秋来，该走的留不住，是我的赶不走，当学会坦然应对这些得失的时候，我想我便可静静地待以春暖花开时，而我笑靥如花。<br>  <img src="../../../../img/1.jpg" alt="Alt text"><br>  　　接受现在和过去的模样，美好和精彩的未来自然会来。作为一个刚步入社会的大三女生，多少都会有这样那样的不适应，离开了安全的庇护所，独自来到一个陌生的城市，虽充满了期待也伴有担忧。因为所有的未知都在等着我。那时的我难以接受那时的模样。</p>
+<p>  　　去学会更多，知道自己其实可以承受更多。铜筋铁骨自然会为你撑起一片天。从不会到会，我学会了如何找工作，怎么去应对面试，怎么去租房，怎么去安抚自己的情绪。或许在大家看来这并不是什么大问题，而对于我，就是难。当我数百份简历石沉大海，我内心十分焦灼不定，感觉时间的每一分每一秒都在拷问我的无能，怀疑我的选择，几天里我没有多余的话，也没有好的睡眠，郁结于心，难以自持，害怕家里的电话让我的小宇宙爆发。想过逃避，我直接回家过暑假好啦！干嘛这么为难自己。所幸我没有，找到了一份还不错的工作，感觉还不错。<br>  <img src="../../../../img/2.jpg" alt="Alt text"><br>  　　生活和天气一般无二，穿插各种插曲，沉着面对，免疫的大伞自然张开。第一天上班我坐错公交，错过了最佳上车时间。穿着高跟鞋，那天的太阳也很烈，站在十字路口，不知道往哪里走。走到一个很荒的地方，旁边都是裸露着钢筋混凝土的高楼，还有一处长满荒草的土地，没有看到公交也没有看到出租，看着导航所指的路，只能过车，一想到自己今天必然迟到有可能丢掉工作，自己就觉得特别无助，特别委屈，后来我还是坚持走了那条逆行的不停传来喇叭声警示的很窄的路，终于找到了公交站，眼看就要到了，要坐的车从我眼前开走了！当时没忍住，泪水止不住地流了下来。但事实上，事情并没有我想象得那么乌云密布，只是我自己把事情过于放大了。现在想想，我自己都笑了。</p>
+<p>  　　如果你花开盛夏，清风自来。不懂花的泥土不必在意。一切似乎都稳定了下来，生活步入正轨，正常上下班，晚上还能和异地的男朋友谈一谈近况。我构想着一切都是那么美好。可是尽不如人意，我在慢慢失去我三年的感情，因为第一次异地，互相不理解，不体谅。最终不欢而散。我最纯粹最珍贵的初恋，难忘而又不舍，我还没有做好任何准备，就失去了。当晚，我表现得很平静，因为不知道该怎么面对。第二天周一我照常上班，假装忘记一些事情。但是周末，再也忍不住了，我哭了，哭得还很大声。任我怎么伤心，怎么难过，什么也改变不了，除了折磨自己没有别的，后来我明白，没有什么是不变的，有些东西或许从来就不是自己的。即使曾经拥有。学会拿得起放得下也就释然了。你走我不留，你来我不阻。<br>  <img src="../../../../img/3.jpg" alt="Alt text"><br>  　　人的心情就跟风中飞舞的铃铛一样；一头是天空，代表希望与梦想，另一头是心底，代表表情和旋律。你越安静，越能听清它的声音，你若越是喧嚣，反倒越听越恼，风起，音來；缘生，相守；淡然，如风；清脆，如铃，仅此而已。心情美了，花自然开了，清风也就来了。</p>
+<p>  　　每个人一生都在追求属于自己的盛夏，真正实现了的，或者是还在追求的人，在等待花开的时候一样艰难，坦然接受和面对才能更加沉着冷静。花开绚烂，蝴蝶翩翩，清风扑面，我付之一笑。<br>  <img src="../../../../img/4.jpg" alt="Alt text"><br>  　　蝉之一夏，畅鸣无憾。而我要花之一生，尽美无暇，与清风相生相伴。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/31/破茧成蝶/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-flyLeaves" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
