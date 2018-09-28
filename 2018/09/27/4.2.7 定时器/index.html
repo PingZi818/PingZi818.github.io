@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>定时器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="setTimeoutsetTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#12">
+  <meta name="description" content="setTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#125;;setTime">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="定时器">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.2.7 定时器/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="setTimeoutsetTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#12">
+<meta property="og:description" content="setTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#125;;setTime">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:36:11.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="setTimeoutsetTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#12">
+<meta name="twitter:title" content="定时器">
+<meta name="twitter:description" content="setTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。1234567891011var x = 1;var o = &amp;#123;  x: 2,  y: function()&amp;#123;    console.log(this.x);  &amp;#125;&amp;#125;;setTime">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.2.7 定时器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      定时器
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.2.7 定时器/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout"></a>setTimeout</h1><p>setTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，<br>那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var x = 1;</div><div class="line"></div><div class="line">var o = &#123;</div><div class="line">  x: 2,</div><div class="line">  y: function()&#123;</div><div class="line">    console.log(this.x);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">setTimeout(o.y,1000);</div><div class="line">// 1</div></pre></td></tr></table></figure></p>
+        <p>setTimeout还有一个需要注意的地方：如果被setTimeout推迟执行的回调函数是某个对象的方法，<br>那么该方法中的this关键字将指向全局环境，而不是定义时所在的那个对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var x = 1;</div><div class="line"></div><div class="line">var o = &#123;</div><div class="line">  x: 2,</div><div class="line">  y: function()&#123;</div><div class="line">    console.log(this.x);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">setTimeout(o.y,1000);</div><div class="line">// 1</div></pre></td></tr></table></figure></p>
 <p>上面代码输出的是1，而不是2，这表示o.y的this所指向的已经不是o，而是全局环境了。</p>
 <p>再看一个不容易发现错误的例子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function User(login) &#123;</div><div class="line">  this.login = login;</div><div class="line">  this.sayHi = function() &#123;</div><div class="line">    console.log(this.login);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var user = new User(&apos;John&apos;);</div><div class="line"></div><div class="line">setTimeout(user.sayHi, 1000);</div></pre></td></tr></table></figure></p>
 <p>上面代码只会显示undefined，因为等到user.sayHi执行时，它是在全局对象中执行，所以this.login取不到值。</p>
@@ -274,18 +289,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.2.8 for 循环中 onclick 问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          js面向对象之公有、私有、静态属性和方法详解
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.2.8 for 循环中 onclick 问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">for循环中onclick问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -314,9 +329,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="定时器" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.2.7 定时器" data-title="" data-url="http://yoursite.com/2018/09/27/4.2.7 定时器/"></div>
+	<div class="ds-thread" data-thread-key="4.2.7 定时器" data-title="定时器" data-url="http://yoursite.com/2018/09/27/4.2.7 定时器/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

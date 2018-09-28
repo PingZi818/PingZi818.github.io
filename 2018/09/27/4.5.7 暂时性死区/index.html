@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>暂时性死区 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="暂时性死区总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域">
+  <meta name="description" content="总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域内let又">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="暂时性死区">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.5.7 暂时性死区/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="暂时性死区总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域">
+<meta property="og:description" content="总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域内let又">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:26:08.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="暂时性死区总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域">
+<meta name="twitter:title" content="暂时性死区">
+<meta name="twitter:description" content="总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ） 123456789var tmp = 123;if (true) &amp;#123;   tmp = &amp;apos;abc&amp;apos;; // ReferenceError   let tmp;&amp;#125;代码中，存在全局变量tmp，但是块级作用域内let又">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.5.7 暂时性死区" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      暂时性死区
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.7 暂时性死区/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h1><p>总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ）</p>
+        <p>总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称TDZ）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var tmp = 123;</div><div class="line"></div><div class="line">if (true) &#123;</div><div class="line">   tmp = &apos;abc&apos;; // ReferenceError</div><div class="line">   let tmp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">代码中，存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错</div></pre></td></tr></table></figure>
 
       
@@ -268,18 +283,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.5.8 理解JS的节流、防抖及使用场景/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/1.0 web 前端基本素养/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          web 前端基本素养
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/5.0 前端面试题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -308,9 +323,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="暂时性死区" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.5.7 暂时性死区" data-title="" data-url="http://yoursite.com/2018/09/27/4.5.7 暂时性死区/"></div>
+	<div class="ds-thread" data-thread-key="4.5.7 暂时性死区" data-title="暂时性死区" data-url="http://yoursite.com/2018/09/27/4.5.7 暂时性死区/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

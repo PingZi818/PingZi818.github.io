@@ -159,674 +159,72 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-css画三角形" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1.1.2 语法检查---ESLint" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/css画三角形/">css画三角形</a>
+      <a class="article-title" href="/2018/09/27/1.1.2 语法检查---ESLint/">语法检查</a>
     </h1>
   
 
         
-        <a href="/2017/12/07/css画三角形/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
+        <a href="/2018/09/27/1.1.2 语法检查---ESLint/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>啥话也不说了，直接贴代码：</p>
-<p>css样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">       /* create an arrow that points up */</div><div class="line">       div&#123;</div><div class="line">           margin: 10px;</div><div class="line">       &#125;</div><div class="line">       div.arrow-up &#123;</div><div class="line">           width:0px;</div><div class="line">           height:0px;</div><div class="line">           border-left:20px solid transparent;  /* left arrow slant */</div><div class="line">           border-right:20px solid transparent; /* right arrow slant */</div><div class="line">           border-bottom:20px solid #2f2f2f; /* bottom, add background color here */</div><div class="line">           font-size:0px;</div><div class="line">           line-height:0px;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       /* create an arrow that points down */</div><div class="line">       div.arrow-down &#123;</div><div class="line">           width:0px;</div><div class="line">           height:0px;</div><div class="line">           border-left:20px solid transparent;  /* left arrow slant */</div><div class="line">           border-right:20px solid transparent; /* right arrow slant */</div><div class="line">           border-top:20px solid #2f2f2f;</div><div class="line">           font-size:0px;</div><div class="line">           line-height:0px;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       /* create an arrow that points left */</div><div class="line">       div.arrow-left &#123;</div><div class="line">           width:0px;</div><div class="line">           height:0px;</div><div class="line">           border-bottom:20px solid transparent;  /* left arrow slant */</div><div class="line">           border-top:20px solid transparent; /* right arrow slant */</div><div class="line">           border-right:20px solid #2f2f2f; /* bottom, add background color here */</div><div class="line">           font-size:0px;</div><div class="line">           line-height:0px;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       /* create an arrow that points right */</div><div class="line">       div.arrow-right &#123;</div><div class="line">           width:0px;</div><div class="line">           height:0px;</div><div class="line">           border-bottom:20px solid transparent;  /* left arrow slant */</div><div class="line">           border-top:20px solid transparent; /* right arrow slant */</div><div class="line">           border-left:20px solid #2f2f2f; /* bottom, add background color here */</div><div class="line">           font-size:0px;</div><div class="line">           line-height:0px;</div><div class="line">       &#125;</div><div class="line">   &lt;/style&gt;</div></pre></td></tr></table></figure></p>
-<p>元素：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;arrow-up&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;arrow-down&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;arrow-left&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;arrow-right&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<p>效果：<br>  <img src="../../../../img/1512611510.png" alt="Alt text"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/07/css画三角形/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-霓虹灯文字效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/霓虹灯文字效果/">霓虹灯文字效果</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/07/霓虹灯文字效果/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:36:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <center> <h1>使用 SVG + CSS 实现动态霓虹灯文字效果</h1> </center>
-
-<p><img src="../../../../img/coloredtext.gif" alt="Alt text"></p>
-<p>刚开始以为是gif动画之类的，审查元素发现居然是用SVG + CSS3动画实现的，顿时激起了我的(hao)欲(qi)望(xin)，决定要一探究竟，查看代码之后，发现原理居然是如此简单：多个SVG描边动画使用不同的animation-delay即可！</p>
-<p>对于一个形状SVG元素或文本SVG元素，可以使用stroke-dasharray来控制描边的间隔样式，并且可以用stroke-dashoffset来控制描边的偏移量，借此可以实现描边动画效果，更具体的资料可以看看张大神的《纯CSS实现帅气的SVG路径描边动画效果》</p>
-<p>我们先实现一个简单的文字描边动画：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;svg width=&quot;100%&quot; height=&quot;100&quot;&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">&lt;/svg&gt; </div><div class="line">.text&#123;</div><div class="line">    font-size: 64px;</div><div class="line">    font-weight: bold;</div><div class="line">    text-transform: uppercase;</div><div class="line">    fill: none;</div><div class="line">    stroke: #3498db;</div><div class="line">    stroke-width: 2px;</div><div class="line">    stroke-dasharray: 90 310;</div><div class="line">    animation: stroke 6s infinite linear;</div><div class="line">&#125;</div><div class="line">@keyframes stroke &#123;</div><div class="line">  100% &#123;</div><div class="line">    stroke-dashoffset: -400;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后我们同时使用多个描边动画，并设置不同的animation-delay：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;svg width=&quot;100%&quot; height=&quot;100&quot;&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-1&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-2&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-3&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">    &lt;text text-anchor=&quot;middle&quot; x=&quot;50%&quot; y=&quot;50%&quot; class=&quot;text text-4&quot;&gt;</div><div class="line">        segmentfault.com</div><div class="line">    &lt;/text&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
-<p>注意：要使用多少种颜色，就放多少个text</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">.text&#123;</div><div class="line">    font-size: 64px;</div><div class="line">    font-weight: bold;</div><div class="line">    text-transform: uppercase;</div><div class="line">    fill: none;</div><div class="line">    stroke-width: 2px;</div><div class="line">    stroke-dasharray: 90 310;</div><div class="line">    animation: stroke 6s infinite linear;</div><div class="line">&#125;</div><div class="line">.text-1&#123;</div><div class="line">    stroke: #3498db;</div><div class="line">    text-shadow: 0 0 5px #3498db;</div><div class="line">    animation-delay: -1.5s;</div><div class="line">&#125;</div><div class="line">.text-2&#123;</div><div class="line">    stroke: #f39c12;</div><div class="line">    text-shadow: 0 0 5px #f39c12;</div><div class="line">    animation-delay: -3s;</div><div class="line">&#125;</div><div class="line">.text-3&#123;</div><div class="line">    stroke: #e74c3c;</div><div class="line">    text-shadow: 0 0 5px #e74c3c;</div><div class="line">    animation-delay: -4.5s;</div><div class="line">&#125;</div><div class="line">.text-4&#123;</div><div class="line">    stroke: #9b59b6;</div><div class="line">    text-shadow: 0 0 5px #9b59b6;</div><div class="line">    animation-delay: -6s;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@keyframes stroke &#123;</div><div class="line">  100% &#123;</div><div class="line">    stroke-dashoffset: -400;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="../../../../img/text.gif" alt="Alt text"></p>
-<p>需要注意的几个点：</p>
-<p>各个元素的animation-delay与animation的总时长的设置要协调<br>stroke-dashoffset与stroke-dasharray的设置要协调</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/07/霓虹灯文字效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-用一张图片做出gif效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/用一张图片做出gif效果/">用一张图片做出gif效果</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/07/用一张图片做出gif效果/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><center><h1>巧用CSS3动画与精灵图制作关键帧动画</h1></center><br>这个是动图gif的效果，下面我将用ps处理得到它的序列静态图，按顺序将它整理到一张图片上，横向排列</p>
-<p> <img src="../../../../img/love.gif" alt="Alt text"></p>
-<p> 从网上下载了一张gif图，然后将其放入ps中处理，得到我想要的象sprite那样的一张静态序列图。</p>
-<p> 导入PS中后可以看到这张gif图一共有26帧，我将这些帧小心的排列成一行或一列；</p>
-<p> 将其导出为静态图片，任意格式，此时可以在图片大小、质量与占用空间上做权衡，最终我选择将其导出为jpg格式的，宽度为10400，高度为184的横向序列的图片。</p>
-<p> 在进入正式的animation实现动画之前，我需要知道整张序列图中每一张小图的宽高，好在后续设置背景图像容器的宽高，还需要知道这张序列图一共有几张小图，前期已经知道了共有26张小图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">排列方式：横向排列</div><div class="line">大图宽度：10400px</div><div class="line">大图高度：184px</div><div class="line">小图个数：26 (个)</div><div class="line">小图宽度：10400 /26 = 400 (px)</div></pre></td></tr></table></figure></p>
-<p> 知道这些参数后，就可以进入CSS3的书写环节：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line"> @keyframes love-jpg&#123;</div><div class="line">            0%&#123;</div><div class="line">                background-position: 0 0;</div><div class="line">            &#125;</div><div class="line">            100%&#123;</div><div class="line">                background-position: -10400px 0;</div><div class="line">            &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line">  .love&#123;</div><div class="line">            width:400px;</div><div class="line">            height:184px;</div><div class="line">            margin:auto;</div><div class="line">            background-image:url(../img/love.jpg);</div><div class="line">            animation-name: love-jpg;</div><div class="line">            animation-duration: 2.6s;</div><div class="line">            animation-timing-function: steps(26,end);</div><div class="line">            animation-iteration-count:infinite;</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<p> 我在定义一个div标签用来播放动画：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;love&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>好啦大功告成了！<br>给提供一个我做好的love.jpg静态图：</p>
-<p> <img src="../../../../img/love.jpg" alt="Alt text"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/07/用一张图片做出gif效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css黑魔法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/10/css黑魔法/">css黑魔法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/10/css黑魔法/" class="archive-article-date">
-  	<time datetime="2017-10-10T09:18:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、利用 CSS 的 content 属性 attr 抓取资料<br>需求</p>
-<p>鼠标悬浮实现一个提示的文字，类似github的这种，如图：</p>
-<p>想必大家都想到了伪元素 after，但是文字怎么获得呢，又不能用 JavaScript。</p>
-<p>CSS 的伪元素是个很強大的东西，我们可以利用他做很多运用，通常为了做一些效果，content:” “ 多半会留空，但其实可以在里面写上 attr 抓资料哦！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div data-msg=&quot;Open this file in Github Desktop&quot;&gt;  </div><div class="line">hover</div><div class="line">&lt;/div&gt;</div><div class="line">div&#123;</div><div class="line">width:100px;</div><div class="line">border:1px solid red;  </div><div class="line">position:relative;</div><div class="line">&#125;</div><div class="line">div:hover:after&#123;</div><div class="line">content:attr(data-msg);</div><div class="line">position:absolute;</div><div class="line">font-size: 12px;</div><div class="line">width:200%;</div><div class="line">line-height:30px;</div><div class="line">text-align:center;</div><div class="line">left:0;</div><div class="line">top:25px;</div><div class="line">border:1px solid green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在 attr 里面塞入我们在 html 新增的 data-msg 属性，这样伪元素 (:after) 就会得到该值。</p>
-<p>最终效果</p>
-<p>同样的，你还可以结合其他强大的选择器使用，例如：使用属性选择器选择空链接</p>
-<p>显示没有文本值但是 href 属性具有链接的 a 元素的链接：</p>
-<p>a[href^=”http”]:empty::before {<br>  content: attr(href);<br>}<br>这样做很方便。</p>
-<p>2、利用用 :valid 和 :invalid 来做表单即时校验<br>需求</p>
-<p>让表单检验变得简单优雅，不需要写冗长的 JS 代码来校验设置样式<br>html5 丰富了表单元素，提供了类似 required,email,tel 等表单元素属性。同样的，我们可以利用 :valid 和 :invalid 来做针对html5表单属性的校验。</p>
-<p>:required 伪类指定具有required 属性的表单元素<br>:valid 伪类指定一个通过匹配正确的所要求的表单元素<br>:invalid 伪类指定一个不匹配指定要求的表单元素<br>代码</p>
-<p> <div class="container"><br>    <div class="row" style="margin-top: 2rem;"><br>      <form><br>        <div class="form-group"><br>          <label>name</label><br>          <input type="text" required placeholder="请输入名称"><br>        </div><br>        <div class="form-group"><br>          <label>email</label><br>          <input type="email" required placeholder="请输入邮箱"><br>        </div><br>        <div class="form-group"><br>          <label>homepage</label><br>          <input type="url" placeholder="请输入博客url"><br>        </div><br>        <div class="form-group"><br>          <label>Comments</label><br>          <textarea required></textarea><br>        </div><br>      </form><br>    </div><br>  </div><br>.valid {<br>  border-color: #429032;<br>  box-shadow: inset 5px 0 0 #429032;<br>}</p>
-<p>.invalid {<br>  border-color: #D61D1D;<br>  box-shadow: inset 5px 0 0 #D61D1D;<br>}</p>
-<p>.form-group {<br>  width: 32rem;<br>  padding: 1rem;<br>  border: 1px solid transparent;<br>  &amp;:hover {<br>    border-color: #eee;<br>    transition: border .2s;<br>  }<br>  label {<br>    display: block;<br>    font-weight: normal;<br>  }<br>  input,<br>  textarea {<br>    display: block;<br>    width: 100%;<br>    line-height: 2rem;<br>    padding: .5rem .5rem .5rem 1rem;<br>    border: 1px solid #ccc;<br>    outline: none;<br>    &amp;:valid {<br>      @extend .valid;<br>    }<br>    &amp;:invalid {<br>      @extend .invalid;<br>    }<br>  }<br>}<br>更多伪元素技巧可以参看这篇文章：你不知道的CSS</p>
-<p>最终效果</p>
-<p>3、利用 nth-of-type 选择某范围内的子元素<br>需求</p>
-<p>table表格红绿相间，显示的更加直观<br>代码</p>
-<p><table><br>  <tbody><br>    <tr><br>      <td>1</td><br>    </tr><br>    <tr><br>      <td>2</td><br>    </tr><br>    <tr><br>      <td>3</td><br>    </tr><br>    <tr><br>      <td>4</td><br>    </tr><br>    <tr><br>      <td>5</td><br>    </tr><br>    <tr><br>      <td>6</td><br>    </tr><br>  </tbody><br></table><br>tbody tr:nth-of-type(2n){<br>background-color: red;<br>}</p>
-<p>tbody tr:nth-of-type(2n+1){<br>background-color: green;<br>}<br>最终效果</p>
-<p>你也这样来做，选择5-10的子元素。</p>
-<p>table tr:nth-child(n+5):nth-child(-n+10) {<br>    background-color: red;<br>}<br>4、让文字像古诗一样竖着呈现<br>需求</p>
-<p>有时候，需要容器的文字从上到下排列，而不是从左往右排列，如图所示：</p>
-<p>这是segmentfault的回到顶部，他的实现很简单，就是设置一定宽度让其折行，如果我要实现这种需求呢？</p>
-<p>代码</p>
-<p>writing-mode 这个 CSS 属性，我们是不是很少见到，很少用到！我们往往称不常见的东西为“生僻”，就像是不常见的文字我们叫“生僻字”，因此不常见的 CSS 属性，我们可以叫做“生僻属性”，writing-mode 给我们的感觉就是一个“生僻属性”，很弱，可有可无。这个属性可以追溯到 IE 5.5 时代，兼容性是相当好的。</p>
-<p></p><h4>咏柳</h4><p></p>
-<p>碧玉妆成一树高，<br>万条垂下绿丝绦。<br>不知细叶谁裁出，<br>二月春风似剪刀。</p>
-
-<p><div class="verticle-mode"><br>    <h4>咏柳</h4><br>    <p>碧玉妆成一树高，<br>万条垂下绿丝绦。<br>不知细叶谁裁出，<br>二月春风似剪刀。</p><br>.verticle-mode {<br>    writing-mode: tb-rl;<br>    -webkit-writing-mode: vertical-rl;<br>    writing-mode: vertical-rl;<br>}<br>/<em> IE7比较弱，需要做点额外的动作 </em>/<br>.verticle-mode {<br>    <em>width: 120px;<br>}<br>.verticle-mode h4,<br>.verticle-mode p {
-    </em>display: inline;<br>    <em>writing-mode: tb-rl;<br>}<br>.verticle-mode h4 {
-    </em>float:right;<br>}<br>最终效果</div></p>
-<p>更多细节与讨论请移步张鑫旭老师的这篇文章：改变CSS世界纵横规则的writing-mode属性</p>
-<p>5、实现鼠标悬浮内容自动撑开的过渡动画<br>需求</p>
-<p>需要为一个列表添加个动画，容器的高度是不确定的，也就是高度为 auto，悬浮时候撑开内容有个过渡动画<br>如下图所示：</p>
-<p>而用 CSS3 实现的话，由于高度的不确定，而 transtion 是需要具体的树枝，所以设置 height:auto 是无法实现效果的，可以通过 max-height 这个属性间接的实现这么个效果，css 样式是这样的：</p>
-<p>代码</p>
-<p><ul><br>  <li><br>    <div class="hd"> 列表1 </div><br>    <div class="bd">列表内容<br>内容列表内容<br>内容列表内容<br>内容</div><br>  </li><br>  <li><br>    <div class="hd"> 列表1 </div><br>    <div class="bd">列表内容<br>内容列表内容<br>内容列表内容<br>内容</div><br>  </li><br>  <li><br>    <div class="hd"> 列表1 </div><br>    <div class="bd">列表内容<br>内容列表内容<br>内容列表内容<br>内容</div><br>  </li><br></ul><br>.bd {<br>  max-height:0;<br>  overflow:hidden;<br>  transition: all 1s ease-out;<br>}<br>li:hover .bd {<br>  max-height: 600px;<br>  transition-timing-function: ease-in;<br>}<br>最终效果</p>
-<p>跟前面 GIF 差不多，这里就不录 GIF 了，有兴趣的可以自己尝试感受一下</p>
-<p>6、利用 pointer-events 禁用 a 标签事件效果<br>需求：</p>
-<p>在做 tab 切换的时候，当选中当前项，禁用当前标签的事件，只有切换其他 tab 的时候，才重新请求新的数据。<br>pointer-events 是一个用于 HTML 指针事件的属性。</p>
-<p>pointer-events 可以禁用 HTML 元素的 hover/focus/active 等动态效果。</p>
-<p>默认值为 auto，语法：pointer-events: auto | none | visiblepainted | visiblefill | visiblestroke | visible | painted | fill | stroke | all;</p>
-<p>代码</p>
-<p> <ul><br>    <li><br>        <a class="tab" href="https://google.com" target="_blank" rel="external">aaa</a><br>    </li><br>    <li><br>         <a class="tab active" href="https://facebook.com" target="_blank" rel="external">bbb</a><br>    </li><br>    <li><br>        <a class="tab" href="https://stackoverflow.com" target="_blank" rel="external">ccc</a><br>     </li><br>    </ul><br>   .active{<br>         pointer-events: none;<br>     }<br>最终效果</p>
-<p>好像没什么效果😂</p>
-<p>7、CSS 如何实现文字两端对齐<br>需求</p>
-<p>红框所在的文字有四个字的、三个字的、两个字的，如果不两端对齐可以选择居中对齐，或者右对齐。但是如果要想文字两端对齐呢？<br>代码</p>
-<p><div>姓名</div></p>
-<p><div>手机号码</div></p>
-<p><div>验证码</div></p>
-<p><div>账号</div></p>
-<p><div>密码</div><br>div{<br>margin:10px 0;<br>width:100px;<br>border:1px solid red;<br>text-align-last: justify;<br>}<br>最终效果</p>
-<p>8、使用 :not() 去除导航上不需要的属性<br>需求</p>
-<p>有时候导航栏需要之间需要用逗号,进行隔离，但是最后一个不需要<br>代码</p>
-<p><ul class="nav"><br>  <li>a</li><br>  <li>b</li><br>  <li>c</li><br>  <li>d</li><br>  <li>e</li><br></ul><br>li{<br>list-style:none;<br>margin-bottom:10px;<br>display:inline-block;<br>}</p>
-<p>ul &gt; li:not(:last-child)::after {<br>  content: “,”;<br>}<br>当然，你可以使用 .nav li + li(不包括第一个li) 或者 .nav li:first-child ~ li(不包括最后一个li)， 但是使用 :not() 的意图特别清晰，CSS选择器按照人类描述它的方式定义边框。</p>
-<p>最后效果</p>
-<p>或者，你已经学习了一些关于 使用 :not()，你还可以尝试：</p>
-<p>/<em> 选择1到3的元素并显示 </em>/<br>li:not(:nth-child(-n+3)){<br>  display: none;<br>}<br>9、移动web页面支持弹性滚动<br>需求</p>
-<p>在IOS机型中，非body元素的滚动条会非常不流畅，又不想用JS模拟滚动条。<br>传统 pc 端中，子容器高度超出父容器高度，通常使用 overflow:auto 可出现滚动条拖动显示溢出的内容，而移动web开发中，由于浏览器厂商的系统不同、版本不同，导致有部分机型尤其是 IOS 机型不支持弹性滚动，从而在开发中制造了所谓的 BUG。</p>
-<p>代码</p>
-<p>body{<br>-webkit-overflow-scrolling: touch; /<em> ios5+ </em>/<br>}<br>ele{<br>overflow:auto;<br>}<br>-webkit-overflow-scrolling属性具有继承效果，所以在 body 上设置即可，这样局部滚动条就非常的流畅了。</p>
-<p>最终效果</p>
-<p>所有滚动条都相当的流畅了</p>
-<p>10、美化浏览器自带的 radio ，checkbox 属性<br>需求</p>
-<p>设计师：你那个单选框按钮好丑啊，跟我的设计稿差好远。程序员：我有什么办法，浏览器就是这样的。。。<br>记得刚开始写页面时候，被浏览器各种默认的 UI 样式恶心到了，当初确实也没啥办法，反正也不影响功能，就那样吧。</p>
-<p>先讲一下原理：checkbox hack技术</p>
-<p>我们使用 CSS 一些特殊的选择器，然后配合单选框以及复选框自带的一些特性，可以实现元素的显示隐藏效果。然后通过一些简单的扩展，我们可以不使用任何 JavaScript 代码实现类似：自定义的单复选框，“更多”展开与收起效果，选项卡切换效果，或是多级下拉列表效果等等。</p>
-<p>相信很多前端开发人员都会遇到 boss 让修改 checkbox 和 radio 样式，毕竟自带的样式太丑了。后来我们发现修改自带样式并不是那么容易，最后直接使出杀手锏——点击之后替换图片。<br>今天教大家一种方法，不用替换图片，随意修改样式。</p>
-<p>先讲一下原理：两个关键东东，一是伪类选择器 :checked，表示对应控件元素（单选框或是复选框）选中时的样式；二就是加号 + 相邻兄弟选择器，这个符号表示选择后面的兄弟节点。于是，两者配合，就可以轻松自如控制后面元素的显示或者隐藏，或是其他样式了。</p>
-<p>而如何让单复选框选中和不选中了，那就是 label 标签了哈，for 属性锚定对应的单选框或是复选框，然后点击这里的 label 标签元素的时候，对应的单复选框就会选中或是取消选中。然后，就有上面的效果啦！<br>代码</p>
-<p>这里只给一个 radio 单选框的代码,仅供参考:</p>
-<p><div class="radio-beauty-container"><br>    <label><br>        <span class="radio-name">前端工程师</span><br>        <input type="radio" name="radioName" id="radioName1" hidden><br>        <label for="radioName1" class="radio-beauty"></label><br>    </label><br>    <label><br>        <span class="radio-name">后端工程师</span><br>        <input type="radio" name="radioName" id="radioName2" hidden><br>        <label for="radioName2" class="radio-beauty"></label><br>    </label><br>    <label><br>        <span class="radio-name">全栈工程师</span><br>        <input type="radio" name="radioName" id="radioName3" hidden><br>        <label for="radioName3" class="radio-beauty"></label><br>    </label><br></div><br>.radio-beauty-container {<br>    font-size: 0;<br>    $bgc: green;<br>    %common {<br>        padding: 2px;<br>        background-color: $bgc;<br>        background-clip: content-box;<br>    }<br>    .radio-name {<br>        vertical-align: middle;<br>        font-size: 16px;<br>    }<br>    .radio-beauty {<br>        width: 18px;<br>        height: 18px;<br>        box-sizing: border-box;<br>        display: inline-block;<br>        border: 1px solid $bgc;<br>        vertical-align: middle;<br>        margin: 0 15px 0 3px;<br>        border-radius: 50%;<br>        &amp;:hover {<br>            box-shadow: 0 0 7px $bgc;<br>            @extend %common;<br>        }<br>    }<br>    input[type=”radio”]:checked+.radio-beauty {<br>        @extend %common;<br>    }<br>}<br>最终效果</p>
-<p>美化radio单选框在线预览地址：点击我呀<br>美化checkbox复选框在线预览地址：点击我呀</p>
-<p>更多关于这方面的介绍和例子可以参看张鑫旭大神的这篇文章：CSS radio/checkbox单复选框元素显隐技术</p>
-<p>11、改变 input 焦点光标的颜色<br>需求</p>
-<p>设计师觉得默认的光标颜色有点与整体设计风格不符合，有点突兀，想换成红色的<br>代码</p>
-<p><input value="This field uses a default caret."></p>
-<p><input class="custom" value="I have a custom caret color!"><br>input {<br>  caret-color: auto;<br>  display: block;<br>  margin-bottom: .5em;<br>}</p>
-<p>input.custom {<br>  caret-color: red;<br>}<br>最终效果</p>
-<p>12、rem 布局不再使用 JavaScript 设置<br>这里不探讨 rem 的原理以及细节，还不熟悉的童鞋建议去恶补一下。</p>
-<p>需求</p>
-<p>有时候，移动端用 rem 布局时候，根据不同的屏幕宽度要设置不同的 font-size 来做到适配，要写一坨 JS 来设置，能不能不用JS呢？<br>例如：以 750px 设计稿作为基准，根节点设置 font-size 为 100px ,只考虑 DPR 为 2 的情况，只考虑最简单的情况</p>
-<p> document.querySelector(‘html’).style.fontSize = <code>${window.innerWidth / 7.5 }px</code>;<br>代码</p>
-<p>现在移动端 css3 单位 vw ,wh 兼容性已经很不错了，在不需要兼容太低版本的安卓机情况下可以这样来：</p>
-<p>html{<br>font-size: 100vw / 750<br>}<br>最终结果</p>
-<p>就这么简单的设置，rem 就可以使用了</p>
-<p>13、利用 transparent 属性实现各种三角形，提示框<br>需求</p>
-<p>在不使用图片的情况，实现一个简单的三角形箭头<br>代码</p>
-<p>#triangle-right {<br>    width: 0;<br>    height: 0;<br>    border-top: 50px solid transparent;<br>    border-left: 100px solid red;<br>    border-bottom: 50px solid transparent;<br>}<br>最终效果</p>
-<p>复杂点的话，同样的原理还可以实现一个五角星，原理都是利用 transparent 的透明属性。</p>
-<p>14、让网站所有图片变成黑白色彩的<br>需求</p>
-<p>记得2008年时候汶川大地震时候，很多网站图片都变成黑白色彩悼念逝者<br>代码</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/9/25/0844cf44a8d8c4ed026d6c488a6e9b80?
-imageView2/1/w/500/h/200/q/85/interlace/1" alt="" class="desaturate"><br>img.desaturate {<br>    filter: grayscale(100%);<br>    -webkit-filter: grayscale(100%);<br>    -moz-filter: grayscale(100%);<br>    -ms-filter: grayscale(100%);<br>    -o-filter: grayscale(100%);<br>}<br>最终效果</p>
-<p>15、实现文字的波浪线效果<br>需求</p>
-<p>实现文字波浪线的强调效果，如图所示</p>
-<p> 相信大家对于 text-decoration 这个属性并不陌生，在重置 a 标签的默认样式时，我们经常要这样写：text-decoration: none; 可能对它了解的人也很少，实际上 text-decoration 是一个复合属性，由 line、style 和 color 组成。</p>
-<p>  所以我们可以实现这样的效果： </p>
-<p>  可惜的是 line 只有 underline (下划线)、overline (上划线)和 line-through (删除线)。如果突然需要下划波浪线，怎么办呢？不要急，神奇的 CSS 会帮你做到的。首先，你需要先了解一下渐变的使用技巧。</p>
-<p>  说一下这里的思路，我们首先要用两段渐变构造一个基本元素：’X’(这里我就不放图了)，下一步就比较重要了，我们要截取’X’的上半部分，得到一个’V’,从而结合 repeat 形成波浪线。下面是用 scss 写的一个 mixin ，方便以后使用。</p>
-<p>代码</p>
-<pre><code>@mixin waveline($color,$h) {
-    position: relative;
-    &amp;::after {
-        content: &apos;&apos;;
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: $h;
-        background: linear-gradient(135deg, transparent, transparent 45%, $color, transparent 55%, transparent 100%),
-                    linear-gradient(45deg, transparent, transparent 45%, $color, transparent 55%, transparent 100%);
-        background-size: $h * 2 $h * 2;
-    }
-}
-</code></pre><p>最终效果</p>
-<p>兼容性<br>这些技巧在当前版本的Chrome，Firefox， Safari， 以及Edge， 和IE11可以工作，移动端基本都没问题，IE 重度开发者慎用。</p>
-<p>相关兼容性自行查找：<a href="https://caniuse.com/" target="_blank" rel="external">https://caniuse.com/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/10/css黑魔法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript高级程序设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/10/javaScript高级程序设计/">javaScript高级程序设计</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/10/javaScript高级程序设计/" class="archive-article-date">
-  	<time datetime="2017-10-10T08:56:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文：<a href="http://www.jianshu.com/p/f46e4d76280b" target="_blank" rel="external">http://www.jianshu.com/p/f46e4d76280b</a><br>图片有点大</p>
-<p> 放假出去玩了2天，冻得一把鼻涕一把泪，回家王者还输的落花流水，长长的假期怎一个惨字了得，唯有学习排解郁闷让自己看上去充实一点，打开快落灰的红皮书（《JavaScript高级程序设计》），翻开自己以前的笔记，一边看，一边查缺补漏，看了整整一天，觉得捡起来很多知识点，来来来，分享给你们，保存在手机里图片还是很清楚的。</p>
-<p>由于还要做笔记，所以看书进度比较慢，DOM和BOM，还有面向对象后续会整理，想看的同学请期待。</p>
-<p>这几张思维导图建议有些基础的小伙伴看，从0开始的估计看起来会月朦胧鸟朦胧的。</p>
-<p>或者是想学js的同学可以拿着这个做学习大纲，然后再深入学习。</p>
-<h2 id="一，js基本概念"><a href="#一，js基本概念" class="headerlink" title="一，js基本概念"></a>一，js基本概念</h2><p><img src="../../../../img/基本概念.png" alt="Alt text"></p>
-<h2 id="二-，js操作符"><a href="#二-，js操作符" class="headerlink" title="二 ，js操作符"></a>二 ，js操作符</h2><p><img src="../../../../img/操作符.png" alt="Alt text"></p>
-<h2 id="三，js基本语句"><a href="#三，js基本语句" class="headerlink" title="三，js基本语句"></a>三，js基本语句</h2><p><img src="../../../../img/语句.png" alt="Alt text"></p>
-<h2 id="四，Date-常基本用方法汇总"><a href="#四，Date-常基本用方法汇总" class="headerlink" title="四，Date 常基本用方法汇总"></a>四，Date 常基本用方法汇总</h2><p><img src="../../../../img/Date.png" alt="Alt text"></p>
-<h2 id="五，数组基本及常用方法汇总"><a href="#五，数组基本及常用方法汇总" class="headerlink" title="五，数组基本及常用方法汇总"></a>五，数组基本及常用方法汇总</h2><p><img src="../../../../img/数组.png" alt="Alt text"></p>
-<h2 id="六，字符串基本及常用方法汇总"><a href="#六，字符串基本及常用方法汇总" class="headerlink" title="六，字符串基本及常用方法汇总"></a>六，字符串基本及常用方法汇总</h2><p><img src="../../../../img/字符串.png" alt="Alt text"></p>
-<p>满满的都是干货。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/10/javaScript高级程序设计/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/10/闭包/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/10/闭包/" class="archive-article-date">
-  	<time datetime="2017-10-10T07:54:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文：<a href="https://my.oschina.net/u/3693769/blog/1544436" target="_blank" rel="external">https://my.oschina.net/u/3693769/blog/1544436</a></p>
-<h2 id="1、什么是闭包？"><a href="#1、什么是闭包？" class="headerlink" title="1、什么是闭包？"></a>1、什么是闭包？</h2><p>JavaScript的闭包是一个特色。官方解释是：闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。这句话相信有许多人看不懂。我来表述一下我对JavaScript闭包的理解：</p>
-<p>闭包的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var count=10;//全局作用域 标记为flag1</div><div class="line">function add()&#123;</div><div class="line">    var count=0;//函数全局作用域 标记为flag2</div><div class="line">    return function()&#123;</div><div class="line">        count+=1;//函数的内部作用域</div><div class="line">        alert(count);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var s=add()</div><div class="line">s();//输出1</div><div class="line">s();//输出2</div></pre></td></tr></table></figure>
-<p>add()的返回值是一个函数，首先第一次调用s()的时候，是执行add()的返回的函数，也就是下面这个函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">        count+=1;//函数的内部作用域</div><div class="line">        alert(count);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>也就是将count+1，在输出，那count是从哪儿来的的呢，根据作用域链的规则，底层作用域没有声明的变量，会向上一级找，找到就返回，没找到就一直找，直到window的变量，没有就返回undefined。这里明显count 是函数内部的flag2 的那个count ，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var count=10;//全局作用域</div><div class="line">function add()&#123;</div><div class="line">    //var count=0;注释掉了</div><div class="line">    return function()&#123;</div><div class="line">        count+=1;//函数的内部作用域</div><div class="line">        alert(count);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var s=add()</div><div class="line">s();//输出11</div><div class="line">s();//输出12</div></pre></td></tr></table></figure>
-<p>自然这是体现不出闭包的性质，只为了说明函数作用域链 继续说明：第一次执行，是没有疑问的输出1，那第二次的过程是怎样的呢？ 继续执行那个函数的返回的方法，还是count+=1;然后再输出count ，这里问题就来了，不应该继续向上寻找，找到count=0；然后输出1吗？不知道有没有注意一个问题，那就是s()执行的是下面这个函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">        count+=1;//函数的内部作用域</div><div class="line">        alert(count);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>也就是说add()，只被执行了一次。然后执行两次s()，那count的值就是只声明了一次。</p>
-<p>var s=add()，函数add 只在这里执行了一次。</p>
-<p>下面执行的都是s()，那第二次的count的值是从哪儿来的，没错它还是第一次执行add时，留下来的那个变量。</p>
-<p>（这怎么可能，函数变量执行完就会被释放啊，为什么还在？这里就是一个垃圾回收机制的引用计数问题）。</p>
-<p>“”如果一个变量的引用不为0，那么他不会被垃圾回收机制回收，引用，就是被调用“”。</p>
-<p>由于再次执行s()的时候，再次引用了第一次add()产生的变量count ，所以count没有被释放，第一次s(),count 的值为1,第二次执行s()，count的值再加1，自然就是2了。</p>
-<p>让我们返回来再看看，根据以上所说，如果执行两次add() ，那就应该输出 都是1，来改一下这个函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function add()&#123;</div><div class="line">    var count=0;//函数全局作用域</div><div class="line">    return function()&#123;</div><div class="line">        count+=1;//函数的内部作用域</div><div class="line">        alert(count);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">add()();//输出1</div><div class="line">add()();//输出1</div></pre></td></tr></table></figure>
-<p>果真如此。输出的两次都是1.</p>
-<p>另外，我觉得阮一峰说的闭包也是很简洁的：“我的理解是，闭包就是能够读取其他函数内部变量的函数。”</p>
-<h2 id="2、变量的作用域"><a href="#2、变量的作用域" class="headerlink" title="2、变量的作用域"></a>2、变量的作用域</h2><p>要理解闭包，首先必须理解Javascript特殊的变量作用域。</p>
-<p>变量的作用域无非就是两种：全局变量和局部变量。</p>
-<p>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">var n=999; </div><div class="line">　　function f1()&#123;</div><div class="line">alert(n);</div><div class="line">		&#125;</div><div class="line">f1(); // 999</div></pre></td></tr></table></figure>
-<p>另一方面，在函数外部自然无法读取函数内的局部变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">function f1()&#123;</div><div class="line">  var n=999;</div><div class="line">&#125;</div><div class="line">alert(n); // error</div></pre></td></tr></table></figure>
-<p>这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">function f1()&#123;</div><div class="line"> n=999;</div><div class="line">&#125;</div><div class="line">f1();</div><div class="line">alert(n); // 999</div></pre></td></tr></table></figure>
-<p>有时候需要得到函数内的局部变量，在函数的内部，再定义一个函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">function f1()&#123;</div><div class="line">　　n=999;</div><div class="line">　　function f2()&#123;</div><div class="line">        alert(n); // 999</div><div class="line">       &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在上面的代码中，函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1 就是不可见的。这就是Javascript语言特有的“链式作用域”结构（chain scope），子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
-<p>既然f2可以读取f1中的局部变量，那么只要把f2作为返回值就可以在f1外部读取它的内部变量了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">function f1()&#123;</div><div class="line">　　n=999;</div><div class="line">　　function f2()&#123;</div><div class="line">       alert(n);</div><div class="line">       &#125;</div><div class="line"></div><div class="line">　return f2;</div><div class="line"></div><div class="line">&#125;</div><div class="line">var result=f1();</div><div class="line">result(); // 999</div></pre></td></tr></table></figure>
-<h2 id="3、使用闭包的注意点"><a href="#3、使用闭包的注意点" class="headerlink" title="3、使用闭包的注意点"></a>3、使用闭包的注意点</h2><p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
-<p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便</p>
-<p>改变父函数内部变量的值。</p>
-<h2 id="4、闭包的用途"><a href="#4、闭包的用途" class="headerlink" title="4、闭包的用途"></a>4、闭包的用途</h2><p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
-<p>怎么来理解这句话呢？请看下面的代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Js代码</div><div class="line"></div><div class="line">function f1()&#123;</div><div class="line">     var n=999;</div><div class="line">     nAdd=function()&#123;n+=1&#125;</div><div class="line">      function f2()&#123;</div><div class="line">      alert(n);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">　return f2;</div><div class="line">&#125;</div><div class="line">var result=f1();</div><div class="line">result(); // 999</div><div class="line">nAdd();</div><div class="line">result(); // 1000</div></pre></td></tr></table></figure>
-<p>在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</p>
-<p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
-<p>这段代码中另一个值得注意的地方，就是“nAdd=function(){n+=1}”这一行，首先在nAdd前面没有使用var关键字，因此 nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个</p>
-<p>匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
-<h2 id="5、结语"><a href="#5、结语" class="headerlink" title="5、结语"></a>5、结语</h2><p>理解JavaScript的闭包是迈向高级JS程序员的必经之路，理解了其解释和运行机制才能写出更为安全和优雅的代码。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/10/闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/14/css/">css</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/14/css/" class="archive-article-date">
-  	<time datetime="2017-09-14T02:40:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="相关网址："><a href="#相关网址：" class="headerlink" title="相关网址："></a>相关网址：</h3><blockquote>
-<p><a href="http://www.cnblogs.com/hnyei/archive/2011/10/04/2198779.html" target="_blank" rel="external">http://www.cnblogs.com/hnyei/archive/2011/10/04/2198779.html</a>                     css重置</p>
-</blockquote>
-<h3 id="媒体查询："><a href="#媒体查询：" class="headerlink" title="媒体查询："></a>媒体查询：</h3><blockquote>
-<p>@media screen and(min-width:600px) and(max-width:1200px){<br>     .zweb{<br>         border:1px solid blue;<br>     }<br>}<br>@media screen and(min-width:600px){<br>     .zweb{<br>         border:1px solid blue;<br>     }<br>}<br>@media screen and(max-width:600px){<br>     .zweb{<br>         border:1px solid blue;<br>     }<br>}</p>
-</blockquote>
-<h3 id="伪元素与伪类："><a href="#伪元素与伪类：" class="headerlink" title="伪元素与伪类："></a>伪元素与伪类：</h3><blockquote>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">npm i eslint -g</div><div class="line"></div><div class="line">eslint --init</div><div class="line"></div><div class="line">eslint 会创建一个 .eslintrc.json 的配置文件，同时自动安装并添加相关的模块到 devDependencies。</div><div class="line"></div><div class="line">这里我们使用 Standard 规范，其主要特点是不加分号。</div></pre></td></tr></table></figure>
 <ul>
-<li>CSS 伪类  用于向某些选择器添加特殊的效果。</li>
-<li>CSS 伪元素用于将特殊的效果添加到某些选择器。</li>
+<li>rules:</li>
 </ul>
-<p>伪元素和伪类之所以这么容易混淆，是因为他们的效果类似而且写法相仿，但实际上 css3 为了区分两者，已经明确规定了伪类用一个冒号来表示，而伪元素则用两个冒号来表示。<br>:Pseudo-classes             // 伪类<br>::Pseudo-elements          //  伪元素<br>但因为兼容性的问题，所以现在大部分还是统一的单冒号，但是抛开兼容性的问题，在书写时应该尽可能养成好习惯，区分两者。</p>
-<p>###类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&apos;rules&apos;: &#123;</div><div class="line">    // no-var</div><div class="line">    &apos;no-var&apos;: &apos;error&apos;,</div><div class="line">    // 要求或禁止 var 声明中的初始化</div><div class="line">    &apos;init-declarations&apos;: 2,</div><div class="line">    // 强制使用单引号</div><div class="line">    &apos;quotes&apos;: [&apos;error&apos;, &apos;single&apos;],</div><div class="line">    // 要求或禁止使用分号而不是 ASI</div><div class="line">    &apos;semi&apos;: [&apos;error&apos;, &apos;never&apos;],</div><div class="line">    // 禁止不必要的分号</div><div class="line">    &apos;no-extra-semi&apos;: &apos;error&apos;,</div><div class="line">    // 强制使用一致的换行风格</div><div class="line">    &apos;linebreak-style&apos;: [&apos;error&apos;, &apos;unix&apos;],</div><div class="line">    // 空格2个</div><div class="line">    &apos;indent&apos;: [&apos;error&apos;, 2, &#123;&apos;SwitchCase&apos;: 1&#125;],</div><div class="line">    // 指定数组的元素之间要以空格隔开(,后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格</div><div class="line">    &apos;array-bracket-spacing&apos;: [2, &apos;never&apos;],</div><div class="line">    // 在块级作用域外访问块内定义的变量是否报错提示</div><div class="line">    &apos;block-scoped-var&apos;: 0,</div><div class="line">    // if while function 后面的&#123;必须与if在同一行，java风格。</div><div class="line">    &apos;brace-style&apos;: [2, &apos;1tbs&apos;, &#123;&apos;allowSingleLine&apos;: true&#125;],</div><div class="line">    // 双峰驼命名格式</div><div class="line">    &apos;camelcase&apos;: 2,</div><div class="line">    // 数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号， </div><div class="line">    &apos;comma-dangle&apos;: [2, &apos;never&apos;],</div><div class="line">    // 控制逗号前后的空格</div><div class="line">    &apos;comma-spacing&apos;: [2, &#123;&apos;before&apos;: false, &apos;after&apos;: true&#125;],</div><div class="line">    // 控制逗号在行尾出现还是在行首出现</div><div class="line">    &apos;comma-style&apos;: [2, &apos;last&apos;],</div><div class="line">    // 圈复杂度</div><div class="line">    &apos;complexity&apos;: [2, 9],</div><div class="line">    // 以方括号取对象属性时，[ 后面和 ] 前面是否需要空格, 可选参数 never, always</div><div class="line">    &apos;computed-property-spacing&apos;: [2, &apos;never&apos;],</div><div class="line">    // TODO 关闭 强制方法必须返回值，TypeScript强类型，不配置</div><div class="line">    // &apos;consistent-return&apos;: 0</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <ul>
-<li>外部样式表；<link></li>
-<li>内部样式表；<style> </style></li>
-<li>内联样式表；style=””<h3 id="input去掉默认样式："><a href="#input去掉默认样式：" class="headerlink" title="input去掉默认样式："></a>input去掉默认样式：</h3></li>
+<li>vue demo:</li>
 </ul>
-<p>input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {<br>    -webkit-appearance: none !important;<br>}</p>
-<h3 id="font-style"><a href="#font-style" class="headerlink" title="font-style:"></a>font-style:</h3><p>normal：     默认值，正常体<br>italic：     斜体，这是一个属性<br>oblique：     将字体倾斜，将没有斜体变量（italic）的特殊字体，要应用oblique<br>font-style属性值为italic或oblique时，在浏览器预览的效果是一样的都是倾斜！那这两者究竟有什么区别呢？<br>从预览效果我们看不出有什么区别，italic是字体的一个属性，也就是说并非所有字体都有这个italic属性，对于没有italic属性的字体，可以使用oblique将该字体进行倾斜设置。</p>
-</blockquote>
-<h3 id="text-transform"><a href="#text-transform" class="headerlink" title="text-transform:"></a>text-transform:</h3><blockquote>
-<p>none：     默认值，无转换发生<br>uppercase：     转换成大写<br>lowercase：     转换成小写<br>capitalize：     将每个英文单词的首字母转换成大写，其余无转换发生</p>
-<h3 id="font-variant"><a href="#font-variant" class="headerlink" title="font-variant:"></a>font-variant:</h3><p>normal         默认值，正常效果<br>small-caps    小型大写字母的字体</p>
-<h3 id="word-spacing-letter-spacing"><a href="#word-spacing-letter-spacing" class="headerlink" title="word-spacing: letter-spacing:"></a>word-spacing: letter-spacing:</h3><p>letter-spacing:          对单个字母和汉字都有作用：<br>word-spacing:            只对单词有作用，对汉字无效；</p>
-<h3 id="background-attachment："><a href="#background-attachment：" class="headerlink" title="background-attachment："></a>background-attachment：</h3><p> 设置背景图像是随对象滚动还是固定不动。</p>
-<h3 id="clip-rect-0px-20px-100px-100px"><a href="#clip-rect-0px-20px-100px-100px" class="headerlink" title="clip: rect(0px, 20px, 100px, 100px);"></a>clip: rect(0px, 20px, 100px, 100px);</h3><p>clip 是 CSS2 中的裁剪属性，用于裁剪绝对定位的元素。常用语法为：     clip:rect(top, right, bottom, left);<br> clip: rect(0px, 20px, 100px, 100px);</p>
-<h3 id="input相关属性："><a href="#input相关属性：" class="headerlink" title="input相关属性："></a>input相关属性：</h3><p>textarea{<br>     resize：both;               //表示横向纵向均可拉动<br>     resize : horizontal;       //表示只有横向可以拉动<br>     resize : vertical;           //表示只有纵向才可以拉动<br>     resize : none;            //禁止拉动<br>}<br>select{<br>      -moz-appearance:none;         //firefox<br>      -webkit-appearance:none;      //edge goodle<br>      appearance:none;               //本样式 ie 不支持<br>      background:url(“../images/select.png”) no-repeat right center;<br>}<br>input,textarea{<br>     -webkit-appearance:none;<br>}<br>a,img,button,input,textarea{<br>     -webkit-tap-highlight-color:rgba(255,255,255,0);<br>}<br>::-webkit-input-placeholder {                         //placeholder  样式控制<br>　　color:#a9a9a9;<br>}</p>
-<h3 id="calc函数："><a href="#calc函数：" class="headerlink" title="calc函数："></a>calc函数：</h3><p>/<em> zweb </em>/<br>.z-web{<br>     margin-left: calc(100vw - 100%);<br>     padding-left: calc(100vw - 100%);</p>
-</blockquote>
-<pre><code>animation: scroll-toggle 2s infinite alternate;
-</code></pre><p>}</p>
-<h3 id="盒模型："><a href="#盒模型：" class="headerlink" title="盒模型："></a>盒模型：</h3><p>/<em> css3盒子模型布局 </em>/</p>
-<blockquote>
-<p>.div{<br>     display:-moz-box;<br>     display:-webkit-box;<br>     display:box;<br>     -moz-box-pack:center;<br>     -webkit-box-pack:center;<br>     box-pack:center;          //文本水平居中</p>
-</blockquote>
-<pre><code>-moz-box-algin:center;
--webkit-box-align:center;
-box-align:center;         //文本垂直居中
-</code></pre><p>}</p>
-<h3 id="背景色渐变："><a href="#背景色渐变：" class="headerlink" title="背景色渐变："></a>背景色渐变：</h3><blockquote>
-<p>1、线性渐变（linear-gradient）；<br>2、径向渐变（radial-gradient）；</p>
-<p>.div{<br>     background:     linear-gradient(toleft,red,orange,yellow,green,blue);                    //(方向，开始颜色，结束颜色)<br>     background:     linear-gradient(#ffe3dc,#f8c8bc);<br>     background:     radial-gradient(position,shapesize,start-color,stop-color);<br>}<br>0deg               = to top           = 从下到上渐变<br>90deg             = to right         = 从左到右渐变<br>180deg           = to bottom     = 从上到下渐变<br>270deg           = to left           = 从右到左渐变<br>to top left       = 右下角到左上角<br>to top right     = 左下角到右上角</p>
-</blockquote>
-<h3 id="单行截取："><a href="#单行截取：" class="headerlink" title="单行截取："></a>单行截取：</h3><p>/<em> 单行截取 </em>/</p>
-<blockquote>
-<p>.div{<br>     white-space:nowrap；             //强制文本在一行显示  不换行<br>     overflow:hidden；                //溢出隐藏<br>     text-overflow:ellipsis丨clip;    //显示省略号丨直接裁切<br>}<br>/<em> 强制换行 </em>/<br>.div{<br>     word-wrap：break-word丨normal；      //单词间换行丨浏览器默认值 无需设置<br>     word-break:break-all;               //单词内换行丨根据父级宽度自动换行<br>}</p>
-<h3 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow:"></a>box-shadow:</h3><p>box-shadow:     0 0 12px red inset;       //内阴影<br>box-shadow:     -5px 0 12px red,     0 -5px 12px yellow,     0 5px 12px blue,     5px 0 12px green;      //分别为4条边设置不同的 样式<br>box-shadow:     0 0 0 2px red,     0 0 0 4px blue;                                                       //此方法 可以 实现 元素 多条  边框效果</p>
-<p>###动画：<br>.div{<br>     width:100px;<br>     height:100px;<br>     transition:all 2s;<br>}<br>.div:hover{<br>     width:300px;<br>     transform:rotate(45deg);<br>     transform:translate(100px,100px);<br>     transform:scale(2,3);<br>     transform:skew(10deg,10deg);<br>}<br>transform:translate(x,y);</p>
-<h3 id="calc的用法："><a href="#calc的用法：" class="headerlink" title="calc的用法："></a>calc的用法：</h3><p>.zbweb{<br>     margin-left: calc(100vw - 100%);<br>}<br>.pc-info-release&gt;li&gt;textarea{<br>     width:calc(100% - 10px);          //保证宽度 依然是 100%；<br>     padding:5px;<br>}</p>
-<h3 id="clip的用法：削减、裁切cut"><a href="#clip的用法：削减、裁切cut" class="headerlink" title="clip的用法：削减、裁切cut"></a>clip的用法：削减、裁切cut</h3><p>img{<br>     position:absolute;<br>     clip:rect(0px,60px,200px,0px);<br>}<br>所有主流浏览器都支持 clip 属性。任何的版本的 Internet Explorer 都不支持属性值 “inherit”。<br>clip用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。<br>出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。<br>默认值：auto<br>继承性：no<br>版  本：CSS2<br>Js语法：object.style.clip = “rect(0px,50px,50px,0px)”<br>shape ：设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left)<br>auto ：默认值。不应用任何剪裁。<br>inherit ：规定应该从父元素继承 clip 属性的值。<br>clip在IE8等无效时，把rect（）内的4个值用空格分开，不用逗号即可。</p>
-<h3 id="css样式控制三角-形成箭头："><a href="#css样式控制三角-形成箭头：" class="headerlink" title="css样式控制三角 形成箭头："></a>css样式控制三角 形成箭头：</h3><p>.pre1 {<br>     border-width: 40px;<br>     border-color: transparent red transparent transparent;<br>}<br>.pre2 {<br>     position: relative;<br>     top: -80px;<br>     left: 10px;<br>     border-width: 40px;<br>     border-color: transparent blue transparent transparent;<br>}<br>.pre1, .pre2 {<br>     width: 0;<br>     height: 0;<br>     border-style: dashed solid dashed dashed;<br>}<br>//以下使用伪元素方式<br>.pre{<br>     position: relative;<br>     width: 0;<br>     height:0;<br>     margin:50px 0 0 50px;<br>     border-top:100px solid red;<br>     border-right:100px solid blue;<br>     border-bottom:100px solid red;<br>     border-left:100px solid blue;<br>}<br>.pre:after{<br>     content:”1”;<br>     position: absolute;<br>     top:-100px;<br>     left: -90px;<br>     width: 0;<br>     height:0;<br>     font-size: 0;<br>     border-top: 100px solid transparent;<br>     border-right: 100px solid orange;<br>     border-bottom: 100px solid transparent;<br>     border-left: 100px solid transparent;<br>}</p>
-<p><div class="pre"></div></p>
-<p><div class="pre1"></div></p>
-<p><div class="pre2"></div></p>
-<h3 id="placeholder设置颜色："><a href="#placeholder设置颜色：" class="headerlink" title="placeholder设置颜色："></a>placeholder设置颜色：</h3><p>::-webkit-input-placeholder { /<em> WebKit browsers </em>/<br>　　     color:#999;<br>　　}<br>:-ms-input-placeholder { /<em> Internet Explorer 10+ </em>/<br>　　     color:#999;<br>　&gt;　}<br>或者：<br> input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {<br>　　     color: #666;<br>　　}<br>　　input:-ms-input-placeholder, textarea:-ms-input-placeholder {<br>　　     color:#666;<br>　&gt;　}<br>知识点：单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。<br>　　css伪类：CSS 伪类用于向某些选择器添加特殊的效果。<br>　　css伪元素：CSS 伪元素用于向某些选择器设置特殊效果。<br>伪元素由双冒号和伪元素名称组成。双冒号是在当前规范中引入的，用于区分伪类和伪元素。但是伪类兼容现存样式，浏览器需要同时支持旧的伪类， 如:first-line,:first-letter,:before,:after等等。因此对于css2之前已经有的伪元素两种写法的作用是一样的，但是为了兼容IE浏览器还是使用单冒号的写法。<br>阴影制作多边框、多背景、渐变、边框渐变色：<br>box-shadow: 0 0 0 10px red, 0 0 0 20px green, 0 0 0 20px red;<br>background:#fff url(“img1.jpg”) no-repeat 0 0,</p>
-<pre><code>#000 url(&quot;img2.jpg&quot;) no-repeat 10px 10px,
-     url(&quot;img3.jpg&quot;) no-repeat 20px 20px;
-</code></pre><p>background:linear-gradient( left, red 100px, yellow 200px);<br>.border{          /<em> css border  边框 渐变色 </em>/<br>    width:100px;<br>     height:100px;<br>     border-left: 10px solid;<br>     border-image: -webkit-linear-gradient( red, blue) 30 30;<br>     border-image: -moz-linear-gradient( red, blue) 30 30;<br>     border-image: linear-gradient( red, blue) 30 30;<br>}</p>
-</blockquote>
-<h3 id="cursor："><a href="#cursor：" class="headerlink" title="cursor："></a>cursor：</h3><blockquote>
-<p>div:{<br>cursor:<br>Auto<br>Crosshair<br>Default<br>Pointer<br>Move<br>e-resize<br>ne-resize<br>nw-resize<br>n-resize<br>se-resize<br>sw-resize<br>s-resize<br>w-resize<br>text<br>wait<br>help<br>not-allowed     // 禁止<br>}<br>多样式：<br>$(“p”).css({“background-color”:”yellow”,”font-size”:”200%”});<br>img标签的src为空的时候、灰色边框解决方案：<br>此问题为兼容问题在 ie 上不会出现； 但是 如果 src=” “ 冒号中间有空格了会出现破图现象； 火狐不管怎样都会有破图和 灰色边框； 谷歌不会有破图但是有灰色边框； 以下方案只是解决边框问题；<br>所以可以给src一个 默认的图片路径，然后js动态更改src路径；是最好的处理方案；img.prop(“src”, “src”);<br>1.Js解决办法<br><img src="error.jpg" onerror="whenError(this)"><br>    <script><br>    function whenError(a){<br>        a.onerror=null;<br>        a.src=’path_default.jpg’;<br>        console.log(‘图片出错的时候调用默认的图片’);<br>    }<br>    </script></p>
-</blockquote>
-<p>2.绝对定位聚焦解决方案<br>img{<br>     position: absolute;<br>     top: -1px;<br>     right: -1px;<br>}<br>3.margin聚焦解决办法<br>img{<br>     margin:-1px 0 0 -1px;<br>}<br>4.css隐藏<br>img[src=’’]{<br>     1opacity: 0;<br>}</p>
-<p>波浪线的动画：<br>li{<br>     width: 4px;<br>     height:30px;<br>     margin:0 2px;<br>     background: red;</p>
-<pre><code>transform: scaleY(0.4);
-animation: load 2s infinite;
-</code></pre><p>}<br>.pic li:nth-child(1){<br>     animation-delay: 0s;<br>}<br>.pic li:nth-child(2){<br>     animation-delay: 0.1s;<br>}<br>.pic li:nth-child(3){<br>     animation-delay: 0.2s;<br>}<br>.pic li:nth-child(4){<br>     animation-delay: 0.3s;<br>}<br>.pic li:nth-child(5){<br>     animation-delay: 0.4s;<br>}<br>@keyframes load{<br>     0%, 50%, 100%{<br>           transform: scaleY(0.4);<br>     }<br>     20%{<br>           transform: scaleY(1);<br>     }<br>}<br>月牙状图形转动：<br>.ro span{<br>     display: block;<br>     width:80px;<br>     height: 80px;<br>     border-radius: 80px;<br>     box-shadow: 0 3px 0 #666;<br>     animation:rotate 1s infinite linear;<br>}<br>@keyframes rotate{<br>     0%{<br>           transform:rotate(0deg);<br>     }<br>     100%{<br>           transform:rotate(360deg);<br>     }<br>}<br>去掉百度logo<br>.anchorBL{<br>     display:none;<br>}<br>反相排列：<br>writing-mode：<br>/<em> 关键字值 </em>/<br>writing-mode: horizontal-tb;    /<em> 默认值 </em>/<br>writing-mode: vertical-rl;<br>writing-mode: vertical-lr;</p>
-<p>文本填充和描边：<br>text-fill-color：red;<br>text-stroke:1px green;</p>
+<p>ESLint的规则有三种级别：</p>
+<ul>
+<li>“off”或者0，不启用这个规则</li>
+<li>“warn”或者1，出现问题会有警告</li>
+<li>“error”或者2，出现问题会报错</li>
+</ul>
+<p>vue-cli在init初始化时会询问是否需要添加ESLint，确认之后在创建的项目中就会出现.eslintignore和.eslintrc.js两个文件。</p>
+<ul>
+<li>.eslintignore类似Git的.gitignore用来忽略一些文件不使用ESLint检查。</li>
+<li><p>.eslintrc.js是ESLint配置文件，用来设置插件、自定义规则、解析器等配置。</p>
+</li>
+<li><p>解析器(parser)：使用了babel-eslint，这个可以在package.json中找到，说明我们已经安装过该解析器了。</p>
+</li>
+<li>环境配置(env)：在浏览器中使用eslint。</li>
+<li>继承(extends)：该配置文件继承了standard规则，具体规则自己看文档，看不懂有中文版的。</li>
+<li>规则(rules)：<ul>
+<li>arrow-parems 允许箭头函数参数使用括号,具体操作请看文档</li>
+<li>generator-star-spacing 允许方法之间加星号，如function * generator() {}。文档在此。特地查了下，发现这是ES6提供的生成器函数，回头学习下。</li>
+<li>no-debugger’ 允许在开发环境下使用debugger。</li>
+</ul>
+</li>
+</ul>
+<p>常用规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line">&apos;rules&apos;: &#123;</div><div class="line">   &quot;comma-dangle&quot;: [&quot;error&quot;, &quot;never&quot;], //是否允许对象中出现结尾逗号</div><div class="line">   &quot;no-cond-assign&quot;: 2, //条件语句的条件中不允许出现赋值运算符</div><div class="line">   &quot;no-console&quot;: 2, //不允许出现console语句</div><div class="line">   &quot;no-constant-condition&quot;: 2, //条件语句的条件中不允许出现恒定不变的量</div><div class="line">   &quot;no-control-regex&quot;: 2, //正则表达式中不允许出现控制字符</div><div class="line">   &quot;no-debugger&quot;: 2, //不允许出现debugger语句</div><div class="line">   &quot;no-dupe-args&quot;: 2, //函数定义的时候不允许出现重复的参数</div><div class="line">   &quot;no-dupe-keys&quot;: 2, //对象中不允许出现重复的键</div><div class="line">   &quot;no-duplicate-case&quot;: 2, //switch语句中不允许出现重复的case标签</div><div class="line">   &quot;no-empty&quot;: 2, //不允许出现空的代码块</div><div class="line">   &quot;no-empty-character-class&quot;: 2, //正则表达式中不允许出现空的字符组</div><div class="line">   &quot;no-ex-assign&quot;: 2, //在try catch语句中不允许重新分配异常变量</div><div class="line">   &quot;no-extra-boolean-cast&quot;: 2, //不允许出现不必要的布尔值转换</div><div class="line">   &quot;no-extra-parens&quot;: 0, //不允许出现不必要的圆括号</div><div class="line">   &quot;no-extra-semi&quot;: 2, //不允许出现不必要的分号</div><div class="line">   &quot;no-func-assign&quot;: 2, //不允许重新分配函数声明</div><div class="line">   &quot;no-inner-declarations&quot;: [&quot;error&quot;, &quot;functions&quot;], //不允许在嵌套代码块里声明函数</div><div class="line">   &quot;no-invalid-regexp&quot;: 2, //不允许在RegExp构造函数里出现无效的正则表达式</div><div class="line">   &quot;no-irregular-whitespace&quot;: 2, //不允许出现不规则的空格</div><div class="line">   &quot;no-negated-in-lhs&quot;: 2, //不允许在in表达式语句中对最左边的运算数使用取反操作</div><div class="line">   &quot;no-obj-calls&quot;: 2, //不允许把全局对象属性当做函数来调用</div><div class="line">   &quot;no-regex-spaces&quot;: 2, //正则表达式中不允许出现多个连续空格</div><div class="line">   &quot;quote-props&quot;: 2, //对象中的属性名是否需要用引号引起来</div><div class="line">   &quot;no-sparse-arrays&quot;: 2, //数组中不允许出现空位置</div><div class="line">   &quot;no-unreachable&quot;: 2, //在return，throw，continue，break语句后不允许出现不可能到达的语句</div><div class="line">   &quot;use-isnan&quot;: 2, //要求检查NaN的时候使用isNaN()</div><div class="line">   &quot;valid-jsdoc&quot;: [&quot;error&quot;, &#123;</div><div class="line">     &quot;requireReturn&quot;: false,</div><div class="line">     &quot;requireParamDescription&quot;: false,</div><div class="line">     &quot;requireReturnDescription&quot;: true</div><div class="line">   &#125;], //强制JSDoc注释</div><div class="line">   &quot;valid-typeof&quot;: [&quot;error&quot;, &#123;</div><div class="line">     &quot;requireStringLiterals&quot;: true</div><div class="line">   &#125;], //在使用typeof表达式比较的时候强制使用有效的字符串</div><div class="line">   &quot;block-scoped-var&quot;: 2, //将变量声明放在合适的代码块里</div><div class="line">   &quot;complexity&quot;: 0, //限制条件语句的复杂度</div><div class="line">   &quot;consistent-return&quot;: 2, //无论有没有返回值都强制要求return语句返回一个值</div><div class="line">   &quot;curly&quot;: [&quot;error&quot;, &quot;all&quot;], //强制使用花括号的风格</div><div class="line">   &quot;default-case&quot;: 0, //在switch语句中需要有default语句</div><div class="line">   &quot;dot-notation&quot;: [&quot;error&quot;, &#123;&quot;allowKeywords&quot;: false, &quot;allowPattern&quot;: &quot;&quot;&#125;], //获取对象属性的时候使用点号</div><div class="line">   &quot;eqeqeq&quot;: [&quot;error&quot;, &quot;smart&quot;], //比较的时候使用严格等于</div><div class="line">   &quot;no-alert&quot;: 1, //不允许使用alert，confirm，prompt语句</div><div class="line">   &quot;no-caller&quot;: 2, //不允许使用arguments.callee和arguments.caller属性</div><div class="line">   &quot;guard-for-in&quot;: 0, //监视for in循环，防止出现不可预料的情况</div><div class="line">   &quot;no-div-regex&quot;: 2, //不能使用看起来像除法的正则表达式</div><div class="line">   &quot;no-else-return&quot;: 0, //如果if语句有return，else里的return不用放在else里</div><div class="line">   &quot;no-labels&quot;: [&quot;error&quot;, &#123;</div><div class="line">     &quot;allowLoop&quot;: false,</div><div class="line">     &quot;allowSwitch&quot;: false</div><div class="line">   &#125;], //不允许标签语句</div><div class="line">   &quot;no-eq-null&quot;: 2, //不允许对null用==或者!=</div><div class="line">   &quot;no-eval&quot;: 2, //不允许使用eval()</div><div class="line">   &quot;no-extend-native&quot;: 2, //不允许扩展原生对象</div><div class="line">   &quot;no-extra-bind&quot;: 2, //不允许不必要的函数绑定</div><div class="line">   &quot;no-fallthrough&quot;: 2, //不允许switch按顺序全部执行所有case</div><div class="line">   &quot;no-floating-decimal&quot;: 2, //不允许浮点数缺失数字</div><div class="line">   &quot;no-implied-eval&quot;: 2, //不允许使用隐式eval()</div><div class="line">   &quot;no-iterator&quot;: 2, //不允许使用__iterator__属性</div><div class="line">   &quot;no-lone-blocks&quot;: 2, //不允许不必要的嵌套代码块</div><div class="line">   &quot;no-loop-func&quot;: 2, //不允许在循环语句中进行函数声明</div><div class="line">   &quot;no-multi-spaces&quot;: 2, //不允许出现多余的空格</div><div class="line">   &quot;no-multi-str&quot;: 2, //不允许用\来让字符串换行</div><div class="line">   &quot;no-global-assign&quot;: 2, //不允许重新分配原生对象</div><div class="line">   &quot;no-new&quot;: 2, //不允许new一个实例后不赋值或者不比较</div><div class="line">   &quot;no-new-func&quot;: 2, //不允许使用new Function</div><div class="line">   &quot;no-new-wrappers&quot;: 2, //不允许使用new String，Number和Boolean对象</div><div class="line">   &quot;no-octal&quot;: 2, //不允许使用八进制字面值</div><div class="line">   &quot;no-octal-escape&quot;: 2, //不允许使用八进制转义序列</div><div class="line">   &quot;no-param-reassign&quot;: 0, //不允许重新分配函数参数&quot;no-proto&quot;: 2, //不允许使用__proto__属性</div><div class="line">   &quot;no-redeclare&quot;: 2, //不允许变量重复声明</div><div class="line">   &quot;no-return-assign&quot;: 2, //不允许在return语句中使用分配语句</div><div class="line">   &quot;no-script-url&quot;: 2, //不允许使用javascript:void(0)</div><div class="line">   &quot;no-self-compare&quot;: 2, //不允许自己和自己比较</div><div class="line">   &quot;no-sequences&quot;: 2, //不允许使用逗号表达式</div><div class="line">   &quot;no-throw-literal&quot;: 2, //不允许抛出字面量错误 throw &quot;error&quot;</div><div class="line">   &quot;no-unused-expressions&quot;: 2, //不允许无用的表达式</div><div class="line">   &quot;no-void&quot;: 2, //不允许void操作符</div><div class="line">   &quot;no-warning-comments&quot;: [1, &#123;&quot;terms&quot;: [&quot;todo&quot;, &quot;fixme&quot;, &quot;any other term&quot;]&#125;], //不允许警告备注</div><div class="line">   &quot;no-with&quot;: 2, //不允许使用with语句</div><div class="line">   &quot;radix&quot;: 1, //使用parseInt时强制使用基数来指定是十进制还是其他进制</div><div class="line">   &quot;vars-on-top&quot;: 0, //var必须放在作用域顶部</div><div class="line">   &quot;wrap-iife&quot;: [2, &quot;any&quot;], //立即执行表达式的括号风格</div><div class="line">   &quot;yoda&quot;: [2, &quot;never&quot;, &#123;&quot;exceptRange&quot;: true&#125;], //不允许在if条件中使用yoda条件</div><div class="line">   &quot;strict&quot;: [2, &quot;function&quot;], //使用严格模式</div><div class="line">   &quot;no-catch-shadow&quot;: 2, //不允许try catch语句接受的err变量与外部变量重名&quot;no-delete-var&quot;: 2, //不允许使用delete操作符</div><div class="line">   &quot;no-label-var&quot;: 2, //不允许标签和变量同名</div><div class="line">   &quot;no-shadow&quot;: 2, //外部作用域中的变量不能与它所包含的作用域中的变量或参数同名</div><div class="line">   &quot;no-shadow-restricted-names&quot;: 2, //js关键字和保留字不能作为函数名或者变量名</div><div class="line">   &quot;no-undef&quot;: 2, //不允许未声明的变量</div><div class="line">   &quot;no-undef-init&quot;: 2, //不允许初始化变量时给变量赋值undefined</div><div class="line">   &quot;no-undefined&quot;: 2, //不允许把undefined当做标识符使用</div><div class="line">   &quot;no-unused-vars&quot;: [2, &#123;&quot;vars&quot;: &quot;all&quot;, &quot;args&quot;: &quot;after-used&quot;&#125;], //不允许有声明后未使用的变量或者参数</div><div class="line">   &quot;no-use-before-define&quot;: [2, &quot;nofunc&quot;], //不允许在未定义之前就使用变量&quot;indent&quot;: 2, //强制一致的缩进风格</div><div class="line">   &quot;brace-style&quot;: [2, &quot;1tbs&quot;, &#123; &quot;allowSingleLine&quot;: false&#125;], //大括号风格</div><div class="line">   &quot;camelcase&quot;: [2, &#123;&quot;properties&quot;: &quot;never&quot;&#125;], //强制驼峰命名规则</div><div class="line">   &quot;comma-style&quot;: [2, &quot;last&quot;], //逗号风格</div><div class="line">   &quot;consistent-this&quot;: [0, &quot;self&quot;], //当获取当前环境的this是用一样的风格</div><div class="line">   &quot;eol-last&quot;: 2, //文件以换行符结束</div><div class="line">   &quot;func-names&quot;: 0, //函数表达式必须有名字</div><div class="line">   &quot;func-style&quot;: 0, //函数风格，规定只能使用函数声明或者函数表达式</div><div class="line">   &quot;key-spacing&quot;: [2, &#123;&quot;beforeColon&quot;: false, &quot;afterColon&quot;: true&#125;], //对象字面量中冒号的前后空格</div><div class="line">   &quot;max-nested-callbacks&quot;: 0, //回调嵌套深度</div><div class="line">   &quot;new-cap&quot;: [2, &#123;&quot;newIsCap&quot;: true, &quot;capIsNew&quot;: false&#125;], //构造函数名字首字母要大写</div><div class="line">   &quot;new-parens&quot;: 2, //new时构造函数必须有小括号</div><div class="line">   &quot;newline-after-var&quot;: 0, //变量声明后必须空一行</div><div class="line">   &quot;no-array-constructor&quot;: 2, //不允许使用数组构造器</div><div class="line">   &quot;no-inline-comments&quot;: 0, //不允许行内注释</div><div class="line">   &quot;no-lonely-if&quot;: 0, //不允许else语句内只有if语句</div><div class="line">   &quot;no-mixed-spaces-and-tabs&quot;: [2, &quot;smart-tabs&quot;], //不允许混用tab和空格</div><div class="line">   &quot;no-multiple-empty-lines&quot;: [2, &#123;&quot;max&quot;: 2&#125;], //空行最多不能超过两行</div><div class="line">   &quot;no-nested-ternary&quot;: 2, //不允许使用嵌套的三目运算符</div><div class="line">   &quot;no-new-object&quot;: 2, //禁止使用new Object()</div><div class="line">   &quot;fun-call-spacing&quot;: 2, //函数调用时，函数名与()之间不能有空格</div><div class="line">   &quot;no-ternary&quot;: 0, //不允许使用三目运算符</div><div class="line">   &quot;no-trailing-spaces&quot;: 2, //一行最后不允许有空格</div><div class="line">   &quot;no-underscore-dangle&quot;: 2, //不允许标识符以下划线开头</div><div class="line">   &quot;no-extra-parens&quot;: 0, //不允许出现多余的括号</div><div class="line">   &quot;one-var&quot;: 0, //强制变量声明放在一起</div><div class="line">   &quot;operator-assignment&quot;: 0, //赋值运算符的风格</div><div class="line">   &quot;padded-blocks&quot;: [2, &quot;never&quot;], //块内行首行尾是否空行</div><div class="line">   &quot;quote-props&quot;: 0, //对象字面量中属性名加引号</div><div class="line">   &quot;quotes&quot;: [1, &quot;single&quot;, &quot;avoid-escape&quot;], //引号风格</div><div class="line">   &quot;semi&quot;: [2, &quot;always&quot;], //强制语句分号结尾</div><div class="line">   &quot;semi-spacing&quot;: [2, &#123;&quot;before&quot;: false, &quot;after&quot;: true&#125;], //分后前后空格</div><div class="line">   &quot;sort-vars&quot;: 0, //变量声明时排序</div><div class="line">   &quot;space-before-blocks&quot;: [2, &quot;always&quot;], //块前的空格</div><div class="line">   &quot;space-before-function-paren&quot;: [2, &#123;&quot;anonymous&quot;: &quot;always&quot;, &quot;named&quot;: &quot;never&quot;&#125;], //函数定义时括号前的空格</div><div class="line">   &quot;space-infix-ops&quot;: [2, &#123;&quot;int32Hint&quot;: true&#125;], //操作符周围的空格</div><div class="line">   &quot;keyword-spacing&quot;: 2, //关键字前后的空格</div><div class="line">   &quot;space-unary-ops&quot;: [2, &#123; &quot;words&quot;: true, &quot;nonwords&quot;: false&#125;], //一元运算符前后不要加空格</div><div class="line">   &quot;wrap-regex&quot;: 2, //正则表达式字面量用括号括起来</div><div class="line">   &quot;no-var&quot;: 0, //使用let和const代替var</div><div class="line">   &quot;generator-star-spacing&quot;: [2, &quot;both&quot;], //生成器函数前后空格</div><div class="line">   &quot;max-depth&quot;: 0, //嵌套块深度</div><div class="line">   &quot;max-len&quot;: 0, //一行最大长度，单位为字符</div><div class="line">   &quot;max-params&quot;: 0, //函数最多能有多少个参数</div><div class="line">   &quot;max-statements&quot;: 0, //函数内最多有几个声明</div><div class="line">   &quot;no-bitwise&quot;: 0, //不允许使用位运算符</div><div class="line">   &quot;no-plusplus&quot;: 0 //不允许使用++ --运算符</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>.eslintrc.js</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// http://eslint.org/docs/user-guide/configuring</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  root: true,</div><div class="line">  parser: &apos;babel-eslint&apos;,</div><div class="line">  parserOptions: &#123;</div><div class="line">    sourceType: &apos;module&apos;</div><div class="line">  &#125;,</div><div class="line">  env: &#123;</div><div class="line">    browser: true,</div><div class="line">  &#125;,</div><div class="line">  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style</div><div class="line">  extends: &apos;standard&apos;,</div><div class="line">  // required to lint *.vue files</div><div class="line">  plugins: [</div><div class="line">    &apos;html&apos;</div><div class="line">  ],</div><div class="line">  // add your custom rules here</div><div class="line">  &apos;rules&apos;: &#123;</div><div class="line">    // allow paren-less arrow functions</div><div class="line">    &apos;arrow-parens&apos;: 0,</div><div class="line">    // allow async-await</div><div class="line">    &apos;generator-star-spacing&apos;: 0,</div><div class="line">    // allow debugger during development</div><div class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos; ? 2 : 0</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://eslint.org/docs/rules/" target="_blank" rel="external">http://eslint.org/docs/rules/</a></li>
+<li><a href="https://www.jb51.net/article/124945.htm" target="_blank" rel="external">https://www.jb51.net/article/124945.htm</a></li>
+<li><a href="https://www.jianshu.com/p/efb6fbed6fac" target="_blank" rel="external">https://www.jianshu.com/p/efb6fbed6fac</a></li>
+<li><a href="https://github.com/babel/babel-eslint" target="_blank" rel="external">https://github.com/babel/babel-eslint</a></li>
+</ul>
+<h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://eslint.org/" target="_blank" rel="external">https://eslint.org/</a></li>
+<li>腾讯IVWEB前端工作流和规范: <a href="https://github.com/feflow" target="_blank" rel="external">https://github.com/feflow</a></li>
+</ul>
 
       
 
@@ -839,7 +237,7 @@ animation: load 2s infinite;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/14/css/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/1.1.2 语法检查---ESLint/">展开全文 >></a>
         </p>
       
 
@@ -869,44 +267,27 @@ animation: load 2s infinite;
 
 
   
-    <article id="post-flex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.1.4. 事件委托" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/flex/">flex</a>
+      <a class="article-title" href="/2018/09/27/4.1.4. 事件委托/">事件委托</a>
     </h1>
   
 
         
-        <a href="/2017/09/13/flex/" class="archive-article-date">
-  	<time datetime="2017-09-13T01:57:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
+        <a href="/2018/09/27/4.1.4. 事件委托/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="参考网址："><a href="#参考网址：" class="headerlink" title="参考网址："></a>参考网址：</h2><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>                  Flex 布局教程：语法篇</p>
-<p><a href="http://static.vgee.cn/static/index.html" target="_blank" rel="external">http://static.vgee.cn/static/index.html</a>                                                        flex 案列</p>
-<h2 id="flex定义："><a href="#flex定义：" class="headerlink" title="flex定义："></a>flex定义：</h2><p>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。<br>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局。<br>注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。<br>.box{<br>     display: flex;<br>}</p>
-<p>.box{<br>     display: inline-flex;<br>}</p>
-<h2 id="flex基本概念："><a href="#flex基本概念：" class="headerlink" title="flex基本概念："></a>flex基本概念：</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。     它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
-<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。<br>主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；<br>交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
-<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。<br>容器上的属性：<br>作用在容器上的属性：6个；<br>1- flex-direction<br>2- flex-wrap<br>3- flex-flow<br>4- justify-content<br>5- align-items<br>6- align-content</p>
-<h2 id="如下取值："><a href="#如下取值：" class="headerlink" title="如下取值："></a>如下取值：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">.box1 &#123;</div><div class="line">     flex-direction: row;                                   //- row（默认值）：主轴为水平方向，起点在左端。</div><div class="line">     flex-direction: row-reverse;                           //- row-reverse：主轴为水平方向，起点在右端。</div><div class="line">     flex-direction: column;                                //- column：主轴为垂直方向，起点在上沿。</div><div class="line">     flex-direction: column-reverse;                        //主轴为垂直方向，起点在下沿。</div><div class="line">&#125;</div><div class="line">.box2 &#123;</div><div class="line">     flex-wrap: nowrap;                                     //（默认）：不换行。如过项目数过多  就算是右固定宽度也会自动减少项目宽度；</div><div class="line">     flex-wrap: wrap;                                       // 换行，第一行在上方。 保证项目的原始宽度</div><div class="line">     flex-wrap: wrap-reverse;                               // 换行，第一行在下方。 保证项目的原始宽度</div><div class="line">&#125;</div><div class="line">.box3 &#123;</div><div class="line">     flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;            // 二者随机搭配</div><div class="line">     flex-flow: row nowrap;                                 // 默认值；  没发现什么特殊的 作用</div><div class="line">     flex-flow: row-reverse wrap;                           // 同时具有两个属性的值</div><div class="line">&#125;</div><div class="line">.box4 &#123;</div><div class="line">     justify-content: flex-start;                           //（默认值）：左对齐</div><div class="line">     justify-content: flex-end;                             //右对齐</div><div class="line">     justify-content: center;                               //居中</div><div class="line">     justify-content: space-between;                        //两端对齐，项目之间的间隔都相等。</div><div class="line">     justify-content: space-around;                         //每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</div><div class="line">&#125;</div><div class="line">.box5 &#123;</div><div class="line">     align-items: flex-start;                               //交叉轴的起点对齐。</div><div class="line">     align-items: flex-end;                                 //交叉轴的终点对齐。</div><div class="line">     align-items: center;                                   //交叉轴的中点对齐。</div><div class="line">     align-items: baseline;                                 //项目的第一行文字的基线对齐。</div><div class="line">     align-items: stretch;                                  //（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</div><div class="line">&#125;</div><div class="line">.box6 &#123;</div><div class="line">     align-content: flex-start;                             //与交叉轴的起点对齐。</div><div class="line">     align-content: flex-end;                               //与交叉轴的终点对齐。</div><div class="line">     align-content: center;                                 //与交叉轴的中点对齐</div><div class="line">     align-content: space-between;                          //与交叉轴两端对齐，轴线之间的间隔平均分布。</div><div class="line">     align-content: space-around;                           //每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</div><div class="line">     align-content: stretch;                                //（默认值）：轴线占满整个交叉轴。</div><div class="line">&#125;</div><div class="line">-----------------------------------------------------------------------------------------------------------------------------------------------------</div></pre></td></tr></table></figure>
-<h2 id="分解："><a href="#分解：" class="headerlink" title="分解："></a>分解：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">1、 flex-direction：     属性决定主轴的方向（即项目的排列方向）</div><div class="line"></div><div class="line">.box &#123;</div><div class="line">     flex-direction: row;                                   //- row（默认值）：主轴为水平方向，起点在左端。</div><div class="line">     flex-direction: row-reverse;                           //- row-reverse：主轴为水平方向，起点在右端。</div><div class="line">     flex-direction: column;                                //- column：主轴为垂直方向，起点在上沿。</div><div class="line">     flex-direction: column-reverse;                        //主轴为垂直方向，起点在下沿。</div><div class="line">&#125;</div><div class="line"></div><div class="line">2、 flex-wrap:     默认情况下，项目都排在一条线（又称&quot;轴线&quot;）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。</div><div class="line">.box&#123;</div><div class="line">     flex-wrap: nowrap;                         //（默认）：不换行。如过项目数过多  就算是右固定宽度也会自动减少项目宽度；</div><div class="line">     flex-wrap: wrap;                           // 换行，第一行在上方。 保证项目的原始宽度</div><div class="line">     flex-wrap: wrap-reverse;                   // 换行，第一行在下方。 保证项目的原始宽度</div><div class="line">&#125;</div><div class="line"></div><div class="line">3、 flex-flow：     flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</div><div class="line">.box &#123;</div><div class="line">     flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">4、 justify-content:     justify-content属性定义了项目在主轴上的对齐方式。</div><div class="line">.box &#123;</div><div class="line">     justify-content: flex-start;                    //（默认值）：左对齐</div><div class="line">     justify-content: flex-end;                      //右对齐</div><div class="line">     justify-content: center;                        //居中</div><div class="line">     justify-content: space-between;                 //两端对齐，项目之间的间隔都相等。</div><div class="line">     justify-content: space-around;                  //每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</div><div class="line">&#125;</div><div class="line"></div><div class="line">5、 align-items:     align-items属性定义项目在交叉轴上如何对齐。  具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</div><div class="line">.box &#123;</div><div class="line">     align-items: flex-start;                    //交叉轴的起点对齐。</div><div class="line">     align-items: flex-end;                      //交叉轴的终点对齐。</div><div class="line">     align-items: center;                        //交叉轴的中点对齐。</div><div class="line">     align-items: stretch;                       //（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</div><div class="line">     align-items: baseline;                      //项目的第一行文字的基线对齐。</div><div class="line">&#125;</div><div class="line"></div><div class="line">6、 align-content：     align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</div><div class="line">.box &#123;</div><div class="line">     align-content: flex-start;                  //与交叉轴的起点对齐。</div><div class="line">     align-content: flex-end;                    //与交叉轴的终点对齐。</div><div class="line">     align-content: center;                      //与交叉轴的中点对齐</div><div class="line">     align-content: stretch;                     //（默认值）：轴线占满整个交叉轴。</div><div class="line">     align-content: space-between;               //与交叉轴两端对齐，轴线之间的间隔平均分布。</div><div class="line">     align-content: space-around;                //每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="项目上的属性："><a href="#项目上的属性：" class="headerlink" title="项目上的属性："></a>项目上的属性：</h2><p>作用在项目上的6个属性：                    // 父级是容器flex是  项目上的属性存在的 根本条件； 反之 则不存在项目；     项目的属性都是作用在单个项目上的；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">1- order</div><div class="line">2- flex-grow</div><div class="line">3- flex-shrink</div><div class="line">4- flex-basis</div><div class="line">5- flex</div><div class="line">6- align-self</div><div class="line">取值：</div><div class="line">.item &#123;</div><div class="line">     order: &lt;integer&gt;;</div><div class="line">     order: -1;                                       // 最前</div><div class="line">     order: 0;                                        //保持原样</div><div class="line">     order: 1;                                        //最后</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">     flex-grow: &lt;number&gt;;                             // default 0;</div><div class="line">     flex-grow: 0;                                    // 不进行缩放</div><div class="line">     flex-grow: 1;                                    // 剩余空间足够的话 放大一倍；   不够则不会放大；</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">     flex-shrink: &lt;number&gt;;                           // default 1 ;</div><div class="line">     flex-shrink: 0;                                  // 不缩放          当其他的项目都缩小的时候 将此项目设置为 0 则此项目不缩小；</div><div class="line">     flex-shrink: 1;</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">     flex-basis: &lt;length&gt; | auto;                     // default auto</div><div class="line">     flex-basis: 30px;                                //和设置width一样 但优先级高于width；</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">     flex: flex-grow flex-shrink flex-basis;</div><div class="line">     flex: none;                                      //0 0 auto</div><div class="line">     flex: auto;                                      //1 1 auto</div><div class="line">&#125;</div><div class="line">.item &#123;</div><div class="line">     align-self: auto;                                //除了auto，其他都与align-items属性完全一致（在容器上的）</div><div class="line">     align-self: flex-start;</div><div class="line">     align-self: flex-end;</div><div class="line">     align-self: center;</div><div class="line">     align-self: baseline;</div><div class="line">     align-self: stretch;</div><div class="line">&#125;</div><div class="line"></div><div class="line">---------------------------------------------------------------------------------------------------------------------------------------------------------------</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>1、order    order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。   -1（最前）、  0（正常显示）、 1（最后）；  数字随意的整数；<br>.item {                            //item应该是单个项目才行  而不是多个项目<br>     order: <integer>;<br>     order: -1;                    // 最前<br>     order: 0;                     //保持原样<br>     order: 1;                     //最后<br>}</integer></p>
-<p>2、 flex-grow     flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。 前提是剩余空间足够放大才有效<br>                  如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。     负值对该属性无效<br>.item {<br>     flex-grow: <number>;                // default 0;<br>     flex-grow: 0;                       // 不进行缩放<br>     flex-grow: 1;                       // 剩余空间足够的话 放大一倍；   不够则不会放大；<br>}</number></p>
-<p>3、 flex-shrink     flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。     负值对该属性无效          //未感受到实际变化<br>                    如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。<br>.item {<br>     flex-shrink: <number>;           // default 1 ;<br>     flex-shrink: 0;                  // 不缩放          当其他的项目都缩小的时候 将此项目设置为 0 则此项目不缩小；<br>     flex-shrink: 1;<br>}</number></p>
-<p>4、 flex-basis     flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。<br>.item {<br>     flex-basis: <length> | auto;      // default auto<br>     flex-basis: 30px;                 //和设置width一样 但优先级高于width；<br>}</length></p>
-<p>5、 flex     flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br>             该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。<br>.item {<br>     flex: none | [ &lt;’flex-grow’&gt; &lt;’flex-shrink’&gt; || &lt;’flex-basis’&gt; ];<br>     flex: auto;<br>}</p>
-<p>6、align-self     align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br>.item {<br>     align-self: auto;                    //除了auto，其他都与align-items属性完全一致（在容器上的）<br>     align-self: flex-start;<br>     align-self: flex-end;<br>     align-self: center;<br>     align-self: baseline;<br>     align-self: stretch;<br>}</p>
-</blockquote>
+        <p>事件委托:就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件</p>
 
       
 
@@ -919,7 +300,7 @@ animation: load 2s infinite;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/13/flex/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.1.4. 事件委托/">展开全文 >></a>
         </p>
       
 
@@ -949,28 +330,52 @@ animation: load 2s infinite;
 
 
   
-    <article id="post-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2.0 html 代码规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/05/blog/">How to look great in photographs?</a>
+      <a class="article-title" href="/2018/09/27/2.0 html 代码规范/">html代码规范</a>
     </h1>
   
 
         
-        <a href="/2017/09/05/blog/" class="archive-article-date">
-  	<time datetime="2017-09-05T03:02:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
+        <a href="/2018/09/27/2.0 html 代码规范/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Hi-大家好，我是-LittleBottle-今天给大家分享一下我的拍照心得：显瘦靠角度，美白靠相机。哦，其实想拍一张自然又好看的人像，也不是那么难，來看一下下面的九个步骤吧！"><a href="#Hi-大家好，我是-LittleBottle-今天给大家分享一下我的拍照心得：显瘦靠角度，美白靠相机。哦，其实想拍一张自然又好看的人像，也不是那么难，來看一下下面的九个步骤吧！" class="headerlink" title="Hi 大家好，我是 LittleBottle.今天给大家分享一下我的拍照心得：显瘦靠角度，美白靠相机。哦，其实想拍一张自然又好看的人像，也不是那么难，來看一下下面的九个步骤吧！"></a>Hi 大家好，我是 LittleBottle.今天给大家分享一下我的拍照心得：显瘦靠角度，美白靠相机。哦，其实想拍一张自然又好看的人像，也不是那么难，來看一下下面的九个步骤吧！</h4> <center>How to look great in photographs? </center><br>  <center>Sure,a beautiful photograph takes some skill behind the lens, </center><br>  <center>but it takes a little skill in front of it,too. </center><br>  <center>you will need: </center><br>  <center>a photographer and a camera with flash. </center><br>  <center>Stept 1: </center><br>  <center>when choosing your clothes, </center><br>  <center>leave bright colors,crazy patterns and horizontal stripes in the closet </center><br>  <center>Neutral colors look best </center><br>  <center>Stept 2:<br>  <center>Check your face in the mirror </center><br> <center> Do you have any blemishes you could cover, </center><br> <center> or greasy skin that needs powdering </center><br> <center> Could your eyes use some drops to clear up redness? </center><br> <center> Are your eyebrows trim and neat? </center><br> <center> If you wear make up, remember that colors will look more intense in photos, </center><br>  <center>especially on black and white film. </center><br>  <center>Stept 3:<br>  <center>Try to have the picture taken outside, in the morning or before sunset, </center><br>  <center>the light is soft and flattering at these times. </center><br>  <center>Whereas high noon, a flash photographer can illuminate a little too much. </center><br>  <center>Stept 4:<br> <center> Make sure the camera lens is at the level or just slightly higher. </center><br> <center> Any lower, and you’ll look like you have a double chin. </center><br>  <center>Stept 5<br>  <center>To appear more natural when standing for a photo, </center><br>  <center>lean slightly back with your weight on your rear foot,</center><br>  <center>and angle one hip forward.</center><br>  <center>Keep your posture erect ,but not overly posed.</center><br>  <center>Think Great statue,not william Shatner.</center><br>  <center>Stept 6:</center><br>  <center>Turn your head two thirds to one side or the other for sliming effect on your face.</center><br>  <center>Avoid wide-angle lenses,which will widen the appearance of your face.</center><br>  <center>Stept 7:</center><br>  <center>Look at a light source,like a lamp or light for a few moments.</center><br>  <center>it reduces the size of your pupils and the possibility of res eye.</center><br>  <center>However never look directly at the sun </center><br>  <center>Stept 8:</center><br>  <center>Just before the picture is taken,close your eyes.</center><br>  <center>and have the photographer count to three,</center><br>  <center>then open your eyes as he begins shooting.</center><br>  <center>this is the best way to prevent blinking from runing shots.</center><br>  <center>Stept 9:</center><br>  <center>the last and most important part of the picture is the smile.</center><br>  <center>Saying kitschy things like cheese,</center><br>  <center>forces a fake grin and makes you look like a newscaster or a local politician</center><br>  <center>Instead,think of a funny memory which</center><br>  <center>will bring out a naturally happy look</center><br>  <center>Did you know :</center><br>  <center>The first commercially avalible color film </center><br>  <center>was offered in France in 1907</center>
-</center></center></center></center>
+        <ul>
+<li>缩进 以前说使用 <strong>2</strong> 个空格，现在一般使用 <strong>4</strong> 个空格；</li>
+<li>在属性上，使用双引号 <strong>“”</strong>，不要使用单引号 <strong>‘’</strong>；</li>
+<li>标签正确关闭；</li>
+<li>在自动闭合标签结尾处使用斜线；</li>
+<li>头部要声明 doctype : &lt;!DOCTYPE html&gt;</li>
+<li>指出页面的语言: <html lang="en-us">  <html lang="zh-cmn-Hans"></html></html></li>
+<li>声明一个明确的字符编码: <head> <meta charset="UTF-8"></head></li>
+<li>IE 兼容模式: 使用兼容性 <meta> 标签来指定使用什么版本的 IE 来渲染页面。如果不是特殊需要，通常通过 edge mode 来通知 IE 使用最新的兼容模式<meta http-equiv="X-UA-Compatible" content="IE=Edge"></li>
+<li><p>通常在引入 CSS 和 JavaScript 时不需要指明 type，css 放 head 头部</p>
+</li>
+<li><p>属性顺序： HTML 属性应该按照特定的顺序出现以保证易读性。尽量大部分用 class，少使用 id</p>
+<ul>
+<li>class</li>
+<li>id, name</li>
+<li>data-*</li>
+<li>src, for, type, href, value</li>
+<li>title, alt</li>
+<li>role, aria-*<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;a class=&quot;...&quot; id=&quot;...&quot; data-toggle=&quot;modal&quot; href=&quot;#&quot;&gt;</div><div class="line">  Example link</div><div class="line">&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;input class=&quot;form-control&quot; type=&quot;text&quot;&gt;</div><div class="line"></div><div class="line">&lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Boolean 属性指不需要声明取值的属性<br><input type="checkbox" value="1" checked>  <input type="text" disabled></p>
+</li>
+</ul>
+
       
 
       
@@ -982,7 +387,7 @@ animation: load 2s infinite;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/05/blog/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/2.0 html 代码规范/">展开全文 >></a>
         </p>
       
 
@@ -1012,50 +417,30 @@ animation: load 2s infinite;
 
 
   
-    <article id="post-head" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1.1.3 前端小团队建设" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/05/head/">head</a>
+      <a class="article-title" href="/2018/09/27/1.1.3 前端小团队建设/">前端小团队建设</a>
     </h1>
   
 
         
-        <a href="/2017/09/05/head/" class="archive-article-date">
-  	<time datetime="2017-09-05T00:50:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
+        <a href="/2018/09/27/1.1.3 前端小团队建设/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="最小推荐"><a href="#最小推荐" class="headerlink" title="最小推荐"></a>最小推荐</h1><h3 id="下面是基本的、最低限度的网站基本标签："><a href="#下面是基本的、最低限度的网站基本标签：" class="headerlink" title="下面是基本的、最低限度的网站基本标签："></a>下面是基本的、最低限度的网站基本标签：</h3><p>HTML 代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</div><div class="line">&lt;!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* --&gt;</div><div class="line">&lt;title&gt;页面标题&lt;/title&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="网页元素"><a href="#网页元素" class="headerlink" title="网页元素"></a>网页元素</h1><p>HTML 代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 文档标题 --&gt;</div><div class="line">&lt;title&gt;页面标题&lt;/title&gt;</div><div class="line"> </div><div class="line">&lt;!-- 基本 URL 作用于文档中所包含的所有相对 URL --&gt;</div><div class="line">&lt;base href=&quot;https://example.com/page.html&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 外部的 CSS --&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 文档内的 CSS --&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  /* ... */</div><div class="line">&lt;/style&gt;</div><div class="line"> </div><div class="line">&lt;!-- JavaScript --&gt;</div><div class="line">&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;noscript&gt;&lt;!--无 JS 时的替代--&gt;&lt;/noscript&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="Meta-标签"><a href="#Meta-标签" class="headerlink" title="Meta 标签"></a>Meta 标签</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 设置文档的字符编码 --&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</div><div class="line">&lt;!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* --&gt;</div><div class="line"> </div><div class="line">&lt;!-- 允许控制资源的过度加载 --&gt;</div><div class="line">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &apos;self&apos;&quot;&gt;</div><div class="line">&lt;!-- 尽早地放置在文档中 --&gt;</div><div class="line">&lt;!-- 仅应用于该标签下的内容 --&gt;</div><div class="line"> </div><div class="line">&lt;!-- Web 应用的名称（仅当网站被用作为一个应用时才使用）--&gt;</div><div class="line">&lt;meta name=&quot;application-name&quot; content=&quot;应用名称&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 针对页面的简短描述（限制 150 字符）--&gt;</div><div class="line">&lt;!-- 在*某些*情况下，该描述是被用作搜索结果展示片段的一部分 --&gt;</div><div class="line">&lt;meta name=&quot;description&quot; content=&quot;一个页面描述&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 控制搜索引擎的抓取和索引行为 --&gt;</div><div class="line">&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;&gt;&lt;!-- 所有搜索引擎 --&gt;</div><div class="line">&lt;meta name=&quot;googlebot&quot; content=&quot;index,follow&quot;&gt;&lt;!-- 仅对 Google 有效 --&gt;</div><div class="line"> </div><div class="line">&lt;!-- 告诉 Google 不显示网站链接的搜索框 --&gt;</div><div class="line">&lt;meta name=&quot;google&quot; content=&quot;nositelinkssearchbox&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 告诉 Google 不提供此页面的翻译 --&gt;</div><div class="line">&lt;meta name=&quot;google&quot; content=&quot;notranslate&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Google 搜索控制台的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;google-site-verification&quot; content=&quot;verification_token&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Yandex 网站管理员的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;yandex-verification&quot; content=&quot;verification_token&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Bing 网站管理员中心的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;msvalidate.01&quot; content=&quot;verification_token&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Alexa 控制台的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;alexaVerifyID&quot; content=&quot;verification_token&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Pinterest 控制台的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;p:domain_verify&quot; content=&quot;code from pinterest&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 验证 Norton 安全站点的所有权 --&gt;</div><div class="line">&lt;meta name=&quot;norton-safeweb-site-verification&quot; content=&quot;norton code&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）--&gt;</div><div class="line">&lt;meta name=&quot;generator&quot; content=&quot;program&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 关于你的网站主题的简短描述 --&gt;</div><div class="line">&lt;meta name=&quot;subject&quot; content=&quot;你的网站主题&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 基于网站内容给出一般的年龄分级 --&gt;</div><div class="line">&lt;meta name=&quot;rating&quot; content=&quot;General&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 允许控制 referrer 信息如何传递 --&gt;</div><div class="line">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 禁用自动检测和格式化可能的电话号码 --&gt;</div><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 通过设置为 “off” 完全退出 DNS 预取 --&gt;</div><div class="line">&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;off&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 在客户端存储 cookie，web 浏览器的客户端识别 --&gt;</div><div class="line">&lt;meta http-equiv=&quot;set-cookie&quot; content=&quot;name=value; expires=date; path=url&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 指定要显示在一个特定框架中的页面 --&gt;</div><div class="line">&lt;meta http-equiv=&quot;Window-Target&quot; content=&quot;_value&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 地理标签 --&gt;</div><div class="line">&lt;meta name=&quot;ICBM&quot; content=&quot;latitude, longitude&quot;&gt;</div><div class="line">&lt;meta name=&quot;geo.position&quot; content=&quot;latitude;longitude&quot;&gt;</div><div class="line">&lt;meta name=&quot;geo.region&quot; content=&quot;country[-state]&quot;&gt;&lt;!-- 国家代码 (ISO 3166-1): 强制性, 州代码 (ISO 3166-2): 可选; 如 content=&quot;US&quot; / content=&quot;US-NY&quot; --&gt;</div><div class="line">&lt;meta name=&quot;geo.placename&quot; content=&quot;city/town&quot;&gt;&lt;!-- 如 content=&quot;New York City&quot; --&gt;</div></pre></td></tr></table></figure>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>HTML 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 表明一个 CSS 样式表 --&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://example.com/styles.css&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 有助于防止出现内容重复的问题 --&gt;</div><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/2010/06/9-things-to-do-before-entering-social-media.html&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 之前用于包含 icon 链接，但已被废弃并不再使用 --&gt;</div><div class="line">&lt;link rel=&quot;shortlink&quot; href=&quot;https://example.com/?p=42&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 链接到当前文档的一个 AMP HTML 版本 --&gt;</div><div class="line">&lt;link rel=&quot;amphtml&quot; href=&quot;https://example.com/path/to/amp-version.html&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 链接到一个指定 Web 应用程序“安装”证书的 JSON 文件 --&gt;</div><div class="line">&lt;link rel=&quot;manifest&quot; href=&quot;manifest.json&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 链接到文档的作者 --&gt;</div><div class="line">&lt;link rel=&quot;author&quot; href=&quot;humans.txt&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 指向一个适用于链接内容的版权申明 --&gt;</div><div class="line">&lt;link rel=&quot;license&quot; href=&quot;copyright.html&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 给出可能的你的另一种语言的文档位置参考 --&gt;</div><div class="line">&lt;link rel=&quot;alternate&quot; href=&quot;https://es.example.com/&quot; hreflang=&quot;es&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 提供了关于作者或其他人的信息 --&gt;</div><div class="line">&lt;link rel=&quot;me&quot; href=&quot;https://google.com/profiles/thenextweb&quot; type=&quot;text/html&quot;&gt;</div><div class="line">&lt;link rel=&quot;me&quot; href=&quot;mailto:name@example.com&quot;&gt;</div><div class="line">&lt;link rel=&quot;me&quot; href=&quot;sms:+15035550125&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 链接到一个描述历史记录、文档或其他具有历史意义的材料的集合的文档。 --&gt;</div><div class="line">&lt;link rel=&quot;archives&quot; href=&quot;https://example.com/archives/&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 链接到层次结构中的顶级资源 --&gt;</div><div class="line">&lt;link rel=&quot;index&quot; href=&quot;https://example.com/&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 给出一个自我参考 - 当文档有多个可能的参考时非常有用 --&gt;</div><div class="line">&lt;link rel=&quot;self&quot; type=&quot;application/atom+xml&quot; href=&quot;https://example.com/atomFeed.php?page=3&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 分别是在一系列文件中的第一个、下一个、上一个和最后一个 --&gt;</div><div class="line">&lt;link rel=&quot;first&quot; href=&quot;https://example.com/atomFeed.php&quot;&gt;</div><div class="line">&lt;link rel=&quot;next&quot; href=&quot;https://example.com/atomFeed.php?page=4&quot;&gt;</div><div class="line">&lt;link rel=&quot;prev&quot; href=&quot;https://example.com/atomFeed.php?page=2&quot;&gt;</div><div class="line">&lt;link rel=&quot;last&quot; href=&quot;https://example.com/atomFeed.php?page=147&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 当使用第三方服务来维护 blog 时使用 --&gt;</div><div class="line">&lt;link rel=&quot;EditURI&quot; href=&quot;https://example.com/xmlrpc.php?rsd&quot; type=&quot;application/rsd+xml&quot; title=&quot;RSD&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 当另一个 WordPress 博客链接到你的 WordPress 博客或文章时形成一个自动化的评论 --&gt;</div><div class="line">&lt;link rel=&quot;pingback&quot; href=&quot;https://example.com/xmlrpc.php&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 当你在自己的页面上链接到一个 url 时通知它 --&gt;</div><div class="line">&lt;link rel=&quot;webmention&quot; href=&quot;https://example.com/webmention&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 加载一个外部的 HTML 文件到当前 HTML 文件中 --&gt;</div><div class="line">&lt;link rel=&quot;import&quot; href=&quot;/path/to/component.html&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 打开搜索 --&gt;</div><div class="line">&lt;link rel=&quot;search&quot; href=&quot;/open-search.xml&quot; type=&quot;application/opensearchdescription+xml&quot; title=&quot;Search Title&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- Feeds --&gt;</div><div class="line">&lt;link rel=&quot;alternate&quot; href=&quot;https://feeds.feedburner.com/example&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot;&gt;</div><div class="line">&lt;link rel=&quot;alternate&quot; href=&quot;https://example.com/feed.atom&quot; type=&quot;application/atom+xml&quot; title=&quot;Atom 0.3&quot;&gt;</div><div class="line"> </div><div class="line">&lt;!-- 预取，预载，预浏览 --&gt;</div><div class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//example.com/&quot;&gt;</div><div class="line">&lt;link rel=&quot;preconnect&quot; href=&quot;https://www.example.com/&quot;&gt;</div><div class="line">&lt;link rel=&quot;prefetch&quot; href=&quot;https://www.example.com/&quot;&gt;</div><div class="line">&lt;link rel=&quot;prerender&quot; href=&quot;https://example.com/&quot;&gt;</div><div class="line">&lt;link rel=&quot;preload&quot; href=&quot;image.png&quot; as=&quot;image&quot;&gt;</div><div class="line">&lt;!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ --&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="网站图标"><a href="#网站图标" class="headerlink" title="网站图标"></a>网站图标</h2><p>HTML 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 针对 IE 10 及以下版本 --&gt;</div><div class="line">&lt;!-- 如果将 `favicon.ico` 放在根目录下，则无需标签 --&gt;</div><div class="line"> </div><div class="line">&lt;!-- 对于 IE 11、Chrome、Firefox、Safari 和 Opera --&gt;</div><div class="line">&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;16x16&quot; href=&quot;/path/to/favicon-16x16.png&quot;/&gt;</div><div class="line">&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;32x32&quot; href=&quot;/path/to/favicon-32x32.png&quot;/&gt;</div><div class="line">&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;96x96&quot; href=&quot;/path/to/favicon-96x96.png&quot;/&gt;</div><div class="line">&lt;!-- 更多信息: https://bitsofco.de/all-about-favicons-and-touch-icons/ --&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="社交"><a href="#社交" class="headerlink" title="社交"></a>社交</h1><h2 id="Facebook-Open-Graph"><a href="#Facebook-Open-Graph" class="headerlink" title="Facebook Open Graph"></a>Facebook Open Graph</h2><p>HTML 代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;meta property=&quot;fb:app_id&quot; content=&quot;123456789&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:url&quot; content=&quot;https://example.com/page.html&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:title&quot; content=&quot;Content Title&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:image&quot; content=&quot;https://example.com/image.jpg&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:description&quot; content=&quot;Description Here&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:site_name&quot; content=&quot;Site Name&quot;/&gt;</div><div class="line">&lt;meta property=&quot;og:locale&quot; content=&quot;en_US&quot;/&gt;</div><div class="line">&lt;meta property=&quot;article:author&quot; content=&quot;&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="Facebook-Instant-Articles"><a href="#Facebook-Instant-Articles" class="headerlink" title="Facebook Instant Articles"></a>Facebook Instant Articles</h2><p>HTML 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;meta charset=&quot;utf-8&quot;/&gt;</div><div class="line">&lt;meta property=&quot;op:markup_version&quot; content=&quot;v1.0&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 你的文章的 Web 版网址 --&gt;</div><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;http://example.com/article.html&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 用于该文章的样式 --&gt;</div><div class="line">&lt;meta property=&quot;fb:article_style&quot; content=&quot;myarticlestyle&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="Twitter-Cards"><a href="#Twitter-Cards" class="headerlink" title="Twitter Cards"></a>Twitter Cards</h2><p>HTML 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;twitter:card&quot; content=&quot;summary&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:site&quot; content=&quot;@site_account&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:creator&quot; content=&quot;@individual_account&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:url&quot; content=&quot;https://example.com/page.html&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:title&quot; content=&quot;Content Title&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:description&quot; content=&quot;Content description less than 200 characters&quot;/&gt;</div><div class="line">&lt;meta name=&quot;twitter:image&quot; content=&quot;https://example.com/image.jpg&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="Google-Schema-org"><a href="#Google-Schema-org" class="headerlink" title="Google+ / Schema.org"></a>Google+ / Schema.org</h2><p>HTML 代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;https://plus.google.com/+YourPage&quot; rel=&quot;publisher&quot;/&gt;</div><div class="line">&lt;meta itemprop=&quot;name&quot; content=&quot;内容标题&quot;/&gt;</div><div class="line">&lt;meta itemprop=&quot;description&quot; content=&quot;内容描述少于 200 个字符&quot;/&gt;</div><div class="line">&lt;meta itemprop=&quot;image&quot; content=&quot;https://example.com/image.jpg&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="OEmbed"><a href="#OEmbed" class="headerlink" title="OEmbed"></a>OEmbed</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;link rel=&quot;alternate&quot; type=&quot;application/json+oembed&quot;</div><div class="line">  href=&quot;http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;amp;format=json&quot;</div><div class="line">  title=&quot;oEmbed Profile: JSON&quot;/&gt;</div><div class="line">&lt;link rel=&quot;alternate&quot; type=&quot;text/xml+oembed&quot;</div><div class="line">  href=&quot;http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;amp;format=xml&quot;</div><div class="line">  title=&quot;oEmbed Profile: XML&quot;/&gt;</div></pre></td></tr></table></figure>
-<h1 id="浏览器-平台"><a href="#浏览器-平台" class="headerlink" title="浏览器 / 平台"></a>浏览器 / 平台</h1><h2 id="Apple-iOS"><a href="#Apple-iOS" class="headerlink" title="Apple iOS"></a>Apple iOS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;!-- 智能应用 Banner --&gt;</div><div class="line">&lt;meta name=&quot;apple-itunes-app&quot; content=&quot;app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 禁用自动检测和格式化可能的电话号码 --&gt;</div><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 添加到主屏幕 --&gt;</div><div class="line">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;</div><div class="line">&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;/&gt;</div><div class="line">&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;应用标题&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 触摸图标 --&gt;</div><div class="line">&lt;!-- 在大多数情况下，在 `&lt;head&gt;` 中，一个 180×180px 触摸图标就已经足够了 --&gt;</div><div class="line">&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;/path/to/apple-touch-icon.png&quot;/&gt;</div><div class="line">&lt;!-- 注意：iOS 7 上的 Safari 不会对图标产生效果。 --&gt;</div><div class="line">&lt;!-- 较早版本的 Safari 不会对以 `-precomposed.png` 后缀命名的图标文件产生效果。 --&gt;</div><div class="line"> </div><div class="line">&lt;!-- 启动画面（已无效） --&gt;</div><div class="line">&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;path/to/startup.png&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- iOS 应用深层链接 --&gt;</div><div class="line">&lt;meta name=&quot;apple-itunes-app&quot; content=&quot;app-id=APP-ID, app-argument=http/url-sample.com&quot;/&gt;</div><div class="line">&lt;link rel=&quot;alternate&quot; href=&quot;ios-app://APP-ID/http/url-sample.com&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="Apple-Safari"><a href="#Apple-Safari" class="headerlink" title="Apple Safari"></a>Apple Safari</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;!-- 固定网站 --&gt;</div><div class="line">&lt;link rel=&quot;mask-icon&quot; href=&quot;path/to/icon.svg&quot; color=&quot;red&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="Google-Android"><a href="#Google-Android" class="headerlink" title="Google Android"></a>Google Android</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;meta name=&quot;theme-color&quot; content=&quot;#E64545&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 添加到主屏幕 --&gt;</div><div class="line">&lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;/&gt;</div><div class="line">&lt;!-- 更多信息：https://developer.chrome.com/multidevice/android/installtohomescreen --&gt;</div></pre></td></tr></table></figure>
-<h2 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">  &lt;link rel=&quot;chrome-webstore-item&quot; href=&quot;https://chrome.google.com/webstore/detail/APP_ID&quot;/&gt;</div><div class="line">   </div><div class="line">  &lt;!-- 禁用翻译提示 --&gt;</div><div class="line">  &lt;meta name=&quot;google&quot; content=&quot;notranslate&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="Microsoft-Internet-Explorer"><a href="#Microsoft-Internet-Explorer" class="headerlink" title="Microsoft Internet Explorer"></a>Microsoft Internet Explorer</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;/&gt;</div><div class="line">&lt;meta name=&quot;skype_toolbar&quot; content=&quot;skype_toolbar_parser_compatible&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- IE10: 禁用链接点击高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) --&gt;</div><div class="line">&lt;meta name=&quot;msapplication-tap-highlight&quot; content=&quot;no&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;!-- 固定网站 (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) --&gt;</div><div class="line">&lt;meta name=&quot;application-name&quot; content=&quot;Sample Title&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-tooltip&quot; content=&quot;A description of what this site does.&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-starturl&quot; content=&quot;http://example.com/index.html?pinned=true&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#FF3300&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-window&quot; content=&quot;width=800;height=600&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-task&quot; content=&quot;name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-task&quot; content=&quot;name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-badge&quot; value=&quot;frequency=NUMBER_IN_MINUTES;polling-uri=http://example.com/path/to/file.xml&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#FF3300&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;path/to/tileimage.jpg&quot;/&gt;</div><div class="line"> </div><div class="line">&lt;meta name=&quot;msapplication-config&quot; content=&quot;http://example.com/browserconfig.xml&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-notification&quot; content=&quot;frequency=60;polling-uri=http://example.com/livetile;polling-uri2=http://example.com/livetile2&quot;/&gt;</div><div class="line">&lt;meta name=&quot;msapplication-task-separator&quot; content=&quot;1&quot;/&gt;</div></pre></td></tr></table></figure>
-<h1 id="国内的浏览器"><a href="#国内的浏览器" class="headerlink" title="国内的浏览器"></a>国内的浏览器</h1><h2 id="360-浏览器"><a href="#360-浏览器" class="headerlink" title="360 浏览器"></a>360 浏览器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">        &lt;!-- 选择渲染引擎 --&gt;</div><div class="line">        &lt;meta name=&quot;renderer&quot; content=&quot;webkit|ie-comp|ie-stand&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="QQ-移动浏览器"><a href="#QQ-移动浏览器" class="headerlink" title="QQ 移动浏览器"></a>QQ 移动浏览器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JavaScript 代码:</div><div class="line">&lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name=&quot;x5-orientation&quot; content=&quot;landscape/portrait&quot;/&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name=&quot;x5-fullscreen&quot; content=&quot;true&quot;/&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏等）--&gt;</div><div class="line">&lt;meta name=&quot;x5-page-mode&quot; content=&quot;app&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="UC-移动浏览器"><a href="#UC-移动浏览器" class="headerlink" title="UC 移动浏览器"></a>UC 移动浏览器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name=&quot;screen-orientation&quot; content=&quot;landscape/portrait&quot;/&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name=&quot;full-screen&quot; content=&quot;yes&quot;/&gt;</div><div class="line">&lt;!-- 即使在“文本模式”下，UC 浏览器也会显示图片 --&gt;</div><div class="line">&lt;meta name=&quot;imagemode&quot; content=&quot;force&quot;/&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏、禁止手势等） --&gt;</div><div class="line">&lt;meta name=&quot;browsermode&quot; content=&quot;application&quot;/&gt;</div><div class="line">&lt;!-- 在此页面禁用 UC 浏览器的“夜间模式” --&gt;</div><div class="line">&lt;meta name=&quot;nightmode&quot; content=&quot;disable&quot;/&gt;</div><div class="line">&lt;!-- 简化页面，减少数据传输 --&gt;</div><div class="line">&lt;meta name=&quot;layoutmode&quot; content=&quot;fitscreen&quot;/&gt;</div><div class="line">&lt;!-- 禁用的 UC 浏览器的功能，“当此页面中有较多文本时缩放字体” --&gt;</div><div class="line">&lt;meta name=&quot;wap-font-scale&quot; content=&quot;no&quot;/&gt;</div></pre></td></tr></table></figure>
-<h2 id="UC-浏览器文档"><a href="#UC-浏览器文档" class="headerlink" title="UC 浏览器文档"></a>UC 浏览器文档</h2><h3 id="应用链接"><a href="#应用链接" class="headerlink" title="应用链接"></a>应用链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;!-- iOS --&gt;</div><div class="line">&lt;meta property=&quot;al:ios:url&quot; content=&quot;applinks://docs&quot;/&gt;</div><div class="line">&lt;meta property=&quot;al:ios:app_store_id&quot; content=&quot;12345&quot;/&gt;</div><div class="line">&lt;meta property=&quot;al:ios:app_name&quot; content=&quot;App Links&quot;/&gt;</div><div class="line">&lt;!-- Android --&gt;</div><div class="line">&lt;meta property=&quot;al:android:url&quot; content=&quot;applinks://docs&quot;/&gt;</div><div class="line">&lt;meta property=&quot;al:android:app_name&quot; content=&quot;App Links&quot;/&gt;</div><div class="line">&lt;meta property=&quot;al:android:package&quot; content=&quot;org.applinks&quot;/&gt;</div><div class="line">&lt;!-- Web 回退 --&gt;</div><div class="line">&lt;meta property=&quot;al:web:url&quot; content=&quot;http://applinks.org/documentation&quot;/&gt;</div><div class="line">&lt;!-- 更多信息：http://applinks.org/documentation/ --&gt;</div></pre></td></tr></table></figure>
-<h2 id="应用链接文档"><a href="#应用链接文档" class="headerlink" title="应用链接文档"></a>应用链接文档</h2><p>注意</p>
-<p>性能</p>
-<p>当启用 GZIP 时，移动 href 属性到该元素的开头以提高压缩，因为 href 属性被用于 a、base 和 link 标签。</p>
-<p>示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HTML 代码:</div><div class="line">&lt;link href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:400,700&quot; rel=&quot;stylesheet&quot;/&gt;</div></pre></td></tr></table></figure>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NTEwMTAwNg==&amp;mid=2650215305&amp;idx=1&amp;sn=c05c83f51813919c6ae7db50c9d89387&amp;chksm=befe13a889899abe428cc6564fc9857e4403f7bd6245c7f9cf892fc69c10b8608a08d6c8a70f&amp;mpshare=1&amp;scene=23&amp;srcid=092701H4FKxu5n1VcnK5M5jJ#rd" target="_blank" rel="external">一些规范</a></li>
+</ul>
+
       
 
       
@@ -1067,7 +452,459 @@ animation: load 2s infinite;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/05/head/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/1.1.3 前端小团队建设/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1.1.4 提问的智慧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/1.1.4 提问的智慧/">提问的智慧</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/1.1.4 提问的智慧/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md" target="_blank" rel="external">issue: 提问的智慧</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/1.1.4 提问的智慧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-3.0 css 代码规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/3.0 css 代码规范/">css代码规范</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.0 css 代码规范/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阮一峰新增 css 教程：<a href="https://github.com/wangdoc/css-tutorial/tree/master/docs" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/tree/master/docs</a></p>
+<ul>
+<li>4 个空格</li>
+<li>在每个声明的左括号前增加一个空格，声明块的右括号应该另起一行：  .selector {<pre><code>}
+</code></pre></li>
+<li>所有的十六进制值都应该使用小写字母，例如 #fff</li>
+<li>尽可能使用短的十六进制数值，例如使用 #fff 替代 #ffffff。</li>
+<li>为选择器中得属性取值添加引号，例如 input[type=”text”]</li>
+<li><p>不要为 0 指明单位，比如使用 margin: 0; 而不是 margin: 0px;</p>
+</li>
+<li><p>相关的属性声明应该以下面的顺序分组处理</p>
+<ul>
+<li>Positioning</li>
+<li>Box model 盒模型</li>
+<li>Typographic 排版</li>
+<li>Visual 外观</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">/* Positioning */</div><div class="line">position: absolute;</div><div class="line">top: 0;</div><div class="line">right: 0;</div><div class="line">bottom: 0;</div><div class="line">left: 0;</div><div class="line">z-index: 100;</div><div class="line"></div><div class="line">/* Box-model */</div><div class="line">display: block;</div><div class="line">float: right;</div><div class="line">width: 100px;</div><div class="line">height: 100px;</div><div class="line"></div><div class="line">/* Typography */</div><div class="line">font: normal 13px &quot;Helvetica Neue&quot;, sans-serif;</div><div class="line">line-height: 1.5;</div><div class="line">color: #333;</div><div class="line">text-align: center;</div><div class="line"></div><div class="line">/* Visual */</div><div class="line">background-color: #f5f5f5;</div><div class="line">border: 1px solid #e5e5e5;</div><div class="line">border-radius: 3px;</div><div class="line"></div><div class="line">/* Misc */</div><div class="line">opacity: 1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>媒体查询位置 靠近他们相关的规则</p>
+</li>
+<li><p>不要使用 @import : 与 <link> 相比, @import 更慢，需要额外的页面请求，并且可能引发其他的意想不到的问题。</p>
+</li>
+<li><p>前缀属性: 当使用厂商前缀属性时，通过缩进使取值垂直对齐以便多行编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.selector &#123;</div><div class="line">  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);</div><div class="line">          box-shadow: 0 1px 2px rgba(0,0,0,.15);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在一个声明块中只包含一条声明的情况下，为了易读性和快速编辑可以考虑移除其中的换行。所有包含多条声明的声明块应该分为多行。</p>
+</li>
+<li><p>坚持限制属性取值简写的使用，属性简写需要你必须显式设置所有取值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/* Good example */</div><div class="line">.element &#123;</div><div class="line">  margin-bottom: 10px;</div><div class="line">  background-color: red;</div><div class="line">  background-image: url(&quot;image.jpg&quot;);</div><div class="line">  border-top-left-radius: 3px;</div><div class="line">  border-top-right-radius: 3px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Class 命名为全小写，可以使用短划线（不要使用下划线和 camelCase 命名）</p>
+</li>
+<li>Class 的命名应该尽量短，也要尽量明确,最多三个：.top-title-p</li>
+<li>以组件为单位组织代码</li>
+<li><p>使用一致的空白来分割代码块</p>
+</li>
+<li><p>编辑器配置<br>-使用 4 个空格的 soft-tabs</p>
+<ul>
+<li>在保存时删除尾部的空白字符</li>
+<li>设置文件编码为 UTF-8</li>
+<li>在文件结尾添加一个空白行</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/3.0 css 代码规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-3.0.1 BEM 规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/3.0.1 BEM 规范/">BEM 规范</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.0.1 BEM 规范/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="external">https://en.bem.info/methodology/quick-start/</a></li>
+<li><a href="http://www.w3cplus.com/blog/tags/325.html" target="_blank" rel="external">http://www.w3cplus.com/blog/tags/325.html</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/3.0.1 BEM 规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2.1.2 把一个简单的div元素的属性都打印出来" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/2.1.2 把一个简单的div元素的属性都打印出来/">把一个简单的div元素的属性都打印出来</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/2.1.2 把一个简单的div元素的属性都打印出来/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var docu = document.createElement(&apos;div&apos;)</div><div class="line">var str = &apos;&apos;;</div><div class="line">for(var key in docu)&#123;</div><div class="line">	str += key+&apos;&apos;;</div><div class="line">&#125;</div><div class="line">&quot;aligntitlelangtranslatedirdatasethiddentabIndexaccessKeydraggablespellcheckautocapitalizecontentEditableisContentEditableinputModeoffsetParentoffsetTopoffsetLeftoffsetWidthoffsetHeightstyleinnerTextouterTextonabortonbluroncanceloncanplayoncanplaythroughonchangeonclickoncloseoncontextmenuoncuechangeondblclickondragondragendondragenterondragleaveondragoverondragstartondropondurationchangeonemptiedonendedonerroronfocusoninputoninvalidonkeydownonkeypressonkeyuponloadonloadeddataonloadedmetadataonloadstartonmousedownonmouseenteronmouseleaveonmousemoveonmouseoutonmouseoveronmouseuponmousewheelonpauseonplayonplayingonprogressonratechangeonresetonresizeonscrollonseekedonseekingonselectonstalledonsubmitonsuspendontimeupdateontoggleonvolumechangeonwaitingonwheelonauxclickongotpointercaptureonlostpointercaptureonpointerdownonpointermoveonpointeruponpointercancelonpointeroveronpointeroutonpointerenteronpointerleavenonceclickfocusblurnamespaceURIprefixlocalNametagNameidclassNameclassListslotattributesshadowRootassignedSlotinnerHTMLouterHTMLscrollTopscrollLeftscrollWidthscrollHeightclientTopclientLeftclientWidthclientHeightonbeforecopyonbeforecutonbeforepasteoncopyoncutonpasteonsearchonselectstartpreviousElementSiblingnextElementSiblingchildrenfirstElementChildlastElementChildchildElementCountonwebkitfullscreenchangeonwebkitfullscreenerrorsetPointerCapturereleasePointerCapturehasPointerCapturehasAttributesgetAttributeNamesgetAttributegetAttributeNSsetAttributesetAttributeNSremoveAttributeremoveAttributeNShasAttributehasAttributeNSgetAttributeNodegetAttributeNodeNSsetAttributeNodesetAttributeNodeNSremoveAttributeNodeclosestmatcheswebkitMatchesSelectorattachShadowgetElementsByTagNamegetElementsByTagNameNSgetElementsByClassNameinsertAdjacentElementinsertAdjacentTextinsertAdjacentHTMLrequestPointerLockgetClientRectsgetBoundingClientRectscrollIntoViewscrollIntoViewIfNeededanimatebeforeafterreplaceWithremoveprependappendquerySelectorquerySelectorAllwebkitRequestFullScreenwebkitRequestFullscreenattributeStyleMapscrollscrollToscrollBycreateShadowRootgetDestinationInsertionPointscomputedStyleMapELEMENT_NODEATTRIBUTE_NODETEXT_NODECDATA_SECTION_NODEENTITY_REFERENCE_NODEENTITY_NODEPROCESSING_INSTRUCTION_NODECOMMENT_NODEDOCUMENT_NODEDOCUMENT_TYPE_NODEDOCUMENT_FRAGMENT_NODENOTATION_NODEDOCUMENT_POSITION_DISCONNECTEDDOCUMENT_POSITION_PRECEDINGDOCUMENT_POSITION_FOLLOWINGDOCUMENT_POSITION_CONTAINSDOCUMENT_POSITION_CONTAINED_BYDOCUMENT_POSITION_IMPLEMENTATION_SPECIFICnodeTypenodeNamebaseURIisConnectedownerDocumentparentNodeparentElementchildNodesfirstChildlastChildpreviousSiblingnextSiblingnodeValuetextContenthasChildNodesgetRootNodenormalizecloneNodeisEqualNodeisSameNodecompareDocumentPositioncontainslookupPrefixlookupNamespaceURIisDefaultNamespaceinsertBeforeappendChildreplaceChildremoveChildaddEventListenerremoveEventListenerdispatchEvent&quot;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">https://github.com/livoras/blog/issues/13</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/2.1.2 把一个简单的div元素的属性都打印出来/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-3.0.2 SMACSS 规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/3.0.2 SMACSS 规范/">SMACSS 规范</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.0.2 SMACSS 规范/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>基本(base)： 简单的选择器的基本样式，如 <code>clearfix</code> , <code>reset</code> 重置默认样式</li>
+<li>布局（Layout）: 定义顶部栏、侧边栏、正文、页脚等主要部分</li>
+<li>模块(Module)： 一群元素组成的一个模块，比如说 <code>header</code> 和  <code>sidebar</code> 等</li>
+<li>状态（State）: 元素的不同状态。如 <code>hover</code> , <code>focus</code> ,隐藏、按住等</li>
+<li>主题(Theme)：更多的样式,颜色、形状、边框、阴影还有其他等等</li>
+<li>参考: <a href="https://smacss.com/book/categorizing" target="_blank" rel="external">https://smacss.com/book/categorizing</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://smacss.com/book/categorizing" target="_blank" rel="external">https://smacss.com/book/categorizing</a></li>
+<li></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/3.0.2 SMACSS 规范/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-3.1.1 两列布局左边定宽，右边自适应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/3.1.1 两列布局左边定宽，右边自适应/">两列布局左边定宽，右边自适应。</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.1.1 两列布局左边定宽，右边自适应/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>1 采用position：absollute;并设置margin-left的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#left&#123;</div><div class="line">    position:absolute;</div><div class="line">    width:300px;</div><div class="line">    top:0px;</div><div class="line">    left:0px;</div><div class="line">    background:#F00;</div><div class="line">&#125;</div><div class="line">#right&#123;</div><div class="line">    background:#0FC;</div><div class="line">    margin-left:300px;</div><div class="line">&#125;</div><div class="line">&lt;div id=&quot;left&quot;&gt;左边定宽&lt;/div&gt; &lt;div id=&quot;right&quot;&gt;右边自适应&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>2 采用float;并设置overflow:auto;(隐藏溢出的内容)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#left &#123;</div><div class="line">    float: left;</div><div class="line">    width: 300px;</div><div class="line">    background-color: blue;</div><div class="line">&#125;</div><div class="line">#right &#123;</div><div class="line">    overflow: auto;</div><div class="line">    background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div id=&quot;left&quot;&gt;左边自适应&lt;/div&gt;</div><div class="line">&lt;div id=&quot;right&quot;&gt;右边定宽&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>3 左边和右边都用绝对定位</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">div.left&#123; position: absolute; left: 0;top: 0; width: 200px;height: 400px;background: red; word-break: break-all;&#125;</div><div class="line">div.right&#123;position: absolute; left: 200px;top: 0; height: 400px;  background: blue; word-break: break-all;&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/3.1.1 两列布局左边定宽，右边自适应/">展开全文 >></a>
         </p>
       
 
@@ -1099,7 +936,7 @@ animation: load 2s infinite;
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1111,7 +948,7 @@ animation: load 2s infinite;
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Little Bottle
+    		&copy; 2018 Little Bottle
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

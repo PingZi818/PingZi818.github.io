@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>setTimeout、setInterval被遗忘的第三个参数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="setTimeout、setInterval被遗忘的第三个参数第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;ap">
+  <meta name="description" content="第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;apos;)  )  const r2 = await new P">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="setTimeout、setInterval被遗忘的第三个参数">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="setTimeout、setInterval被遗忘的第三个参数第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;ap">
+<meta property="og:description" content="第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;apos;)  )  const r2 = await new P">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:29:14.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="setTimeout、setInterval被遗忘的第三个参数第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;ap">
+<meta name="twitter:title" content="setTimeout、setInterval被遗忘的第三个参数">
+<meta name="twitter:description" content="第三个以后的参数是作为第一个func()的参数传进去。 ##  demo1234567891011async function example() &amp;#123;  const r1 = await new Promise(resolve =&amp;gt;    setTimeout(resolve, 500, &amp;apos;slowest&amp;apos;)  )  const r2 = await new P">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.5.6 setTimeout、setInterval被遗忘的第三个参数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      setTimeout、setInterval被遗忘的第三个参数
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="setTimeout、setInterval被遗忘的第三个参数"><a href="#setTimeout、setInterval被遗忘的第三个参数" class="headerlink" title="setTimeout、setInterval被遗忘的第三个参数"></a>setTimeout、setInterval被遗忘的第三个参数</h1><p>第三个以后的参数是作为第一个func()的参数传进去。</p>
+        <p>第三个以后的参数是作为第一个func()的参数传进去。</p>
 <p>## </p>
 <h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">async function example() &#123;</div><div class="line">  const r1 = await new Promise(resolve =&gt;</div><div class="line">    setTimeout(resolve, 500, &apos;slowest&apos;)</div><div class="line">  )</div><div class="line">  const r2 = await new Promise(resolve =&gt;</div><div class="line">    setTimeout(resolve, 200, &apos;slow&apos;)</div><div class="line">  )</div><div class="line">  return [r1, r2]</div><div class="line">&#125;</div><div class="line"></div><div class="line">example().then(result =&gt; console.log(result))</div></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -273,18 +288,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.5.7 暂时性死区/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.5.4 时间戳日期转换/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          时间戳日期转换
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.5.5 常用JS方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/1 移动端 适配/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端 适配</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -313,9 +328,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="setTimeout、setInterval被遗忘的第三个参数" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.5.6 setTimeout、setInterval被遗忘的第三个参数" data-title="" data-url="http://yoursite.com/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/"></div>
+	<div class="ds-thread" data-thread-key="4.5.6 setTimeout、setInterval被遗忘的第三个参数" data-title="setTimeout、setInterval被遗忘的第三个参数" data-url="http://yoursite.com/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

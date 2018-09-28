@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>JavaScript 内存机制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript 内存机制#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈">
+  <meta name="description" content="#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈 var b = &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="JavaScript 内存机制">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.5.1 JavaScript 内存机制/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JavaScript 内存机制#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈">
+<meta property="og:description" content="#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈 var b = &amp;#123;">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="JavaScript 内存机制#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈">
+<meta name="twitter:title" content="JavaScript 内存机制">
+<meta name="twitter:description" content="#内存模型JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。 为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。12345678var a1 = 0; // 栈 var a2 = &amp;apos;this is string&amp;apos;; // 栈var a3 = null; // 栈 var b = &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.5.1 JavaScript 内存机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 内存机制
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.1 JavaScript 内存机制/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JavaScript-内存机制"><a href="#JavaScript-内存机制" class="headerlink" title="JavaScript 内存机制"></a>JavaScript 内存机制</h1><h3 id="内存模型"><a href="#内存模型" class="headerlink" title="#内存模型"></a>#内存模型</h3><p>JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。</p>
+        <h3 id="内存模型"><a href="#内存模型" class="headerlink" title="#内存模型"></a>#内存模型</h3><p>JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。</p>
 <p>为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a1 = 0; // 栈 </div><div class="line">var a2 = &apos;this is string&apos;; // 栈</div><div class="line">var a3 = null; // 栈 </div><div class="line">var b = &#123; m: 20 &#125;; // 变量b存在于栈中，&#123;m: 20&#125; 作为对象存在于堆内存中</div><div class="line">var c = [1, 2, 3]; // 变量c存在于栈中，[1, 2, 3] 作为对象存在于堆内存中</div><div class="line"></div><div class="line">作者：梁音</div><div class="line">链接：https://juejin.im/post/5b10ba336fb9a01e66164346</div></pre></td></tr></table></figure></p>
 <h3 id="内存的生命周期"><a href="#内存的生命周期" class="headerlink" title="#内存的生命周期"></a>#内存的生命周期</h3><p>JS环境中分配的内存一般有如下生命周期：</p>
 <ul>
@@ -311,14 +326,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          函数式编程
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.5.2 forEach和map和for方法的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">forEach和map和for方法的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -347,9 +362,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="JavaScript 内存机制" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.5.1 JavaScript 内存机制" data-title="" data-url="http://yoursite.com/2018/09/27/4.5.1 JavaScript 内存机制/"></div>
+	<div class="ds-thread" data-thread-key="4.5.1 JavaScript 内存机制" data-title="JavaScript 内存机制" data-url="http://yoursite.com/2018/09/27/4.5.1 JavaScript 内存机制/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

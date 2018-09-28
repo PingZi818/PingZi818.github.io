@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>双向数据绑定原理 | Hexo</title>
+  <title>CSS变量 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+  <meta name="description" content="MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables Can I USE: https://caniuse.com/#search=CSS%20Variables  使用自定义属性来设置变量名，并使用特定的 var() 来访问。（比如  color: var(–main-color);）  基本用法 E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双向数据绑定原理">
-<meta property="og:url" content="http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/index.html">
+<meta property="og:title" content="CSS变量">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/3.2.3. CSS 变量/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+<meta property="og:description" content="MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables Can I USE: https://caniuse.com/#search=CSS%20Variables  使用自定义属性来设置变量名，并使用特定的 var() 来访问。（比如  color: var(–main-color);）  基本用法 E">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T07:42:38.384Z">
+<meta property="og:updated_time" content="2018-09-27T08:20:17.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="双向数据绑定原理">
-<meta name="twitter:description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+<meta name="twitter:title" content="CSS变量">
+<meta name="twitter:description" content="MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables Can I USE: https://caniuse.com/#search=CSS%20Variables  使用自定义属性来设置变量名，并使用特定的 var() 来访问。（比如  color: var(–main-color);）  基本用法 E">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,20 +158,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-6.0 双向数据绑定原理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-3.2.3. CSS 变量" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      双向数据绑定原理
+      CSS变量
     </h1>
   
 
         
-        <a href="/2018/09/27/6.0 双向数据绑定原理/" class="archive-article-date">
-  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+        <a href="/2018/09/27/3.2.3. CSS 变量/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
@@ -179,15 +179,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>脏值检测<br>AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，<br>可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。<br>如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。  </li>
+<li>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables</a></li>
+<li>Can I USE: <a href="https://caniuse.com/#search=CSS%20Variables" target="_blank" rel="external">https://caniuse.com/#search=CSS%20Variables</a></li>
 </ul>
+<p>使用自定义属性来设置变量名，并使用特定的 var() 来访问。（比如  color: var(–main-color);）</p>
 <ul>
-<li><p>数据劫持<br>VueJS 则使用 ES5 提供的 Object.defineProperty() 方法，监控对数据的操作，从而可以自动触发数据同步。<br>并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的视图，而不是对所有的数据都执行一次检测。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;;  </div><div class="line">            Object.defineProperty(obj,&apos;a&apos;,&#123;  </div><div class="line">                set:function(newVal)&#123;  </div><div class="line">                    document.getElementById(&apos;a&apos;).value = newVal;  </div><div class="line">                    document.getElementById(&apos;b&apos;).innerHTML = newVal;  </div><div class="line">                &#125;  </div><div class="line">            &#125;);  </div><div class="line">              </div><div class="line">            document.addEventListener(&apos;keyup&apos;,function(e)&#123;  </div><div class="line">                obj.a = e.target.value;  </div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>观察机制<br>博主之前有一篇转载翻译的文章， Object.observe()带来的数据绑定变革 ，说的就是使用ECMAScript7中的 Object.observe 方法对对象<br>（或者其属性）进行监控观察，一旦其发生变化时，将会执行相应的handler。<br>这是目前监控属性数据变更最完美的一种方法，语言（浏览器）原生支持，没有什么比这个更好了。唯一的遗憾就是目前支持广度还不行，有待全面推广。   </p>
+<li>基本用法 Edit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">声明一个局部变量：</div><div class="line"></div><div class="line">element &#123;</div><div class="line">  --main-bg-color: brown;</div><div class="line">&#125; </div><div class="line">使用一个局部变量：</div><div class="line"></div><div class="line">element &#123;</div><div class="line">  background-color: var(--main-bg-color);</div><div class="line">&#125;</div><div class="line"></div><div class="line">------------------------------------------------------</div><div class="line"></div><div class="line">声明一个 全局 CSS 变量：</div><div class="line"></div><div class="line">:root &#123;</div><div class="line">  --global-color: #666;</div><div class="line">  --pane-padding: 5px 42px;</div><div class="line">&#125;</div><div class="line">使用一个 全局 CSS 变量：</div><div class="line"></div><div class="line">.demo&#123;</div><div class="line">   color: var(--global-color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>1、CSS颜色属性的设置和表示方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[css] view plain copy</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">    #div&#123;  </div><div class="line">        color: red;/*关键字表示法*/  </div><div class="line">        color: #f00;/*短-16进制表示法*/  </div><div class="line">        color: #ff0000;/*长-16进制表示法*/  </div><div class="line">        color: rgb(255, 0, 0);/*rgb基本表示法*/  </div><div class="line">        color: rgb(100%, 0, 0);/*rgb百分比表示法*/  </div><div class="line">        color: hsl(240, 0%, 50%);/*色彩三属性表示法表示法，下文具体解释hsl含义*/  </div><div class="line">        color: color(#29B4F0 a(50%) contrast(%10) h(10));/*颜色函数表示法，请看下文具体解释*/  </div><div class="line">    &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>2、CSS自定义变量<br>    声明语法：–*，如–color-basis: red;</p>
+<pre><code>调用语法：var(--color-basis)，如color: var(--color-basis);
+
+位置：可以放在根选择器中，也可以放在常规选择器中
+</code></pre><p>引申：CSS3根选择器，:root选择器匹配文档根元素，在HTML中，根元素始终是html元素，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line"></div><div class="line">--color-basis: red;//定义一个CSS变量</div><div class="line"></div><div class="line">background: #f00;//设置html元素背景色</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、CSS颜色函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CSS Color Module Level 4的颜色配置函数有：color()、gray()、hsl()、hwb()等，这些函数浏览器暂时不支持，实际开发需要引入第三方插件（postcss/cssnext）来做预处理。</div><div class="line"></div><div class="line">color-mod()函数详解：</div><div class="line"></div><div class="line">color-mod() = color(#29B4F0 a() s() h() l() tint() shade() w() b() contrast());</div><div class="line"></div><div class="line">调用语法：</div><div class="line"></div><div class="line">#div&#123;background-color:color(#29B4F0 a() s() h() l() tint() shade() w() b() contrast() blend());&#125;</div></pre></td></tr></table></figure></p>
+<p>第一个参数基准色值，必须设定；</p>
+<p>第二个参数及后面的参数为可选参数，这些参数的详细含义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">a-alpha，透明度，值为百分比；</div><div class="line"></div><div class="line">b-blackness，黑度，值为百分比；</div><div class="line"></div><div class="line">blend，混合度，值为百分比;</div><div class="line"></div><div class="line">contrast，对比度，值为百分比；    </div><div class="line"></div><div class="line">h-hue，色相-色彩的第一属性，色彩的相貌区别；0-360deg，0和360是红色，接近120的是绿色，240是蓝色；</div><div class="line"></div><div class="line">l-lightness，明度，亮度-色彩的第二属性，表明色彩的明暗性质； 0%是最暗，50%均值，100%最亮。</div><div class="line"></div><div class="line">s-saturation，纯度，饱和度-色彩的第三属性，表明色彩的鲜灰程度；0%是灰度，100%饱和度最高 ;</div><div class="line"></div><div class="line">shade，暗度，值为百分比；</div><div class="line"></div><div class="line">tint，色调，值为百分比；</div><div class="line"></div><div class="line">w-whiteness，白度，值为百分比；</div></pre></td></tr></table></figure></p>
+<p>4、综合实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[css] view plain copy</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">    :root&#123;  </div><div class="line">        --color-basis: red;  </div><div class="line">        --mytheme-p-color: var(--color-basis);  </div><div class="line">    &#125;  </div><div class="line">    p&#123;  </div><div class="line">        color:color(var(--mytheme-p-color) a(50%) hue(+30deg));//p元素dom数组集合中，每个元素的hue递增30deg，等同于hue += 30  </div><div class="line">    &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>5、扩展</p>
+<pre><code>CSS函数：
+</code></pre><p>attr();返回选择元素的属性值</p>
+<p>calc();计算CSS属性值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">linear-gradient();创建一个线性渐变的图像  </div><div class="line">radial-gradient();用径向渐变创建图像</div><div class="line">repeating-linear-gradient();用重复的线性渐变创建图像</div><div class="line">repeating-radial-gradient();类似 radial-gradient()，用重复的径向渐变创建图像。</div></pre></td></tr></table></figure></p>
+<p>6、当前文字颜色属性</p>
+<p>如：border: 1px solid currentColor;//currentColor是CSS3的一个变量</p>
 
       
 
@@ -277,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/09/27/3.2.3. CSS 变量/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +308,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/5.1.7 leetCode 算法题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.5.9 统计字符串中特定字符包含的个数/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          leetCode 算法题
+          统计字符串中特定字符包含的个数
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/html5与css3权威指南学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">html5与css3权威指南学习笔记</div>
+    <a href="/2018/09/27/5.1.0 2万5千字大厂面经/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2万5千字大厂面经</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -331,9 +348,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="双向数据绑定原理" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="CSS变量" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="6.0 双向数据绑定原理" data-title="双向数据绑定原理" data-url="http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/"></div>
+	<div class="ds-thread" data-thread-key="3.2.3. CSS 变量" data-title="CSS变量" data-url="http://yoursite.com/2018/09/27/3.2.3. CSS 变量/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -381,8 +398,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/", 
-    sourceId: "6.0 双向数据绑定原理",
+    url: "http://yoursite.com/2018/09/27/3.2.3. CSS 变量/", 
+    sourceId: "3.2.3. CSS 变量",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -391,7 +408,7 @@
   
 
   
-  <div id="SOHUCS" sid="6.0 双向数据绑定原理" ></div> 
+  <div id="SOHUCS" sid="3.2.3. CSS 变量" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 

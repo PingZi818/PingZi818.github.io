@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>currentColor | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="currentColor阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-">
+  <meta name="description" content="阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-shadow: 0 0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="currentColor">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/3.1.7 css currentColor/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="currentColor阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-">
+<meta property="og:description" content="阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-shadow: 0 0">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:20:17.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="currentColor阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-">
+<meta name="twitter:title" content="currentColor">
+<meta name="twitter:description" content="阮一峰： https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md currentColorcurrentColor是一个属性值，代表当前元素的color属性的值。 12345.box &amp;#123;  color: red;  border: 1px solid currentColor;  box-shadow: 0 0">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,10 +161,25 @@
             <article id="post-3.1.7 css currentColor" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      currentColor
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.1.7 css currentColor/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="currentColor"><a href="#currentColor" class="headerlink" title="currentColor"></a>currentColor</h1><p>阮一峰： <a href="https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md</a></p>
-<h2 id="currentColor-1"><a href="#currentColor-1" class="headerlink" title="currentColor"></a>currentColor</h2><p><code>currentColor</code>是一个属性值，代表当前元素的<code>color</code>属性的值。</p>
+        <p>阮一峰： <a href="https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md</a></p>
+<h2 id="currentColor"><a href="#currentColor" class="headerlink" title="currentColor"></a>currentColor</h2><p><code>currentColor</code>是一个属性值，代表当前元素的<code>color</code>属性的值。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid currentColor;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> <span class="number">2px</span> currentColor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面代码，<code>border</code>和<code>box-shadow</code>的颜色都与<code>color</code>保持一致。这种写法的好处是，如果要修改<code>color</code>，只要修改一处就可以了，不用修改三个地方。</p>
 <p><code>currentColor</code>的另一个用处，是让衍生类都继承基类的颜色。</p>
@@ -275,18 +290,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/3.1.6 css clip-path 画聊天气泡/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/3.1.2 H5 页面在 ios 端滑动不流畅的问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          H5页面在 ios 端滑动不流畅的问题
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/3.1.5 CSS中margin边界叠加问题及解决方案/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/3.1.8 css flexbox/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flexbox</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,9 +330,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="currentColor" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="3.1.7 css currentColor" data-title="" data-url="http://yoursite.com/2018/09/27/3.1.7 css currentColor/"></div>
+	<div class="ds-thread" data-thread-key="3.1.7 css currentColor" data-title="currentColor" data-url="http://yoursite.com/2018/09/27/3.1.7 css currentColor/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>this | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="thisjs中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(th">
+  <meta name="description" content="js中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(this.n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="this">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.1.3. this 在不同环境中指向/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="thisjs中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(th">
+<meta property="og:description" content="js中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(this.n">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:20:18.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="thisjs中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(th">
+<meta name="twitter:title" content="this">
+<meta name="twitter:description" content="js中this在不同环境的指向this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象； 1.函数调用模式 当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）123456function a()&amp;#123;       var num= 233;       console.log(this.n">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.1.3. this 在不同环境中指向" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      this
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.1.3. this 在不同环境中指向/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><h2 id="js中this在不同环境的指向"><a href="#js中this在不同环境的指向" class="headerlink" title="js中this在不同环境的指向"></a>js中this在不同环境的指向</h2><p>this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，<br>实际上this的最终指向的是那个调用它的对象；</p>
+        <h2 id="js中this在不同环境的指向"><a href="#js中this在不同环境的指向" class="headerlink" title="js中this在不同环境的指向"></a>js中this在不同环境的指向</h2><p>this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，<br>实际上this的最终指向的是那个调用它的对象；</p>
 <p>1.函数调用模式</p>
 <p>当作函数调用，这时函数内的this指向全局对象（大对数情况下是window）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function a()&#123;    </div><div class="line">   var num= 233;    </div><div class="line">   console.log(this.num); //undefined    </div><div class="line">   console.log(this); //Window</div><div class="line">&#125;</div><div class="line">a();</div></pre></td></tr></table></figure></p>
 <p>按照我们上面说的this最终指向的是调用它的对象，<br>这里的函数a实际是被Window对象所点出来的，<br>相当于window.a();<br>a() 是 一个函数也可以说是方法 ，那方法肯定是由对象来调用的。<br>所以当执行 a(); 时 就有一个隐式对象调用了a() ，这个隐式对象就是 window;  </p>
@@ -297,18 +312,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.1.4. 事件委托/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.1.2.  call 和 apply /" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          调用一个对象的一个方法，以另一个对象替换当前对象
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.1.2.  call 和 apply /" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/1.1.0 统一代码风格---.editorconfig/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">.editorconfig</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -337,9 +352,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="this" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.1.3. this 在不同环境中指向" data-title="" data-url="http://yoursite.com/2018/09/27/4.1.3. this 在不同环境中指向/"></div>
+	<div class="ds-thread" data-thread-key="4.1.3. this 在不同环境中指向" data-title="this" data-url="http://yoursite.com/2018/09/27/4.1.3. this 在不同环境中指向/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

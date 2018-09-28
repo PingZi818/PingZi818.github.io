@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>前端数组对象排序算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端数组对象排序算法主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 12345678910111213141516171819202122232425262728293031323334">
+  <meta name="description" content="主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="前端数组对象排序算法">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.3.7 前端数组对象排序算法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前端数组对象排序算法主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 12345678910111213141516171819202122232425262728293031323334">
+<meta property="og:description" content="主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:36.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="前端数组对象排序算法主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 12345678910111213141516171819202122232425262728293031323334">
+<meta name="twitter:title" content="前端数组对象排序算法">
+<meta name="twitter:description" content="主要用 Arrays.sort(func);  //进行排序    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 123456789101112131415161718192021222324252627282930313233343536373839">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.3.7 前端数组对象排序算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端数组对象排序算法
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.3.7 前端数组对象排序算法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前端数组对象排序算法"><a href="#前端数组对象排序算法" class="headerlink" title="前端数组对象排序算法"></a>前端数组对象排序算法</h1><p>主要用 Arrays.sort(func);  //进行排序   </p>
+        <p>主要用 Arrays.sort(func);  //进行排序   </p>
 <p>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">// 根据字段排序</div><div class="line">var by = function(name)&#123; </div><div class="line">  return function(o, p)&#123; </div><div class="line">    var a, b; </div><div class="line">    if (typeof o === &quot;object&quot; &amp;&amp; typeof p === &quot;object&quot; &amp;&amp; o &amp;&amp; p) &#123; </div><div class="line">      a = o[name]; b = p[name]; </div><div class="line">      if (a === b) &#123; </div><div class="line">        return 0; </div><div class="line">      &#125; </div><div class="line">      if (typeof a === typeof b) &#123; </div><div class="line">        return a &lt; b ? -1 : 1; </div><div class="line">      &#125; </div><div class="line">      return typeof a &lt; typeof b ? -1 : 1; </div><div class="line">    &#125; else &#123; </div><div class="line">      throw ( &quot;error&quot;); </div><div class="line">    &#125; </div><div class="line">  &#125; </div><div class="line">&#125;</div><div class="line">var employees=[</div><div class="line">    &#123;name:&quot;George&quot;, age:32, retiredate:&quot;March 12, 2014&quot;&#125;,</div><div class="line">    &#123;name:&quot;Edward&quot;, age:17, retiredate:&quot;June 2, 2023&quot;&#125;,</div><div class="line">    &#123;name:&quot;Christine&quot;, age:58, retiredate:&quot;December 20, 2036&quot;&#125;,</div><div class="line">    &#123;name:&quot;Sarah&quot;, age:62, retiredate:&quot;April 30, 2020&quot;&#125;</div><div class="line">]</div><div class="line"></div><div class="line">employees.sort(by(&quot;age&quot;));</div><div class="line">console.log(employees);</div><div class="line"></div><div class="line">// 根据多个字段排序</div><div class="line">var by = function(name,minor)&#123;</div><div class="line">  return function(o,p)&#123;</div><div class="line">    var a,b;</div><div class="line">    if(o &amp;&amp; p &amp;&amp; typeof o === &apos;object&apos; &amp;&amp; typeof p ===&apos;object&apos;)&#123;</div><div class="line">      a = o[name];</div><div class="line">      b = p[name];</div><div class="line">      if(a === b)&#123;</div><div class="line">        return typeof minor === &apos;function&apos; ? minor(o,p):0;</div><div class="line">      &#125;</div><div class="line">      if(typeof a === typeof b)&#123;</div><div class="line">        return a &lt; b ? -1:1;</div><div class="line">      &#125;</div><div class="line">      return typeof a &lt; typeof b ? -1 : 1;</div><div class="line">    &#125;else&#123;</div><div class="line">      throw(&quot;error&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">employees.sort(by(&apos;age&apos;,by(&apos;name&apos;)));</div><div class="line">console.log(employees);</div></pre></td></tr></table></figure>
 
@@ -269,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.3.8 ios 需要点击2次才能跳转/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.3.2 多级菜单遍历判断子节点/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          demo
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.3.6 自执行函数中暴露方法调用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.3.5 JS中document对象和window对象的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS中document对象和window对象的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -309,9 +324,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="前端数组对象排序算法" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.3.7 前端数组对象排序算法" data-title="" data-url="http://yoursite.com/2018/09/27/4.3.7 前端数组对象排序算法/"></div>
+	<div class="ds-thread" data-thread-key="4.3.7 前端数组对象排序算法" data-title="前端数组对象排序算法" data-url="http://yoursite.com/2018/09/27/4.3.7 前端数组对象排序算法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

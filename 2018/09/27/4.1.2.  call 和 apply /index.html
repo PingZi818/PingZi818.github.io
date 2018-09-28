@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>调用一个对象的一个方法，以另一个对象替换当前对象 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="调用一个对象的一个方法，以另一个对象替换当前对象apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.a">
+  <meta name="description" content="apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.apply(add,[4,2]);alert(a1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="调用一个对象的一个方法，以另一个对象替换当前对象">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.1.2.  call 和 apply /index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="调用一个对象的一个方法，以另一个对象替换当前对象apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.a">
+<meta property="og:description" content="apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.apply(add,[4,2]);alert(a1">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:38.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="调用一个对象的一个方法，以另一个对象替换当前对象apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.a">
+<meta name="twitter:title" content="调用一个对象的一个方法，以另一个对象替换当前对象">
+<meta name="twitter:description" content="apply(func,数组参数)： 12345678910function add(a,b)&amp;#123;  return a+b;  &amp;#125;function sub(a,b)&amp;#123;  return a-b;  &amp;#125;var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法var a2 = sub.apply(add,[4,2]);alert(a1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.1.2.  call 和 apply " class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      调用一个对象的一个方法，以另一个对象替换当前对象
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.1.2.  call 和 apply /" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="调用一个对象的一个方法，以另一个对象替换当前对象"><a href="#调用一个对象的一个方法，以另一个对象替换当前对象" class="headerlink" title="调用一个对象的一个方法，以另一个对象替换当前对象"></a>调用一个对象的一个方法，以另一个对象替换当前对象</h1><p>apply(func,数组参数)：</p>
+        <p>apply(func,数组参数)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function add(a,b)&#123;</div><div class="line">  return a+b;  </div><div class="line">&#125;</div><div class="line">function sub(a,b)&#123;</div><div class="line">  return a-b;  </div><div class="line">&#125;</div><div class="line">var a1 = add.apply(sub,[4,2]);　　//sub调用add的方法</div><div class="line">var a2 = sub.apply(add,[4,2]);</div><div class="line">alert(a1);  //6     </div><div class="line">alert(a2);  //2</div></pre></td></tr></table></figure>
 
       
@@ -268,18 +283,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.1.3. this 在不同环境中指向/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.1.1 移动端 js 拖拽实现/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          移动端 js 拖拽实现
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.1.1 移动端 js 拖拽实现/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.1.3. this 在不同环境中指向/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">this</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -308,9 +323,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="调用一个对象的一个方法，以另一个对象替换当前对象" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.1.2.  call 和 apply " data-title="" data-url="http://yoursite.com/2018/09/27/4.1.2.  call 和 apply /"></div>
+	<div class="ds-thread" data-thread-key="4.1.2.  call 和 apply " data-title="调用一个对象的一个方法，以另一个对象替换当前对象" data-url="http://yoursite.com/2018/09/27/4.1.2.  call 和 apply /"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

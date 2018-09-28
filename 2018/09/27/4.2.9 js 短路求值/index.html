@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>短路求值 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="短路求值 &amp;amp;&amp;amp;  ||1234567891011121314151617181920212223242526几乎所有语言中||和&amp;amp;&amp;amp;都遵循“短路”原理，如&amp;amp;&amp;amp;中第一个表达式为假就不会去处理第二个表达式，而||正好相反。 js也遵循上述原则。但是比较有意思的是它们返回的值。 代码：var attr = true &amp;amp;&amp;amp; 4 &amp;amp;&amp;a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="短路求值">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.2.9 js 短路求值/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="短路求值 &amp;amp;&amp;amp;  ||1234567891011121314151617181920212223242526几乎所有语言中||和&amp;amp;&amp;amp;都遵循“短路”原理，如&amp;amp;&amp;amp;中第一个表达式为假就不会去处理第二个表达式，而||正好相反。 js也遵循上述原则。但是比较有意思的是它们返回的值。 代码：var attr = true &amp;amp;&amp;amp; 4 &amp;amp;&amp;a">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:36.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="短路求值">
 <meta name="twitter:description" content="短路求值 &amp;amp;&amp;amp;  ||1234567891011121314151617181920212223242526几乎所有语言中||和&amp;amp;&amp;amp;都遵循“短路”原理，如&amp;amp;&amp;amp;中第一个表达式为假就不会去处理第二个表达式，而||正好相反。 js也遵循上述原则。但是比较有意思的是它们返回的值。 代码：var attr = true &amp;amp;&amp;amp; 4 &amp;amp;&amp;a">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -161,6 +161,21 @@
             <article id="post-4.2.9 js 短路求值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      短路求值
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.2.9 js 短路求值/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="短路求值-amp-amp"><a href="#短路求值-amp-amp" class="headerlink" title="短路求值 &amp;&amp;  ||"></a>短路求值 &amp;&amp;  ||</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">几乎所有语言中||和&amp;&amp;都遵循“短路”原理，如&amp;&amp;中第一个表达式为假就不会去处理第二个表达式，而||正好相反。 </div><div class="line"></div><div class="line">js也遵循上述原则。但是比较有意思的是它们返回的值。 </div><div class="line"></div><div class="line">代码：var attr = true &amp;&amp; 4 &amp;&amp; “aaa”; </div><div class="line"></div><div class="line">那么运行的结果attr就不是简单的true或这false，而是”aaa” </div><div class="line"></div><div class="line">再来看看||： </div><div class="line"></div><div class="line">代码：var attr = attr || “”;这个运算经常用来判断一个变量是否已定义，如果没有定义就给他一个初始值，这在给函数的参数定义一个默认值的时候比较有用。</div><div class="line">因为js不像php可以直接在型参数上定义func($attr=5)。</div><div class="line">再次提醒你记住上面的原则：如果实参需要是0、&quot;&quot;、null、false、undefined、NaN的时候也会当false来处理。 </div><div class="line"></div><div class="line">if(a &gt;=5)&#123; </div><div class="line">alert(&quot;你好&quot;); </div><div class="line">&#125; </div><div class="line">可以写成： </div><div class="line"></div><div class="line">a &gt;= 5 &amp;&amp; alert(&quot;你好&quot;);</div><div class="line"></div><div class="line">这样只需一行代码就搞定。但是需要注意的一点就是：js中||和&amp;&amp;的特性帮我们精简了代码的同时，也带来了代码可读性的降低。</div><div class="line">这就需要我们自己来权衡了。 </div><div class="line">一方面精简js代码，能实质性的减少网络流量，尤其是大量应用的js公用库。</div><div class="line">个人比较推荐的做法是：如果是相对复杂的应用，请适当地写一些注释。</div><div class="line">这个和正则表达式一样，能够精简代码，但是可读性会降低，对读代码的人要求会高些，最好的办法就是写注释。</div></pre></td></tr></table></figure>
@@ -267,18 +282,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.3.2 多级菜单遍历判断子节点/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.2.8 for 循环中 onclick 问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          for循环中onclick问题
         
       </div>
     </a>
   
   
     <a href="/2018/09/27/4.3.1 判断为 true 严谨写法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">判断 true</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -307,9 +322,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="短路求值" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.2.9 js 短路求值" data-title="" data-url="http://yoursite.com/2018/09/27/4.2.9 js 短路求值/"></div>
+	<div class="ds-thread" data-thread-key="4.2.9 js 短路求值" data-title="短路求值" data-url="http://yoursite.com/2018/09/27/4.2.9 js 短路求值/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

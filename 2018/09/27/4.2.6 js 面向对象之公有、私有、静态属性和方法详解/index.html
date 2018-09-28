@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>js面向对象之公有、私有、静态属性和方法详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js面向对象之公有、私有、静态属性和方法详解1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user">
+  <meta name="description" content="1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user = new User(&amp;apos;fire子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="js面向对象之公有、私有、静态属性和方法详解">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="js面向对象之公有、私有、静态属性和方法详解1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user">
+<meta property="og:description" content="1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user = new User(&amp;apos;fire子">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="js面向对象之公有、私有、静态属性和方法详解1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user">
+<meta name="twitter:title" content="js面向对象之公有、私有、静态属性和方法详解">
+<meta name="twitter:description" content="1.公有属性和公有方法123456789function User(name,age)&amp;#123;  this.name = name;//公有属性  this.age = age;&amp;#125;User.prototype.getName = function()&amp;#123;//公有方法  return this.name;&amp;#125;var user = new User(&amp;apos;fire子">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.2.6 js 面向对象之公有、私有、静态属性和方法详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js面向对象之公有、私有、静态属性和方法详解
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="js面向对象之公有、私有、静态属性和方法详解"><a href="#js面向对象之公有、私有、静态属性和方法详解" class="headerlink" title="js面向对象之公有、私有、静态属性和方法详解"></a>js面向对象之公有、私有、静态属性和方法详解</h1><p>1.公有属性和公有方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function User(name,age)&#123;</div><div class="line">  this.name = name;//公有属性</div><div class="line">  this.age = age;</div><div class="line">&#125;</div><div class="line">User.prototype.getName = function()&#123;//公有方法</div><div class="line">  return this.name;</div><div class="line">&#125;</div><div class="line">var user = new User(&apos;fire子海&apos;,26);</div><div class="line">console.log(user.getName());//output:fire子海</div></pre></td></tr></table></figure></p>
+        <p>1.公有属性和公有方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function User(name,age)&#123;</div><div class="line">  this.name = name;//公有属性</div><div class="line">  this.age = age;</div><div class="line">&#125;</div><div class="line">User.prototype.getName = function()&#123;//公有方法</div><div class="line">  return this.name;</div><div class="line">&#125;</div><div class="line">var user = new User(&apos;fire子海&apos;,26);</div><div class="line">console.log(user.getName());//output:fire子海</div></pre></td></tr></table></figure></p>
 <p>2.私有属性和方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function User(name,age)&#123;</div><div class="line">  var name = name;//私有属性</div><div class="line">  var age = age;</div><div class="line">  function alertAge()&#123;//私有方法</div><div class="line">     alert(age);</div><div class="line">  &#125;</div><div class="line">  alertAge(age); //弹出26</div><div class="line">&#125;</div><div class="line">var user = new User(&apos;fire子海&apos;,26);</div></pre></td></tr></table></figure></p>
 <p>3.静态属性和方法</p>
 <p>在php中，无需实例化就可以调用的方法就叫静态方法，js也一样，无需实例化，即用new操作符实化对象，就可调用对象的方法和属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function User()&#123;&#125;</div><div class="line">User.age = 26;//静态属性</div><div class="line">User.myname = &apos;fire子海&apos;;</div><div class="line">User.getName =function()&#123;//静态方法</div><div class="line">  </div><div class="line">  return this.myname;//如果这里使用this.name，返回的将是User，所有改用了myname，</div><div class="line">&#125;</div><div class="line">console.log(User.getName());//output:fire子海</div></pre></td></tr></table></figure></p>
@@ -279,18 +294,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.2.7 定时器/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.2.5 JS 中的柯里化(currying)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          JS中的柯里化(currying)
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.2.4.1 正则匹配相关/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.2.7 定时器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">定时器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -319,9 +334,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="js面向对象之公有、私有、静态属性和方法详解" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.2.6 js 面向对象之公有、私有、静态属性和方法详解" data-title="" data-url="http://yoursite.com/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/"></div>
+	<div class="ds-thread" data-thread-key="4.2.6 js 面向对象之公有、私有、静态属性和方法详解" data-title="js面向对象之公有、私有、静态属性和方法详解" data-url="http://yoursite.com/2018/09/27/4.2.6 js 面向对象之公有、私有、静态属性和方法详解/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -159,194 +159,106 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-3.2.4 安卓 line-height 问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.4.3 BFC-块格式化上下文（block formatting context）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安卓-line-height-问题"><a href="#安卓-line-height-问题" class="headerlink" title="安卓 line-height 问题"></a>安卓 line-height 问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">如果写 height: 15px;</div><div class="line">      line-height: 15px;</div><div class="line">      font-size: 13px;</div><div class="line">      </div><div class="line">      ios 表现正常居中,android 位置偏了</div><div class="line">      </div><div class="line">改为 width: 16px;</div><div class="line">     height: 16px;</div><div class="line">     line-height: 16px;</div><div class="line">    ,android 正常</div><div class="line"></div><div class="line"></div><div class="line">说是 font-size 字数大小不要用奇数</div><div class="line"></div><div class="line">有时不行,js 判断 iOS Android</div><div class="line">var u = navigator.userAgent;</div><div class="line">var isAndroid = u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Adr&apos;) &gt; -1; //android终端</div><div class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</div></pre></td></tr></table></figure>
-<h3 id="网上说法"><a href="#网上说法" class="headerlink" title="网上说法:"></a>网上说法:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">仔细观察 这个android上line-height问题的一些看法：</div><div class="line"></div><div class="line">字体大小不要使用奇数字号，带小数点的更不要提了。也就是说被2整除的整数且不可小于12px。</div><div class="line">尽量不要使用rem或者em的单位，除非你能对字号的把握在每个手机上都能达到第1条的要求。</div><div class="line">别外，微信小程序上的rpx是动态计算的，可以单独针对这部分使用px。</div><div class="line"></div><div class="line">一般只要不是边框贴着文字，一般都还看得过去，在接受的范围之内。如果是边框贴着文字，就是居中了，也不好看啊。</div><div class="line">那么，对于小于12像素的居中或者是对居中要求很是严格的需求，这个问题怎么解决？</div><div class="line"></div><div class="line">把字号内外边距等设置为需求大小的2倍，使用transform进行缩放。只能针对 单个或者是一排的布局进行缩放，</div><div class="line">如果是父级自适应高度且可展示多行的，使用transform是有问题的。因为transform缩放是不影响页面布局的。</div><div class="line">把字号内外边距等设置为需求大小的2倍，使用zoom进行缩放，可以完美解决。zoom原本只有ie支持，</div><div class="line">但现在除了Firefox，都已经支持了。是的，Firefox不支持。</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.2.4 安卓 line-height 问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-3.2.2. css3字体缩放样式-webkit-text-size-adjust的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="css3字体缩放样式-webkit-text-size-adjust的用法详解"><a href="#css3字体缩放样式-webkit-text-size-adjust的用法详解" class="headerlink" title="css3字体缩放样式-webkit-text-size-adjust的用法详解"></a>css3字体缩放样式-webkit-text-size-adjust的用法详解</h1><p>就是当你放大网页时，一般情况下字体也会随着变大，而设置了以下代码后，字体只会显示你当前设置的字体大小，不会随着网页放大而变大了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html&#123;-webkit-text-size-adjust: none;&#125;</div></pre></td></tr></table></figure>
-<p>1、当样式表里font-size&lt;12px时，中文版chrome浏览器里字体显示仍为12px，这时可以用 html{-webkit-text-size-adjust:none;} </p>
-<p>2、-webkit-text-size-adjust放在body上会导致页面缩放失效 </p>
-<p>3、body会继承定义在html的样式 </p>
-<p>4、用-webkit-text-size-adjust不要定义成可继承的或全局的</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.2.2. css3字体缩放样式-webkit-text-size-adjust的用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/">块格式化上下文（block formatting context）</a>
+    </h1>
   
-    <article id="post-3.2.1. 使用 css3 缩小字体不偏移" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="使用-css3-缩小字体不偏移"><a href="#使用-css3-缩小字体不偏移" class="headerlink" title="使用 css3 缩小字体不偏移"></a>使用 css3 缩小字体不偏移</h1><p>通常使用 css3 缩小字体后，文字部分会偏移位置，如，原来左对齐，缩小后发现距离左侧有一段距离，需要设置 transform-origin-x:0</p>
-<p>测试使用时对块级元素有效，行内元素无效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-webkit-transform-origin-x: 0;</div><div class="line">transform: scale(0.5);</div><div class="line">-webkit-transform: scale(0.5);</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.2.1. 使用 css3 缩小字体不偏移/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3.1.9 css 属性选择器，伪类，伪元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="css-属性选择器，伪类，伪元素"><a href="#css-属性选择器，伪类，伪元素" class="headerlink" title="css 属性选择器，伪类，伪元素"></a>css 属性选择器，伪类，伪元素</h1><ul>
-<li><p>属性选择器</p>
-<p>[id<em>=content]: </em> 这里代表属性 id 的属性值包含字符 content 的元素,如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;content2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;content3&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>[id^=content]: <em> 这里代表属性 id 的属性值开头是字符 content 的元素,如：<br>[id$=content]: </em> 这里代表属性 id 的属性值结尾是字符 content 的元素,如：  </p>
-</li>
-<li><p>结构性伪类选择器</p>
+        <ul>
+<li>MDN 介绍：<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context</a></li>
+</ul>
+<p>一个块格式化上下文由以下之一创建：</p>
 <ul>
-<li>伪元素： first-line,first-letter,before,after</li>
-<li>伪类：<br>root: 根元素<br>not: 排除结构元素下的子元素<br>empty: 指定元素空白时样式<br>target: 页面在用户点击超链接，跳转到 target 元素后<br>，<br>first-child<br>last-child<br>nth-child  (odd:奇数，even:偶数)<br>nth-last-child<br>nth-of-type  (odd:奇数，even:偶数)<br>only-child  ： 父元素只有一个元素<br>，     </li>
+<li>根元素或其它包含它的元素</li>
+<li>浮动元素 (元素的 float 不是 none)</li>
+<li>绝对定位元素 (元素的 position 为 absolute 或 fixed)</li>
+<li>内联块 (元素具有 display: inline-block)</li>
+<li>表格单元格 (元素具有 display: table-cell，HTML表格单元格默认属性)</li>
+<li>表格标题 (元素具有 display: table-caption, HTML表格标题默认属性)</li>
+<li>具有overflow 且值不是 visible 的块元素，</li>
+<li>display: flow-root</li>
+<li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</li>
 </ul>
-</li>
-<li>UI 元素状态伪类选择器<ul>
-<li>hover</li>
-<li>active</li>
-<li>focus</li>
-<li>enabled</li>
-<li>disabled</li>
-<li>read-only</li>
-<li>read-write</li>
-<li>checked</li>
-<li>::selection</li>
-<li>default</li>
-<li>valid</li>
-<li>invalid</li>
-<li>indeterminate</li>
-<li>required</li>
-<li>optional</li>
-<li>in-range</li>
-<li>out-of-range</li>
-</ul>
+<p>一个块格式化上下文包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.4.4 函数封装写法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.4 函数封装写法/">函数封装写法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.4 函数封装写法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  </div><div class="line">  var datepicker = &#123;&#125;;</div><div class="line">  datepicker.getMonthData = function (year, month) &#123;</div><div class="line">    if (!year || !month) &#123; </div><div class="line">      var today =new Date();</div><div class="line">      year=today.getFullYear(); </div><div class="line">      month = today.getMonth() + 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return &#123;</div><div class="line">      year: year,</div><div class="line">      month: month,</div><div class="line">      days: ret</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  window.datepicker = datepicker; //方法暴露出去，供外部调用</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"></div><div class="line">// 带参数写法</div><div class="line">( function(str)&#123;</div><div class="line">    alert(str);</div><div class="line">&#125;)(&quot;你好！&quot;);</div><div class="line"></div><div class="line"></div><div class="line">/ ------------------------ 工具包---------------------------------//</div><div class="line">var utils = &#123;</div><div class="line">            center : function(dom)&#123;</div><div class="line">                dom.style.position = &apos;absolute&apos;;</div><div class="line">                dom.style.top = &apos;50%&apos;;</div><div class="line">                dom.style.left = &apos;50%&apos;;</div><div class="line">                dom.style[&apos;margin-top&apos;] = - dom.offsetHeight / 2 + &apos;px&apos;;</div><div class="line">                dom.style[&apos;margin-left&apos;] = - dom.offsetWidth / 2 + &apos;px&apos;;</div><div class="line">            &#125;,</div><div class="line">        </div><div class="line">            /** dom相关 * */</div><div class="line">            isDom : ( typeof HTMLElement === &apos;object&apos; ) ?</div><div class="line">                function(obj)&#123;</div><div class="line">                    return obj instanceof HTMLElement;</div><div class="line">                &#125; :</div><div class="line">                function(obj)&#123;</div><div class="line">                    return obj &amp;&amp; typeof obj === &apos;object&apos; &amp;&amp; obj.nodeType === 1 &amp;&amp; typeof obj.nodeName === &apos;string&apos;;</div><div class="line">                &#125; ,</div><div class="line">             </div><div class="line">            /** 数组相关 * */</div><div class="line">            isArray : function(obj)&#123;</div><div class="line">                return obj.constructor.toString().indexOf(&apos;Array&apos;) != -1;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -361,7 +273,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.9 css 属性选择器，伪类，伪元素/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.4.4 函数封装写法/">展开全文 >></a>
         </p>
       
 
@@ -391,189 +303,50 @@
 
 
   
-    <article id="post-3.1.8 css flexbox" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.4.5 字符串数组常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h1><h1 id="阮一峰"><a href="#阮一峰" class="headerlink" title="阮一峰"></a>阮一峰</h1><p><a href="https://github.com/wangdoc/css-tutorial/blob/master/docs/layout/flexbox.md" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/blob/master/docs/layout/flexbox.md</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.8 css flexbox/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-3.1.6 css clip-path 画聊天气泡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.5 字符串数组常用方法/">字符串数组常用方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.5 字符串数组常用方法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="css-clip-path"><a href="#css-clip-path" class="headerlink" title="css clip-path"></a>css clip-path</h1><p>聊天气泡小角实现<br>可以由两种实现的方式  </p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = 0;</div><div class="line">function test()&#123;</div><div class="line">    alert(a);</div><div class="line">    var a = 100;</div><div class="line">&#125;</div><div class="line">test();</div><div class="line">// undefined</div><div class="line">先创建了空间,再赋值，都是从上到下的。还有一点就是现在自己的空间里面找是否有，没有去父级找。要是还没有就再往上一层。简单的说就是作用域链</div></pre></td></tr></table></figure>
 <ul>
-<li>canvas，绘制路径，然后再clip图片,本文暂不描述</li>
-<li>另一种就是利用css3的新属性clip-path属性，绘制出要切割的路径，然后再给clip-path属性赋值,火狐和IE未实现此属性</li>
-</ul>
-<p>Can I use: <a href="https://caniuse.com/#search=css%20clip" target="_blank" rel="external">https://caniuse.com/#search=css%20clip</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">/* Keyword values */</div><div class="line">clip-path: none;</div><div class="line"></div><div class="line">/* Image values */ </div><div class="line">clip-path: url(resources.svg#c1);</div><div class="line"></div><div class="line">/* Box values */</div><div class="line">clip-path: fill-box;</div><div class="line">clip-path: stroke-box;</div><div class="line">clip-path: view-box;</div><div class="line">clip-path: margin-box;</div><div class="line">clip-path: border-box;</div><div class="line">clip-path: padding-box;</div><div class="line">clip-path: content-box;</div><div class="line"></div><div class="line">/* Geometry values */</div><div class="line">clip-path: inset(100px 50px);</div><div class="line">clip-path: circle(50px at 0 100px);</div><div class="line">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</div><div class="line"></div><div class="line">/* Box and geometry values combined */</div><div class="line">clip-path: padding-box circle(50px at 0 100px);</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">clip-path: inherit;</div><div class="line">clip-path: initial;</div><div class="line">clip-path: unset;</div></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://css-tricks.com/clipping-masking-css/" target="_blank" rel="external">https://css-tricks.com/clipping-masking-css/</a></li>
-<li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path</a></li>
-<li>张鑫旭: <a href="http://www.zhangxinxu.com/wordpress/2014/12/css3-svg-clip-path/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2014/12/css3-svg-clip-path/</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.6 css clip-path 画聊天气泡/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3.1.7 css currentColor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="currentColor"><a href="#currentColor" class="headerlink" title="currentColor"></a>currentColor</h1><p>阮一峰： <a href="https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/blob/master/docs/color.md</a></p>
-<h2 id="currentColor-1"><a href="#currentColor-1" class="headerlink" title="currentColor"></a>currentColor</h2><p><code>currentColor</code>是一个属性值，代表当前元素的<code>color</code>属性的值。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid currentColor;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> <span class="number">2px</span> currentColor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面代码，<code>border</code>和<code>box-shadow</code>的颜色都与<code>color</code>保持一致。这种写法的好处是，如果要修改<code>color</code>，只要修改一处就可以了，不用修改三个地方。</p>
-<p><code>currentColor</code>的另一个用处，是让衍生类都继承基类的颜色。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.child-1</span> &#123;</div><div class="line">    <span class="attribute">background</span>: currentColor;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-class">.child-2</span> &#123;</div><div class="line">    <span class="attribute">color</span>: currentColor;</div><div class="line">    border 1px solid currentColor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>伪元素也可以使用<code>currentColor</code>。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">color</span>: currentColor;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid currentColor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>参考： <a href="http://www.qcyoung.com/2016/09/28/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8%20currentColor%20%E5%B1%9E%E6%80%A7%E5%86%99%E5%87%BA%E6%9B%B4%E5%A5%BD%E7%9A%84%20CSS%20%E4%BB%A3%E7%A0%81/" target="_blank" rel="external">http://www.qcyoung.com/2016/09/28/%E3%80%90%E8%AF%91%E3%80%91%E4%BD%BF%E7%94%A8%20currentColor%20%E5%B1%9E%E6%80%A7%E5%86%99%E5%87%BA%E6%9B%B4%E5%A5%BD%E7%9A%84%20CSS%20%E4%BB%A3%E7%A0%81/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.7 css currentColor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3.1.5 CSS中margin边界叠加问题及解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS中margin边界叠加问题及解决方案"><a href="#CSS中margin边界叠加问题及解决方案" class="headerlink" title="CSS中margin边界叠加问题及解决方案"></a>CSS中margin边界叠加问题及解决方案</h1><p>别人的博客说的情况：<a href="https://www.cnblogs.com/zhangmingze/articles/4664074.html" target="_blank" rel="external">https://www.cnblogs.com/zhangmingze/articles/4664074.html</a></p>
-<ul>
-<li><a href="http://www.hujuntao.com/web/css/css-margin-overlap.html" target="_blank" rel="external">http://www.hujuntao.com/web/css/css-margin-overlap.html</a></li>
-</ul>
-<p>边界叠加的大多数问题可以通过添加透明边框或1px的补白来修复。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">外层元素padding代替</div><div class="line">内层元素透明边框 border:1px solid transparent;</div><div class="line">内层元素绝对定位 postion:absolute:</div><div class="line">外层元素 overflow:hidden;</div><div class="line">内层元素 加float:left;或display:inline-block;</div><div class="line">内层元素padding:1px;</div></pre></td></tr></table></figure></p>
-<p>补充解决方案：</p>
-<p>1.外层padding</p>
-<p>2.透明边框border:1px solid transparent;</p>
-<p>3.绝对定位postion:absolute:</p>
-<p>4.外层DIVoverflow:hidden;</p>
-<p>5.内层DIV　加float:left;display:inline;</p>
-<p>6.外层DIV有时会用到zoom:1;</p>
-<ol>
-<li>设置 display:inline-block的元素，垂直margin不会重叠，甚至和他们的子元素之间也是一样。</li>
+<li><ol>
+<li>字符串 format方法</li>
 </ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">if(!String.prototype.format )&#123;</div><div class="line">    String.prototype.format = function() &#123;</div><div class="line">        var e = arguments;</div><div class="line">        return this.replace(/&#123;(\d+)&#125;/g,function(t, n) &#123;</div><div class="line">            return typeof e[n] != &quot;undefined&quot; ? e[n] : t;</div><div class="line">        &#125;)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var template = &quot;今天是&#123;0&#125;,马上就是&#123;1&#125;！&quot;;</div><div class="line">console.log(template.format(&quot;2017&quot;,&quot;2018&quot;));</div></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>数组 forEach(callback,context) 操作数组中的每一个元素</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">    forEach除了接受一个必须的回调函数参数，还可以接受一个可选的上下文参数（改变回调函数里面的this指向）（第2个参数）。</div><div class="line">*/</div><div class="line">if (!Array.prototype.forEach &amp;&amp; typeof Array.prototype.forEach !== &quot;function&quot;) &#123;</div><div class="line">    Array.prototype.forEach = function(callback, context) &#123;</div><div class="line">       // 遍历数组,在每一项上调用回调函数，这里使用原生方法验证数组。</div><div class="line">       if (Object.prototype.toString.call(this) === &quot;[object Array]&quot;) &#123;</div><div class="line">           var i,len;</div><div class="line">           //遍历该数组所有的元素</div><div class="line">           for (i = 0, len = this.length; i &lt; len; i++) &#123;</div><div class="line">               if (typeof callback === &quot;function&quot;  &amp;&amp; Object.prototype.hasOwnProperty.call(this, i)) &#123;</div><div class="line">                   if (callback.call(context, this[i], i, this) === false) &#123;</div><div class="line">                       break; // or return;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var drinks = [&apos;雪碧&apos;,&apos;可乐&apos;,&apos;脉动&apos;,&apos;红牛&apos;,&apos;农夫山泉&apos;];</div><div class="line">        </div><div class="line">var context = &#123;</div><div class="line">    str1 : &apos;【&apos;,</div><div class="line">    str2 : &apos;】&apos;</div><div class="line">&#125;;</div><div class="line">        </div><div class="line">drinks.forEach(function(item)&#123;</div><div class="line">    console.log(this.str1 + item + this.str2);</div><div class="line">&#125;,context);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>indexOf():indexOf(searchvalue,fromindex) 查询数组中某一个值的下标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">//获取某元素在数组中第一次出现的下标</div><div class="line">if (!Array.prototype.indexOf) &#123;</div><div class="line">  Array.prototype.indexOf = function(searchElement, fromIndex) &#123;</div><div class="line">    var k;</div><div class="line">    // 1. Let O be the result of calling ToObject passing</div><div class="line">    //    the this value as the argument.</div><div class="line">    if (this == null) &#123;</div><div class="line">      throw new TypeError(&apos;&quot;this&quot; is null or not defined&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var O = Object(this);</div><div class="line"></div><div class="line">    // 2. Let lenValue be the result of calling the Get</div><div class="line">    //    internal method of O with the argument &quot;length&quot;.</div><div class="line">    // 3. Let len be ToUint32(lenValue).</div><div class="line">    var len = O.length &gt;&gt;&gt; 0;</div><div class="line"></div><div class="line">    // 4. If len is 0, return -1.</div><div class="line">    if (len === 0) &#123;</div><div class="line">      return -1;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 5. If argument fromIndex was passed let n be</div><div class="line">    //    ToInteger(fromIndex); else let n be 0.</div><div class="line">    var n = +fromIndex || 0;</div><div class="line"></div><div class="line">    if (Math.abs(n) === Infinity) &#123;</div><div class="line">      n = 0;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 6. If n &gt;= len, return -1.</div><div class="line">    if (n &gt;= len) &#123;</div><div class="line">      return -1;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 7. If n &gt;= 0, then Let k be n.</div><div class="line">    // 8. Else, n&lt;0, Let k be len - abs(n).</div><div class="line">    //    If k is less than 0, then let k be 0.</div><div class="line">    k = Math.max(n &gt;= 0 ? n : len - Math.abs(n), 0);</div><div class="line"></div><div class="line">    // 9. Repeat, while k &lt; len</div><div class="line">    while (k &lt; len) &#123;</div><div class="line">      // a. Let Pk be ToString(k).</div><div class="line">      //   This is implicit for LHS operands of the in operator</div><div class="line">      // b. Let kPresent be the result of calling the</div><div class="line">      //    HasProperty internal method of O with argument Pk.</div><div class="line">      //   This step can be combined with c</div><div class="line">      // c. If kPresent is true, then</div><div class="line">      //    i.  Let elementK be the result of calling the Get</div><div class="line">      //        internal method of O with the argument ToString(k).</div><div class="line">      //   ii.  Let same be the result of applying the</div><div class="line">      //        Strict Equality Comparison Algorithm to</div><div class="line">      //        searchElement and elementK.</div><div class="line">      //  iii.  If same is true, return k.</div><div class="line">          if (k in O &amp;&amp; O[k] === searchElement) &#123;</div><div class="line">            return k;</div><div class="line">          &#125;</div><div class="line">          k++;</div><div class="line">        &#125;</div><div class="line">        return -1;</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">var index = drinks.indexOf(&apos;雪碧&apos;);</div><div class="line">alert(index);//0</div></pre></td></tr></table></figure>
+</li>
+<li><p>3 数组封装</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div></pre></td><td class="code"><pre><div class="line">//模拟ArrayList</div><div class="line">function ArrayList()&#123;</div><div class="line">    var arr = []; //用于保存数据的数组</div><div class="line">    var length = 0; //数组的长度，默认为0</div><div class="line">    </div><div class="line">    /**</div><div class="line">     * 判断是否为空</div><div class="line">     */</div><div class="line">    this.isEmpty = function()&#123;</div><div class="line">        return length == 0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /**</div><div class="line">     * 获取列表长度</div><div class="line">     */</div><div class="line">    </div><div class="line">    this.size = function()&#123;</div><div class="line">        return length;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** </div><div class="line">    * 判断对象中是否包含给定对象</div><div class="line">    */ </div><div class="line">    this.contains = function(obj)&#123;</div><div class="line">        if(arr.indexOf(obj) != -1)&#123;</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** </div><div class="line">    * 新增</div><div class="line">    */</div><div class="line">   this.add = function(obj)&#123;</div><div class="line">    length = length + 1;</div><div class="line">    arr.push(obj);</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   /**</div><div class="line">    * 删除</div><div class="line">    * 参数1  obj ： 需要删除的元素</div><div class="line">    * 参数2  deleteAll： 是否全部删除，否则默认删除第一个匹配项</div><div class="line">    */</div><div class="line">   this.remove = function(obj,deleteAll)&#123;</div><div class="line">        var len = arr.length;</div><div class="line">        for(var i = 0 ;i &lt; len ;i++)&#123;</div><div class="line">            if(arr[i] == obj)&#123;</div><div class="line">                arr.splice(i,1);</div><div class="line">                length = length - 1;</div><div class="line">                if(!deleteAll)&#123;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   </div><div class="line">   /**</div><div class="line">    * 根据索引获取对应的元素</div><div class="line">    */</div><div class="line">   this.get = function(index)&#123;</div><div class="line">    if(index &gt; length - 1)&#123;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">    return arr[index];</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   /**</div><div class="line">    * 获取列表数组</div><div class="line">    */</div><div class="line">   this.toArray = function()&#123;</div><div class="line">     return arr;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   /**</div><div class="line">    * 获取某一个元素的角标</div><div class="line">    * 如果只出现一次，就返回一个数字，如果大于一次，就返回数组</div><div class="line">    */</div><div class="line">   this.indexOf = function(obj)&#123;</div><div class="line">     var rstArr = [];</div><div class="line">     var count = 0;</div><div class="line">     for(var i = 0 ;i &lt; length ;i++)&#123;</div><div class="line">        if(obj == arr[i])&#123;</div><div class="line">            rstArr[count++] = i;</div><div class="line">        &#125;</div><div class="line">     &#125;</div><div class="line">     if(count == 1)&#123;</div><div class="line">        return rstArr[0];</div><div class="line">     &#125;</div><div class="line">     return rstArr;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   this.toString = function()&#123;</div><div class="line">    return arr.toString();  </div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//测试代码</div><div class="line">var list = new ArrayList();</div><div class="line">list.add(&apos;张三&apos;);</div><div class="line">list.add(&apos;李四&apos;);</div><div class="line">list.add(&apos;王五&apos;);</div><div class="line">list.add(&apos;赵六&apos;);</div><div class="line">list.add(&apos;王五&apos;);</div><div class="line">console.log(list.size());</div><div class="line">console.log(list.toString());</div><div class="line">console.log(list.contains(&apos;张三&apos;));</div><div class="line">list.remove(&apos;王五&apos;,true); //null,undefined,&apos;&apos;</div><div class="line">console.log(list.toString());</div><div class="line">console.log(list.get(0));</div><div class="line">console.log(list.get(1));</div><div class="line">console.log(list.get(2));</div><div class="line">console.log(list.size());</div><div class="line"></div><div class="line">console.log(list.toArray());</div><div class="line">list.add(&apos;张三&apos;);</div><div class="line">list.add(&apos;张三&apos;);</div><div class="line">console.log(list.toArray());</div><div class="line">console.log(list.indexOf(&apos;张三&apos;));</div><div class="line">console.log(list.indexOf(&apos;赵六&apos;));</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">作者：剽悍一小兔</div><div class="line">链接：https://www.jianshu.com/p/3c37e186d41c</div></pre></td></tr></table></figure>
 
       
 
@@ -586,7 +359,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.5 CSS中margin边界叠加问题及解决方案/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.4.5 字符串数组常用方法/">展开全文 >></a>
         </p>
       
 
@@ -616,17 +389,41 @@
 
 
   
-    <article id="post-3.1.4 安卓浏览器键盘输入改变弹出层的定位" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.4.6 本地缓存与浏览器缓存区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.6 本地缓存与浏览器缓存区别/">本地缓存与浏览器缓存区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.6 本地缓存与浏览器缓存区别/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安卓浏览器键盘输入改变弹出层的定位"><a href="#安卓浏览器键盘输入改变弹出层的定位" class="headerlink" title="安卓浏览器键盘输入改变弹出层的定位"></a>安卓浏览器键盘输入改变弹出层的定位</h1><p>在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.popup &#123;</div><div class="line"></div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。</p>
-<p>bug解决:</p>
-<p>给弹出层添加一个高度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.popup &#123;</div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">    max-height: 80%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <ul>
+<li>本地缓存<ul>
+<li>为整个 web 应用程序服务，</li>
+<li>只缓存指定的网页</li>
+<li>可靠的，</li>
+<li>控制对哪些内容缓存</li>
+</ul>
+</li>
+<li>浏览器网页缓存<ul>
+<li>服务单个网页</li>
+<li>不安全，不可靠</li>
+<li>任何网页都具有缓存</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -639,7 +436,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.4 安卓浏览器键盘输入改变弹出层的定位/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.4.6 本地缓存与浏览器缓存区别/">展开全文 >></a>
         </p>
       
 
@@ -669,17 +466,36 @@
 
 
   
-    <article id="post-3.1.3 移动端 ios scroll 滚动穿透" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.4.7. 判断 js 中的数据类型的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/">判断js中的数据类型的几种方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ios-scroll-滚动穿透"><a href="#ios-scroll-滚动穿透" class="headerlink" title="ios scroll 滚动穿透"></a>ios scroll 滚动穿透</h1><p>在 ios 微信浏览器或原生浏览器中，主内容容器.content在文档流内，并且overflow-y: scroll。</p>
-<p>在其之上有一个 fixed 定位的弹出层.popUp，滚动.popUp到底部，继续滚动会触发底层容器.content开始滚动。</p>
-<p>期望结果</p>
-<p>滚动弹出层.popUp,底层容器.content不会触发滚动</p>
-<p>解决方案:</p>
-<p>google搜的方案基本上都不能完全解决问题……<br>经过各种尝试，下面方法可以达到预期效果：<br>1） 弹出层显示时，改变容器.content的css属性：overflow-y: hidden；<br>2） 弹出层消失时，恢复容器.content的css属性：overflow-y: scroll；  </p>
+        <p>判断js中的数据类型的几种方法</p>
+<p>判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。</p>
+<p>先举几个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var a = &quot;iamstring.&quot;;</div><div class="line">var b = 222;</div><div class="line">var c= [1,2,3];</div><div class="line">var d = new Date();</div><div class="line">var e = function()&#123;alert(111);&#125;;</div><div class="line">var f = function()&#123;this.name=&quot;22&quot;;&#125;;</div></pre></td></tr></table></figure></p>
+<p>1、最常见的判断方法：typeof</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">alert(typeof a)   ------------&gt; string</div><div class="line">alert(typeof b)   ------------&gt; number</div><div class="line">alert(typeof c)   ------------&gt; object</div><div class="line">alert(typeof d)   ------------&gt; object</div><div class="line">alert(typeof e)   ------------&gt; function</div><div class="line">alert(typeof f)   ------------&gt; function</div><div class="line"></div><div class="line">其中typeof返回的类型都是字符串形式，需注意，例如：</div><div class="line">alert(typeof a == &quot;string&quot;) -------------&gt; true</div><div class="line">alert(typeof a == String) ---------------&gt; false</div><div class="line">另外typeof 可以判断function的类型；在判断除Object类型的对象时比较方便。</div></pre></td></tr></table></figure>
+<p>2、判断已知对象类型的方法： instanceof</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert(c instanceof Array) ---------------&gt; true</div><div class="line">alert(d instanceof Date) </div><div class="line">alert(f instanceof Function) ------------&gt; true</div><div class="line">alert(f instanceof function) ------------&gt; false</div><div class="line"></div><div class="line">注意：instanceof 后面一定要是对象类型，并且大小写不能错，该方法适合一些条件选择或分支。</div></pre></td></tr></table></figure>
+<p>3、根据对象的constructor判断： constructor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">alert(c.constructor === Array) ----------&gt; true</div><div class="line">alert(d.constructor === Date) -----------&gt; true</div><div class="line">alert(e.constructor === Function) -------&gt; true</div><div class="line">注意： constructor 在类继承时会出错</div><div class="line">eg：</div><div class="line">      function A()&#123;&#125;;</div><div class="line">      function B()&#123;&#125;;</div><div class="line">      A.prototype = new B(); //A继承自B</div><div class="line">      var aObj = new A();</div><div class="line">      alert(aobj.constructor === B) -----------&gt; true;</div><div class="line">      alert(aobj.constructor === A) -----------&gt; false;</div><div class="line">而instanceof方法不会出现该问题，对象直接继承和间接继承的都会报true：</div><div class="line">      alert(aobj instanceof B) ----------------&gt; true;</div><div class="line">      alert(aobj instanceof B) ----------------&gt; true;</div><div class="line">言归正传，解决construtor的问题通常是让对象的constructor手动指向自己：</div><div class="line">      aobj.constructor = A; //将自己的类赋值给对象的constructor属性</div><div class="line">      alert(aobj.constructor === A) -----------&gt; true;</div><div class="line">      alert(aobj.constructor === B) -----------&gt; false; //基类不会报true了;</div></pre></td></tr></table></figure></p>
+<p>4、通用但很繁琐的方法： prototype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(Object.prototype.toString.call(a) === ‘[object String]’) -------&gt; true;</div><div class="line">alert(Object.prototype.toString.call(b) === ‘[object Number]’) -------&gt; true;</div><div class="line">alert(Object.prototype.toString.call(c) === ‘[object Array]’) -------&gt; true;</div><div class="line">alert(Object.prototype.toString.call(d) === ‘[object Date]’) -------&gt; true;</div><div class="line">alert(Object.prototype.toString.call(e) === ‘[object Function]’) -------&gt; true;</div><div class="line">alert(Object.prototype.toString.call(f) === ‘[object Function]’) -------&gt; true;</div><div class="line"></div><div class="line">大小写不能写错，比较麻烦，但胜在通用。</div></pre></td></tr></table></figure></p>
+<p>5、无敌万能的方法：jquery.type()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">如果对象是undefined或null，则返回相应的“undefined”或“null”。</div><div class="line"></div><div class="line">jQuery.type( undefined ) === &quot;undefined&quot;</div><div class="line">jQuery.type() === &quot;undefined&quot;</div><div class="line">jQuery.type( window.notDefined ) === &quot;undefined&quot;</div><div class="line">jQuery.type( null ) === &quot;null&quot;</div><div class="line"></div><div class="line">如果对象有一个内部的[[Class]]和一个浏览器的内置对象的 [[Class]] 相同，我们返回相应的 [[Class]] 名字。 (有关此技术的更多细节。 )</div><div class="line"></div><div class="line">jQuery.type( true ) === &quot;boolean&quot;</div><div class="line">jQuery.type( 3 ) === &quot;number&quot;</div><div class="line">jQuery.type( &quot;test&quot; ) === &quot;string&quot;</div><div class="line">jQuery.type( function()&#123;&#125; ) === &quot;function&quot;</div><div class="line">jQuery.type( [] ) === &quot;array&quot;</div><div class="line">jQuery.type( new Date() ) === &quot;date&quot;</div><div class="line">jQuery.type( new Error() ) === &quot;error&quot; // as of jQuery 1.9</div><div class="line">jQuery.type( /test/ ) === &quot;regexp&quot;</div><div class="line"></div><div class="line">其他一切都将返回它的类型“object”。</div><div class="line">通常情况下用typeof 判断就可以了，遇到预知Object类型的情况可以选用instanceof或constructor方法,实在没辙就使用$.type()方法。</div></pre></td></tr></table></figure></p>
 
       
 
@@ -692,7 +508,421 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.3 移动端 ios scroll 滚动穿透/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/">获取字符串长度（汉字算两个字符，字母数字算一个)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//获取字符串长度（汉字算两个字符，字母数字算一个）</div><div class="line">    function getByteLen(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 2;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return len;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">  vue demo </div><div class="line">  // 输入</div><div class="line">      toInput: function(value) &#123;</div><div class="line">        var that = this;</div><div class="line">        console.log(value,that.floorName)</div><div class="line">        that.inputLength = 4;</div><div class="line">        var l = strLength.getByteLen(that.floorName);</div><div class="line">        console.log(l)</div><div class="line">        if (l &lt;= 8) &#123;</div><div class="line">          that.inputLength = that.floorName.length</div><div class="line">          console.log(&quot;len:&quot;,that.inputLength)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        that.floorName = value.target.value.substr(0,that.inputLength)</div><div class="line"></div><div class="line">        console.log(that.floorName)</div><div class="line"></div><div class="line">      &#125;,</div></pre></td></tr></table></figure>
+<h3 id="截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）"><a href="#截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）" class="headerlink" title="截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）"></a>截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function func(s, n) &#123;</div><div class="line">　　　　return s.slice(0, n).replace(/([^x00-xff])/g, &quot;$1a&quot;).slice(0, n).replace(/([^x00-xff])a/g, &quot;$1&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">func(&apos;我的jdfhjfdsgf&apos;, 5)</div><div class="line">// 有点问题</div><div class="line"></div><div class="line">----------------------------------</div><div class="line">测试可用：</div><div class="line">function getByteVal(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 2;</div><div class="line">        else</div><div class="line">        byteValLen += 1;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">getByteVal(&apos;我的合肥决定是否看见&apos;,10)</div></pre></td></tr></table></figure>
+<h3 id="截取字符串（一个字算一个，两个英文字母或数字算一个字）"><a href="#截取字符串（一个字算一个，两个英文字母或数字算一个字）" class="headerlink" title="截取字符串（一个字算一个，两个英文字母或数字算一个字）"></a>截取字符串（一个字算一个，两个英文字母或数字算一个字）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getByteVal(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 1;</div><div class="line">        else</div><div class="line">        byteValLen += 0.5;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">&#125;</div><div class="line">undefined</div><div class="line">getByteVal(&apos;我的合肥决定是否看见&apos;,10)</div><div class="line">//&quot;我的合肥决定是否看见&quot;</div></pre></td></tr></table></figure>
+<h3 id="判断是否为纯汉字"><a href="#判断是否为纯汉字" class="headerlink" title="判断是否为纯汉字"></a>判断是否为纯汉字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function load(str)&#123;  </div><div class="line">    var regex =/^[\u4E00-\u9FA5]+$/;  </div><div class="line">    if(!regex.test(str))&#123;  </div><div class="line">    return false;  </div><div class="line">    &#125;else&#123;  </div><div class="line">    return true;  </div><div class="line">    &#125;  </div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="判断字符串是否为数字和字母的组合"><a href="#判断字符串是否为数字和字母的组合" class="headerlink" title="判断字符串是否为数字和字母的组合"></a>判断字符串是否为数字和字母的组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function checkRate(nubmer)  </div><div class="line">&#123;  </div><div class="line">     var re =  /^[0-9a-zA-Z]*$/g;  //判断字符串是否为数字和字母组合     //判断正整数 /^[1-9]+[0-9]*]*$/    </div><div class="line">     if (!re.test(nubmer))  </div><div class="line">    &#123;  </div><div class="line">        return false;  </div><div class="line">     &#125;else&#123;  </div><div class="line">    return true;  </div><div class="line">     &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="两个字母数字算一个字，一个字算一个字"><a href="#两个字母数字算一个字，一个字算一个字" class="headerlink" title="两个字母数字算一个字，一个字算一个字"></a>两个字母数字算一个字，一个字算一个字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getByteLen(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 0.5;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return Math.ceil(len);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="vue-中用到的"><a href="#vue-中用到的" class="headerlink" title="vue 中用到的"></a>vue 中用到的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">/*</div><div class="line"> * 判断字符长度</div><div class="line"> * @param: str</div><div class="line"> */</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  /*</div><div class="line">  * 一个汉字算两个字符,一个英文字母或数字算一个字符</div><div class="line">  */</div><div class="line"> getByteLen: function(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 2;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return len;</div><div class="line">  &#125;,</div><div class="line">   /*</div><div class="line">  * 一个汉字算一个字,一个英文字母或数字算半个字</div><div class="line">  */</div><div class="line">  getZhLen: function (val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 0.5;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return Math.ceil(len);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*暂无用*/</div><div class="line">  cutStr: function(str, len,type)&#123;</div><div class="line">    var char_length = 0;</div><div class="line">    for (var i = 0; i &lt; str.length; i++)&#123;</div><div class="line">        var son_str = str.charAt(i);</div><div class="line">        if(type==1) &#123;</div><div class="line">          encodeURI(son_str).length &gt; 2 ? char_length += 1 : char_length += 0.5;</div><div class="line">        &#125;</div><div class="line">        if(type==2) &#123;</div><div class="line">           char_length += 1 ;</div><div class="line">        &#125;</div><div class="line">        if (char_length &gt;= len)&#123;</div><div class="line">            var sub_len = char_length == len ? i+1 : i;</div><div class="line">            return str.substr(0, sub_len);</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 限制字数用, 一个汉字算一个字,两个英文/字母算一个字</div><div class="line">  */</div><div class="line">  getByteVal: function(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 1;</div><div class="line">        else</div><div class="line">        byteValLen += 0.5;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 限制字符数用, 一个汉字算两个字符,一个英文/字母算一个字符</div><div class="line">  */</div><div class="line">  getCharVal: function (val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 2;</div><div class="line">        else</div><div class="line">        byteValLen += 1;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 正则校验,校验非负数字</div><div class="line">  */</div><div class="line">  regPos: function(v) &#123;</div><div class="line">    var regTest = /^\d+(\.\d+)?$/;</div><div class="line">    return regTest.test(v);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.4.9-函数式编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.4.9-函数式编程/">函数式编程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.9-函数式编程/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>函数式编程初探: <a href="http://www.ruanyifeng.com/blog/2012/04/functional_programming.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/04/functional_programming.html</a></li>
+<li>使用 JavaScript 进行函数式编程 : <a href="http://www.codeceo.com/javascript-functional-programming-1.html" target="_blank" rel="external">http://www.codeceo.com/javascript-functional-programming-1.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">函数式编程要求使用函数，我们可以把运算过程定义为不同的函数，然后写成下面这样：</div><div class="line"></div><div class="line">　　var result = subtract(multiply(add(1,2), 3), 4);</div><div class="line"></div><div class="line">这就是函数式编程。</div></pre></td></tr></table></figure>
+<h3 id="下面是写出正确函数的几个原则："><a href="#下面是写出正确函数的几个原则：" class="headerlink" title="下面是写出正确函数的几个原则："></a>下面是写出正确函数的几个原则：</h3><ul>
+<li>（1）直接把函数赋值给变量</li>
+</ul>
+<p>记住：凡是使用return返回函数调用的，都可以去掉这个间接包裹层，最终连参数和括号一起去掉！</p>
+<p>以下代码都来自 npm 上的模块包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// 太傻了</div><div class="line">var getServerStuff = function(callback)&#123;</div><div class="line">  return ajaxCall(function(json)&#123;</div><div class="line">    return callback(json);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 这才像样</div><div class="line">var getServerStuff = ajaxCall;</div><div class="line">世界上到处都充斥着这样的垃圾 ajax 代码。以下是上述两种写法等价的原因：</div><div class="line"></div><div class="line">// 这行</div><div class="line">return ajaxCall(function(json)&#123;</div><div class="line">  return callback(json);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 等价于这行</div><div class="line">return ajaxCall(callback);</div><div class="line"></div><div class="line">// 那么，重构下 getServerStuff</div><div class="line">var getServerStuff = function(callback)&#123;</div><div class="line">  return ajaxCall(callback);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// ...就等于</div><div class="line">var getServerStuff = ajaxCall; // &lt;-- 看，没有括号哦</div></pre></td></tr></table></figure></p>
+<p>-（2）使用最普适的方式命名</p>
+<p>函数属于操作，命名最好简单直白体现功能性，比如add等。参数是数据，最好不要限定在特定的数据上，比如articles，就能让写出来的函数更加通用，避免重复造轮子。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 只针对当前的博客</div><div class="line">var validArticles = function(articles) &#123;</div><div class="line">  return articles.filter(function(article)&#123;</div><div class="line">    return article !== null &amp;&amp; article !== undefined;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 对未来的项目友好太多</div><div class="line">var compact = function(xs) &#123;</div><div class="line">  return xs.filter(function(x) &#123;</div><div class="line">    return x !== null &amp;&amp; x !== undefined;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>（3）避免依赖外部变量</li>
+</ul>
+<p>不依赖外部变量和环境，就能确保写出的函数是纯函数，即：相同输入得到相同输出的函数。 比如 slice 和 splice，这两个函数的作用一样，但方式不同， slice 符合纯函数的定义是因为对相同的输入它保证能返回相同的输出。而 splice 却会嚼烂调用它的那个数组，然后再吐出来，即这个数组永久地改变了。</p>
+<p>再如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 不纯的</div><div class="line">var minimum = 21;</div><div class="line"></div><div class="line">var checkAge = function(age) &#123;</div><div class="line">  return age &gt;= minimum;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 纯的</div><div class="line">var checkAge = function(age) &#123;</div><div class="line">  var minimum = 21;</div><div class="line">  return age &gt;= minimum;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.4.9-函数式编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.5.1 JavaScript 内存机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.1 JavaScript 内存机制/">JavaScript 内存机制</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.1 JavaScript 内存机制/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="内存模型"><a href="#内存模型" class="headerlink" title="#内存模型"></a>#内存模型</h3><p>JS内存空间分为栈(stack)、堆(heap)、池(一般也会归类为栈中)。 其中栈存放变量，堆存放复杂对象，池存放常量。</p>
+<p>为了更好的搞懂栈内存与堆内存，我们可以结合以下例子与图解进行理解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a1 = 0; // 栈 </div><div class="line">var a2 = &apos;this is string&apos;; // 栈</div><div class="line">var a3 = null; // 栈 </div><div class="line">var b = &#123; m: 20 &#125;; // 变量b存在于栈中，&#123;m: 20&#125; 作为对象存在于堆内存中</div><div class="line">var c = [1, 2, 3]; // 变量c存在于栈中，[1, 2, 3] 作为对象存在于堆内存中</div><div class="line"></div><div class="line">作者：梁音</div><div class="line">链接：https://juejin.im/post/5b10ba336fb9a01e66164346</div></pre></td></tr></table></figure></p>
+<h3 id="内存的生命周期"><a href="#内存的生命周期" class="headerlink" title="#内存的生命周期"></a>#内存的生命周期</h3><p>JS环境中分配的内存一般有如下生命周期：</p>
+<ul>
+<li>内存分配：当我们申明变量、函数、对象的时候，系统会自动为他 们分配内存</li>
+<li>内存使用：即读写内存，也就是使用变量、函数等</li>
+<li>内存回收：使用完毕，由垃圾回收机制自动回收不再使用的内存</li>
+</ul>
+<p>为了便于理解，我们使用一个简单的例子来解释这个周期。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = 20;  // 在内存中给数值变量分配空间</div><div class="line">alert(a + 100);  // 使用内存</div><div class="line">var a = null; // 使用完毕之后，释放内存空间</div></pre></td></tr></table></figure></p>
+<h3 id="内存回收"><a href="#内存回收" class="headerlink" title="#内存回收"></a>#内存回收</h3><h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="#垃圾回收算法"></a>#垃圾回收算法</h3><ul>
+<li>引用计数算法<ul>
+<li>引用计数算法定义“内存不再使用”的标准很简单，就是看一个对象是否有指向它的引用。如果没有其他对象指向它了，说明该对象已经不再需了。</li>
+</ul>
+</li>
+<li>标记清除算法<ul>
+<li>现代的浏览器已经不再使用引用计数算法了。现代浏览器通用的大多是基于标记清除算法的某些改进算法，总体思想都是一致的</li>
+<li>标记清除算法将“不再使用的对象”定义为“无法达到的对象”。简单来说，就是从根部（在JS中就是全局对象）出发定时扫描内存中的对象。</li>
+<li>凡是能从根部到达的对象，都是还需要使用的。那些无法由根部出发触及到的对象被标记为不再使用，稍后进行回收。</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存泄露"><a href="#内存泄露" class="headerlink" title="#内存泄露"></a>#内存泄露</h3><ul>
+<li>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。</li>
+</ul>
+<h4 id="内存泄漏的识别方法"><a href="#内存泄漏的识别方法" class="headerlink" title="内存泄漏的识别方法"></a>内存泄漏的识别方法</h4><ul>
+<li>浏览器方法</li>
+</ul>
+<p>打开开发者工具，选择 Timeline 面板<br>在顶部的Capture字段里面勾选 Memory<br>点击左上角的录制按钮。<br>在页面上进行各种操作，模拟用户的使用情况。<br>一段时间后，点击对话框的 stop 按钮，面板上就会显示这段时间的内存占用情况。  </p>
+<p>如果内存占用基本平稳，接近水平，就说明不存在内存泄漏。<br>反之，就是内存泄漏了。  </p>
+<ul>
+<li>命令行方法</li>
+</ul>
+<p>命令行可以使用 Node 提供的 process.memoryUsage 方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">console.log(process.memoryUsage());</div><div class="line">// &#123; rss: 27709440,</div><div class="line">//  heapTotal: 5685248,</div><div class="line">//  heapUsed: 3449392,</div><div class="line">//  external: 8772 &#125;</div></pre></td></tr></table></figure></p>
+<p>process.memoryUsage返回一个对象，包含了 Node 进程的内存占用信息。该对象包含四个字段，单位是字节，含义如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Resident Set(常驻内存)</div><div class="line"></div><div class="line">Code Segment(代码区)</div><div class="line"></div><div class="line">Stack(Local Variables, Pointers)</div><div class="line"></div><div class="line">Heap(Objects, Closures)</div><div class="line"></div><div class="line">Used Heap</div><div class="line"></div><div class="line"></div><div class="line">rss（resident set size）：所有内存占用，包括指令区和堆栈。</div><div class="line">heapTotal：&quot;堆&quot;占用的内存，包括用到的和没用到的。</div><div class="line">heapUsed：用到的堆的部分。</div><div class="line">external： V8 引擎内部的 C++ 对象占用的内存。</div></pre></td></tr></table></figure>
+<p>判断内存泄漏，以heapUsed字段为准。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="#参考资料"></a>#参考资料</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2017/04/memory-leak.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2017/04/memory-leak.html</a></li>
+<li><a href="https://juejin.im/post/5b10ba336fb9a01e66164346" target="_blank" rel="external">https://juejin.im/post/5b10ba336fb9a01e66164346</a></li>
+<li><a href="https://www.jianshu.com/p/84a8fd5fa0ee" target="_blank" rel="external">https://www.jianshu.com/p/84a8fd5fa0ee</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.1 JavaScript 内存机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.5.2 forEach和map和for方法的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.2 forEach和map和for方法的区别/">forEach和map和for方法的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.2 forEach和map和for方法的区别/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JS中的forEach、$.each、map方法</p>
+<p>forEach是ECMA5中Array新方法中最基本的一个，就是遍历，循环。例如下面这个例子：</p>
+<p>[1, 2 ,3, 4].forEach(alert);</p>
+<p>等同于下面这个for循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3, 4];</div><div class="line">for (var k = 0, length = array.length; k &lt; length; k++) &#123;</div><div class="line"> alert(array[k]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Array在ES5新增的方法中，参数都是function类型，默认有传参，forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach(function(value, index, array) &#123;</div><div class="line">  // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>对比jQuery中的$.each方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.each([], function(index, value, array) &#123;</div><div class="line">  // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>会发现，第1个和第2个参数正好是相反的，大家要注意了，不要记错了。后面类似的方法，例如$.map也是如此。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var data=[1,3,4] ; </div><div class="line">var sum=0 ;</div><div class="line">data.forEach(function(val,index,arr)&#123;</div><div class="line">  console.log(arr[index]==val);  // ==&gt; true</div><div class="line">  sum+=val            </div><div class="line">&#125;)</div><div class="line">console.log(sum);          // ==&gt; 8</div></pre></td></tr></table></figure>
+<h3 id="map"><a href="#map" class="headerlink" title="#map"></a>#map</h3><p>这里的map不是“地图”的意思，而是指“映射”。[].map(); 基本用法跟forEach方法类似：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">array.map(callback,[ thisObject]);</div><div class="line">callback的参数也类似：</div><div class="line"></div><div class="line">[].map(function(value, index, array) &#123;</div><div class="line">  // ...</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>map方法的作用不难理解，“映射”嘛，也就是原数组被“映射”成对应新数组。下面这个例子是数值项求平方：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var data=[1,3,4]</div><div class="line"> </div><div class="line">var Squares=data.map(function(val,index,arr)&#123;</div><div class="line">  console.log(arr[index]==val);  // ==&gt; true</div><div class="line">  return val*val           </div><div class="line">&#125;)</div><div class="line">console.log(Squares);        // ==&gt; [1, 9, 16]</div><div class="line">注意：由于forEach、map都是ECMA5新增数组的方法，所以ie9以下的浏览器还不支持（万恶的IE啊），不过呢，可以从Array原型扩展可以实现以上全部功能，例如forEach方法:</div><div class="line"></div><div class="line"></div><div class="line">if (typeof Array.prototype.forEach != &quot;function&quot;) &#123;</div><div class="line">  Array.prototype.forEach = function() &#123;</div><div class="line">    /* 实现 */</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="#总结："></a>#总结：</h3><p>1、map速度比foreach快</p>
+<p>2、map会返回一个新数组，不对原数组产生影响,foreach不会产生新数组，foreach返回undefined</p>
+<p>3、map因为返回数组所以可以链式操作，foreach不能</p>
+<p>4, map里可以用return ,而foreach里用return不起作用，foreach不能用break，会直接报错</p>
+<p>那么接下来，继续做分析，为什么更推荐用.map()，而不是.forEach()？</p>
+<p>首先，.map()要比.forEach()执行速度更快。虽然我也说过执行速度不是我们需要考虑的主要因素，但是他们都比for()要更好用，那肯定要选更优化的一个。</p>
+<p>第二，.forEach()的返回值并不是array。如果你想用函数式编程写个链式表达式来装个逼，.map()将会是你不二的选择。</p>
+<p>来看下面这个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3];</div><div class="line"></div><div class="line">console.log(</div><div class="line">    arr.map(function(i)&#123;</div><div class="line">        return i+i;</div><div class="line">    &#125;)</div><div class="line">    //链式风格</div><div class="line">    .sort()</div><div class="line">);// [2,4,6]</div><div class="line"></div><div class="line">console.log(</div><div class="line">    arr.forEach(function(i)&#123;</div><div class="line">        return i+i;</div><div class="line">    &#125;)</div><div class="line">    //接不起来，断了</div><div class="line">    .sort()</div><div class="line">);//TypeError: Cannot read property &apos;sort&apos; of undefined</div></pre></td></tr></table></figure></p>
+<p>最后，感谢大家耐心的阅读，排个序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.map() &gt; .forEach() &gt; for()</div></pre></td></tr></table></figure></p>
+<p>高级浏览器(包括ie9以上)支持map和forEach方法对数组循环遍历，用法基本相同，但有些区别必须知道，才能在项目中正确选择</p>
+<ul>
+<li>原理：</li>
+</ul>
+<p>高级浏览器支持forEach方法<br>语法：forEach和map都支持2个参数：一个是回调函数（item,index,list）和上下文；<br>forEach:用来遍历数组中的每一项；这个方法执行是没有返回值的，对原来数组也没有影响；<br>数组中有几项，那么传递进去的匿名回调函数就需要执行几次；<br>每一次执行匿名函数的时候，还给其传递了三个参数值：数组中的当前项item,当前项的索引index,原始数组input；<br>理论上这个方法是没有返回值的，仅仅是遍历数组中的每一项，不对原来数组进行修改；但是我们可以自己通过数组的索引来修改原来的数组；<br>forEach方法中的this是ary,匿名回调函数中的this默认是window；  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var ary = [12,23,24,42,1];</div><div class="line">var res = ary.forEach(function (item,index,input) &#123;</div><div class="line">     input[index] = item*10;</div><div class="line">&#125;)</div><div class="line">console.log(res);//--&gt;undefined;</div></pre></td></tr></table></figure>
+<p>map:和forEach非常相似，都是用来遍历数组中的每一项值的，用来遍历数组中的每一项；<br>区别：map的回调函数中支持return返回值；return的是啥，相当于把数组中的这一项变为啥（并不影响原来的数组，<br>只是相当于把原数组克隆一份，把克隆的这一份的数组中的对应项改变了）；<br>不管是forEach还是map 都支持第二个参数值，第二个参数的意思是把匿名回调函数中的this进行修改。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var ary = [12,23,24,42,1];</div><div class="line">var res = ary.map(function (item,index,input) &#123;</div><div class="line">     return item*10;</div><div class="line">&#125;)</div><div class="line">console.log(res);//--&gt;[120,230,240,420,10];</div><div class="line">console.log(ary);//--&gt;[12,23,24,42,1]；</div></pre></td></tr></table></figure>
+<h3 id="兼容写法："><a href="#兼容写法：" class="headerlink" title="#兼容写法："></a>#兼容写法：</h3><p>不管是forEach还是map在IE6-8下都不兼容（不兼容的情况下在Array.prototype上没有这两个方法）,那么需要我们自己封装一个都兼容的方法，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* forEach遍历数组</div><div class="line">* @param callback [function] 回调函数；</div><div class="line">* @param context [object] 上下文；</div><div class="line">*/</div><div class="line">Array.prototype.myForEach = function myForEach(callback,context)&#123;</div><div class="line">    context = context || window;</div><div class="line">    if(&apos;forEach&apos; in Array.prototye) &#123;</div><div class="line">        this.forEach(callback,context);</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">    //IE6-8下自己编写回调函数执行的逻辑for(var i = 0,len = this.length; i &lt; len;i++) &#123;</div><div class="line">        callback &amp;&amp; callback.call(context,this[i],i,this);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">/**</div><div class="line">* map遍历数组</div><div class="line">* @param callback [function] 回调函数；</div><div class="line">* @param context [object] 上下文；</div><div class="line">*/</div><div class="line">Array.prototype.myMap = function myMap(callback,context)&#123;</div><div class="line">    context = context || window;</div><div class="line">    if(&apos;map&apos; in Array.prototye) &#123;</div><div class="line">        return this.map(callback,context);</div><div class="line">    &#125;</div><div class="line">    //IE6-8下自己编写回调函数执行的逻辑var newAry = [];</div><div class="line">    for(var i = 0,len = this.length; i &lt; len;i++) &#123;</div><div class="line">        if(typeof  callback === &apos;function&apos;) &#123;</div><div class="line">            var val = callback.call(context,this[i],i,this);</div><div class="line">            newAry[newAry.length] = val;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return newAry;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="https://www.cnblogs.com/chaoyuehedy/p/6905422.html" target="_blank" rel="external">https://www.cnblogs.com/chaoyuehedy/p/6905422.html</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.2 forEach和map和for方法的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.5.3 json 数组对象中键值重复判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.3 json 数组对象中键值重复判断/">对象中键值重复判断</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.3 json 数组对象中键值重复判断/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var arr = [</div><div class="line">  &#123;&apos;type&apos;:&apos;checkbox&apos;,&apos;name&apos;:&apos;选项1&apos;&#125;,</div><div class="line">  &#123;&apos;type&apos;:&apos;checkbox&apos;,&apos;name&apos;:&apos;选项1&apos;&#125;,</div><div class="line">  &#123;&apos;type&apos;:&apos;checkbox&apos;,&apos;name&apos;:&apos;选项3&apos;&#125;</div><div class="line">]</div><div class="line"></div><div class="line">//判断 type 的值 和 name 值 是否有重复</div><div class="line"></div><div class="line">var arrValues = arr.map(item=&gt;item.name) // 返回对象中键值集合的数组</div><div class="line"></div><div class="line">// 判断数组中是否有重复值</div><div class="line">function isRepeat(arr)&#123;</div><div class="line">  var hash = &#123;&#125;;</div><div class="line">  for(var i in arr) &#123;</div><div class="line">    if(hash[arr[i]])&#123;</div><div class="line">       return true;</div><div class="line">     &#125;</div><div class="line">     hash[arr[i]] = true;</div><div class="line">  &#125;</div><div class="line">  return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.3 json 数组对象中键值重复判断/">展开全文 >></a>
         </p>
       
 

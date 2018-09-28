@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>时间戳日期转换 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="时间戳日期转换12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;  to  *">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="时间戳日期转换">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.5.4 时间戳日期转换/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="时间戳日期转换12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;  to  *">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:06:42.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="时间戳日期转换12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;">
+<meta name="twitter:title" content="时间戳日期转换">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334/* * 时间日期转换 * @param: &amp;quot;10:00-22:00&amp;quot;/ new Date() */export default &amp;#123;  /*  * var storeBusinessTime=&amp;quot;10:00-22:00&amp;quot;  to  *">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.5.4 时间戳日期转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      时间戳日期转换
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.4 时间戳日期转换/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="时间戳日期转换"><a href="#时间戳日期转换" class="headerlink" title="时间戳日期转换"></a>时间戳日期转换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 时间日期转换</div><div class="line"> * @param: &quot;10:00-22:00&quot;/ new Date()</div><div class="line"> */</div><div class="line">export default &#123;</div><div class="line">  /*</div><div class="line">  * var storeBusinessTime=&quot;10:00-22:00&quot;  to</div><div class="line">  */</div><div class="line">  timeToDate: function(val) &#123;</div><div class="line">    var date = new Date()</div><div class="line">    var y = date.getFullYear();</div><div class="line">    var m = date.getMonth() +1;</div><div class="line">    var day = date.getDate();</div><div class="line">    var d = [],newArr = [];</div><div class="line">    var dArr = val.split(&apos;-&apos;);</div><div class="line">    dArr.forEach(function(ele,index)&#123;</div><div class="line">      newArr.push(ele.split(&apos;:&apos;))</div><div class="line">    &#125;)</div><div class="line">    d = [new Date(y,m,day,newArr[0][0],newArr[0][1]),new Date(y,m,day,newArr[1][0],newArr[1][1])]</div><div class="line">    return d;</div><div class="line">  &#125;,</div><div class="line">  dateToTime(val) &#123;</div><div class="line">    console.log(val)</div><div class="line">    //  (0-9)年月数字的显示</div><div class="line">    function formatDig(num) &#123;</div><div class="line">      return num &gt; 9 ? &apos;&apos; + num : &apos;0&apos; + num;</div><div class="line">    &#125;</div><div class="line">    var t;</div><div class="line">    var t1 = formatDig(new Date(val[0]).getHours())+&apos;:&apos;+formatDig(new Date(val[0]).getMinutes())</div><div class="line">    var t2 = formatDig(new Date(val[1]).getHours())+&apos;:&apos;+formatDig(new Date(val[1]).getMinutes())</div><div class="line">    t= t1+&apos;-&apos;+t2</div><div class="line">    return t;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 时间日期转换</div><div class="line"> * @param: &quot;10:00-22:00&quot;/ new Date()</div><div class="line"> */</div><div class="line">export default &#123;</div><div class="line">  /*</div><div class="line">  * var storeBusinessTime=&quot;10:00-22:00&quot;  to</div><div class="line">  */</div><div class="line">  timeToDate: function(val) &#123;</div><div class="line">    var date = new Date()</div><div class="line">    var y = date.getFullYear();</div><div class="line">    var m = date.getMonth() +1;</div><div class="line">    var day = date.getDate();</div><div class="line">    var d = [],newArr = [];</div><div class="line">    var dArr = val.split(&apos;-&apos;);</div><div class="line">    dArr.forEach(function(ele,index)&#123;</div><div class="line">      newArr.push(ele.split(&apos;:&apos;))</div><div class="line">    &#125;)</div><div class="line">    d = [new Date(y,m,day,newArr[0][0],newArr[0][1]),new Date(y,m,day,newArr[1][0],newArr[1][1])]</div><div class="line">    return d;</div><div class="line">  &#125;,</div><div class="line">  dateToTime(val) &#123;</div><div class="line">    console.log(val)</div><div class="line">    //  (0-9)年月数字的显示</div><div class="line">    function formatDig(num) &#123;</div><div class="line">      return num &gt; 9 ? &apos;&apos; + num : &apos;0&apos; + num;</div><div class="line">    &#125;</div><div class="line">    var t;</div><div class="line">    var t1 = formatDig(new Date(val[0]).getHours())+&apos;:&apos;+formatDig(new Date(val[0]).getMinutes())</div><div class="line">    var t2 = formatDig(new Date(val[1]).getHours())+&apos;:&apos;+formatDig(new Date(val[1]).getMinutes())</div><div class="line">    t= t1+&apos;-&apos;+t2</div><div class="line">    return t;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -267,18 +282,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.5.5 常用JS方法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.5.3.1 数组对象去重/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          数组对象去重
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.5.3.1 数组对象去重/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">setTimeout、setInterval被遗忘的第三个参数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -307,9 +322,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="时间戳日期转换" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.5.4 时间戳日期转换" data-title="" data-url="http://yoursite.com/2018/09/27/4.5.4 时间戳日期转换/"></div>
+	<div class="ds-thread" data-thread-key="4.5.4 时间戳日期转换" data-title="时间戳日期转换" data-url="http://yoursite.com/2018/09/27/4.5.4 时间戳日期转换/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

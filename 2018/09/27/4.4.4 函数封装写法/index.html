@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>函数封装写法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数封装写法 112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, mo">
+  <meta name="description" content="112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, month) &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="函数封装写法">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.4.4 函数封装写法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="函数封装写法 112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, mo">
+<meta property="og:description" content="112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, month) &amp;">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:06:42.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="函数封装写法 112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, mo">
+<meta name="twitter:title" content="函数封装写法">
+<meta name="twitter:description" content="112345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152(function()&amp;#123;    var datepicker = &amp;#123;&amp;#125;;  datepicker.getMonthData = function (year, month) &amp;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.4.4 函数封装写法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数封装写法
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.4 函数封装写法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="函数封装写法"><a href="#函数封装写法" class="headerlink" title="函数封装写法"></a>函数封装写法</h1><ul>
+        <ul>
 <li>1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  </div><div class="line">  var datepicker = &#123;&#125;;</div><div class="line">  datepicker.getMonthData = function (year, month) &#123;</div><div class="line">    if (!year || !month) &#123; </div><div class="line">      var today =new Date();</div><div class="line">      year=today.getFullYear(); </div><div class="line">      month = today.getMonth() + 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return &#123;</div><div class="line">      year: year,</div><div class="line">      month: month,</div><div class="line">      days: ret</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  window.datepicker = datepicker; //方法暴露出去，供外部调用</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"></div><div class="line">// 带参数写法</div><div class="line">( function(str)&#123;</div><div class="line">    alert(str);</div><div class="line">&#125;)(&quot;你好！&quot;);</div><div class="line"></div><div class="line"></div><div class="line">/ ------------------------ 工具包---------------------------------//</div><div class="line">var utils = &#123;</div><div class="line">            center : function(dom)&#123;</div><div class="line">                dom.style.position = &apos;absolute&apos;;</div><div class="line">                dom.style.top = &apos;50%&apos;;</div><div class="line">                dom.style.left = &apos;50%&apos;;</div><div class="line">                dom.style[&apos;margin-top&apos;] = - dom.offsetHeight / 2 + &apos;px&apos;;</div><div class="line">                dom.style[&apos;margin-left&apos;] = - dom.offsetWidth / 2 + &apos;px&apos;;</div><div class="line">            &#125;,</div><div class="line">        </div><div class="line">            /** dom相关 * */</div><div class="line">            isDom : ( typeof HTMLElement === &apos;object&apos; ) ?</div><div class="line">                function(obj)&#123;</div><div class="line">                    return obj instanceof HTMLElement;</div><div class="line">                &#125; :</div><div class="line">                function(obj)&#123;</div><div class="line">                    return obj &amp;&amp; typeof obj === &apos;object&apos; &amp;&amp; obj.nodeType === 1 &amp;&amp; typeof obj.nodeName === &apos;string&apos;;</div><div class="line">                &#125; ,</div><div class="line">             </div><div class="line">            /** 数组相关 * */</div><div class="line">            isArray : function(obj)&#123;</div><div class="line">                return obj.constructor.toString().indexOf(&apos;Array&apos;) != -1;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -270,18 +285,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.4.5 字符串数组常用方法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          块格式化上下文（block formatting context）
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.4.5 字符串数组常用方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串数组常用方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -310,9 +325,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="函数封装写法" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.4.4 函数封装写法" data-title="" data-url="http://yoursite.com/2018/09/27/4.4.4 函数封装写法/"></div>
+	<div class="ds-thread" data-thread-key="4.4.4 函数封装写法" data-title="函数封装写法" data-url="http://yoursite.com/2018/09/27/4.4.4 函数封装写法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

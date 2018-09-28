@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>双向数据绑定原理 | Hexo</title>
+  <title>获取字符串长度（汉字算两个字符，字母数字算一个) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435//获取字符串长度（汉字算两个字符，字母数字算一个）    function getByteLen(val) &amp;#123;      var len = 0;      for (var i = 0; i &amp;lt; val.length; i++) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双向数据绑定原理">
-<meta property="og:url" content="http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/index.html">
+<meta property="og:title" content="获取字符串长度（汉字算两个字符，字母数字算一个)">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435//获取字符串长度（汉字算两个字符，字母数字算一个）    function getByteLen(val) &amp;#123;      var len = 0;      for (var i = 0; i &amp;lt; val.length; i++) &amp;#123;">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T07:42:38.384Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="双向数据绑定原理">
-<meta name="twitter:description" content="脏值检测AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。     数据劫持">
+<meta name="twitter:title" content="获取字符串长度（汉字算两个字符，字母数字算一个)">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435//获取字符串长度（汉字算两个字符，字母数字算一个）    function getByteLen(val) &amp;#123;      var len = 0;      for (var i = 0; i &amp;lt; val.length; i++) &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,36 +158,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-6.0 双向数据绑定原理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      双向数据绑定原理
+      获取字符串长度（汉字算两个字符，字母数字算一个)
     </h1>
   
 
         
-        <a href="/2018/09/27/6.0 双向数据绑定原理/" class="archive-article-date">
-  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+        <a href="/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>脏值检测<br>AngularJS 采用“脏值检测”的方式，数据发生变更后，对于所有的数据和视图的绑定关系进行一次检测，识别是否有数据发生了改变，有变化进行处理，<br>可能进一步引发其他数据的改变，所以这个过程可能会循环几次，一直到不再有数据变化发生后，将变更的数据发送到视图，更新页面展现。<br>如果是手动对 ViewModel 的数据进行变更，为确保变更同步到视图，需要手动触发一次“脏值检测”。  </li>
-</ul>
-<ul>
-<li><p>数据劫持<br>VueJS 则使用 ES5 提供的 Object.defineProperty() 方法，监控对数据的操作，从而可以自动触发数据同步。<br>并且，由于是在不同的数据上触发同步，可以精确的将变更发送给绑定的视图，而不是对所有的数据都执行一次检测。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;;  </div><div class="line">            Object.defineProperty(obj,&apos;a&apos;,&#123;  </div><div class="line">                set:function(newVal)&#123;  </div><div class="line">                    document.getElementById(&apos;a&apos;).value = newVal;  </div><div class="line">                    document.getElementById(&apos;b&apos;).innerHTML = newVal;  </div><div class="line">                &#125;  </div><div class="line">            &#125;);  </div><div class="line">              </div><div class="line">            document.addEventListener(&apos;keyup&apos;,function(e)&#123;  </div><div class="line">                obj.a = e.target.value;  </div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>观察机制<br>博主之前有一篇转载翻译的文章， Object.observe()带来的数据绑定变革 ，说的就是使用ECMAScript7中的 Object.observe 方法对对象<br>（或者其属性）进行监控观察，一旦其发生变化时，将会执行相应的handler。<br>这是目前监控属性数据变更最完美的一种方法，语言（浏览器）原生支持，没有什么比这个更好了。唯一的遗憾就是目前支持广度还不行，有待全面推广。   </p>
-</li>
-</ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//获取字符串长度（汉字算两个字符，字母数字算一个）</div><div class="line">    function getByteLen(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 2;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return len;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">  vue demo </div><div class="line">  // 输入</div><div class="line">      toInput: function(value) &#123;</div><div class="line">        var that = this;</div><div class="line">        console.log(value,that.floorName)</div><div class="line">        that.inputLength = 4;</div><div class="line">        var l = strLength.getByteLen(that.floorName);</div><div class="line">        console.log(l)</div><div class="line">        if (l &lt;= 8) &#123;</div><div class="line">          that.inputLength = that.floorName.length</div><div class="line">          console.log(&quot;len:&quot;,that.inputLength)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        that.floorName = value.target.value.substr(0,that.inputLength)</div><div class="line"></div><div class="line">        console.log(that.floorName)</div><div class="line"></div><div class="line">      &#125;,</div></pre></td></tr></table></figure>
+<h3 id="截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）"><a href="#截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）" class="headerlink" title="截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）"></a>截取制定长度的字符串（一个汉字算两个字符，英文或字母算一个）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function func(s, n) &#123;</div><div class="line">　　　　return s.slice(0, n).replace(/([^x00-xff])/g, &quot;$1a&quot;).slice(0, n).replace(/([^x00-xff])a/g, &quot;$1&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">func(&apos;我的jdfhjfdsgf&apos;, 5)</div><div class="line">// 有点问题</div><div class="line"></div><div class="line">----------------------------------</div><div class="line">测试可用：</div><div class="line">function getByteVal(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 2;</div><div class="line">        else</div><div class="line">        byteValLen += 1;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">getByteVal(&apos;我的合肥决定是否看见&apos;,10)</div></pre></td></tr></table></figure>
+<h3 id="截取字符串（一个字算一个，两个英文字母或数字算一个字）"><a href="#截取字符串（一个字算一个，两个英文字母或数字算一个字）" class="headerlink" title="截取字符串（一个字算一个，两个英文字母或数字算一个字）"></a>截取字符串（一个字算一个，两个英文字母或数字算一个字）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getByteVal(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 1;</div><div class="line">        else</div><div class="line">        byteValLen += 0.5;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">&#125;</div><div class="line">undefined</div><div class="line">getByteVal(&apos;我的合肥决定是否看见&apos;,10)</div><div class="line">//&quot;我的合肥决定是否看见&quot;</div></pre></td></tr></table></figure>
+<h3 id="判断是否为纯汉字"><a href="#判断是否为纯汉字" class="headerlink" title="判断是否为纯汉字"></a>判断是否为纯汉字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function load(str)&#123;  </div><div class="line">    var regex =/^[\u4E00-\u9FA5]+$/;  </div><div class="line">    if(!regex.test(str))&#123;  </div><div class="line">    return false;  </div><div class="line">    &#125;else&#123;  </div><div class="line">    return true;  </div><div class="line">    &#125;  </div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="判断字符串是否为数字和字母的组合"><a href="#判断字符串是否为数字和字母的组合" class="headerlink" title="判断字符串是否为数字和字母的组合"></a>判断字符串是否为数字和字母的组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function checkRate(nubmer)  </div><div class="line">&#123;  </div><div class="line">     var re =  /^[0-9a-zA-Z]*$/g;  //判断字符串是否为数字和字母组合     //判断正整数 /^[1-9]+[0-9]*]*$/    </div><div class="line">     if (!re.test(nubmer))  </div><div class="line">    &#123;  </div><div class="line">        return false;  </div><div class="line">     &#125;else&#123;  </div><div class="line">    return true;  </div><div class="line">     &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="两个字母数字算一个字，一个字算一个字"><a href="#两个字母数字算一个字，一个字算一个字" class="headerlink" title="两个字母数字算一个字，一个字算一个字"></a>两个字母数字算一个字，一个字算一个字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getByteLen(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 0.5;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return Math.ceil(len);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="vue-中用到的"><a href="#vue-中用到的" class="headerlink" title="vue 中用到的"></a>vue 中用到的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">/*</div><div class="line"> * 判断字符长度</div><div class="line"> * @param: str</div><div class="line"> */</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  /*</div><div class="line">  * 一个汉字算两个字符,一个英文字母或数字算一个字符</div><div class="line">  */</div><div class="line"> getByteLen: function(val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 2;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return len;</div><div class="line">  &#125;,</div><div class="line">   /*</div><div class="line">  * 一个汉字算一个字,一个英文字母或数字算半个字</div><div class="line">  */</div><div class="line">  getZhLen: function (val) &#123;</div><div class="line">      var len = 0;</div><div class="line">      for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        var a = val.charAt(i);</div><div class="line">        if (a.match(/[^\x00-\xff]/ig) != null) &#123;</div><div class="line">          len += 1;</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">          len += 0.5;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return Math.ceil(len);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*暂无用*/</div><div class="line">  cutStr: function(str, len,type)&#123;</div><div class="line">    var char_length = 0;</div><div class="line">    for (var i = 0; i &lt; str.length; i++)&#123;</div><div class="line">        var son_str = str.charAt(i);</div><div class="line">        if(type==1) &#123;</div><div class="line">          encodeURI(son_str).length &gt; 2 ? char_length += 1 : char_length += 0.5;</div><div class="line">        &#125;</div><div class="line">        if(type==2) &#123;</div><div class="line">           char_length += 1 ;</div><div class="line">        &#125;</div><div class="line">        if (char_length &gt;= len)&#123;</div><div class="line">            var sub_len = char_length == len ? i+1 : i;</div><div class="line">            return str.substr(0, sub_len);</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 限制字数用, 一个汉字算一个字,两个英文/字母算一个字</div><div class="line">  */</div><div class="line">  getByteVal: function(val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 1;</div><div class="line">        else</div><div class="line">        byteValLen += 0.5;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 限制字符数用, 一个汉字算两个字符,一个英文/字母算一个字符</div><div class="line">  */</div><div class="line">  getCharVal: function (val, max) &#123;</div><div class="line">    var returnValue = &apos;&apos;;</div><div class="line">    var byteValLen = 0;</div><div class="line">    for (var i = 0; i &lt; val.length; i++) &#123;</div><div class="line">        if (val[i].match(/[^\x00-\xff]/ig) != null)</div><div class="line">        byteValLen += 2;</div><div class="line">        else</div><div class="line">        byteValLen += 1;</div><div class="line">        if (byteValLen &gt; max)</div><div class="line">        break;</div><div class="line">        returnValue += val[i];</div><div class="line">    &#125;</div><div class="line">    return returnValue;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  /*</div><div class="line">  * 正则校验,校验非负数字</div><div class="line">  */</div><div class="line">  regPos: function(v) &#123;</div><div class="line">    var regTest = /^\d+(\.\d+)?$/;</div><div class="line">    return regTest.test(v);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -277,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +288,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/5.1.7 leetCode 算法题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          leetCode 算法题
+          判断js中的数据类型的几种方法
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/html5与css3权威指南学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">html5与css3权威指南学习笔记</div>
+    <a href="/2018/09/27/4.4.9-函数式编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数式编程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -331,9 +328,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="双向数据绑定原理" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="获取字符串长度（汉字算两个字符，字母数字算一个)" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="6.0 双向数据绑定原理" data-title="双向数据绑定原理" data-url="http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/"></div>
+	<div class="ds-thread" data-thread-key="4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个" data-title="获取字符串长度（汉字算两个字符，字母数字算一个)" data-url="http://yoursite.com/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -381,8 +378,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2018/09/27/6.0 双向数据绑定原理/", 
-    sourceId: "6.0 双向数据绑定原理",
+    url: "http://yoursite.com/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/", 
+    sourceId: "4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -391,7 +388,7 @@
   
 
   
-  <div id="SOHUCS" sid="6.0 双向数据绑定原理" ></div> 
+  <div id="SOHUCS" sid="4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "true"; 

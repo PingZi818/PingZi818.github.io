@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>安卓浏览器键盘输入改变弹出层的定位 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安卓浏览器键盘输入改变弹出层的定位在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;">
+  <meta name="description" content="在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;    position: abs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="安卓浏览器键盘输入改变弹出层的定位">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/3.1.4 安卓浏览器键盘输入改变弹出层的定位/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安卓浏览器键盘输入改变弹出层的定位在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;">
+<meta property="og:description" content="在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;    position: abs">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:34:11.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="安卓浏览器键盘输入改变弹出层的定位在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;">
+<meta name="twitter:title" content="安卓浏览器键盘输入改变弹出层的定位">
+<meta name="twitter:description" content="在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下： 12345.popup &amp;#123;    position: absolute;    bottom: 0;&amp;#125; 当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。 bug解决: 给弹出层添加一个高度 12345.popup &amp;#123;    position: abs">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-3.1.4 安卓浏览器键盘输入改变弹出层的定位" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      安卓浏览器键盘输入改变弹出层的定位
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.1.4 安卓浏览器键盘输入改变弹出层的定位/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安卓浏览器键盘输入改变弹出层的定位"><a href="#安卓浏览器键盘输入改变弹出层的定位" class="headerlink" title="安卓浏览器键盘输入改变弹出层的定位"></a>安卓浏览器键盘输入改变弹出层的定位</h1><p>在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下：</p>
+        <p>在安卓浏览器中，有一个在页面底部的弹出层表单，样式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.popup &#123;</div><div class="line"></div><div class="line">    position: absolute;</div><div class="line">    bottom: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>当在这个弹出层输入内容，键盘自动弹出，弹出层的bottom值会改变成键盘的高度，有可能使输入框超出屏幕的高度。</p>
 <p>bug解决:</p>
@@ -272,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/3.1.5 CSS中margin边界叠加问题及解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/5.1.6 写好一份简历/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          你为什么写不好一份简历?
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/3.1.3 移动端 ios scroll 滚动穿透/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/3.1.6 css clip-path 画聊天气泡/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css clip-path</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,9 +327,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="安卓浏览器键盘输入改变弹出层的定位" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="3.1.4 安卓浏览器键盘输入改变弹出层的定位" data-title="" data-url="http://yoursite.com/2018/09/27/3.1.4 安卓浏览器键盘输入改变弹出层的定位/"></div>
+	<div class="ds-thread" data-thread-key="3.1.4 安卓浏览器键盘输入改变弹出层的定位" data-title="安卓浏览器键盘输入改变弹出层的定位" data-url="http://yoursite.com/2018/09/27/3.1.4 安卓浏览器键盘输入改变弹出层的定位/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

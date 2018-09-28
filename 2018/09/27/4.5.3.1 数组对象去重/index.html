@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>数组对象去重 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组对象去重demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quo">
+  <meta name="description" content="demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="数组对象去重">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.5.3.1 数组对象去重/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数组对象去重demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quo">
+<meta property="og:description" content="demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quot;,">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:06:43.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="数组对象去重demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quo">
+<meta name="twitter:title" content="数组对象去重">
+<meta name="twitter:description" content="demo: 1234567891011121314151617181920212223var arr = [&amp;#123;    &amp;quot;name&amp;quot;: &amp;quot;ZYTX&amp;quot;,    &amp;quot;age&amp;quot;: &amp;quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&amp;quot;,">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.5.3.1 数组对象去重" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组对象去重
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.3.1 数组对象去重/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数组对象去重"><a href="#数组对象去重" class="headerlink" title="数组对象去重"></a>数组对象去重</h1><p>demo:</p>
+        <p>demo:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var arr = [&#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;AAAAAA.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTA&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;BBBBBB.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZDTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;CCCCCC.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;AAAAAA.doc&quot;</div><div class="line">&#125;];</div><div class="line">var hash = &#123;&#125;;</div><div class="line">arr = arr.reduce(function(item, next) &#123;</div><div class="line">    hash[next.name] ? &apos;&apos; : hash[next.name] = true &amp;&amp; item.push(next);</div><div class="line">    return item</div><div class="line">&#125;, [])</div><div class="line">console.log(arr);</div></pre></td></tr></table></figure>
 <ul>
 <li>ES6的Set；不过根据我的实验，Set还是适合对基本类型的去重，如果Set中的每一项是对象的话，是不会去重的，j即使有的对象一模一样——</li>
@@ -272,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.5.4 时间戳日期转换/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.5.3 json 数组对象中键值重复判断/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          对象中键值重复判断
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.5.3 json 数组对象中键值重复判断/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.5.4 时间戳日期转换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">时间戳日期转换</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,9 +327,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="数组对象去重" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.5.3.1 数组对象去重" data-title="" data-url="http://yoursite.com/2018/09/27/4.5.3.1 数组对象去重/"></div>
+	<div class="ds-thread" data-thread-key="4.5.3.1 数组对象去重" data-title="数组对象去重" data-url="http://yoursite.com/2018/09/27/4.5.3.1 数组对象去重/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

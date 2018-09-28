@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>新增元素使用jQuery on()方法重复绑定的问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新增元素使用jQuery on()方法重复绑定的问题最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必">
+  <meta name="description" content="最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必须在元素每次添加进来之后重新绑定，否则会无效。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="新增元素使用jQuery on()方法重复绑定的问题">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.4.1 新增元素使用 jQuery on()方法重复绑定的问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="新增元素使用jQuery on()方法重复绑定的问题最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必">
+<meta property="og:description" content="最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必须在元素每次添加进来之后重新绑定，否则会无效。">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:38.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="新增元素使用jQuery on()方法重复绑定的问题最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必">
+<meta name="twitter:title" content="新增元素使用jQuery on()方法重复绑定的问题">
+<meta name="twitter:description" content="最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。 当使用$(document).find(‘target-selector’).on(event,function);时，必须在元素每次添加进来之后重新绑定，否则会无效。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.4.1 新增元素使用 jQuery on()方法重复绑定的问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      新增元素使用jQuery on()方法重复绑定的问题
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.1 新增元素使用 jQuery on()方法重复绑定的问题/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="新增元素使用jQuery-on-方法重复绑定的问题"><a href="#新增元素使用jQuery-on-方法重复绑定的问题" class="headerlink" title="新增元素使用jQuery on()方法重复绑定的问题"></a>新增元素使用jQuery on()方法重复绑定的问题</h1><p>最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，<br>找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。</p>
+        <p>最近写ajax新增元素button绑定click事件的时候发现元素重新添加进来的时候会多执行一次事件函数，<br>找了半天，怀疑是on()的问题，于是测试了一下，果然是因为on()的使用方式造成了有的新增元素会执行多次绑定事件函数。</p>
 <p>当使用$(document).find(‘target-selector’).on(event,function);时，必须在元素每次添加进来之后重新绑定，否则会无效。  </p>
 <p>而使用$(document).on(event,selector,function);时，只需执行一次绑定即可，可以在开头就写好绑定，对后面添加进来的元素都有效，<br>如果在元素每次添加进来之后都绑定，则绑定了几次，触发事件的时候就会执行几次事件函数。  </p>
 
@@ -273,14 +288,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          一年中的 周 范围计算
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.3.9 2017-12-11 遇到 ios bug/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">块格式化上下文（block formatting context）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -309,9 +324,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="新增元素使用jQuery on()方法重复绑定的问题" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.4.1 新增元素使用 jQuery on()方法重复绑定的问题" data-title="" data-url="http://yoursite.com/2018/09/27/4.4.1 新增元素使用 jQuery on()方法重复绑定的问题/"></div>
+	<div class="ds-thread" data-thread-key="4.4.1 新增元素使用 jQuery on()方法重复绑定的问题" data-title="新增元素使用jQuery on()方法重复绑定的问题" data-url="http://yoursite.com/2018/09/27/4.4.1 新增元素使用 jQuery on()方法重复绑定的问题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>const | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="constthis 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTi">
+  <meta name="description" content="this 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTimeout">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="const">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.1.0 const /index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="constthis 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTi">
+<meta property="og:description" content="this 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTimeout">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:34:11.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="constthis 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTi">
+<meta name="twitter:title" content="const">
+<meta name="twitter:description" content="this 作用域问题 12345678910111213141516171819202122const opt = &amp;#123;  name: &amp;apos;Amy&amp;apos;,  name2: this.name,  say: function() &amp;#123;    return this.name;  &amp;#125;,  say2: function() &amp;#123;    setTimeout">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.1.0 const " class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      const
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.1.0 const /" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><p>this 作用域问题</p>
+        <p>this 作用域问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">const opt = &#123;</div><div class="line">  name: &apos;Amy&apos;,</div><div class="line">  name2: this.name,</div><div class="line">  say: function() &#123;</div><div class="line">    return this.name;</div><div class="line">  &#125;,</div><div class="line">  say2: function() &#123;</div><div class="line">    setTimeout(function() &#123;</div><div class="line">      console.log(this.name);</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">  say3: function() &#123;</div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      console.log(this.name);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">console.log(opt.name2); // 1. 这里打印出什么？undefined</div><div class="line">console.log(opt.say); // 2. 这里打印出什么？  function() &#123;return this.name&#125;</div><div class="line">opt.say2(); // 3. 这里打印出什么？			 undefined</div><div class="line">opt.say3(); // 4. 这里打印出什么？			 &apos;Amy&apos;</div></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://github.com/wxyyxc1992/coding-snippets/blob/master/language/js/snippets/this.js" target="_blank" rel="external">https://github.com/wxyyxc1992/coding-snippets/blob/master/language/js/snippets/this.js</a></li>
@@ -271,18 +286,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.1.1 移动端 js 拖拽实现/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.0 javascript 代码规范/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          javascript 代码规范
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/3.2.5 css grid/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.1.1 移动端 js 拖拽实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端 js 拖拽实现</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -311,9 +326,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="const" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.1.0 const " data-title="" data-url="http://yoursite.com/2018/09/27/4.1.0 const /"></div>
+	<div class="ds-thread" data-thread-key="4.1.0 const " data-title="const" data-url="http://yoursite.com/2018/09/27/4.1.0 const /"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

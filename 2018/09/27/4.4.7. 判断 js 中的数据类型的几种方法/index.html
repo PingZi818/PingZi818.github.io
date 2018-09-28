@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>判断js中的数据类型的几种方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断js中的数据类型的几种方法判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,">
+  <meta name="description" content="判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,2,3];var d = ne">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="判断js中的数据类型的几种方法">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断js中的数据类型的几种方法判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,">
+<meta property="og:description" content="判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,2,3];var d = ne">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="判断js中的数据类型的几种方法判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,">
+<meta name="twitter:title" content="判断js中的数据类型的几种方法">
+<meta name="twitter:description" content="判断js中的数据类型的几种方法 判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。 先举几个例子：123456var a = &amp;quot;iamstring.&amp;quot;;var b = 222;var c= [1,2,3];var d = ne">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.4.7. 判断 js 中的数据类型的几种方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      判断js中的数据类型的几种方法
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="判断js中的数据类型的几种方法"><a href="#判断js中的数据类型的几种方法" class="headerlink" title="判断js中的数据类型的几种方法"></a>判断js中的数据类型的几种方法</h1><p>判断js中的数据类型的几种方法</p>
+        <p>判断js中的数据类型的几种方法</p>
 <p>判断js中的数据类型有一下几种方法：typeof、instanceof、 constructor、 prototype、 $.type()/jquery.type(),接下来主要比较一下这几种方法的异同。</p>
 <p>先举几个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var a = &quot;iamstring.&quot;;</div><div class="line">var b = 222;</div><div class="line">var c= [1,2,3];</div><div class="line">var d = new Date();</div><div class="line">var e = function()&#123;alert(111);&#125;;</div><div class="line">var f = function()&#123;this.name=&quot;22&quot;;&#125;;</div></pre></td></tr></table></figure></p>
 <p>1、最常见的判断方法：typeof</p>
@@ -276,18 +291,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.5.1 JavaScript 内存机制/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.4.6 本地缓存与浏览器缓存区别/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          本地缓存与浏览器缓存区别
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.4.6 本地缓存与浏览器缓存区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.4.8 获取字符串长度（汉字算两个字符，字母数字算一个/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">获取字符串长度（汉字算两个字符，字母数字算一个)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -316,9 +331,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="判断js中的数据类型的几种方法" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.4.7. 判断 js 中的数据类型的几种方法" data-title="" data-url="http://yoursite.com/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/"></div>
+	<div class="ds-thread" data-thread-key="4.4.7. 判断 js 中的数据类型的几种方法" data-title="判断js中的数据类型的几种方法" data-url="http://yoursite.com/2018/09/27/4.4.7. 判断 js 中的数据类型的几种方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

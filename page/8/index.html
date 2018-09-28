@@ -159,77 +159,255 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-3.1.2 H5 页面在 ios 端滑动不流畅的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.5.3.1 数组对象去重" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="H5页面在-ios-端滑动不流畅的问题"><a href="#H5页面在-ios-端滑动不流畅的问题" class="headerlink" title="H5页面在 ios 端滑动不流畅的问题"></a>H5页面在 ios 端滑动不流畅的问题</h1><p>IOS系统的惯性滑动效果非常6，但是当我们对div加overflow-y:auto;后是不会出这个效果的，滑动的时候会感觉很生涩。怎么办？</p>
-<p>方案一：</p>
-<p>在滚动容器内加-webkit-overflow-scrolling: touch</p>
-<p>但这个方案有一个问题，在页面内具有多个overflow：auto的情况下，那些具有 绝对定位（absolute, fixed） 属性的元素，也会跟着滚动。</p>
-<p>方案二：</p>
-<p>body {overflow-x: hidden}</p>
-<p>即，给 body 元素添加overflow-x：hidden。然后在滚动容器内加overflow-y: auto</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.2 H5 页面在 ios 端滑动不流畅的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-3.1.1 两列布局左边定宽，右边自适应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.3.1 数组对象去重/">数组对象去重</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.3.1 数组对象去重/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="两列布局左边定宽，右边自适应。"><a href="#两列布局左边定宽，右边自适应。" class="headerlink" title="两列布局左边定宽，右边自适应。"></a>两列布局左边定宽，右边自适应。</h1><ul>
-<li>1 采用position：absollute;并设置margin-left的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#left&#123;</div><div class="line">    position:absolute;</div><div class="line">    width:300px;</div><div class="line">    top:0px;</div><div class="line">    left:0px;</div><div class="line">    background:#F00;</div><div class="line">&#125;</div><div class="line">#right&#123;</div><div class="line">    background:#0FC;</div><div class="line">    margin-left:300px;</div><div class="line">&#125;</div><div class="line">&lt;div id=&quot;left&quot;&gt;左边定宽&lt;/div&gt; &lt;div id=&quot;right&quot;&gt;右边自适应&lt;/div&gt;</div></pre></td></tr></table></figure>
+        <p>demo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var arr = [&#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;AAAAAA.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTA&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;BBBBBB.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZDTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;CCCCCC.doc&quot;</div><div class="line">&#125;, &#123;</div><div class="line">    &quot;name&quot;: &quot;ZYTX&quot;,</div><div class="line">    &quot;age&quot;: &quot;Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix&quot;,</div><div class="line">    &quot;gender&quot;: &quot;AAAAAA.doc&quot;</div><div class="line">&#125;];</div><div class="line">var hash = &#123;&#125;;</div><div class="line">arr = arr.reduce(function(item, next) &#123;</div><div class="line">    hash[next.name] ? &apos;&apos; : hash[next.name] = true &amp;&amp; item.push(next);</div><div class="line">    return item</div><div class="line">&#125;, [])</div><div class="line">console.log(arr);</div></pre></td></tr></table></figure>
 <ul>
-<li>2 采用float;并设置overflow:auto;(隐藏溢出的内容)</li>
+<li>ES6的Set；不过根据我的实验，Set还是适合对基本类型的去重，如果Set中的每一项是对象的话，是不会去重的，j即使有的对象一模一样——</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#left &#123;</div><div class="line">    float: left;</div><div class="line">    width: 300px;</div><div class="line">    background-color: blue;</div><div class="line">&#125;</div><div class="line">#right &#123;</div><div class="line">    overflow: auto;</div><div class="line">    background-color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div id=&quot;left&quot;&gt;左边自适应&lt;/div&gt;</div><div class="line">&lt;div id=&quot;right&quot;&gt;右边定宽&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let arr = new Set([</div><div class="line">    &#123;id: 0, name: &quot;小明&quot;&#125;,</div><div class="line">    &#123;id: 0, name: &quot;小明&quot;&#125;,</div><div class="line">    &#123;id: 0, name: &quot;小明&quot;&#125;,</div><div class="line">    &#123;id: 0, name: &quot;小明&quot;&#125;      </div><div class="line">]);</div><div class="line">console.log([...arr]); //依旧是这4个对象</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">[...new Set(n)];</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.3.1 数组对象去重/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.5.4 时间戳日期转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.4 时间戳日期转换/">时间戳日期转换</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.4 时间戳日期转换/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 时间日期转换</div><div class="line"> * @param: &quot;10:00-22:00&quot;/ new Date()</div><div class="line"> */</div><div class="line">export default &#123;</div><div class="line">  /*</div><div class="line">  * var storeBusinessTime=&quot;10:00-22:00&quot;  to</div><div class="line">  */</div><div class="line">  timeToDate: function(val) &#123;</div><div class="line">    var date = new Date()</div><div class="line">    var y = date.getFullYear();</div><div class="line">    var m = date.getMonth() +1;</div><div class="line">    var day = date.getDate();</div><div class="line">    var d = [],newArr = [];</div><div class="line">    var dArr = val.split(&apos;-&apos;);</div><div class="line">    dArr.forEach(function(ele,index)&#123;</div><div class="line">      newArr.push(ele.split(&apos;:&apos;))</div><div class="line">    &#125;)</div><div class="line">    d = [new Date(y,m,day,newArr[0][0],newArr[0][1]),new Date(y,m,day,newArr[1][0],newArr[1][1])]</div><div class="line">    return d;</div><div class="line">  &#125;,</div><div class="line">  dateToTime(val) &#123;</div><div class="line">    console.log(val)</div><div class="line">    //  (0-9)年月数字的显示</div><div class="line">    function formatDig(num) &#123;</div><div class="line">      return num &gt; 9 ? &apos;&apos; + num : &apos;0&apos; + num;</div><div class="line">    &#125;</div><div class="line">    var t;</div><div class="line">    var t1 = formatDig(new Date(val[0]).getHours())+&apos;:&apos;+formatDig(new Date(val[0]).getMinutes())</div><div class="line">    var t2 = formatDig(new Date(val[1]).getHours())+&apos;:&apos;+formatDig(new Date(val[1]).getMinutes())</div><div class="line">    t= t1+&apos;-&apos;+t2</div><div class="line">    return t;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.4 时间戳日期转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-4.5.6 setTimeout、setInterval被遗忘的第三个参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/">setTimeout、setInterval被遗忘的第三个参数</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第三个以后的参数是作为第一个func()的参数传进去。</p>
+<p>## </p>
+<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">async function example() &#123;</div><div class="line">  const r1 = await new Promise(resolve =&gt;</div><div class="line">    setTimeout(resolve, 500, &apos;slowest&apos;)</div><div class="line">  )</div><div class="line">  const r2 = await new Promise(resolve =&gt;</div><div class="line">    setTimeout(resolve, 200, &apos;slow&apos;)</div><div class="line">  )</div><div class="line">  return [r1, r2]</div><div class="line">&#125;</div><div class="line"></div><div class="line">example().then(result =&gt; console.log(result))</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.cnblogs.com/leaf930814/p/6828588.html" target="_blank" rel="external">https://www.cnblogs.com/leaf930814/p/6828588.html</a></li>
+<li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/27/4.5.6 setTimeout、setInterval被遗忘的第三个参数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1 移动端 适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/1 移动端 适配/">移动端 适配</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/1 移动端 适配/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>**demo : <a href="https://github.com/HuJiaoHJ/h5-layout" target="_blank" rel="external">https://github.com/HuJiaoHJ/h5-layout</a></p>
+<h2 id="vw-rem-方案"><a href="#vw-rem-方案" class="headerlink" title="vw + rem 方案"></a>vw + rem 方案</h2><ul>
+<li><p>1、设置 html font-size 为 10vw</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">html &#123;</div><div class="line">    font-size: 10vw;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2、以750UI图为例，在 css 中，直接使用UI图上的长度值，单位设置为 px</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.head &#123;</div><div class="line">    width: 750px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3、引入 postcss-pxtorem 插件，配置如下：</p>
 <ul>
-<li>3 左边和右边都用绝对定位</li>
+<li><a href="https://github.com/HuJiaoHJ/h5-layout/blob/master/.postcssrc.js" target="_blank" rel="external">https://github.com/HuJiaoHJ/h5-layout/blob/master/.postcssrc.js</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">require(&apos;postcss-pxtorem&apos;)(&#123;</div><div class="line">    rootValue: 75,</div><div class="line">    unitPrecision: 5,</div><div class="line">    propList: [&apos;*&apos;],</div><div class="line">    selectorBlackList: [],</div><div class="line">    replace: true,</div><div class="line">    mediaQuery: false,</div><div class="line">    minPixelValue: 0</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">div.left&#123; position: absolute; left: 0;top: 0; width: 200px;height: 400px;background: red; word-break: break-all;&#125;</div><div class="line">div.right&#123;position: absolute; left: 200px;top: 0; height: 400px;  background: blue; word-break: break-all;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上，就可以使用了 vw + rem 方案实现了移动端适配</p>
+<h2 id="1px-border-问题"><a href="#1px-border-问题" class="headerlink" title="1px border 问题"></a>1px border 问题</h2><ul>
+<li>再谈Retina下1px的解决方案： <a href="https://www.w3cplus.com/css/fix-1px-for-retina.html" target="_blank" rel="external">https://www.w3cplus.com/css/fix-1px-for-retina.html</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">(function () &#123;</div><div class="line">    // 1px</div><div class="line">    var dpr = window.devicePixelRatio;</div><div class="line">    var isIPhone = window.navigator.appVersion.match(/iphone/gi);</div><div class="line">    var UA = window.navigator.userAgent;</div><div class="line">    var hacks = [&apos;m1 note&apos;]; // 对 meizu 某型号进行hack，主要原因是 dpr为3，但是手机屏幕分辨率不够，会出现 1px border 过细的问题，这种问题主要出现在部分魅族手机上</div><div class="line">    var flag = false;</div><div class="line">    hacks.forEach(function (item) &#123;</div><div class="line">        if (UA.indexOf(item) &gt;= 0) &#123;</div><div class="line">            flag = true;</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    if (!isIPhone &amp;&amp; flag) &#123;</div><div class="line">        dpr = dpr &gt;= 2 ? 2 : dpr;</div><div class="line">    &#125;</div><div class="line">    var scale = 1 / dpr;</div><div class="line">    var metaEl = document.createElement(&apos;meta&apos;);</div><div class="line">    metaEl.setAttribute(&apos;name&apos;, &apos;viewport&apos;);</div><div class="line">    metaEl.setAttribute(&apos;content&apos;, &apos;width=device-width, initial-scale=&apos; + scale + &apos;, maximum-scale=&apos; + scale + &apos;, minimum-scale=&apos; + scale + &apos;, user-scalable=no, viewport-fit=cover&apos;);</div><div class="line">    if (document.documentElement.firstElementChild) &#123;</div><div class="line">        document.documentElement.firstElementChild.appendChild(metaEl);</div><div class="line">    &#125; else &#123;</div><div class="line">        var wrap = document.createElement(&apos;div&apos;);</div><div class="line">        wrap.appendChild(metaEl);</div><div class="line">        document.write(wrap.innerHTML);</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://juejin.im/post/5b6575b0518825196b01fd85" target="_blank" rel="external">https://juejin.im/post/5b6575b0518825196b01fd85</a></li>
+<li><a href="https://github.com/cuth/postcss-pxtorem#readme" target="_blank" rel="external">https://github.com/cuth/postcss-pxtorem#readme</a></li>
+<li><a href="https://github.com/HuJiaoHJ/blog/issues/6" target="_blank" rel="external">https://github.com/HuJiaoHJ/blog/issues/6</a></li>
+<li>vw ployfill: <a href="https://github.com/HuJiaoHJ/viewport-units-polyfill/blob/master/index.js" target="_blank" rel="external">https://github.com/HuJiaoHJ/viewport-units-polyfill/blob/master/index.js</a></li>
+<li>使用Flexible实现手淘H5页面的终端适配: <a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html</a></li>
+<li>postcss-pxtorem： <a href="https://www.npmjs.com/package/postcss-pxtorem" target="_blank" rel="external">https://www.npmjs.com/package/postcss-pxtorem</a></li>
+<li>sublime 3 插件 cssrem： <a href="https://github.com/flashlizi/cssrem" target="_blank" rel="external">https://github.com/flashlizi/cssrem</a></li>
+</ul>
 
       
 
@@ -242,7 +420,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.1.1 两列布局左边定宽，右边自适应/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/1 移动端 适配/">展开全文 >></a>
         </p>
       
 
@@ -272,12 +450,65 @@
 
 
   
-    <article id="post-3.0.3 通用公共 css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.5.5 常用JS方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.5 常用JS方法/">常用JS方法整理</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.5 常用JS方法/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="公共-css-样式"><a href="#公共-css-样式" class="headerlink" title="公共 css 样式"></a>公共 css 样式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div><div class="line">444</div><div class="line">445</div><div class="line">446</div><div class="line">447</div><div class="line">448</div><div class="line">449</div><div class="line">450</div><div class="line">451</div><div class="line">452</div><div class="line">453</div><div class="line">454</div><div class="line">455</div><div class="line">456</div><div class="line">457</div><div class="line">458</div><div class="line">459</div><div class="line">460</div><div class="line">461</div><div class="line">462</div><div class="line">463</div><div class="line">464</div><div class="line">465</div><div class="line">466</div><div class="line">467</div><div class="line">468</div><div class="line">469</div><div class="line">470</div><div class="line">471</div><div class="line">472</div><div class="line">473</div><div class="line">474</div><div class="line">475</div><div class="line">476</div><div class="line">477</div><div class="line">478</div><div class="line">479</div><div class="line">480</div><div class="line">481</div><div class="line">482</div><div class="line">483</div><div class="line">484</div><div class="line">485</div><div class="line">486</div><div class="line">487</div><div class="line">488</div><div class="line">489</div><div class="line">490</div><div class="line">491</div><div class="line">492</div><div class="line">493</div><div class="line">494</div><div class="line">495</div><div class="line">496</div><div class="line">497</div><div class="line">498</div><div class="line">499</div><div class="line">500</div><div class="line">501</div><div class="line">502</div><div class="line">503</div><div class="line">504</div><div class="line">505</div><div class="line">506</div><div class="line">507</div><div class="line">508</div><div class="line">509</div><div class="line">510</div><div class="line">511</div><div class="line">512</div><div class="line">513</div><div class="line">514</div><div class="line">515</div><div class="line">516</div><div class="line">517</div><div class="line">518</div><div class="line">519</div><div class="line">520</div><div class="line">521</div><div class="line">522</div><div class="line">523</div><div class="line">524</div><div class="line">525</div><div class="line">526</div><div class="line">527</div><div class="line">528</div><div class="line">529</div><div class="line">530</div><div class="line">531</div><div class="line">532</div><div class="line">533</div><div class="line">534</div><div class="line">535</div><div class="line">536</div><div class="line">537</div><div class="line">538</div><div class="line">539</div><div class="line">540</div><div class="line">541</div><div class="line">542</div><div class="line">543</div><div class="line">544</div><div class="line">545</div><div class="line">546</div><div class="line">547</div><div class="line">548</div><div class="line">549</div><div class="line">550</div><div class="line">551</div><div class="line">552</div><div class="line">553</div><div class="line">554</div><div class="line">555</div><div class="line">556</div><div class="line">557</div><div class="line">558</div><div class="line">559</div><div class="line">560</div><div class="line">561</div></pre></td><td class="code"><pre><div class="line">html,</div><div class="line">body,</div><div class="line">p,</div><div class="line">ol,</div><div class="line">ul,</div><div class="line">li,</div><div class="line">dl,</div><div class="line">dt,</div><div class="line">dd,</div><div class="line">blockquote,</div><div class="line">figure,</div><div class="line">fieldset,</div><div class="line">legend,</div><div class="line">textarea,</div><div class="line">pre,</div><div class="line">iframe,</div><div class="line">hr,</div><div class="line">h1,</div><div class="line">h2,</div><div class="line">h3,</div><div class="line">h4,</div><div class="line">h5,</div><div class="line">h6 &#123;</div><div class="line">  margin: 0;</div><div class="line">  padding: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">* &#123;</div><div class="line">  margin: 0;</div><div class="line">  padding: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1,</div><div class="line">h2,</div><div class="line">h3,</div><div class="line">h4,</div><div class="line">h5,</div><div class="line">h6 &#123;</div><div class="line">  font-size: 100%;</div><div class="line">  font-weight: normal;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ul &#123;</div><div class="line">  list-style: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">button,</div><div class="line">input,</div><div class="line">select,</div><div class="line">textarea &#123;</div><div class="line">  margin: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">html &#123;</div><div class="line">  -webkit-box-sizing: border-box;</div><div class="line">  box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">*, *:before, *:after &#123;</div><div class="line">  box-sizing: inherit;</div><div class="line">&#125;</div><div class="line"></div><div class="line">img,</div><div class="line">embed,</div><div class="line">iframe,</div><div class="line">object,</div><div class="line">audio,</div><div class="line">video &#123;</div><div class="line">  height: auto;</div><div class="line">  max-width: 100%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">iframe &#123;</div><div class="line">  border: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">table &#123;</div><div class="line">  border-collapse: collapse;</div><div class="line">  border-spacing: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">td,</div><div class="line">th &#123;</div><div class="line">  padding: 0;</div><div class="line">  text-align: left;</div><div class="line">&#125;</div><div class="line"></div><div class="line">b,</div><div class="line">strong &#123;</div><div class="line">  font-weight: bolder;</div><div class="line">&#125;</div><div class="line"></div><div class="line">button,</div><div class="line">[type=&quot;button&quot;],</div><div class="line">[type=&quot;reset&quot;],</div><div class="line">[type=&quot;submit&quot;] &#123;</div><div class="line">  -webkit-appearance: button;</div><div class="line">&#125;</div><div class="line"></div><div class="line">button::-moz-focus-inner,</div><div class="line">[type=&quot;button&quot;]::-moz-focus-inner,</div><div class="line">[type=&quot;reset&quot;]::-moz-focus-inner,</div><div class="line">[type=&quot;submit&quot;]::-moz-focus-inner &#123;</div><div class="line">  border-style: none;</div><div class="line">  padding: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[type=&quot;checkbox&quot;],</div><div class="line">[type=&quot;radio&quot;] &#123;</div><div class="line">  box-sizing: border-box; /* 1 */</div><div class="line">  padding: 0; /* 2 */</div><div class="line">&#125;</div><div class="line"></div><div class="line">[type=&quot;number&quot;]::-webkit-inner-spin-button,</div><div class="line">[type=&quot;number&quot;]::-webkit-outer-spin-button &#123;</div><div class="line">  height: auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[type=&quot;search&quot;] &#123;</div><div class="line">  -webkit-appearance: textfield; /* 1 */</div><div class="line">  outline-offset: -2px; /* 2 */</div><div class="line">&#125;</div><div class="line"></div><div class="line">[type=&quot;search&quot;]::-webkit-search-decoration &#123;</div><div class="line">  -webkit-appearance: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fl&#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.fr&#123;</div><div class="line">  float: right;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/* 动画 */</div><div class="line">@-webkit-keyframes slideUp&#123;</div><div class="line">  from&#123;</div><div class="line">    -webkit-transform:translate3d(0, 100%, 0);</div><div class="line">            transform:translate3d(0, 100%, 0);</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    -webkit-transform:translate3d(0, 0, 0);</div><div class="line">            transform:translate3d(0, 0, 0);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@keyframes slideUp&#123;</div><div class="line">  from&#123;</div><div class="line">    -webkit-transform:translate3d(0, 100%, 0);</div><div class="line">            transform:translate3d(0, 100%, 0);</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    -webkit-transform:translate3d(0, 0, 0);</div><div class="line">            transform:translate3d(0, 0, 0);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">.animate-slide-up&#123;</div><div class="line">  -webkit-animation:slideUp ease .3s forwards;</div><div class="line">          animation:slideUp ease .3s forwards;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes slideDown&#123;</div><div class="line">  from&#123;</div><div class="line">    -webkit-transform:translate3d(0, 0, 0);</div><div class="line">            transform:translate3d(0, 0, 0);</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    -webkit-transform:translate3d(0, 100%, 0);</div><div class="line">            transform:translate3d(0, 100%, 0);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@keyframes slideDown&#123;</div><div class="line">  from&#123;</div><div class="line">    -webkit-transform:translate3d(0, 0, 0);</div><div class="line">            transform:translate3d(0, 0, 0);</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    -webkit-transform:translate3d(0, 100%, 0);</div><div class="line">            transform:translate3d(0, 100%, 0);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">.animate-slide-down&#123;</div><div class="line">  -webkit-animation:slideDown ease .3s forwards;</div><div class="line">          animation:slideDown ease .3s forwards;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes fadeIn&#123;</div><div class="line">  from&#123;</div><div class="line">    opacity:0;</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    opacity:1;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@keyframes fadeIn&#123;</div><div class="line">  from&#123;</div><div class="line">    opacity:0;</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    opacity:1;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">.animate-fade-in&#123;</div><div class="line">  -webkit-animation:fadeIn ease .3s forwards;</div><div class="line">          animation:fadeIn ease .3s forwards;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes fadeOut&#123;</div><div class="line">  from&#123;</div><div class="line">    opacity:1;</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    opacity:0;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@keyframes fadeOut&#123;</div><div class="line">  from&#123;</div><div class="line">    opacity:1;</div><div class="line">  &#125;</div><div class="line">  to&#123;</div><div class="line">    opacity:0;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">.animate-fade-out&#123;</div><div class="line">  -webkit-animation:fadeOut ease .3s forwards;</div><div class="line">          animation:fadeOut ease .3s forwards;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 滚动条 */</div><div class="line">::-webkit-scrollbar &#123;</div><div class="line">  width: 5px;</div><div class="line">  height: 5px;</div><div class="line">  -webkit-border-radius: 6px;</div><div class="line">  border-radius: 6px;</div><div class="line">  /*background: #e4e7ed;*/</div><div class="line">  /*background-color: rgba(0, 0, 0, 0.1)*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">::-webkit-scrollbar-track &#123;</div><div class="line">  /*background: #f5f7fa;*/</div><div class="line">  -webkit-border-radius: 6px;</div><div class="line">  border-radius: 6px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">::-webkit-scrollbar-track-piece &#123;</div><div class="line">  /*background-color: rgba(0, 0, 0, 0.2);</div><div class="line">  -webkit-border-radius: 6px;*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">::-webkit-scrollbar-thumb &#123;</div><div class="line">  background: #c0c4cc;</div><div class="line">  -webkit-border-radius: 6px;</div><div class="line">  border-radius: 6px;</div><div class="line">  background-color: rgba(0, 0, 0, 0.1)</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 省略号 ...*/</div><div class="line"></div><div class="line">  .ellipsis &#123;</div><div class="line">      display: block;</div><div class="line">      overfolw: hidden;</div><div class="line">      text-overflow: ellipsis;</div><div class="line">      white-space: nowrap;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">/* 控制几行显示,超出显示省略号 */</div><div class="line"></div><div class="line">  .line-clam&#123;</div><div class="line">    display: -webkit-box;</div><div class="line">    -webkit-box-orient: vertical;</div><div class="line">    -webkit-line-clamp: 3;</div><div class="line">    white-space: pre-wrap;</div><div class="line">    word-break: break-all;</div><div class="line">    overflow: hidden;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">/* 上边框(0.5px), 伪元素写法 */</div><div class="line"></div><div class="line">  .border-top &#123;</div><div class="line">    position: relative;</div><div class="line">  &#125;</div><div class="line">  .border-top::before &#123;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    top: 0;</div><div class="line">    right: 0;</div><div class="line">    height: 1px;</div><div class="line">    border-top: 1px solid #e5e5e5;</div><div class="line">    color: #e5e5e5;</div><div class="line">    -webkit-transform-origin: 0 0;</div><div class="line">    transform-origin: 0 0;</div><div class="line">    -webkit-transform: scaleY(0.5);</div><div class="line">    transform: scaleY(0.5);</div><div class="line">    z-index: 2;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  </div><div class="line">/* 下边距(0.5px) ,伪元素 */</div><div class="line"></div><div class="line">  .border-bottom &#123;</div><div class="line">    position: relative;</div><div class="line">  &#125;</div><div class="line">  .border-bottom:after &#123;</div><div class="line">    content: &quot; &quot;;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    bottom: 0;</div><div class="line">    right: 0;</div><div class="line">    height: 1px;</div><div class="line">    border-bottom: 1px solid #e5e5e5;</div><div class="line">    color: #e5e5e5;</div><div class="line">    -webkit-transform-origin: 0 100%;</div><div class="line">    transform-origin: 0 100%;</div><div class="line">    -webkit-transform: scaleY(0.5);</div><div class="line">    transform: scaleY(0.5);</div><div class="line">    z-index: 2;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">/* 左边距(0.5px) ,伪元素 */</div><div class="line"></div><div class="line">  .border-left::after &#123;</div><div class="line">    content: &quot; &quot;;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    bottom: 0;</div><div class="line">    top: 0;</div><div class="line">    width: 0px;</div><div class="line">    border-left: 1px solid #e3e5e9;</div><div class="line">    color: #e3e5e9;</div><div class="line">    -webkit-transform-origin: 0 0;</div><div class="line">    transform-origin: 0 0;</div><div class="line">    -webkit-transform: scaleX(0.5);</div><div class="line">    transform: scaleX(0.5);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">/* 右边距(0.5px) ,伪元素 */</div><div class="line"></div><div class="line">  :after &#123;</div><div class="line">    content: &quot; &quot;;</div><div class="line">    position: absolute;</div><div class="line">    right: 0;</div><div class="line">    top: 0;</div><div class="line">    width: 1px;</div><div class="line">    bottom: 0;</div><div class="line">    border-right: 1px solid #e5e5e5;</div><div class="line">    color: #e5e5e5;</div><div class="line">    -webkit-transform-origin: 100% 0;</div><div class="line">    transform-origin: 100% 0;</div><div class="line">    -webkit-transform: scaleX(0.5);</div><div class="line">    transform: scaleX(0.5);</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">/* 边框 (0.5px) */</div><div class="line"></div><div class="line">  .btn:after &#123;</div><div class="line">    content: &quot; &quot;;</div><div class="line">    width: 200%;</div><div class="line">    height: 200%;</div><div class="line">    position: absolute;</div><div class="line">    top: 0;</div><div class="line">    left: 0;</div><div class="line">    border: 1px solid rgba(0, 0, 0, 0.2);</div><div class="line">    -webkit-transform: scale(0.5);</div><div class="line">    transform: scale(0.5);</div><div class="line">    -webkit-transform-origin: 0 0;</div><div class="line">    transform-origin: 0 0;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border-radius: 10px;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">/* 右箭头 &gt; */</div><div class="line">  </div><div class="line">  :before &#123;</div><div class="line">    content: &quot; &quot;;</div><div class="line">    display: inline-block;</div><div class="line">    height: 6px;</div><div class="line">    width: 6px;</div><div class="line">    border-width: 2px 2px 0 0;</div><div class="line">    border-color: #C8C8CD;</div><div class="line">    border-style: solid;</div><div class="line">    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);</div><div class="line">    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);</div><div class="line">    position: relative;</div><div class="line">    top: -2px;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    right: 15px;</div><div class="line">    margin-top: -4px;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line"></div><div class="line">/* 三角线箭头 如 ∧∨,*/</div><div class="line">  </div><div class="line">  .vue-treeselect__control-arrow-container &#123;</div><div class="line">    position: relative;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .vue-treeselect__control-arrow-container:after, .vue-treeselect__control-arrow-container:before &#123;</div><div class="line">    border: 6px solid transparent;</div><div class="line">    border-left: 6px solid #fff;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    margin-left: -6px;</div><div class="line">    content: &apos; &apos;;</div><div class="line">    margin-top: -3px;</div><div class="line">    -webkit-transform: rotate(90deg);</div><div class="line">    -moz-transform: rotate(90deg);</div><div class="line">    -o-transform: rotate(90deg);</div><div class="line">    transform: rotate(90deg);</div><div class="line">    -webkit-transition: -webkit-transform .3s;</div><div class="line">    transition: -webkit-transform .3s;</div><div class="line">    transition: transform .3s;</div><div class="line">    transition: transform .3s, -webkit-transform .3s;</div><div class="line">    transition: transform .3s,-webkit-transform .3s;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .vue-treeselect__control-arrow-container:before &#123;</div><div class="line">    border-left-color: #c0c4cc;</div><div class="line">    top: 52%;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .vue-treeselect--focused .vue-treeselect__control-arrow-container:after, .vue-treeselect--focused .vue-treeselect__control-arrow-container:before &#123;</div><div class="line">    margin-top: -6px;</div><div class="line">    -webkit-transform: rotateZ(-90deg);</div><div class="line">    -moz-transform: rotateZ(-90deg);</div><div class="line">    -o-transform: rotateZ(-90deg);</div><div class="line">    transform: rotateZ(-90deg);</div><div class="line">    -webkit-transition: -webkit-transform .3s;</div><div class="line">    transition: -webkit-transform .3s;</div><div class="line">    transition: transform .3s;</div><div class="line">    transition: transform .3s, -webkit-transform .3s;</div><div class="line">    transition: transform .3s,-webkit-transform .3s;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  .vue-treeselect--focused .vue-treeselect__control-arrow-container:before &#123;</div><div class="line">    border-left-color: #c0c4cc;</div><div class="line">    top: 48%;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line"></div><div class="line">/* 虚线,可控制间隔 */</div><div class="line">.dash &#123; </div><div class="line">  width: 100%;</div><div class="line">  height: 1px;</div><div class="line">  background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);</div><div class="line">  background-size: 8px 1px;</div><div class="line">  background-repeat: repeat-x;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 边距 */</div><div class="line">.ml-10 &#123;</div><div class="line">  margin-left: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mr-10 &#123;</div><div class="line">  margin-right: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mb-10 &#123;</div><div class="line">  margin-bottom: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.mt-10 &#123;</div><div class="line">  margin-top: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pl-10 &#123;</div><div class="line">  padding-left: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pr-10 &#123;</div><div class="line">  padding-right: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pb-10 &#123;</div><div class="line">  padding-bottom: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pt-10 &#123;</div><div class="line">  padding-top: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 颜色 */</div><div class="line">.text-white &#123;</div><div class="line">  color: #fff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text-black &#123;</div><div class="line">  color: #000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text-red &#123;</div><div class="line">  color: #ff0000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text-green &#123;</div><div class="line">  color: #00ff00;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text-yellow &#123;</div><div class="line">  color: #ffff00;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text-blue &#123;</div><div class="line">  color: #0000ff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-white &#123;</div><div class="line">  color: #fff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-black &#123;</div><div class="line">  color: #000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-red &#123;</div><div class="line">  color: #ff0000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-green &#123;</div><div class="line">  color: #00ff00;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-yellow &#123;</div><div class="line">  color: #ffff00;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.bg-blue &#123;</div><div class="line">  color: #0000ff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 阴影 */</div><div class="line">.shadow &#123;</div><div class="line">   -moz-box-shadow:2px 2px 5px #333333;</div><div class="line">   -webkit-box-shadow:2px 2px 5px #333333;</div><div class="line">   box-shadow:2px 2px 5px #333333;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 圆角 */</div><div class="line">.radius-2 &#123;</div><div class="line">  -moz-border-radius: 2px;</div><div class="line">  -webkit-border-radius: 2px;</div><div class="line">  border-radius: 2px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.radius-4 &#123;</div><div class="line">  -moz-border-radius: 4px;</div><div class="line">  -webkit-border-radius: 4px;</div><div class="line">  border-radius: 4px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.radius-half &#123;</div><div class="line">  -moz-border-radius: 50%;</div><div class="line">  -webkit-border-radius: 50%;</div><div class="line">  border-radius: 50%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#1.截取指定字节数的字符串">1.截取指定字节数的字符串</a></li>
+<li><a href="#2.判断是否微信">2.判断是否微信</a></li>
+<li><a href="#3.获取时间格式的几个举例">3.获取时间格式的几个举例</a></li>
+<li><a href="#4.获取字符串字节长度">4.获取字符串字节长度</a></li>
+<li><a href="#5.对象克隆、深拷贝">5.对象克隆、深拷贝</a></li>
+<li><a href="#6.组织结构代码证验证">6.组织结构代码证验证</a></li>
+<li><a href="#7.身份证号验证">7.身份证号验证</a></li>
+<li><a href="#8.js正则为url添加http标识">8.js正则为url添加http标识</a></li>
+<li><a href="#9.URL有效性校验方法">9.URL有效性校验方法</a></li>
+<li><a href="#10.自定义jsonp方法">10.自定义jsonp方法</a></li>
+<li><a href="#11.cookie操作">11.cookie操作</a></li>
+<li><a href="#12.生成随机字符串 (可指定长度">12.生成随机字符串 (可指定长度)</a>)</li>
+<li><a href="#13.浏览器判断]">13.浏览器判断</a></li>
+<li><a href="#14.Rem移动端适配">14.Rem移动端适配</a></li>
+<li><a href="#15.获取url后参数">15.获取url后参数</a></li>
+<li><a href="#16.动态加载JS">16.动态加载JS</a></li>
+<li><a href="#17.生成随机颜色值">17.生成随机颜色值</a></li>
+</ul>
+<h2 id="1-截取指定字节数的字符串"><a href="#1-截取指定字节数的字符串" class="headerlink" title="1.截取指定字节数的字符串"></a>1.截取指定字节数的字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 截取指定字节的字符串</div><div class="line"> * @param str 要截取的字符穿</div><div class="line"> * @param len 要截取的长度，根据字节计算</div><div class="line"> * @param suffix 截取前len个后，其余的字符的替换字符，一般用“…”</div><div class="line"> * @returns &#123;*&#125;</div><div class="line"> */</div><div class="line">function cutString(str, len, suffix) &#123;</div><div class="line">  if (!str) return &quot;&quot;;</div><div class="line">  if (len &lt;= 0) return &quot;&quot;;</div><div class="line">  if (!suffix) suffix = &quot;&quot;;</div><div class="line">  var templen = 0;</div><div class="line">  for (var i = 0; i &lt; str.length; i++) &#123;</div><div class="line">    if (str.charCodeAt(i) &gt; 255) &#123;</div><div class="line">      templen += 2;</div><div class="line">    &#125; else &#123;</div><div class="line">      templen++</div><div class="line">    &#125;</div><div class="line">    if (templen == len) &#123;</div><div class="line">      return str.substring(0, i + 1) + suffix;</div><div class="line">    &#125; else if (templen &gt; len) &#123;</div><div class="line">      return str.substring(0, i) + suffix;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return str;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2-判断是否微信"><a href="#2-判断是否微信" class="headerlink" title="2.判断是否微信"></a>2.判断是否微信</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 判断微信浏览器</div><div class="line"> * @returns &#123;Boolean&#125;</div><div class="line"> */</div><div class="line">function isWeiXin() &#123;</div><div class="line">  var ua = window.navigator.userAgent.toLowerCase();</div><div class="line">  if (ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;) &#123;</div><div class="line">    return true;</div><div class="line">  &#125; else &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-获取时间格式的几个举例"><a href="#3-获取时间格式的几个举例" class="headerlink" title="3.获取时间格式的几个举例"></a>3.获取时间格式的几个举例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function getTimeFormat(time) &#123;</div><div class="line">  var date = new Date(parseInt(time) * 1000);</div><div class="line">  var month, day, hour, min;</div><div class="line">  parseInt(date.getMonth()) + 1 &lt; 10 ? month = &apos;0&apos; + (parseInt(date.getMonth()) + 1) : month = parseInt(date.getMonth()) + 1;</div><div class="line">  date.getDate() &lt; 10 ? day = &apos;0&apos; + date.getDate() : day = date.getDate();</div><div class="line">  date.getHours() &lt; 10 ? hour = &apos;0&apos; + date.getHours() : hour = date.getHours();</div><div class="line">  date.getMinutes() &lt; 10 ? min = &apos;0&apos; + date.getMinutes() : min = date.getMinutes();</div><div class="line">  return [month, day].join(&apos;-&apos;) + &apos;  &apos; + hour + &apos;:&apos; + min</div><div class="line">&#125;</div><div class="line"></div><div class="line">function getTimeFormatYMD(time) &#123;</div><div class="line">  var date = new Date(parseInt(time) * 1000);</div><div class="line">  var year, month, day;</div><div class="line">  year = date.getFullYear();</div><div class="line">  parseInt(date.getMonth()) + 1 &lt; 10 ? month = &apos;0&apos; + (parseInt(date.getMonth()) + 1) : month = parseInt(date.getMonth()) + 1;</div><div class="line">  date.getDate() &lt; 10 ? day = &apos;0&apos; + date.getDate() : day = date.getDate();</div><div class="line">  return [year, month, day].join(&apos;-&apos;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">function getTimeFormatAll(time) &#123;</div><div class="line">  var date = new Date(parseInt(time) * 1000);</div><div class="line">  var year, month, day, hour, min, second;</div><div class="line">  year = date.getFullYear();</div><div class="line">  parseInt(date.getMonth()) + 1 &lt; 10 ? month = &apos;0&apos; + (parseInt(date.getMonth()) + 1) : month = parseInt(date.getMonth()) + 1;</div><div class="line">  date.getDate() &lt; 10 ? day = &apos;0&apos; + date.getDate() : day = date.getDate();</div><div class="line">  date.getHours() &lt; 10 ? hour = &apos;0&apos; + date.getHours() : hour = date.getHours();</div><div class="line">  date.getMinutes() &lt; 10 ? min = &apos;0&apos; + date.getMinutes() : min = date.getMinutes();</div><div class="line">  date.getSeconds() &lt; 10 ? second = &apos;0&apos; + date.getSeconds() : second = date.getSeconds();</div><div class="line"></div><div class="line">  return [year, month, day].join(&apos;-&apos;) + &apos;  &apos; + hour + &apos;:&apos; + min + &apos;:&apos; + second</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-获取字符串字节长度"><a href="#4-获取字符串字节长度" class="headerlink" title="4.获取字符串字节长度"></a>4.获取字符串字节长度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 获取字符串字节长度</div><div class="line"> * @param &#123;String&#125;</div><div class="line"> * @returns &#123;Boolean&#125;</div><div class="line"> */</div><div class="line">function checkLength(v) &#123;</div><div class="line">  var realLength = 0;</div><div class="line">  var len = v.length;</div><div class="line">  for (var i = 0; i &lt; len; i++) &#123;</div><div class="line">    var charCode = v.charCodeAt(i);</div><div class="line">    if (charCode &gt;= 0 &amp;&amp; charCode &lt;= 128) realLength += 1;</div><div class="line">    else realLength += 2;</div><div class="line">  &#125;</div><div class="line">  return realLength;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-对象克隆、深拷贝"><a href="#5-对象克隆、深拷贝" class="headerlink" title="5.对象克隆、深拷贝"></a>5.对象克隆、深拷贝</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 对象克隆&amp;深拷贝</div><div class="line"> * @param obj</div><div class="line"> * @returns &#123;&#123;&#125;&#125;</div><div class="line"> */</div><div class="line">function cloneObj(obj) &#123;</div><div class="line">  var newO = &#123;&#125;;</div><div class="line">  if (obj instanceof Array) &#123;</div><div class="line">    newO = [];</div><div class="line">  &#125;</div><div class="line">  for (var key in obj) &#123;</div><div class="line">    var val = obj[key];</div><div class="line">    newO[key] = typeof val === &apos;object&apos; ? arguments.callee(val) : val;</div><div class="line">  &#125;</div><div class="line">  return newO;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">克隆拷贝增强版</div><div class="line">/**</div><div class="line"> * 对象克隆&amp;深拷贝</div><div class="line"> * @param obj</div><div class="line"> * @returns &#123;&#123;&#125;&#125;</div><div class="line"> */</div><div class="line">function clone(obj) &#123;</div><div class="line">  // Handle the 3 simple types, and null or undefined</div><div class="line">  if (null == obj || &quot;object&quot; != typeof obj) return obj;</div><div class="line">  // Handle Date</div><div class="line">  if (obj instanceof Date) &#123;</div><div class="line">    var copy = new Date();</div><div class="line">    copy.setTime(obj.getTime());</div><div class="line">    return copy;</div><div class="line">  &#125;</div><div class="line">  // Handle Array</div><div class="line">  if (obj instanceof Array) &#123;</div><div class="line">    var copy = [];</div><div class="line">    for (var i = 0,</div><div class="line">    len = obj.length; i &lt; len; ++i) &#123;</div><div class="line">      copy[i] = clone(obj[i]);</div><div class="line">    &#125;</div><div class="line">    return copy;</div><div class="line">  &#125;</div><div class="line">  // Handle Object</div><div class="line">  if (obj instanceof Object) &#123;</div><div class="line">    var copy = &#123;&#125;;</div><div class="line">    for (var attr in obj) &#123;</div><div class="line">      if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);</div><div class="line">    &#125;</div><div class="line">    return copy;</div><div class="line">  &#125;</div><div class="line">  throw new Error(&quot;Unable to copy obj! Its type isn&apos;t supported.&quot;);</div><div class="line">&#125;</div><div class="line">测试用例：</div><div class="line">var origin = &#123;</div><div class="line">  a: &quot;text&quot;,</div><div class="line">  b: null,</div><div class="line">  c: undefined,</div><div class="line">  e: &#123;</div><div class="line">    f: [1, 2]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-组织结构代码证验证"><a href="#6-组织结构代码证验证" class="headerlink" title="6.组织结构代码证验证"></a>6.组织结构代码证验证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">验证规则：</div><div class="line">组织机构代码是每一个机关、社会团体、企事业单位在全国范围内唯一的、始终不变的法定代码标识。最新使用的组织机构代码在1997年颁布实施，由8位数字（或大写拉丁字母）本体代码和1位数字（或大写拉丁字母）校验码组成。本体代码采用系列（即分区段）顺序编码方法。校验码按下列公式计算：8 C9 = 11 - MOD(∑Ci * Wi，11)… (2) i = 1其中：MOD——表示求余函数；i——表示代码字符从左到右位置序号；Ci——表示第i位置上的代码字符的值，采用附录A“代码字符集”所列字符；C9——表示校验码；Wi——表示第i位置上的加权因子，其数值如下表：i 1 2 3 4 5 6 7 8 Wi 3 7 9 10 5 8 4 2当MOD函数值为1（即C9 = 10）时，校验码用字母X表示。</div><div class="line">验证方法：</div><div class="line">checkOrgCodeValid: function(el) &#123;</div><div class="line">  var txtval = el.value;</div><div class="line">  var values = txtval.split(&quot;-&quot;);</div><div class="line">  var ws = [3, 7, 9, 10, 5, 8, 4, 2];</div><div class="line">  var str = &apos;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;;</div><div class="line">  var reg = /^([0-9A-Z])&#123;8&#125;$/;</div><div class="line">  if (!reg.test(values[0])) &#123;</div><div class="line">    return false</div><div class="line">  &#125;</div><div class="line">  var sum = 0;</div><div class="line">  for (var i = 0; i &lt; 8; i++) &#123;</div><div class="line">    sum += str.indexOf(values[0].charAt(i)) * ws[i];</div><div class="line">  &#125;</div><div class="line">  var C9 = 11 - (sum % 11);</div><div class="line">  var YC9 = values[1] + &apos;&apos;;</div><div class="line">  if (C9 == 11) &#123;</div><div class="line">    C9 = &apos;0&apos;;</div><div class="line">  &#125; else if (C9 == 10) &#123;</div><div class="line">    C9 = &apos;X&apos;;</div><div class="line">  &#125; else &#123;</div><div class="line">    C9 = C9 + &apos;&apos;;</div><div class="line">  &#125;</div><div class="line">  return YC9 == C9;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##7.身份证号验证<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 验证身份证号</div><div class="line"> * @param el 号码输入input</div><div class="line"> * @returns &#123;boolean&#125;</div><div class="line"> */</div><div class="line">function checkCardNo(el) &#123;</div><div class="line">  var txtval = el.value;</div><div class="line">  var reg = /(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)/;</div><div class="line">  return reg.test(txtval)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="8-js正则为url添加http标识"><a href="#8-js正则为url添加http标识" class="headerlink" title="8.js正则为url添加http标识"></a>8.js正则为url添加http标识</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">  &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</div><div class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;  </div><div class="line">  &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">        var html = &apos;http:/ / www.google.com &apos;;</div><div class="line">        html += &apos;\rwww.google.com &apos;;</div><div class="line">        html += &apos;\rcode.google.com &apos;;</div><div class="line">        html += &apos;\rhttp: //code.google.com/hosting/search?q=label%3aPython&apos;;</div><div class="line">        var regex = /(https?:\/\/)?(\w+\.?)+(\/[a-zA-Z0-9\?%=_\-\+\/]+)?/gi;</div><div class="line">        alert(&apos;before replace:&apos;);</div><div class="line">        alert(html);</div><div class="line">        html = html.replace(regex,</div><div class="line">            function(match, capture) &#123;</div><div class="line">                if (capture) &#123;</div><div class="line">                    return match</div><div class="line">                &#125; else &#123;</div><div class="line">                    return &apos;http://&apos; + match;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        alert(&apos;after replace:&apos;);</div><div class="line">        alert(html); </div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;  </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="9-URL有效性校验方法"><a href="#9-URL有效性校验方法" class="headerlink" title="9.URL有效性校验方法"></a>9.URL有效性校验方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * URL有效性校验</div><div class="line"> * @param str_url</div><div class="line"> * @returns &#123;boolean&#125;</div><div class="line"> */</div><div class="line">function isURL(str_url) &#123; </div><div class="line">  // 验证url</div><div class="line">  var strRegex = &quot;^((https|http|ftp|rtsp|mms)?://)&quot; + &quot;?(([0-9a-z_!~*&apos;().&amp;=+$%-]+: )?[0-9a-z_!~*&apos;().&amp;=+$%-]+@)?&quot; //           </div><div class="line">  ftp的user@ + &quot;(([0-9]&#123;1,3&#125;\.)&#123;3&#125;[0-9]&#123;1,3&#125;&quot; // IP形式的URL- 199.194.52.184</div><div class="line">  + &quot;|&quot; // 允许IP和DOMAIN（域名）</div><div class="line">  + &quot;([0-9a-z_!~*&apos;()-]+\.)*&quot; // 域名- www.</div><div class="line">  + &quot;([0-9a-z][0-9a-z-]&#123;0,61&#125;)?[0-9a-z]\.&quot; // 二级域名</div><div class="line">  + &quot;[a-z]&#123;2,6&#125;)&quot; // first level domain- .com or .museum</div><div class="line">  + &quot;(:[0-9]&#123;1,4&#125;)?&quot; // 端口- :80</div><div class="line">  + &quot;((/?)|&quot; // a slash isn&apos;t required if there is no file name</div><div class="line">  + &quot;(/[0-9a-z_!~*&apos;().;?:@&amp;=+$,%#-]+)+/?)$&quot;;</div><div class="line">  var re = new RegExp(strRegex);</div><div class="line">  return re.test(str_url);</div><div class="line">&#125;</div><div class="line">// 建议的正则</div><div class="line">functionisURL(str) &#123;</div><div class="line">  return !! str.match(/(((^https?:(?:\/\/)?)(?:[-;:&amp;=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&amp;=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&amp;;%@.\w_]*)#?(?:[\w]*))?)$/g);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="10-自定义jsonp方法"><a href="#10-自定义jsonp方法" class="headerlink" title="10.自定义jsonp方法"></a>10.自定义jsonp方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 自定义封装jsonp方法</div><div class="line"> * @param options</div><div class="line"> */</div><div class="line">jsonp = function(options) &#123;</div><div class="line">  options = options || &#123;&#125;;</div><div class="line">  if (!options.url || !options.callback) &#123;</div><div class="line">    throw new Error(&quot;参数不合法&quot;);</div><div class="line">  &#125;</div><div class="line">  //创建 script 标签并加入到页面中</div><div class="line">  var callbackName = (&apos;jsonp_&apos; + Math.random()).replace(&quot;.&quot;, &quot;&quot;);</div><div class="line">  var oHead = document.getElementsByTagName(&apos;head&apos;)[0];</div><div class="line">  options.data[options.callback] = callbackName;</div><div class="line">  var params = formatParams(options.data);</div><div class="line">  var oS = document.createElement(&apos;script&apos;);</div><div class="line">  oHead.appendChild(oS);</div><div class="line">  //创建jsonp回调函数</div><div class="line">  window[callbackName] = function(json) &#123;</div><div class="line">    oHead.removeChild(oS);</div><div class="line">    clearTimeout(oS.timer);</div><div class="line">    window[callbackName] = null;</div><div class="line">    options.success &amp;&amp; options.success(json);</div><div class="line">  &#125;;</div><div class="line">  //发送请求</div><div class="line">  oS.src = options.url + &apos;?&apos; + params;</div><div class="line">  //超时处理</div><div class="line">  if (options.time) &#123;</div><div class="line">    oS.timer = setTimeout(function() &#123;</div><div class="line">      window[callbackName] = null;</div><div class="line">      oHead.removeChild(oS);</div><div class="line">      options.fail &amp;&amp; options.fail(&#123;</div><div class="line">        message: &quot;超时&quot;</div><div class="line">      &#125;);</div><div class="line">    &#125;,</div><div class="line">    time);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">/**</div><div class="line"> * 格式化参数</div><div class="line"> * @param data</div><div class="line"> * @returns &#123;string&#125;</div><div class="line"> */</div><div class="line">formatParams = function(data) &#123;</div><div class="line">  var arr = [];</div><div class="line">  for (var name in data) &#123;</div><div class="line">    arr.push(encodeURIComponent(name) + &apos;=&apos; + encodeURIComponent(data[name]));</div><div class="line">  &#125;</div><div class="line">  return arr.join(&apos;&amp;&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="11-cookie操作"><a href="#11-cookie操作" class="headerlink" title="11.cookie操作"></a>11.cookie操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">//写cookies</div><div class="line">setCookie = function(name, value, time) &#123;</div><div class="line">  var strsec = getsec(time);</div><div class="line">  var exp = new Date();</div><div class="line">  exp.setTime(exp.getTime() + strsec * 1);</div><div class="line">  document.cookie = name + &quot;=&quot; + escape(value) + &quot;;expires=&quot; + exp.toGMTString();</div><div class="line">&#125;</div><div class="line">//cookie操作辅助函数</div><div class="line">getsec = function(str) &#123;</div><div class="line">  var str1 = str.substring(1, str.length) * 1;</div><div class="line">  var str2 = str.substring(0, 1);</div><div class="line">  if (str2 == &quot;s&quot;) &#123;</div><div class="line">    return str1 * 1000;</div><div class="line">  &#125; else if (str2 == &quot;h&quot;) &#123;</div><div class="line">    return str1 * 60 * 60 * 1000;</div><div class="line">  &#125; else if (str2 == &quot;d&quot;) &#123;</div><div class="line">    return str1 * 24 * 60 * 60 * 1000;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//读取cookies</div><div class="line">getCookie = function(name) &#123;</div><div class="line">  var arr, reg = new RegExp(&quot;(^| )&quot; + name + &quot;=([^;]*)(;|$)&quot;);</div><div class="line">  if (arr = document.cookie.match(reg)) return (arr[2]);</div><div class="line">  else return null;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//删除cookies</div><div class="line">delCookie = function(name) &#123;</div><div class="line">  var exp = new Date();</div><div class="line">  exp.setTime(exp.getTime() - 1);</div><div class="line">  var cval = getCookie(name);</div><div class="line">  if (cval != null) document.cookie = name + &quot;=&quot; + cval + &quot;;expires=&quot; + exp.toGMTString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="12-生成随机字符串-可指定长度"><a href="#12-生成随机字符串-可指定长度" class="headerlink" title="12.生成随机字符串 (可指定长度)"></a>12.生成随机字符串 (可指定长度)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 生成随机字符串(可指定长度)</div><div class="line"> * @param len</div><div class="line"> * @returns &#123;string&#125;</div><div class="line"> */</div><div class="line">randomString = function(len) &#123;</div><div class="line">  len = len || 8;</div><div class="line">  var $chars = &apos;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678&apos;;</div><div class="line">  /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/</div><div class="line">  var maxPos = $chars.length;</div><div class="line">  var pwd = &apos;&apos;;</div><div class="line">  for (var i = 0; i &lt; len; i++) &#123;</div><div class="line">    pwd += $chars.charAt(Math.floor(Math.random() * maxPos));</div><div class="line">  &#125;</div><div class="line">  return pwd;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="13-浏览器判断"><a href="#13-浏览器判断" class="headerlink" title="13.浏览器判断"></a>13.浏览器判断</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">function parseUA() &#123;</div><div class="line">  var u = navigator.userAgent;</div><div class="line">  var u2 = navigator.userAgent.toLowerCase();</div><div class="line">  return &#123; //移动终端浏览器版本信息</div><div class="line">    trident: u.indexOf(&apos;Trident&apos;) &gt; -1,</div><div class="line">    //IE内核</div><div class="line">    presto: u.indexOf(&apos;Presto&apos;) &gt; -1,</div><div class="line">    //opera内核</div><div class="line">    webKit: u.indexOf(&apos;AppleWebKit&apos;) &gt; -1,</div><div class="line">    //苹果、谷歌内核</div><div class="line">    gecko: u.indexOf(&apos;Gecko&apos;) &gt; -1 &amp;&amp; u.indexOf(&apos;KHTML&apos;) == -1,</div><div class="line">    //火狐内核</div><div class="line">    mobile: !!u.match(/AppleWebKit.*Mobile.*/),</div><div class="line">    //是否为移动终端</div><div class="line">    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),</div><div class="line">    //ios终端</div><div class="line">    android: u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1,</div><div class="line">    //android终端或uc浏览器</div><div class="line">    iPhone: u.indexOf(&apos;iPhone&apos;) &gt; -1,</div><div class="line">    //是否为iPhone或者QQHD浏览器</div><div class="line">    iPad: u.indexOf(&apos;iPad&apos;) &gt; -1,</div><div class="line">    //是否iPad</div><div class="line">    webApp: u.indexOf(&apos;Safari&apos;) == -1,</div><div class="line">    //是否web应该程序，没有头部与底部</div><div class="line">    iosv: u.substr(u.indexOf(&apos;iPhone OS&apos;) + 9, 3),</div><div class="line">    weixin: u2.match(/MicroMessenger/i) == &quot;micromessenger&quot;,</div><div class="line">    ali: u.indexOf(&apos;AliApp&apos;) &gt; -1,</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">var ua = parseUA();</div><div class="line">if (!ua.mobile) &#123;</div><div class="line">  location.href = &apos;./pc.html&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="14-Rem移动端适配"><a href="#14-Rem移动端适配" class="headerlink" title="14.Rem移动端适配"></a>14.Rem移动端适配</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var rem = &#123;</div><div class="line">  baseRem: 40,</div><div class="line">  // 基准字号，按照iphone6应该为20，此处扩大2倍，便于计算</div><div class="line">  baseWidth: 750,</div><div class="line">  // 基准尺寸宽，此处是按照ihpone6的尺寸</div><div class="line">  rootEle: document.getElementsByTagName(&quot;html&quot;)[0],</div><div class="line">  initHandle: function() &#123;</div><div class="line">    this.setRemHandle();</div><div class="line">    this.resizeHandle();</div><div class="line">  &#125;,</div><div class="line">  setRemHandle: function() &#123;</div><div class="line">    var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;</div><div class="line">    this.rootEle.style.fontSize = clientWidth * this.baseRem / this.baseWidth + &quot;px&quot;;</div><div class="line">  &#125;,</div><div class="line">  resizeHandle: function() &#123;</div><div class="line">    var that = this;</div><div class="line">    window.addEventListener(&quot;resize&quot;,</div><div class="line">    function() &#123;</div><div class="line">      setTimeout(function() &#123;</div><div class="line">        that.setRemHandle();</div><div class="line">      &#125;,</div><div class="line">      300);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">rem.initHandle();</div></pre></td></tr></table></figure>
+<h2 id="15-获取url后参数"><a href="#15-获取url后参数" class="headerlink" title="15.获取url后参数"></a>15.获取url后参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function GetRequest() &#123;</div><div class="line">  var url = location.search; //获取url中&quot;?&quot;符后的字串</div><div class="line">  var theRequest = new Object();</div><div class="line">  if (url.indexOf(&quot;?&quot;) != -1) &#123;</div><div class="line">    var str = url.substr(1);</div><div class="line">    strs = str.split(&quot;&amp;&quot;);</div><div class="line">    for (var i = 0; i &lt; strs.length; i++) &#123;</div><div class="line">      theRequest[strs[i].split(&quot;=&quot;)[0]] = (strs[i].split(&quot;=&quot;)[1]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return theRequest;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="16-动态加载JS"><a href="#16-动态加载JS" class="headerlink" title="16.动态加载JS"></a>16.动态加载JS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function loadScript(url, callback) &#123;</div><div class="line">  var script = document.createElement(&quot;script&quot;);</div><div class="line">  script.type = &quot;text/&quot;;</div><div class="line">  if (typeof(callback) != &quot;undefined&quot;) &#123;</div><div class="line">    if (script.readyState) &#123;</div><div class="line">      script.onreadystatechange = function() &#123;</div><div class="line">        if (script.readyState == &quot;loaded&quot; || script.readyState == &quot;complete&quot;) &#123;</div><div class="line">          script.onreadystatechange = null;</div><div class="line">          callback();</div><div class="line">        &#125;</div><div class="line">      &#125;;</div><div class="line">    &#125; else &#123;</div><div class="line">      script.onload = function() &#123;</div><div class="line">        callback();</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  script.src = url;</div><div class="line">  document.body.appendChild(script);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="17-生成随机颜色值"><a href="#17-生成随机颜色值" class="headerlink" title="17.生成随机颜色值"></a>17.生成随机颜色值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function getRandomColor () &#123;</div><div class="line">  const rgb = []</div><div class="line">  for (let i = 0 ; i &lt; 3; ++i)&#123;</div><div class="line">    let color = Math.floor(Math.random() * 256).toString(16)</div><div class="line">    color = color.length == 1 ? &apos;0&apos; + color : color</div><div class="line">    rgb.push(color)</div><div class="line">  &#125;</div><div class="line">  return &apos;#&apos; + rgb.join(&apos;&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://juejin.im/post/5b62d02ee51d453467552dc9" target="_blank" rel="external">https://juejin.im/post/5b62d02ee51d453467552dc9</a></li>
+</ul>
 
       
 
@@ -290,7 +521,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.0.3 通用公共 css/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.5.5 常用JS方法/">展开全文 >></a>
         </p>
       
 
@@ -320,22 +551,85 @@
 
 
   
-    <article id="post-3.0.2 SMACSS 规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.5.8 理解JS的节流、防抖及使用场景" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.8 理解JS的节流、防抖及使用场景/">理解JS的节流、防抖及使用场景</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.8 理解JS的节流、防抖及使用场景/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SMACSS-规范"><a href="#SMACSS-规范" class="headerlink" title="SMACSS 规范"></a>SMACSS 规范</h1><ul>
-<li>基本(base)： 简单的选择器的基本样式，如 <code>clearfix</code> , <code>reset</code> 重置默认样式</li>
-<li>布局（Layout）: 定义顶部栏、侧边栏、正文、页脚等主要部分</li>
-<li>模块(Module)： 一群元素组成的一个模块，比如说 <code>header</code> 和  <code>sidebar</code> 等</li>
-<li>状态（State）: 元素的不同状态。如 <code>hover</code> , <code>focus</code> ,隐藏、按住等</li>
-<li>主题(Theme)：更多的样式,颜色、形状、边框、阴影还有其他等等</li>
-<li>参考: <a href="https://smacss.com/book/categorizing" target="_blank" rel="external">https://smacss.com/book/categorizing</a></li>
+        <p>以下场景往往由于事件频繁被触发，因而频繁执行DOM操作、资源加载等重行为，导致UI停顿甚至浏览器崩溃。</p>
+<ul>
+<li><p>1.window对象的resize、scroll事件</p>
+</li>
+<li><p>2.拖拽时的mousemove事件</p>
+</li>
+<li><p>3.射击游戏中的mousedown、keydown事件</p>
+</li>
+<li><p>4.文字输入、自动完成的keyup事件</p>
+</li>
+</ul>
+<h2 id="函数防抖-debounce"><a href="#函数防抖-debounce" class="headerlink" title="函数防抖(debounce)"></a>函数防抖(debounce)</h2><blockquote>
+<p>在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。</p>
+</blockquote>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//模拟一段ajax请求</div><div class="line">function ajax(content) &#123;</div><div class="line">  console.log(&apos;ajax request &apos; + content)</div><div class="line">&#125;</div><div class="line"></div><div class="line">let inputa = document.getElementById(&apos;unDebounce&apos;)</div><div class="line"></div><div class="line">inputa.addEventListener(&apos;keyup&apos;, function (e) &#123;</div><div class="line">    ajax(e.target.value)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//模拟一段ajax请求</div><div class="line">function ajax(content) &#123;</div><div class="line">  console.log(&apos;ajax request &apos; + content)</div><div class="line">&#125;</div><div class="line"></div><div class="line">function debounce(fun, delay) &#123;</div><div class="line">    return function (args) &#123;</div><div class="line">        let that = this</div><div class="line">        let _args = args</div><div class="line">        clearTimeout(fun.id)</div><div class="line">        fun.id = setTimeout(function () &#123;</div><div class="line">            fun.call(that, _args)</div><div class="line">        &#125;, delay)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">    </div><div class="line">let inputb = document.getElementById(&apos;debounce&apos;)</div><div class="line"></div><div class="line">let debounceAjax = debounce(ajax, 500)</div><div class="line"></div><div class="line">inputb.addEventListener(&apos;keyup&apos;, function (e) &#123;</div><div class="line">        debounceAjax(e.target.value)</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"></div><div class="line">可以看到，我们加入了防抖以后，当你在频繁的输入时，并不会发送请求，只有当你在指定间隔内没有输入时，才会执行函数。</div><div class="line">如果停止输入但是在指定间隔内又输入，会重新触发计时。</div></pre></td></tr></table></figure>
+<ul>
+<li>demo-2<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">window.onscroll = function()&#123;</div><div class="line">  //lazyload();</div><div class="line">  debounce(lazyload,window);</div><div class="line">&#125;;</div><div class="line">function debounce(method,context)&#123;</div><div class="line">  clearTimeout(method.timeout);</div><div class="line">  method.timeout = setTimeout(function()&#123;</div><div class="line">    method.call(context);</div><div class="line">  &#125;,500);</div><div class="line">&#125;</div><div class="line">function lazyload()&#123;</div><div class="line">  console.log(&quot;scroll执行了&quot;+scrollnum);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">链接：https://www.jianshu.com/p/4f3e2c8f5e95</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数节流-throttle"><a href="#函数节流-throttle" class="headerlink" title="函数节流(throttle)"></a>函数节流(throttle)</h2><blockquote>
+<p>规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。</p>
+</blockquote>
+<h3 id="demo-1"><a href="#demo-1" class="headerlink" title="demo"></a>demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function throttle(fun, delay) &#123;</div><div class="line">        let last, deferTimer</div><div class="line">        return function (args) &#123;</div><div class="line">            let that = this</div><div class="line">            let _args = arguments</div><div class="line">            let now = +new Date()</div><div class="line">            if (last &amp;&amp; now &lt; last + delay) &#123;</div><div class="line">                clearTimeout(deferTimer)</div><div class="line">                deferTimer = setTimeout(function () &#123;</div><div class="line">                    last = now</div><div class="line">                    fun.apply(that, _args)</div><div class="line">                &#125;, delay)</div><div class="line">            &#125;else &#123;</div><div class="line">                last = now</div><div class="line">                fun.apply(that,_args)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    let throttleAjax = throttle(ajax, 1000)</div><div class="line"></div><div class="line">    let inputc = document.getElementById(&apos;throttle&apos;)</div><div class="line">    inputc.addEventListener(&apos;keyup&apos;, function(e) &#123;</div><div class="line">        throttleAjax(e.target.value)</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">可以看到，我们在不断输入时，ajax会按照我们设定的时间，每1s执行一次。</div></pre></td></tr></table></figure>
+<p>不管我们设定的执行时间间隔多小，总是1s内只执行一次。</p>
+<ul>
+<li>demo-2<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function throttle2(method, delay, time) &#123;</div><div class="line">  var timeout,startTime = new Date();</div><div class="line">  return function() &#123;</div><div class="line">    var context = this,</div><div class="line">    args = arguments,</div><div class="line">    curTime = new Date();</div><div class="line">    clearTimeout(timeout);</div><div class="line">    // 如果达到了规定的触发时间间隔，触发 handler</div><div class="line">    if (curTime - startTime &gt;= time) &#123;</div><div class="line">      method.apply(context, args);</div><div class="line">      startTime = curTime;</div><div class="line">      // 没达到触发间隔，重新设定定时器</div><div class="line">    &#125; else &#123;</div><div class="line">      timeout = setTimeout(method, delay);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">链接：https://www.jianshu.com/p/4f3e2c8f5e95</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="sum"><a href="#sum" class="headerlink" title="sum"></a>sum</h2><ul>
+<li>函数防抖和函数节流都是防止某一时间频繁触发，但是这两兄弟之间的原理却不一样。</li>
+<li>函数防抖是某一段时间内只执行一次，而函数节流是间隔时间执行。</li>
+</ul>
+<h2 id="结合应用场景"><a href="#结合应用场景" class="headerlink" title="结合应用场景"></a>结合应用场景</h2><ul>
+<li><p>debounce</p>
+<ul>
+<li>search搜索联想，用户在不断输入值时，用防抖来节约请求资源。</li>
+<li>window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>throttle</p>
+<ul>
+<li>鼠标不断点击触发，mousedown(单位时间内只触发一次)</li>
+<li>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断</li>
+</ul>
+</li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://smacss.com/book/categorizing" target="_blank" rel="external">https://smacss.com/book/categorizing</a></li>
-<li></li>
+<li><a href="https://juejin.im/post/5b8de829f265da43623c4261" target="_blank" rel="external">https://juejin.im/post/5b8de829f265da43623c4261</a></li>
+<li><a href="http://www.cnblogs.com/zichi/p/5331426.html" target="_blank" rel="external">http://www.cnblogs.com/zichi/p/5331426.html</a></li>
+<li><a href="https://davidwalsh.name/javascript-debounce-function" target="_blank" rel="external">https://davidwalsh.name/javascript-debounce-function</a></li>
+<li><a href="https://css-tricks.com/the-difference-between-throttling-and-debouncing/" target="_blank" rel="external">https://css-tricks.com/the-difference-between-throttling-and-debouncing/</a></li>
+<li><a href="https://ict.ken.be/javascript-debounce-vs-throttle-function" target="_blank" rel="external">https://ict.ken.be/javascript-debounce-vs-throttle-function</a></li>
+<li><a href="https://stackoverflow.com/questions/25991367/difference-between-throttling-and-debouncing-a-function" target="_blank" rel="external">https://stackoverflow.com/questions/25991367/difference-between-throttling-and-debouncing-a-function</a></li>
+<li><a href="https://remysharp.com/2010/07/21/throttling-function-calls" target="_blank" rel="external">https://remysharp.com/2010/07/21/throttling-function-calls</a></li>
+<li><a href="https://segmentfault.com/a/1190000008768202" target="_blank" rel="external">https://segmentfault.com/a/1190000008768202</a></li>
+<li><a href="http://www.alloyteam.com/2012/11/javascript-throttle/" target="_blank" rel="external">http://www.alloyteam.com/2012/11/javascript-throttle/</a></li>
 </ul>
 
       
@@ -349,7 +643,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.0.2 SMACSS 规范/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.5.8 理解JS的节流、防抖及使用场景/">展开全文 >></a>
         </p>
       
 
@@ -379,15 +673,27 @@
 
 
   
-    <article id="post-3.0.1 BEM 规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4.5.9 统计字符串中特定字符包含的个数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/4.5.9 统计字符串中特定字符包含的个数/">统计字符串中特定字符包含的个数</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.5.9 统计字符串中特定字符包含的个数/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="BEM-规范"><a href="#BEM-规范" class="headerlink" title="BEM 规范"></a>BEM 规范</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="external">https://en.bem.info/methodology/quick-start/</a></li>
-<li><a href="http://www.w3cplus.com/blog/tags/325.html" target="_blank" rel="external">http://www.w3cplus.com/blog/tags/325.html</a></li>
-</ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getPlaceholderCount(strSource) &#123;</div><div class="line">  //统计字符串中特定字符包含的个数</div><div class="line">  var thisCount = 0;</div><div class="line">  strSource.replace(/4/g, function (m, i) &#123;</div><div class="line">    //m为找到的&#123;xx&#125;元素、i为索引</div><div class="line">    console.log(m,i)</div><div class="line">    thisCount++;</div><div class="line">  &#125;);</div><div class="line">  return thisCount;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -400,7 +706,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.0.1 BEM 规范/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/4.5.9 统计字符串中特定字符包含的个数/">展开全文 >></a>
         </p>
       
 
@@ -430,56 +736,53 @@
 
 
   
-    <article id="post-3.0 css 代码规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-3.2.3. CSS 变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/3.2.3. CSS 变量/">CSS变量</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/3.2.3. CSS 变量/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="css代码规范"><a href="#css代码规范" class="headerlink" title="css代码规范"></a>css代码规范</h1><p>阮一峰新增 css 教程：<a href="https://github.com/wangdoc/css-tutorial/tree/master/docs" target="_blank" rel="external">https://github.com/wangdoc/css-tutorial/tree/master/docs</a></p>
-<ul>
-<li>4 个空格</li>
-<li>在每个声明的左括号前增加一个空格，声明块的右括号应该另起一行：  .selector {<pre><code>}
-</code></pre></li>
-<li>所有的十六进制值都应该使用小写字母，例如 #fff</li>
-<li>尽可能使用短的十六进制数值，例如使用 #fff 替代 #ffffff。</li>
-<li>为选择器中得属性取值添加引号，例如 input[type=”text”]</li>
-<li><p>不要为 0 指明单位，比如使用 margin: 0; 而不是 margin: 0px;</p>
-</li>
-<li><p>相关的属性声明应该以下面的顺序分组处理</p>
-<ul>
-<li>Positioning</li>
-<li>Box model 盒模型</li>
-<li>Typographic 排版</li>
-<li>Visual 外观</li>
+        <ul>
+<li>MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables</a></li>
+<li>Can I USE: <a href="https://caniuse.com/#search=CSS%20Variables" target="_blank" rel="external">https://caniuse.com/#search=CSS%20Variables</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">/* Positioning */</div><div class="line">position: absolute;</div><div class="line">top: 0;</div><div class="line">right: 0;</div><div class="line">bottom: 0;</div><div class="line">left: 0;</div><div class="line">z-index: 100;</div><div class="line"></div><div class="line">/* Box-model */</div><div class="line">display: block;</div><div class="line">float: right;</div><div class="line">width: 100px;</div><div class="line">height: 100px;</div><div class="line"></div><div class="line">/* Typography */</div><div class="line">font: normal 13px &quot;Helvetica Neue&quot;, sans-serif;</div><div class="line">line-height: 1.5;</div><div class="line">color: #333;</div><div class="line">text-align: center;</div><div class="line"></div><div class="line">/* Visual */</div><div class="line">background-color: #f5f5f5;</div><div class="line">border: 1px solid #e5e5e5;</div><div class="line">border-radius: 3px;</div><div class="line"></div><div class="line">/* Misc */</div><div class="line">opacity: 1;</div></pre></td></tr></table></figure>
-</li>
-<li><p>媒体查询位置 靠近他们相关的规则</p>
-</li>
-<li><p>不要使用 @import : 与 <link> 相比, @import 更慢，需要额外的页面请求，并且可能引发其他的意想不到的问题。</p>
-</li>
-<li><p>前缀属性: 当使用厂商前缀属性时，通过缩进使取值垂直对齐以便多行编辑</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.selector &#123;</div><div class="line">  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);</div><div class="line">          box-shadow: 0 1px 2px rgba(0,0,0,.15);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>在一个声明块中只包含一条声明的情况下，为了易读性和快速编辑可以考虑移除其中的换行。所有包含多条声明的声明块应该分为多行。</p>
-</li>
-<li><p>坚持限制属性取值简写的使用，属性简写需要你必须显式设置所有取值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/* Good example */</div><div class="line">.element &#123;</div><div class="line">  margin-bottom: 10px;</div><div class="line">  background-color: red;</div><div class="line">  background-image: url(&quot;image.jpg&quot;);</div><div class="line">  border-top-left-radius: 3px;</div><div class="line">  border-top-right-radius: 3px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Class 命名为全小写，可以使用短划线（不要使用下划线和 camelCase 命名）</p>
-</li>
-<li>Class 的命名应该尽量短，也要尽量明确,最多三个：.top-title-p</li>
-<li>以组件为单位组织代码</li>
-<li><p>使用一致的空白来分割代码块</p>
-</li>
-<li><p>编辑器配置<br>-使用 4 个空格的 soft-tabs</p>
+<p>使用自定义属性来设置变量名，并使用特定的 var() 来访问。（比如  color: var(–main-color);）</p>
 <ul>
-<li>在保存时删除尾部的空白字符</li>
-<li>设置文件编码为 UTF-8</li>
-<li>在文件结尾添加一个空白行</li>
-</ul>
+<li>基本用法 Edit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">声明一个局部变量：</div><div class="line"></div><div class="line">element &#123;</div><div class="line">  --main-bg-color: brown;</div><div class="line">&#125; </div><div class="line">使用一个局部变量：</div><div class="line"></div><div class="line">element &#123;</div><div class="line">  background-color: var(--main-bg-color);</div><div class="line">&#125;</div><div class="line"></div><div class="line">------------------------------------------------------</div><div class="line"></div><div class="line">声明一个 全局 CSS 变量：</div><div class="line"></div><div class="line">:root &#123;</div><div class="line">  --global-color: #666;</div><div class="line">  --pane-padding: 5px 42px;</div><div class="line">&#125;</div><div class="line">使用一个 全局 CSS 变量：</div><div class="line"></div><div class="line">.demo&#123;</div><div class="line">   color: var(--global-color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>1、CSS颜色属性的设置和表示方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[css] view plain copy</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">    #div&#123;  </div><div class="line">        color: red;/*关键字表示法*/  </div><div class="line">        color: #f00;/*短-16进制表示法*/  </div><div class="line">        color: #ff0000;/*长-16进制表示法*/  </div><div class="line">        color: rgb(255, 0, 0);/*rgb基本表示法*/  </div><div class="line">        color: rgb(100%, 0, 0);/*rgb百分比表示法*/  </div><div class="line">        color: hsl(240, 0%, 50%);/*色彩三属性表示法表示法，下文具体解释hsl含义*/  </div><div class="line">        color: color(#29B4F0 a(50%) contrast(%10) h(10));/*颜色函数表示法，请看下文具体解释*/  </div><div class="line">    &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>2、CSS自定义变量<br>    声明语法：–*，如–color-basis: red;</p>
+<pre><code>调用语法：var(--color-basis)，如color: var(--color-basis);
+
+位置：可以放在根选择器中，也可以放在常规选择器中
+</code></pre><p>引申：CSS3根选择器，:root选择器匹配文档根元素，在HTML中，根元素始终是html元素，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">:root&#123;</div><div class="line"></div><div class="line">--color-basis: red;//定义一个CSS变量</div><div class="line"></div><div class="line">background: #f00;//设置html元素背景色</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、CSS颜色函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CSS Color Module Level 4的颜色配置函数有：color()、gray()、hsl()、hwb()等，这些函数浏览器暂时不支持，实际开发需要引入第三方插件（postcss/cssnext）来做预处理。</div><div class="line"></div><div class="line">color-mod()函数详解：</div><div class="line"></div><div class="line">color-mod() = color(#29B4F0 a() s() h() l() tint() shade() w() b() contrast());</div><div class="line"></div><div class="line">调用语法：</div><div class="line"></div><div class="line">#div&#123;background-color:color(#29B4F0 a() s() h() l() tint() shade() w() b() contrast() blend());&#125;</div></pre></td></tr></table></figure></p>
+<p>第一个参数基准色值，必须设定；</p>
+<p>第二个参数及后面的参数为可选参数，这些参数的详细含义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">a-alpha，透明度，值为百分比；</div><div class="line"></div><div class="line">b-blackness，黑度，值为百分比；</div><div class="line"></div><div class="line">blend，混合度，值为百分比;</div><div class="line"></div><div class="line">contrast，对比度，值为百分比；    </div><div class="line"></div><div class="line">h-hue，色相-色彩的第一属性，色彩的相貌区别；0-360deg，0和360是红色，接近120的是绿色，240是蓝色；</div><div class="line"></div><div class="line">l-lightness，明度，亮度-色彩的第二属性，表明色彩的明暗性质； 0%是最暗，50%均值，100%最亮。</div><div class="line"></div><div class="line">s-saturation，纯度，饱和度-色彩的第三属性，表明色彩的鲜灰程度；0%是灰度，100%饱和度最高 ;</div><div class="line"></div><div class="line">shade，暗度，值为百分比；</div><div class="line"></div><div class="line">tint，色调，值为百分比；</div><div class="line"></div><div class="line">w-whiteness，白度，值为百分比；</div></pre></td></tr></table></figure></p>
+<p>4、综合实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[css] view plain copy</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">    :root&#123;  </div><div class="line">        --color-basis: red;  </div><div class="line">        --mytheme-p-color: var(--color-basis);  </div><div class="line">    &#125;  </div><div class="line">    p&#123;  </div><div class="line">        color:color(var(--mytheme-p-color) a(50%) hue(+30deg));//p元素dom数组集合中，每个元素的hue递增30deg，等同于hue += 30  </div><div class="line">    &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>5、扩展</p>
+<pre><code>CSS函数：
+</code></pre><p>attr();返回选择元素的属性值</p>
+<p>calc();计算CSS属性值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">linear-gradient();创建一个线性渐变的图像  </div><div class="line">radial-gradient();用径向渐变创建图像</div><div class="line">repeating-linear-gradient();用重复的线性渐变创建图像</div><div class="line">repeating-radial-gradient();类似 radial-gradient()，用重复的径向渐变创建图像。</div></pre></td></tr></table></figure></p>
+<p>6、当前文字颜色属性</p>
+<p>如：border: 1px solid currentColor;//currentColor是CSS3的一个变量</p>
 
       
 
@@ -492,7 +795,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/3.0 css 代码规范/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/3.2.3. CSS 变量/">展开全文 >></a>
         </p>
       
 
@@ -522,14 +825,28 @@
 
 
   
-    <article id="post-2.1.2 把一个简单的div元素的属性都打印出来" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-5.1.0 2万5千字大厂面经" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/5.1.0 2万5千字大厂面经/">2万5千字大厂面经</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/5.1.0 2万5千字大厂面经/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="把一个简单的div元素的属性都打印出来"><a href="#把一个简单的div元素的属性都打印出来" class="headerlink" title="把一个简单的div元素的属性都打印出来"></a>把一个简单的div元素的属性都打印出来</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var docu = document.createElement(&apos;div&apos;)</div><div class="line">var str = &apos;&apos;;</div><div class="line">for(var key in docu)&#123;</div><div class="line">	str += key+&apos;&apos;;</div><div class="line">&#125;</div><div class="line">&quot;aligntitlelangtranslatedirdatasethiddentabIndexaccessKeydraggablespellcheckautocapitalizecontentEditableisContentEditableinputModeoffsetParentoffsetTopoffsetLeftoffsetWidthoffsetHeightstyleinnerTextouterTextonabortonbluroncanceloncanplayoncanplaythroughonchangeonclickoncloseoncontextmenuoncuechangeondblclickondragondragendondragenterondragleaveondragoverondragstartondropondurationchangeonemptiedonendedonerroronfocusoninputoninvalidonkeydownonkeypressonkeyuponloadonloadeddataonloadedmetadataonloadstartonmousedownonmouseenteronmouseleaveonmousemoveonmouseoutonmouseoveronmouseuponmousewheelonpauseonplayonplayingonprogressonratechangeonresetonresizeonscrollonseekedonseekingonselectonstalledonsubmitonsuspendontimeupdateontoggleonvolumechangeonwaitingonwheelonauxclickongotpointercaptureonlostpointercaptureonpointerdownonpointermoveonpointeruponpointercancelonpointeroveronpointeroutonpointerenteronpointerleavenonceclickfocusblurnamespaceURIprefixlocalNametagNameidclassNameclassListslotattributesshadowRootassignedSlotinnerHTMLouterHTMLscrollTopscrollLeftscrollWidthscrollHeightclientTopclientLeftclientWidthclientHeightonbeforecopyonbeforecutonbeforepasteoncopyoncutonpasteonsearchonselectstartpreviousElementSiblingnextElementSiblingchildrenfirstElementChildlastElementChildchildElementCountonwebkitfullscreenchangeonwebkitfullscreenerrorsetPointerCapturereleasePointerCapturehasPointerCapturehasAttributesgetAttributeNamesgetAttributegetAttributeNSsetAttributesetAttributeNSremoveAttributeremoveAttributeNShasAttributehasAttributeNSgetAttributeNodegetAttributeNodeNSsetAttributeNodesetAttributeNodeNSremoveAttributeNodeclosestmatcheswebkitMatchesSelectorattachShadowgetElementsByTagNamegetElementsByTagNameNSgetElementsByClassNameinsertAdjacentElementinsertAdjacentTextinsertAdjacentHTMLrequestPointerLockgetClientRectsgetBoundingClientRectscrollIntoViewscrollIntoViewIfNeededanimatebeforeafterreplaceWithremoveprependappendquerySelectorquerySelectorAllwebkitRequestFullScreenwebkitRequestFullscreenattributeStyleMapscrollscrollToscrollBycreateShadowRootgetDestinationInsertionPointscomputedStyleMapELEMENT_NODEATTRIBUTE_NODETEXT_NODECDATA_SECTION_NODEENTITY_REFERENCE_NODEENTITY_NODEPROCESSING_INSTRUCTION_NODECOMMENT_NODEDOCUMENT_NODEDOCUMENT_TYPE_NODEDOCUMENT_FRAGMENT_NODENOTATION_NODEDOCUMENT_POSITION_DISCONNECTEDDOCUMENT_POSITION_PRECEDINGDOCUMENT_POSITION_FOLLOWINGDOCUMENT_POSITION_CONTAINSDOCUMENT_POSITION_CONTAINED_BYDOCUMENT_POSITION_IMPLEMENTATION_SPECIFICnodeTypenodeNamebaseURIisConnectedownerDocumentparentNodeparentElementchildNodesfirstChildlastChildpreviousSiblingnextSiblingnodeValuetextContenthasChildNodesgetRootNodenormalizecloneNodeisEqualNodeisSameNodecompareDocumentPositioncontainslookupPrefixlookupNamespaceURIisDefaultNamespaceinsertBeforeappendChildreplaceChildremoveChildaddEventListenerremoveEventListenerdispatchEvent&quot;</div></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">https://github.com/livoras/blog/issues/13</a></li>
+        <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://juejin.im/post/5ba34e54e51d450e5162789b" target="_blank" rel="external">https://juejin.im/post/5ba34e54e51d450e5162789b</a></li>
 </ul>
 
       
@@ -543,7 +860,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/2.1.2 把一个简单的div元素的属性都打印出来/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/5.1.0 2万5千字大厂面经/">展开全文 >></a>
         </p>
       
 
@@ -573,161 +890,30 @@
 
 
   
-    <article id="post-2.1.1 从输入URL到页面加载发生了什么" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-5.1.2 vuejs 前端面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="从输入URL到页面加载发生了什么"><a href="#从输入URL到页面加载发生了什么" class="headerlink" title="从输入URL到页面加载发生了什么"></a>从输入URL到页面加载发生了什么</h1><ul>
-<li>segmentdefault: <a href="https://segmentfault.com/a/1190000006879700" target="_blank" rel="external">从输入URL到页面加载发生了什么</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">总体来说分为以下几个过程:</div><div class="line"></div><div class="line">DNS解析</div><div class="line"></div><div class="line">TCP连接</div><div class="line"></div><div class="line">发送HTTP请求</div><div class="line"></div><div class="line">服务器处理请求并返回HTTP报文</div><div class="line"></div><div class="line">浏览器解析渲染页面</div><div class="line"></div><div class="line">连接结束</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/2.1.1 从输入URL到页面加载发生了什么/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-2.1 http 协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="http-协议"><a href="#http-协议" class="headerlink" title="http 协议"></a>http 协议</h1><p>  Hyper Text Transfer Protocol（超文本传输协议）</p>
-<p>  HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。</p>
-<ul>
-<li><p>http 状态值  ajax 的 readyState  </p>
-<ul>
-<li>0 － （未初始化）还没有调用send()方法 </li>
-<li>1 － （载入）已调用send()方法，正在发送请求 </li>
-<li>2 － （载入完成）send()方法执行完成，已经接收到全部响应内容 </li>
-<li>3 － （交互）正在解析响应内容 </li>
-<li>4 － （完成）响应内容解析完成，可以在客户端调用了</li>
-</ul>
-</li>
-<li><p>http 状态码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1xx：请求收到，继续处理</div><div class="line">2xx：操作成功收到，分析、接受</div><div class="line">3xx：完成此请求必须进一步处理</div><div class="line">4xx：请求包含一个错误语法或不能完成</div><div class="line">5xx：服务器执行一个完全有效请求失</div></pre></td></tr></table></figure>
-<ul>
-<li>200, OK，访问正常</li>
-<li>301, Moved Permanently，永久移动</li>
-<li>302, Move temporarily，暂时移动</li>
-<li>304, Not Modified，未修改</li>
-<li>307, Temporary Redirect，暂时重定向</li>
-<li>401, Unauthorized，未授权</li>
-<li>403, Forbidden，禁止访问</li>
-<li>404, Not Found，未发现指定网址</li>
-<li>500, Internal Server Error，服务器发生错误</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/2.1 http 协议/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/27/5.1.2 vuejs 前端面试题/">vue前端面试题</a>
+    </h1>
   
-    <article id="post-2.0 html 代码规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2018/09/27/5.1.2 vuejs 前端面试题/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="html代码规范"><a href="#html代码规范" class="headerlink" title="html代码规范"></a>html代码规范</h1><ul>
-<li>缩进 以前说使用 <strong>2</strong> 个空格，现在一般使用 <strong>4</strong> 个空格；</li>
-<li>在属性上，使用双引号 <strong>“”</strong>，不要使用单引号 <strong>‘’</strong>；</li>
-<li>标签正确关闭；</li>
-<li>在自动闭合标签结尾处使用斜线；</li>
-<li>头部要声明 doctype : &lt;!DOCTYPE html&gt;</li>
-<li>指出页面的语言: <html lang="en-us">  <html lang="zh-cmn-Hans"></html></html></li>
-<li>声明一个明确的字符编码: <head> <meta charset="UTF-8"></head></li>
-<li>IE 兼容模式: 使用兼容性 <meta> 标签来指定使用什么版本的 IE 来渲染页面。如果不是特殊需要，通常通过 edge mode 来通知 IE 使用最新的兼容模式<meta http-equiv="X-UA-Compatible" content="IE=Edge"></li>
-<li><p>通常在引入 CSS 和 JavaScript 时不需要指明 type，css 放 head 头部</p>
-</li>
-<li><p>属性顺序： HTML 属性应该按照特定的顺序出现以保证易读性。尽量大部分用 class，少使用 id</p>
-<ul>
-<li>class</li>
-<li>id, name</li>
-<li>data-*</li>
-<li>src, for, type, href, value</li>
-<li>title, alt</li>
-<li>role, aria-*<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;a class=&quot;...&quot; id=&quot;...&quot; data-toggle=&quot;modal&quot; href=&quot;#&quot;&gt;</div><div class="line">  Example link</div><div class="line">&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;input class=&quot;form-control&quot; type=&quot;text&quot;&gt;</div><div class="line"></div><div class="line">&lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;</div></pre></td></tr></table></figure>
-</li>
+        <ul>
+<li>Vue原理解析之Virtual Dom: <a href="https://joeray61.com/2017/02/08/Vue%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%E4%B9%8BVirtual-Dom/" target="_blank" rel="external">https://joeray61.com/2017/02/08/Vue%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%E4%B9%8BVirtual-Dom/</a><br><a href="https://joeray61.com/2017/02/08/Vue%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%E4%B9%8BVirtual-Dom/" target="_blank" rel="external">Vue原理解析之Virtual Dom</a></li>
 </ul>
-</li>
-<li><p>Boolean 属性指不需要声明取值的属性<br><input type="checkbox" value="1" checked>  <input type="text" disabled></p>
-</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">1.vue中的MVVM模式  即Model-View-ViewModel。  </div><div class="line">Vue是以数据为驱动的，Vue自身将DOM和数据进行绑定，一旦创建绑定，DOM和数据将保持同步，每当数据发生变化，DOM会跟着变化。  </div><div class="line">ViewModel是Vue的核心，它是Vue的一个实例。Vue实例时作用域某个HTML元素上的，这个HTML元素可以是body，也可以是某个id所指代的元素。 </div><div class="line">DOM Listeners和Data Bindings是实现双向绑定的关键。DOM Listeners监听页面所有View层DOM元素的变化，当发生变化，Model层的数据随之变化；</div><div class="line">Data Bindings监听Model层的数据，当数据发生变化，View层的DOM元素随之变化。 </div><div class="line"></div><div class="line">2.v-show指令，v-if的区别  条件渲染指令，与v-if不同的是，无论v-show的值为true或false，元素都会存在于HTML代码中；</div><div class="line">而只有当v-if的值为true，元素才会存在于HTML代码中。v-show指令只是设置了元素CSS的style值  </div><div class="line"></div><div class="line">3.如何让css只在当前组件中起作用  在每一个vue组件中都可以定义各自的css，js，如果希望组件内写的css只对当前组件起作用，</div><div class="line">只需要在style中写入scoped，即： &lt;style scoped&gt;&lt;/style&gt; </div><div class="line"></div><div class="line">4.指令keep-alive  在vue-router写着keep-alive，</div><div class="line">keep-alive的含义： 如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。</div><div class="line">为此可以添加一个keep-alive指令  &lt;component :is=&apos;curremtView&apos; keep-alive&gt;&lt;/component&gt; 5.Vuejs组件 </div><div class="line">vuejs构建组件使用  Vue.component(&apos;componentName&apos;,&#123; /*component*/ &#125;)；  </div><div class="line">这里注意一点，组件要先注册再使用  Vue.component(&apos;mine&apos;,&#123;           </div><div class="line">template:&apos;#mineTpl&apos;,            </div><div class="line">props:[&apos;name&apos;,&apos;title&apos;,&apos;city&apos;,&apos;content&apos;]        </div><div class="line">&#125;);   </div><div class="line">var v=new Vue(&#123;       </div><div class="line">el:&apos;#vueInstance&apos;,</div><div class="line">data:&#123;           </div><div class="line">name:&apos;zhang&apos;,            </div><div class="line">title:&apos;this is title&apos;,          </div><div class="line">city:&apos;Beijing&apos;,           </div><div class="line">content:&apos;these are some desc about Blog&apos;     </div><div class="line">&#125; &#125;);  </div><div class="line">6.路由嵌套  路由嵌套会将其他组件渲染到该组件内，而不是进行整个页面跳转router-view本身就是将组件渲染到该位置，想要进行页面跳转，</div><div class="line">就要将页面渲染到根组件，在起始配置路由时</div></pre></td></tr></table></figure>
 
       
 
@@ -740,7 +926,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/2.0 html 代码规范/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/27/5.1.2 vuejs 前端面试题/">展开全文 >></a>
         </p>
       
 

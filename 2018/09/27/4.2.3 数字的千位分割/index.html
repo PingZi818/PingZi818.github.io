@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>千位分割 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="千位分割将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 reg">
+  <meta name="description" content="将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 regexp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="千位分割">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.2.3 数字的千位分割/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="千位分割将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 reg">
+<meta property="og:description" content="将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 regexp">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://img.blog.csdn.net/20161003155012112">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="千位分割将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 reg">
+<meta name="twitter:title" content="千位分割">
+<meta name="twitter:description" content="将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。示例：19,351,235.235767 先分离出小数部分；对整数部分逆序为数组； 123456789101112131415$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。$&amp;amp;	与 regexp">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20161003155012112">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -163,9 +163,24 @@
             <article id="post-4.2.3 数字的千位分割" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      千位分割
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.2.3 数字的千位分割/" class="archive-article-date">
+  	<time datetime="2018-09-27T07:42:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="千位分割"><a href="#千位分割" class="headerlink" title="千位分割"></a>千位分割</h1><p>将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。<br>示例：19,351,235.235767</p>
+        <p>将普通的数字转换为带千位分隔符格式的数字字符串是一个非常常见的问题，千位分隔符格式的规则是数字的整数部分每三位一组，以“，”分节。小数部分不分节 。<br>示例：19,351,235.235767</p>
 <p><strong>先分离出小数部分；<br>对整数部分逆序为数组；</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$1、$2、...、$99	与 regexp 中的第 1 到第 99 个子表达式相匹配的文本。</div><div class="line">$&amp;	与 regexp 相匹配的子串。</div><div class="line">$`	位于匹配子串左侧的文本。</div><div class="line">$&apos;	位于匹配子串右侧的文本。</div><div class="line">$$	直接量符号。</div><div class="line">function format (num) &#123;  </div><div class="line">    var reg=/\d&#123;1,3&#125;(?=(\d&#123;3&#125;)+$)/g;   </div><div class="line">    return (num + &apos;&apos;).replace(reg, &apos;$&amp;,&apos;);  </div><div class="line">&#125;</div><div class="line"></div><div class="line">正则表达式 \d&#123;1,3&#125;(?=(\d&#123;3&#125;)+$)  表示前面有1~3个数字，后面的至少由一组3个数字结尾。</div><div class="line">?=表示正向引用，可以作为匹配的条件，但匹配到的内容不获取，并且作为下一次查询的开始。</div><div class="line"> $&amp; 表示与正则表达式相匹配的内容，具体的使用可以查看字符串replace()方法的</div><div class="line">运行的过程看下图</div><div class="line">假如有数字13123903243，则正则表达式查找与替换的过程，如下图所示</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20161003155012112" alt=""></p>
@@ -282,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.2.4 数字，字符串，数组，对象的方法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.2.2 数组分组小算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          数组分组
         
       </div>
     </a>
   
   
-    <a href="/2018/09/27/4.2.1 在总的列表数组对象中查找返回的对象中存在的字段/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/09/27/4.2.4 数字，字符串，数组，对象的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数字，字符串，数组，对象的方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -322,9 +337,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="千位分割" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.2.3 数字的千位分割" data-title="" data-url="http://yoursite.com/2018/09/27/4.2.3 数字的千位分割/"></div>
+	<div class="ds-thread" data-thread-key="4.2.3 数字的千位分割" data-title="千位分割" data-url="http://yoursite.com/2018/09/27/4.2.3 数字的千位分割/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

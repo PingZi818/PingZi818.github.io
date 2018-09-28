@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>一年中的 周 范围计算 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一年中的 周 范围计算123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDat">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDate(mill)&amp;#12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="一年中的 周 范围计算">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/4.4.2 一年中的 周 范围计算/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一年中的 周 范围计算123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDat">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDate(mill)&amp;#12">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2018-09-27T04:20:09.000Z">
+<meta property="og:updated_time" content="2018-09-27T08:31:37.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="一年中的 周 范围计算123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDat">
+<meta name="twitter:title" content="一年中的 周 范围计算">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839function formatDig(num)&amp;#123;        return num&amp;gt;9?&amp;apos;&amp;apos;+num:&amp;apos;0&amp;apos;+num;    &amp;#125;    function formatDate(mill)&amp;#12">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,9 +161,24 @@
             <article id="post-4.4.2 一年中的 周 范围计算" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一年中的 周 范围计算
+    </h1>
+  
+
+        
+        <a href="/2018/09/27/4.4.2 一年中的 周 范围计算/" class="archive-article-date">
+  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一年中的-周-范围计算"><a href="#一年中的-周-范围计算" class="headerlink" title="一年中的 周 范围计算"></a>一年中的 周 范围计算</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">function formatDig(num)&#123;</div><div class="line">        return num&gt;9?&apos;&apos;+num:&apos;0&apos;+num;</div><div class="line">    &#125;</div><div class="line">    function formatDate(mill)&#123;</div><div class="line">        var y=new Date(mill);</div><div class="line">        let raws= [</div><div class="line">            y.getFullYear(),</div><div class="line">            formatDig(y.getMonth()+1),</div><div class="line">            formatDig(y.getDate()),</div><div class="line">            y.getDay()||7</div><div class="line">        ];</div><div class="line">        let format=[&apos;年&apos;,&apos;月&apos;,&apos;日 星期&apos;];</div><div class="line">        return String.raw(&#123;raw:raws&#125;,...format);</div><div class="line">    &#125;</div><div class="line">    function* createWeeks(year)&#123;</div><div class="line">        const ONE_DAY=24*3600*1000;</div><div class="line">        let start=new Date(year,0,1),</div><div class="line">               end=new Date(year,11,31);</div><div class="line">        let firstDay=start.getDay()|| 7,</div><div class="line">                lastDay=end.getDay()||7;</div><div class="line">        let startTime=+start,</div><div class="line">                endTime=startTime+(7-firstDay)*ONE_DAY,</div><div class="line">                _endTime=end-(7-lastDay)*ONE_DAY;</div><div class="line">        yield [startTime,endTime];</div><div class="line">        startTime=endTime+ONE_DAY;</div><div class="line">        endTime=endTime+7*ONE_DAY;</div><div class="line">        while(endTime&lt;_endTime)&#123;</div><div class="line">            yield [startTime,endTime];</div><div class="line">            startTime=endTime+ONE_DAY;</div><div class="line">            endTime=endTime+7*ONE_DAY;</div><div class="line">        &#125;</div><div class="line">        yield [startTime,+end];</div><div class="line">    &#125;</div><div class="line">    let index=1;</div><div class="line">    for(let i of createWeeks(2016))&#123;</div><div class="line">        let start=i[0],</div><div class="line">                end=i[1];</div><div class="line">        console.log(`第$&#123;formatDig(index++)&#125;周 $&#123;formatDate(start)&#125;-$&#123;formatDate(end)&#125;`);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">function formatDig(num)&#123;</div><div class="line">        return num&gt;9?&apos;&apos;+num:&apos;0&apos;+num;</div><div class="line">    &#125;</div><div class="line">    function formatDate(mill)&#123;</div><div class="line">        var y=new Date(mill);</div><div class="line">        let raws= [</div><div class="line">            y.getFullYear(),</div><div class="line">            formatDig(y.getMonth()+1),</div><div class="line">            formatDig(y.getDate()),</div><div class="line">            y.getDay()||7</div><div class="line">        ];</div><div class="line">        let format=[&apos;年&apos;,&apos;月&apos;,&apos;日 星期&apos;];</div><div class="line">        return String.raw(&#123;raw:raws&#125;,...format);</div><div class="line">    &#125;</div><div class="line">    function* createWeeks(year)&#123;</div><div class="line">        const ONE_DAY=24*3600*1000;</div><div class="line">        let start=new Date(year,0,1),</div><div class="line">               end=new Date(year,11,31);</div><div class="line">        let firstDay=start.getDay()|| 7,</div><div class="line">                lastDay=end.getDay()||7;</div><div class="line">        let startTime=+start,</div><div class="line">                endTime=startTime+(7-firstDay)*ONE_DAY,</div><div class="line">                _endTime=end-(7-lastDay)*ONE_DAY;</div><div class="line">        yield [startTime,endTime];</div><div class="line">        startTime=endTime+ONE_DAY;</div><div class="line">        endTime=endTime+7*ONE_DAY;</div><div class="line">        while(endTime&lt;_endTime)&#123;</div><div class="line">            yield [startTime,endTime];</div><div class="line">            startTime=endTime+ONE_DAY;</div><div class="line">            endTime=endTime+7*ONE_DAY;</div><div class="line">        &#125;</div><div class="line">        yield [startTime,+end];</div><div class="line">    &#125;</div><div class="line">    let index=1;</div><div class="line">    for(let i of createWeeks(2016))&#123;</div><div class="line">        let start=i[0],</div><div class="line">                end=i[1];</div><div class="line">        console.log(`第$&#123;formatDig(index++)&#125;周 $&#123;formatDate(start)&#125;-$&#123;formatDate(end)&#125;`);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>不使用 generate 函数的方法</p>
 <p>String.raw方法也可以作为正常的函数使用。这时，它的第一个参数，应该是一个具有raw属性的对象，且raw属性的值应该是一个数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String.raw(&#123; raw: &apos;test&apos; &#125;, 0, 1, 2);</div><div class="line">// &apos;t0e1s2t&apos;</div><div class="line"></div><div class="line">// 等同于</div><div class="line">String.raw(&#123; raw: [&apos;t&apos;,&apos;e&apos;,&apos;s&apos;,&apos;t&apos;] &#125;, 0, 1, 2);</div></pre></td></tr></table></figure></p>
 <p>具体代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">function formatDig(num)&#123;</div><div class="line">        return num&gt;9?&apos;&apos;+num:&apos;0&apos;+num;</div><div class="line">    &#125;</div><div class="line">    function formatDate(mill)&#123;</div><div class="line">        var y=new Date(mill);</div><div class="line">        var raws= [</div><div class="line">            y.getFullYear(),</div><div class="line">            formatDig(y.getMonth()+1),</div><div class="line">            formatDig(y.getDate()),</div><div class="line">            y.getDay()||7</div><div class="line">        ];</div><div class="line">        var format=[&apos;年&apos;,&apos;月&apos;,&apos;日 星期&apos;];</div><div class="line">        return String.raw(&#123;raw:raws&#125;,...format);</div><div class="line">    &#125;</div><div class="line">    function createWeeks(year)&#123;</div><div class="line">        const ONE_DAY=24*3600*1000;</div><div class="line">		var re = [];</div><div class="line">		</div><div class="line">        	var start=new Date(year,0,1),</div><div class="line">               end=new Date(year,11,31);</div><div class="line">        	var firstDay=start.getDay()|| 7,</div><div class="line">                lastDay=end.getDay()||7;</div><div class="line">       		 var startTime=+start,</div><div class="line">                endTime=startTime+(7-firstDay)*ONE_DAY,</div><div class="line">                _endTime=end-(7-lastDay)*ONE_DAY;</div><div class="line">       		re.push([startTime,endTime]);</div><div class="line">        	startTime=endTime+ONE_DAY;</div><div class="line">            endTime=endTime+7*ONE_DAY;</div><div class="line"></div><div class="line">          while(endTime&lt;= _endTime)&#123;</div><div class="line">           re.push([startTime,endTime]);</div><div class="line">            startTime=endTime+ONE_DAY;</div><div class="line">            endTime=endTime+7*ONE_DAY;</div><div class="line">          &#125;</div><div class="line">		  console.log(re);</div><div class="line">		</div><div class="line">        return re;</div><div class="line">    &#125;</div><div class="line">    var index=1;</div><div class="line">    for(var i of createWeeks(2017))&#123;</div><div class="line">        var start=i[0],</div><div class="line">                end=i[1];</div><div class="line">        console.log(`第$&#123;formatDig(index++)&#125;周 $&#123;formatDate(start)&#125;-$&#123;formatDate(end)&#125;`);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    多个年份</div><div class="line">    var year = [2014,2015,2016,2017];</div><div class="line">  year.forEach(function(ele,ind)&#123;</div><div class="line">    var index=1;</div><div class="line">    for(var i of createWeeks(ele))&#123;</div><div class="line">        var start=i[0],</div><div class="line">                end=i[1];</div><div class="line">        console.log(`第$&#123;formatDig(index++)&#125;周 $&#123;formatDate(start)&#125;-$&#123;formatDate(end)&#125;`);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
@@ -270,18 +285,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/4.4.3 BFC-块格式化上下文（block formatting context）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/4.3.9 2017-12-11 遇到 ios bug/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          4-27 2017-12-11 遇到 ios bug
         
       </div>
     </a>
   
   
     <a href="/2018/09/27/4.4.1 新增元素使用 jQuery on()方法重复绑定的问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">新增元素使用jQuery on()方法重复绑定的问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -310,9 +325,9 @@
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	
-         <div id="SOHUCS" sid="" style="padding: 0px 30px 0px 46px;"></div>
+         <div id="SOHUCS" sid="一年中的 周 范围计算" style="padding: 0px 30px 0px 46px;"></div>
 
-	<div class="ds-thread" data-thread-key="4.4.2 一年中的 周 范围计算" data-title="" data-url="http://yoursite.com/2018/09/27/4.4.2 一年中的 周 范围计算/"></div>
+	<div class="ds-thread" data-thread-key="4.4.2 一年中的 周 范围计算" data-title="一年中的 周 范围计算" data-url="http://yoursite.com/2018/09/27/4.4.2 一年中的 周 范围计算/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
